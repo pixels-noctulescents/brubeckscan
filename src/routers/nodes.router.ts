@@ -1,5 +1,5 @@
 import express from "express";
-import { nodesController } from "../controllers/nodes/nodes.controller";
+import { nodesController } from "controllers/nodes/nodes.controller";
 
 const nodesRouter = express.Router();
 
