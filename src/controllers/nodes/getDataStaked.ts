@@ -1,6 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 import { request, gql } from "graphql-request";
 import { constants } from "../../configs/constants";
+import { send } from "../../utils/sender";
 
 export async function getDataStaked(req: Request, res: Response, next: NextFunction) {
     try {
@@ -24,7 +25,7 @@ export async function getDataStaked(req: Request, res: Response, next: NextFunct
 
       const value = Math.floor(+data.erc20Balances[0].value);
 
-      res.json({ data: value });
+      send(res, value);
     } catch(e) {
         next(e);
     }

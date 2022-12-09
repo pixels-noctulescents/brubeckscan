@@ -1,6 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 import { request, gql } from "graphql-request";
 import { constants } from "../../configs/constants";
+import { send } from "../../utils/sender";
 
 export async function getRewardsSent(req: Request, res: Response, next: NextFunction) {
   try {
@@ -20,7 +21,7 @@ export async function getRewardsSent(req: Request, res: Response, next: NextFunc
 
     const data = await request(constants.DATA_GRAPH_URL, query);
 
-    res.json({ data: data });
+    send(res, data);
   } catch (e) {
     next(e);
   }

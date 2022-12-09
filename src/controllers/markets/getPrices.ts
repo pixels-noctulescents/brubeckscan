@@ -1,5 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import { constants } from "../../configs/constants";
+import { send } from "../../utils/sender";
 
 export async function getPrices(req: Request, res: Response, next: NextFunction) {
     try {
@@ -18,7 +19,7 @@ export async function getPrices(req: Request, res: Response, next: NextFunction)
           prices[price.symbol] = +price.price;
         });
     
-        res.json({ data: prices });
+        send(res, prices);
       } catch (e) {
         next(e);
       }
