@@ -1,4 +1,4 @@
-import { prisma } from "clients/prisma";
+import { prisma } from "../clients/prisma";
 import { Request, Response, NextFunction } from "express";
 
 const usersController = () => {};

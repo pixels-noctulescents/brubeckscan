@@ -1,5 +1,5 @@
 import express from "express";
-import { marketsController } from "controllers/markets/markets.controller";
+import { marketsController } from "../controllers/markets/markets.controller";
 
 const marketsRouter = express.Router();
 

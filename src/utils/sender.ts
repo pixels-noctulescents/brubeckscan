@@ -1,9 +1,9 @@
-import e, { Response } from "express";
+import { Response } from "express";
 
 export async function send(res: Response, data: any, error?: Error) {
   if (error) {
     res.status(500).json({
-        status: "failure",
+        status: "error",
         message: error.message
     })
   } else {

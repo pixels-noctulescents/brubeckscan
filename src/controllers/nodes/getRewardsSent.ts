@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 import { request, gql } from "graphql-request";
-import { constants } from "configs/constants";
-import { send } from "utils/sender";
+import { constants } from "../../configs/constants";
+import { send } from "../../utils/sender";
 
 export async function getRewardsSent(req: Request, res: Response, next: NextFunction) {
   try {

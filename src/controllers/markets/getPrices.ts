@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
-import { constants } from "configs/constants";
-import { send } from "utils/sender";
+import { constants } from "../../configs/constants";
+import { send } from "../../utils/sender";
 
 export async function getPrices(req: Request, res: Response, next: NextFunction) {
     try {
