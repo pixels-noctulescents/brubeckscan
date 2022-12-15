@@ -4,7 +4,10 @@ import { validateEthAddress } from "../middlewares/address";
 
 const nodesRouter = express.Router();
 
-nodesRouter.get("/staked/:address", [validateEthAddress], nodesController.getDataStaked);
-nodesRouter.get("/rewards/:address", [validateEthAddress], nodesController.getRewardsSent);
+nodesRouter.get(
+  "/stats/:address",
+  [validateEthAddress],
+  nodesController.getNodeStats
+);
 
 export { nodesRouter };
