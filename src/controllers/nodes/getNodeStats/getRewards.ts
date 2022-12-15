@@ -1,4 +1,4 @@
-import { constants } from "../../configs/constants";
+import { constants } from "../../../configs/constants";
 
 export async function getRewards(address: string) {
   try {

@@ -1,5 +1,5 @@
 import { request, gql } from "graphql-request";
-import { constants } from "../../configs/constants";
+import { constants } from "../../../configs/constants";
 
 export async function getDataStaked(address: string) {
   try {
