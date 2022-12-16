@@ -1,6 +1,7 @@
 # BrubeckScan API
 
 [![TypeScript](https://badgen.net/badge/icon/typescript?icon=typescript&label)](https://typescriptlang.org)
+[![Streamr](https://img.shields.io/coincap/price-usd/streamr)](https://streamr.network/)
 
 ## Routes
 
