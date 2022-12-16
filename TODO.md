@@ -2,7 +2,7 @@
 
 - [ ] Improve type coverage
 - [ ] Unit tests
-- [ ] Auth middleware
+- [X] Auth middleware
 - [ ] Users Endpoints
 - [ ] BrubeckStats Endpoints
 - [ ] Network Endpoints
