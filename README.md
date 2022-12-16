@@ -9,9 +9,9 @@
 
 ## Routes
 
-- api/markets/prices
-- api/nodes/staked/:address
-- api/nodes/sent/:address
+- GET api/markets/prices
+- GET api/nodes/stats/:address
+- GET api/networks/stats/
 
 ## Environment
 
