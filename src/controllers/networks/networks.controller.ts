@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express";
-import { send } from "../../utils/sender";
+import { sender } from "../../utils/sender";
 import { getStats } from "./getStats";
 
 const networksController = () => {};
@@ -11,7 +11,7 @@ networksController.getStats = async (
 ) => {
   try {
     const stats = await getStats();
-    send(res, stats);
+    sender.success(res, { stats: stats });
   } catch (e) {
     next(e);
   }

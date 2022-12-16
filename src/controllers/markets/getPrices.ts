@@ -1,32 +1,23 @@
-import { Request, Response, NextFunction } from "express";
 import { constants } from "../../configs/constants";
-import { send } from "../../utils/sender";
 
-export async function getPrices(
-  req: Request,
-  res: Response,
-  next: NextFunction
-) {
+export async function getPrices() {
   try {
-    const requests = constants.PAIRS.map(async (symbol) => {
-      const request = await fetch(
-        `${constants.BINANCE_PRICE_TICKER_URL}${symbol}`
-      );
-      return request;
-    });
+    const requests = constants.PAIRS.map((symbol) =>
+      fetch(`${constants.BINANCE_PRICE_TICKER_URL}${symbol}`).then((res) =>
+        res.json()
+      )
+    );
 
-    const responses = await Promise.all(requests);
-
-    const data = await Promise.all(responses.map((res) => res.json()));
+    const data = await Promise.all(requests);
 
     let prices: any = {};
 
-    data.forEach((price) => {
-      prices[price.symbol] = +price.price;
+    data.forEach((item) => {
+      prices[item.symbol] = +item.price;
     });
 
-    send(res, prices);
+    return prices;
   } catch (e) {
-    next(e);
+    throw e;
   }
 }

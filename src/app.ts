@@ -2,7 +2,7 @@ import express from "express";
 import morgan from "morgan";
 import { Router } from "./routers";
 import { Request, Response, NextFunction } from "express";
-import { send } from "./utils/sender";
+import { sender } from "./utils/sender";
 
 const app = express();
 
@@ -14,7 +14,7 @@ app.use("/api", Router);
 
 // Error handling middleware
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
-    send(res, null, err);
-})
+  sender.error(res, err);
+});
 
 export default app;

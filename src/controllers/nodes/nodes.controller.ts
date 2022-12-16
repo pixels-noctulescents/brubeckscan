@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express";
-import { send } from "../../utils/sender";
+import { sender } from "../../utils/sender";
 import { getNodeStats } from "./getNodeStats";
 import { formatNodeStats } from "../../utils/format";
 
@@ -17,7 +17,7 @@ nodesController.getNodeStats = async (
 
     const stats = formatNodeStats(data, address);
 
-    send(res, stats);
+    sender.success(res, { node: stats });
   } catch (e) {
     next(e);
   }

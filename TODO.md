@@ -4,7 +4,7 @@
 - [ ] Unit tests
 - [X] Auth middleware
 - [ ] Users Endpoints
-- [ ] BrubeckStats Endpoints
+- [X] BrubeckStats Endpoints
 - [ ] Network Endpoints
 - [ ] Setup cache system
 - [ ] Setup CI/CD
