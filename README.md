@@ -1,6 +1,7 @@
 # BrubeckScan API
 
 [![TypeScript](https://badgen.net/badge/icon/typescript?icon=typescript&label)](https://typescriptlang.org)
+![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/adamphivo/brubeckapi)
 ![GitHub last commit](https://img.shields.io/github/last-commit/adamphivo/brubeckAPI)
 ![GitHub issues](https://img.shields.io/github/issues/adamphivo/brubeckAPI)
 [![Streamr](https://img.shields.io/coincap/price-usd/streamr)](https://streamr.network/)
