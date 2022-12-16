@@ -1,4 +1,7 @@
 import { NextFunction, Request, Response } from "express";
+import { sender } from "../utils/sender";
+
+const UNAUTHORIZED_MESSAGE = "Unauthorized.";
 
 export function validateAuth(req: Request, res: Response, next: NextFunction) {
   const clientToken = req.headers.authorization?.replace("Bearer ", "");
@@ -7,6 +10,6 @@ export function validateAuth(req: Request, res: Response, next: NextFunction) {
   if (clientToken === serverToken) {
     next();
   } else {
-    next(new Error("Unauthorized."));
+    sender.failure(res, { auth: UNAUTHORIZED_MESSAGE }, 401);
   }
 }
