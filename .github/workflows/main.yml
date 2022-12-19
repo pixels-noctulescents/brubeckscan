@@ -47,3 +47,4 @@ jobs:
             npx prisma generate
             npx tsc
             pm2 start
+            pm2 save
