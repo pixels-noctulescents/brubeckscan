@@ -27,12 +27,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: executing remote ssh commands using password 4
-        uses: fifsky/ssh-action@master
+        uses: appleboy/ssh-action@v0.1.6
         with:
           host: ${{ secrets.HOST }}
-          user: ${{ secrets.USERNAME }}
-          key: ${{ secrets.PRIVATE_KEY }}
-          command: |
+          username: ${{ secrets.USER }}
+          key: ${{ secrets.KEY }}
+          port: ${{ secrets.PORT }}
+          script: |
             cd ~/Projects/brubeckAPI
             nvm install --lts
             nvm use --lts
