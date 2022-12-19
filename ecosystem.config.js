@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: "StreamrAPI",
+      name: "brubeckscan/server",
       script: "packages/server/dist/index.js",
       exec_mode: "cluster",
       instances: 4,
