@@ -28,13 +28,12 @@ jobs:
     needs: [build]
     steps:
       - name: executing remote ssh commands using password
-        uses: garygrossgarten/github-action-ssh@release
+        uses: appleboy/ssh-action@v0.1.6
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
-          port: ${{ secrets.PORT }}
-          command: |
+          key: ${{ secrets.PRIVATE_KEY }}
+          script: |
             cd ~/Projects/brubeckAPI
             nvm install --lts
             nvm use --lts
