@@ -28,11 +28,10 @@ jobs:
     needs: [build]
     steps:
       - name: executing remote ssh commands using password 4
-        uses: appleboy/ssh-action@v0.1.6
+        uses: appleboy/ssh-action@v0.1.5
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
-          passphrase: ${{ secrets.PASSWORD }}
           password: ${{ secrets.PASSWORD }}
           script: |
             cd ~/Projects/brubeckAPI
