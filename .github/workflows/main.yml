@@ -1,0 +1,18 @@
+name: Deploy
+
+on: 
+  push:
+    branches: 
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install
+        run: npm install
+      - name: Compile
+        run: npx tsc
+      - name: Prisma Generate Client
+        run: npx prisma generate
+      - name: Restart PM2
+        run: pm2 start
