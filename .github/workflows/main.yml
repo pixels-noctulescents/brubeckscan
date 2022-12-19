@@ -32,6 +32,7 @@ jobs:
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
+          passphrase: ${{ secrets.PASSWORD }}
           password: ${{ secrets.PASSWORD }}
           script: |
             cd ~/Projects/brubeckAPI
