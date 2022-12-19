@@ -10,4 +10,18 @@ nodesRouter.get(
   nodesController.getNodeStats
 );
 
+nodesRouter.post("/:address", [validateEthAddress], nodesController.watchNode);
+
+nodesRouter.delete(
+  "/:address",
+  [validateEthAddress],
+  nodesController.unwatchNode
+);
+
+nodesRouter.patch(
+  "/:address",
+  [validateEthAddress],
+  nodesController.updateNode
+);
+
 export { nodesRouter };
