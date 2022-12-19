@@ -39,3 +39,6 @@ jobs:
             cd ~/Projects/brubeckAPI
             git pull
             npm install
+            npx prisma generate
+            npx tsc
+            pm2 start
