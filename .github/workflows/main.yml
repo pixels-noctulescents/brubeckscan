@@ -28,12 +28,12 @@ jobs:
     needs: [build]
     steps:
       - name: executing remote ssh commands using password 4
-        uses: appleboy/ssh-action@v0.1.5
+        uses: fifsky/ssh-action@master
         with:
           host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
-          script: |
+          user: ${{ secrets.USERNAME }}
+          pass: ${{ secrets.PASSWORD }}
+          command: |
             cd ~/Projects/brubeckAPI
             nvm install --lts
             nvm use --lts
