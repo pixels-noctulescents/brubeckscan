@@ -35,10 +35,4 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             cd ~/Projects/brubeckAPI
-            nvm install --lts
-            nvm use --lts
-            npm install
-            npm install pm2@latest -g
-            npx tsc
-            npx prisma generate
-            pm2 start
+            git pull
