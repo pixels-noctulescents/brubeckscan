@@ -36,3 +36,4 @@ jobs:
           script: |
             cd ~/Projects/brubeckAPI
             git pull
+            npm install
