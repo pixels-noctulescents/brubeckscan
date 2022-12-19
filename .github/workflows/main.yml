@@ -25,7 +25,6 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
-    needs: [build]
     steps:
       - name: executing remote ssh commands using password 4
         uses: fifsky/ssh-action@master
