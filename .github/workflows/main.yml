@@ -26,7 +26,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: executing remote ssh commands using password 4
+      - name: Deploy
         uses: appleboy/ssh-action@v0.1.6
         with:
           host: ${{ secrets.HOST }}
@@ -34,6 +34,8 @@ jobs:
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
           script: |
+            export NVM_DIR=~/.nvm
+            source ~/.nvm/nvm.sh
             cd ~/Projects/brubeckAPI
             git pull
             npm install
