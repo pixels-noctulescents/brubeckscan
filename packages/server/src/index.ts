@@ -1,10 +1,10 @@
 // ENV
-import * as dotenv from "dotenv";
-dotenv.config();
+import { dotenvLoad } from "dotenv-mono";
+const dotenv = dotenvLoad();
 
 // APP
 import app from "./app";
 
-app.listen(process.env.APP_PORT, () => {
-  console.log(`App listening on port ${process.env.APP_PORT}`);
+app.listen(process.env.SERVER_PORT, () => {
+  console.log(`App listening on port ${process.env.SERVER_PORT}`);
 });
