@@ -33,6 +33,7 @@ jobs:
           host: ${{ secrets.HOST }}
           user: ${{ secrets.USERNAME }}
           pass: ${{ secrets.PASSWORD }}
+          key: ${{ secrets.PRIVATE_KEY }}
           command: |
             cd ~/Projects/brubeckAPI
             nvm install --lts
