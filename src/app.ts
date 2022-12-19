@@ -6,6 +6,8 @@ import { sender } from "./utils/sender";
 
 const app = express();
 
+app.use(express.json());
+
 // Logger
 app.use(morgan("dev"));
 

@@ -7,6 +7,23 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model User {
+  address   String   @id @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+  Node      Node[]
+}
+
+model Node {
+  id          String   @id @default(uuid())
+  address     String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @default(now())
+  userAddress String?
+  name        String   @default("Default node name")
+  User        User?    @relation(fields: [userAddress], references: [address], onDelete: Cascade)
+}
+
 model BrubeckStats {
   id              Int      @id @default(autoincrement())
   createdAt       DateTime @default(now())
@@ -24,30 +41,4 @@ model CronRun {
   runTimeInSeconds Float
   finalStatus      Int
   errorMessage     String?
-}
-
-model Node {
-  id          String   @id
-  address     String
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @default(now())
-  userAddress String?
-  name        String   @default("Default node name")
-  User        User?    @relation(fields: [userAddress], references: [address])
-}
-
-model Profile {
-  id        String   @id
-  gradient  String
-  createdAt DateTime @default(now())
-  updatedAt DateTime @default(now())
-  User      User?
-}
-
-model User {
-  address   String   @id @unique
-  createdAt DateTime @default(now())
-  profileId String   @unique
-  Node      Node[]
-  Profile   Profile  @relation(fields: [profileId], references: [id])
 }

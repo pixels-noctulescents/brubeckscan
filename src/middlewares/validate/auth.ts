@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express";
-import { sender } from "../utils/sender";
+import { sender } from "../../utils/sender";
 
 const UNAUTHORIZED_MESSAGE = "Unauthorized.";
 
