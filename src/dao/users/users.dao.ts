@@ -1,4 +1,3 @@
-import { Prisma, User } from "@prisma/client";
 import { prisma } from "../../clients/prisma";
 
 const usersDAO = () => {};
@@ -14,7 +13,7 @@ usersDAO.count = async () => {
 
 usersDAO.createUser = async (address: string) => {
   try {
-    let user: Prisma.UserCreateInput;
+    let user;
 
     user = {
       address: address,
