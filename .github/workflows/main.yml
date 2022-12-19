@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
 
 jobs:
   build:
@@ -20,13 +17,8 @@ jobs:
           node-version: latest
       - name: Install
         run: npm install
-      - run: cd ./packages/server
-      - name: Compile
-        run: npx tsc
-      - name: Prisma Generate Client
-        run: npx prisma generate
-      - run: npm install pm2@latest -g
-      - run: pm2 start
+      - name: Build
+        run: npm run build
 
   deploy:
     runs-on: ubuntu-latest
@@ -45,10 +37,6 @@ jobs:
             cd ~/Projects/brubeckAPI
             git pull
             npm install
-            cd ./packages/server
-            npx prisma migrate deploy
-            npx prisma generate
-            npx tsc
-            cd ~/Projects/brubeckAPI
+            npm run build
             pm2 start
             pm2 save

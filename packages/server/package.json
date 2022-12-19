@@ -1,14 +1,12 @@
 {
-  "name": "brubeckapi",
+  "name": "@brubeckscan/server",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "compile": "tsc",
-    "watch": "tsc --watch",
-    "dev": "node --watch dist/index.js"
+    "build": "rm -rf ./dist && prisma migrate deploy && prisma generate && tsc"
   },
-  "author": "",
+  "author": "Adam Phi Vo",
   "license": "ISC",
   "devDependencies": {
     "@types/cors": "^2.8.13",
