@@ -2,7 +2,7 @@ module.exports = {
   apps: [
     {
       name: "StreamrAPI",
-      script: "dist/index.js",
+      script: "packages/server/dist/index.js",
       exec_mode: "cluster",
       instances: 4,
       env: {

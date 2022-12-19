@@ -44,8 +44,10 @@ jobs:
             cd ~/Projects/brubeckAPI
             git pull
             npm install
+            cd ./packages/server
             npx prisma migrate deploy
             npx prisma generate
             npx tsc
+            cd ~/Projects/brubeckAPI
             pm2 start
             pm2 save
