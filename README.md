@@ -1,6 +1,7 @@
 # BrubeckScan API
 
 [![TypeScript](https://badgen.net/badge/icon/typescript?icon=typescript&label)](https://typescriptlang.org)
+![GitHub](https://img.shields.io/github/license/adamphivo/brubeckapi)
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/adamphivo/brubeckapi/main.yml?branch=main)
 ![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/adamphivo/brubeckapi)
 ![GitHub last commit](https://img.shields.io/github/last-commit/adamphivo/brubeckAPI)
