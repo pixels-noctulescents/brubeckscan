@@ -2,12 +2,19 @@
     "name": "brubeckscan",
     "private": "true",
     "scripts": {
-        "build": "npm run build --workspaces --if-present"
+        "build": "npm run build --workspaces --if-present",
+        "dev": "concurrently npm:dev:*",
+        "dev:client": "npm run dev --workspace=client",
+        "dev:server": "npm run dev --workspace=server"
     },
     "workspaces": [
-        "packages/*"
+        "./packages/client",
+        "./packages/server"
     ],
     "dependencies": {
         "dotenv": "^16.0.3"
+    },
+    "devDependencies": {
+        "concurrently": "^7.6.0"
     }
 }
