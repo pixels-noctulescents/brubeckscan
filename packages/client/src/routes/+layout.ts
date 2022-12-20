@@ -1,5 +1,4 @@
-import type { PageLoad } from "./$types";
-import { count } from "$lib/stores/networkStats";
+import type { LayoutLoad } from "./$types";
 
 export const load = (async ({ params, fetch }) => {
   const response = await fetch("http://localhost:3000/api/networks/stats");
@@ -8,6 +7,5 @@ export const load = (async ({ params, fetch }) => {
     title: "Hello world!",
     content: "Welcome to our blog. Lorem ipsum dolor sit amet...",
     networkStats: data,
-    count: count,
   };
-}) satisfies PageLoad;
+}) satisfies LayoutLoad;

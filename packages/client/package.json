@@ -20,6 +20,8 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@sveltejs/adapter-node": "^1.0.0"
+		"@sveltejs/adapter-node": "^1.0.0",
+		"sass": "^1.57.1",
+		"the-new-css-reset": "^1.7.3"
 	}
 }
