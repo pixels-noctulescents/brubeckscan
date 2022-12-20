@@ -1,7 +1,7 @@
 // my-server.js
-import { handler } from "../dist/handler.js";
 import * as dotenv from "dotenv"; // see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
 dotenv.config();
+import { handler } from "../dist/handler.js";
 import express from "express";
 
 const app = express();
@@ -14,6 +14,6 @@ app.get("/healthcheck", (req, res) => {
 // let SvelteKit handle everything else, including serving prerendered pages and static assets
 app.use(handler);
 
-app.listen(process.env.CLIENT_PORT || 3000, () => {
-  console.log(`listening on port ${process.env.CLIENT_PORT || 3000}`);
+app.listen(process.env.CLIENT_PORT, () => {
+  console.log(`Listening on port ${process.env.CLIENT_PORT}`);
 });
