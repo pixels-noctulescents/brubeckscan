@@ -1,4 +1,11 @@
-<h1>Welcome to SvelteKit TADA !</h1>
-<p>
-  Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation
-</p>
+<script lang="ts">
+  import type { PageData } from "./$types";
+  import { count } from "../lib/stores/networkStats";
+  export let data: PageData;
+</script>
+
+<div>{data.title}</div>
+<div>{$count}</div>
+<button on:click={() => $count++}>+1</button>
+<button on:click={() => ($count = 0)}>reset</button>
+<button on:click={() => $count--}>-1</button>
