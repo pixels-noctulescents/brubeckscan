@@ -8,5 +8,6 @@ export const load = (async ({ params, fetch }) => {
     title: "Hello world!",
     content: "Welcome to our blog. Lorem ipsum dolor sit amet...",
     networkStats: data,
+    count: count,
   };
 }) satisfies PageLoad;
