@@ -1,19 +1,27 @@
-<div>APP</div>
-
-<header>
-  <ul>
-    <li>
-      <a href="/">Home</a>
-    </li>
-    <li>
-      <a href="/about">About</a>
-    </li>
-  </ul>
-</header>
+<script lang="ts">
+  import "the-new-css-reset/css/reset.css";
+  import Header from "$lib/components/layout/Header.svelte";
+  import Footer from "$lib/components/layout/Footer.svelte";
+</script>
 
 <div>
-  <h2>Page</h2>
-  <slot />
+  <Header />
+  <main>
+    <slot />
+  </main>
+  <Footer />
 </div>
 
-<div>FOOTER</div>
+<style lang="scss">
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 120vh;
+  }
+
+  main {
+    display: flex;
+    flex-grow: 1;
+  }
+</style>
