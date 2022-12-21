@@ -4,3 +4,5 @@ export const user = writable({
   address: null,
   nodes: [],
 });
+
+export const isConnected = writable(false);

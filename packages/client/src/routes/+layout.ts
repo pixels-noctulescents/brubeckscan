@@ -1,12 +1,7 @@
-import { browser } from "$app/environment";
-import detectEthereumProvider from "@metamask/detect-provider";
 import type { LayoutLoad } from "./$types";
+import { setupEthereumBrowserEnv } from "$lib/utils/bundle";
 
 export const load = (async ({ params, fetch }) => {
-  if (browser) {
-    const provider = await detectEthereumProvider();
-    return {
-      provider,
-    };
-  }
+  await setupEthereumBrowserEnv(fetch);
+  return {};
 }) satisfies LayoutLoad;
