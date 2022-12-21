@@ -5,7 +5,7 @@
 <style lang="scss">
   footer {
     min-height: 200px;
-    background-color: black;
+    background-color: rgb(31, 28, 28);
     color: whitesmoke;
   }
 </style>

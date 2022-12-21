@@ -8,14 +8,9 @@ const usersRouter = express.Router();
 usersRouter.use(validateAuth);
 
 usersRouter.get("/count", usersController.count);
+usersRouter.get("/:address", usersController.findUserByAddress);
 
 usersRouter.post("", [validateUserCreationInput], usersController.createUser);
-
-usersRouter.get(
-  "",
-  [validateUserCreationInput],
-  usersController.findUserByAddress
-);
 
 usersRouter.delete("", [validateUserCreationInput], usersController.deleteUser);
 
