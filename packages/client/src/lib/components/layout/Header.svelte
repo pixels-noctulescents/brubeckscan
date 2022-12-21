@@ -1,11 +1,11 @@
 <script lang="ts">
   import Navigation from "./Navigation.svelte";
-  import Connect from "./Connect.svelte";
-  import logo from "$lib/assets/streamr/logo.svg";
+  import Connect from "$lib/components/common/Connect.svelte";
+  import Logo from "./Logo.svelte";
 </script>
 
 <header>
-  <img src={logo} alt="The streamr Logo" />
+  <Logo />
   <Navigation />
   <Connect />
 </header>
@@ -24,9 +24,5 @@
     min-height: 65px;
     border-bottom: 1px solid lightgray;
     padding: 10px 50px;
-  }
-
-  img {
-    width: 40px;
   }
 </style>
