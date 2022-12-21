@@ -36,7 +36,7 @@ usersController.findUserByAddress = async (
   next: NextFunction
 ) => {
   try {
-    const user = await usersDAO.findUserByAddress(req.body.address);
+    const user = await usersDAO.findUserByAddress(req.params.address);
 
     if (!user) {
       return sender.failure(res, { user: "User not found." }, 404);
