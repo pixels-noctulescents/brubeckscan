@@ -6,7 +6,7 @@ import {
   hasMetamask,
 } from "$lib/stores/ethereumBrowserEnv";
 
-export async function setupEthereumBrowserEnv(fetch: any) {
+export async function setupEthereumBrowserEnv() {
   if (browser) {
     const provider = await detectEthereumProvider();
     if (provider) {
@@ -15,7 +15,7 @@ export async function setupEthereumBrowserEnv(fetch: any) {
       if (provider.isMetaMask) {
         hasMetamask.set(true);
         // Check existing connection
-        const hasConnection = await checkForExistingConnection(fetch);
+        const hasConnection = await checkForExistingConnection();
         // Add account event
         (window as any).ethereum.on(
           "accountsChanged",
@@ -32,7 +32,7 @@ export async function setupEthereumBrowserEnv(fetch: any) {
   }
 }
 
-async function checkForExistingConnection(fetch: any) {
+async function checkForExistingConnection() {
   const accounts = await (window as any).ethereum.request({
     method: "eth_accounts",
   });
