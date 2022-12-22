@@ -1,6 +1,7 @@
 <script lang="ts">
   import { hasMetamask } from "$lib/stores/ethereumBrowserEnv";
   import { user, isConnected } from "$lib/stores/user";
+  import UserIcon from "./UserIcon.svelte";
 
   async function connect() {
     try {
@@ -14,15 +15,12 @@
 </script>
 
 <div>
-  {#if $hasMetamask}
+  {#if $isConnected}
+    <UserIcon />
+  {:else if $hasMetamask}
     <button on:click={connect}>Connect</button>
   {:else}
     <button rel="noreferrer">Get Metamask</button>
-  {/if}
-
-  {#if $isConnected}
-    <div>{$user.address}</div>
-    <div>{$user.nodes.length}</div>
   {/if}
 </div>
 
