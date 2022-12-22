@@ -5,7 +5,7 @@ export async function login(address: string) {
   try {
     const data = await getUserData(address);
     if (data) {
-      if (data.data.status === "fail") {
+      if (data.status === "fail") {
         const user = await createUser(address);
         updateUserStores(user.data.user);
       } else {
@@ -44,14 +44,13 @@ async function createUser(address: string) {
     const init = {
       headers: new Headers({
         Authorization: `Bearer ${PUBLIC_API_TOKEN}`,
+        "Content-Type": "application/json",
       }),
+      method: "POST",
       body: JSON.stringify({ address }),
     };
 
-    const response = await fetch(
-      `${PUBLIC_API_BASE_URL}/api/users/${address}`,
-      init
-    );
+    const response = await fetch(`${PUBLIC_API_BASE_URL}/api/users`, init);
 
     const data = await response.json();
 

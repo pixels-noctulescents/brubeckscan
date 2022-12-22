@@ -8,11 +8,19 @@ export function validateUserCreationInput(
   next: NextFunction
 ) {
   if (!req.body.address) {
-    sender.failure(res, { address: "Missing user ethereum address." }, 400);
+    return sender.failure(
+      res,
+      { address: "Missing user ethereum address." },
+      400
+    );
   }
 
   if (!validator.isEthereumAddress(req.body.address)) {
-    sender.failure(res, { address: "Not a valid ethereum address." }, 400);
+    return sender.failure(
+      res,
+      { address: "Not a valid ethereum address." },
+      400
+    );
   }
 
   next();
