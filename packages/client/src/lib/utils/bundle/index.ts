@@ -16,6 +16,17 @@ export async function setupEthereumBrowserEnv(fetch: any) {
         hasMetamask.set(true);
         // Check existing connection
         const hasConnection = await checkForExistingConnection(fetch);
+        // Add account event
+        (window as any).ethereum.on(
+          "accountsChanged",
+          async (accounts: string[]) => {
+            if (accounts[0]) {
+              await userService.login(accounts[0]);
+            } else {
+              await userService.logout();
+            }
+          }
+        );
       }
     }
   }
@@ -26,7 +37,7 @@ async function checkForExistingConnection(fetch: any) {
     method: "eth_accounts",
   });
   if (accounts.length > 0) {
-    await userService.login(fetch, accounts[0]);
+    await userService.login(accounts[0]);
     return true;
   } else {
     return false;
