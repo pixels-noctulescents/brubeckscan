@@ -6,3 +6,9 @@ export const user = writable({
 });
 
 export const isConnected = writable(false);
+
+export const nodesData = writable([
+  {
+    address: "",
+  },
+]);
