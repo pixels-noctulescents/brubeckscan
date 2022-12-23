@@ -24,5 +24,7 @@
   main {
     display: flex;
     flex-grow: 1;
+    background-color: whitesmoke;
+    min-height: calc(100vh - 65px);
   }
 </style>

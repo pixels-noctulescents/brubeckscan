@@ -2,12 +2,20 @@
   import { goto } from "$app/navigation";
   import MdHome from "svelte-icons/md/MdHome.svelte";
   import MdFolderSpecial from "svelte-icons/md/MdFolderSpecial.svelte";
+  import MdSearch from "svelte-icons/md/MdSearch.svelte";
   import { isConnected } from "$lib/stores/user";
 </script>
 
 <nav>
   <div class="icon" on:click={() => goto("/")} on:keydown={() => goto("/")}>
     <MdHome />
+  </div>
+  <div
+    class="icon"
+    on:click={() => goto("/scan")}
+    on:keydown={() => goto("/scan")}
+  >
+    <MdSearch />
   </div>
   {#if $isConnected}
     <div
@@ -26,7 +34,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 40px;
   }
 
   .icon {
@@ -35,7 +43,7 @@
     transition: 0.2s;
     color: rgb(172, 172, 172);
     &:hover {
-      color: rgb(35, 48, 87);
+      color: #ff650f;
       cursor: pointer;
     }
   }
