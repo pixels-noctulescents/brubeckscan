@@ -1,6 +1,6 @@
 <script lang="ts">
   import { user } from "$lib/stores/user";
-  const iconUrl = `https://avatars.dicebear.com/api/identicon/${$user.address}.svg`;
+  $: iconUrl = `https://avatars.dicebear.com/api/identicon/${$user.address}.svg`;
 </script>
 
 <div>
