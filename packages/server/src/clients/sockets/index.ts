@@ -9,6 +9,9 @@ socketsClient.init = (server: any) => {
   const io = new Server(server, {
     cors: {
       origin: "*",
+      methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+      preflightContinue: false,
+      optionsSuccessStatus: 204,
     },
   });
 
