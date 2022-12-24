@@ -26,5 +26,6 @@
     flex-grow: 1;
     background-color: whitesmoke;
     min-height: calc(100vh - 65px);
+    padding: 40px;
   }
 </style>

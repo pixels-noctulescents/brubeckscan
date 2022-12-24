@@ -1,11 +1,15 @@
-<div class="landing" />
+<script lang="ts">
+  import Prices from "$lib/components/markets/Prices.svelte";
+</script>
+
+<div class="landing">
+  <Prices />
+</div>
 
 <style lang="scss">
   .landing {
     display: flex;
     flex-direction: row;
-    height: calc(100vh - 65px);
     width: 100%;
-    background-color: whitesmoke;
   }
 </style>

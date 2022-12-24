@@ -15,7 +15,7 @@ export async function setupEthereumBrowserEnv() {
       if (provider.isMetaMask) {
         hasMetamask.set(true);
         // Check existing connection
-        const hasConnection = await checkForExistingConnection();
+        await checkForExistingConnection();
         // Add account event
         (window as any).ethereum.on(
           "accountsChanged",
@@ -36,7 +36,7 @@ async function checkForExistingConnection() {
   const accounts = await (window as any).ethereum.request({
     method: "eth_accounts",
   });
-  if (accounts.length > 0) {
+  if (accounts.length) {
     await userService.login(accounts[0]);
     return true;
   } else {
