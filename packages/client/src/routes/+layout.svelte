@@ -1,8 +1,14 @@
 <script lang="ts">
+  import { onMount } from "svelte";
   import "the-new-css-reset/css/reset.css";
   import "$lib/assets/styles/styles.scss";
   import Header from "$lib/components/layout/Header.svelte";
   import Footer from "$lib/components/layout/Footer.svelte";
+  import { socketService } from "$lib/services/socket";
+
+  onMount(() => {
+    socketService.init();
+  });
 </script>
 
 <div>
