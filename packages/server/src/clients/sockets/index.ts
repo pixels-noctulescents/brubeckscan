@@ -8,7 +8,7 @@ socketsClient.init = (server: any) => {
   // socket.io
   const io = new Server(server, {
     cors: {
-      origin: ["*"],
+      origin: "*",
     },
   });
 
