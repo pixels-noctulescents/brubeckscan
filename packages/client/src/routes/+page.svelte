@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Prices from "$lib/components/markets/Prices.svelte";
+  import Prices from "$lib/components/Prices.svelte";
 </script>
 
 <div class="landing">

@@ -1,9 +1,13 @@
 import * as dotenv from "dotenv";
 dotenv.config();
-
-// APP
+import http from "http";
 import app from "./app";
+import { socketsClient } from "./clients/sockets";
 
-app.listen(process.env.SERVER_PORT, () => {
-  console.log(`Server listening on port ${process.env.SERVER_PORT}`);
+const server = http.createServer(app);
+
+socketsClient.init(server);
+
+server.listen(process.env.SERVER_PORT, () => {
+  console.log(`Server listening on *:${process.env.SERVER_PORT}`);
 });
