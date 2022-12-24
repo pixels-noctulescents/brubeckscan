@@ -1,7 +1,6 @@
 import express from "express";
 import morgan from "morgan";
 import cors from "cors";
-
 import { Router } from "./routers";
 import { Request, Response, NextFunction } from "express";
 import { sender } from "./utils/sender";
@@ -12,10 +11,8 @@ app.use(cors());
 
 app.use(express.json());
 
-// Logger
 app.use(morgan("dev"));
 
-// Router
 app.use("/api", Router);
 
 // Error handling middleware
