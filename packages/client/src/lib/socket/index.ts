@@ -1,7 +1,6 @@
 import { io } from "socket.io-client";
+import { PUBLIC_API_BASE_URL } from "$env/static/public";
 
-const ENDPOINT = "http://localhost:3000";
-
-const socket = io(ENDPOINT);
+const socket = io(PUBLIC_API_BASE_URL);
 
 export { socket };
