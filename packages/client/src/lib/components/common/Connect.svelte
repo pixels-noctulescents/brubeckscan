@@ -1,13 +1,19 @@
 <script lang="ts">
   import { hasMetamask } from "$lib/stores/ethereumBrowserEnv";
-  import { user, isConnected } from "$lib/stores/user";
+  import { isConnected } from "$lib/stores/user";
   import UserIcon from "./UserIcon.svelte";
+  import Icon from "@iconify/svelte";
+
+  let isConnecting = false;
 
   async function connect() {
     try {
+      if (isConnecting) return;
+      isConnecting = true;
       const connect = await (window as any).ethereum.request({
         method: "eth_requestAccounts",
       });
+      isConnecting = false;
     } catch (e) {
       console.log(e);
     }
@@ -18,10 +24,36 @@
   {#if $isConnected}
     <UserIcon />
   {:else if $hasMetamask}
-    <button on:click={connect}>Connect</button>
+    <button on:click={connect}
+      ><p>Connect</p>
+      <div class="icon">
+        <Icon icon="logos:metamask-icon" width="32" />
+      </div></button
+    >
   {:else}
-    <button rel="noreferrer">Get Metamask</button>
+    <button
+      ><p>Get Metamask</p>
+      <div class="icon"><Icon icon="logos:metamask-icon" /></div></button
+    >
   {/if}
 </div>
 
-<style></style>
+<style lang="scss">
+  button {
+    border: 1px solid lightgray;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: 0.3s;
+    color: lightgray;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    &:hover {
+      cursor: pointer;
+      user-select: none;
+      color: black;
+      border-color: black;
+    }
+  }
+</style>

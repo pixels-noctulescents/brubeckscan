@@ -11,7 +11,7 @@ networksController.getStats = async (
 ) => {
   try {
     const stats = await getStats();
-    sender.success(res, { stats: stats });
+    sender.success(res, { stats });
   } catch (e) {
     next(e);
   }

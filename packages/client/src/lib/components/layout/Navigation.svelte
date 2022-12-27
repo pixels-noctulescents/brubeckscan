@@ -40,10 +40,10 @@
   .icon {
     width: 40px;
     height: 40px;
-    transition: 0.2s;
+    transition: 0.3s;
     color: rgb(172, 172, 172);
     &:hover {
-      color: #ff650f;
+      color: #333333;
       cursor: pointer;
     }
   }

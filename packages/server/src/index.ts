@@ -2,7 +2,7 @@ import * as dotenv from "dotenv";
 dotenv.config();
 import http from "http";
 import app from "./app";
-import { socketsClient } from "./clients/sockets";
+import { socketsClient } from "./clients/socket.io";
 
 const server = http.createServer(app);
 

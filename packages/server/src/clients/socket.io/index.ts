@@ -13,14 +13,7 @@ socketsClient.init = (server: any) => {
   });
 
   io.on("connection", (socket) => {
-    console.log("a user connected");
-    socket.on("homepage", (message) => {
-      console.log(message);
-      io.emit("homepage", message);
-    });
-    socket.on("disconnect", () => {
-      console.log("user disconnecd");
-    });
+    socket.on("disconnect", () => {});
   });
 
   const job = schedule.scheduleJob("*/5 * * * * *", async () => {
