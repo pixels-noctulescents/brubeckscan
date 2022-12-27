@@ -1,6 +1,7 @@
 {
 	"name": "@brubeckscan/client",
 	"version": "0.0.1",
+	"description": "BrubeckScan client.",
 	"private": true,
 	"scripts": {
 		"dev": "vite dev",
