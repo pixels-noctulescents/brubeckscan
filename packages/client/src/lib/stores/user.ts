@@ -1,4 +1,5 @@
 import { writable } from "svelte/store";
+import type { Node } from "@brubeckscan/common/types";
 
 export const user = writable({
   address: null,
@@ -7,8 +8,4 @@ export const user = writable({
 
 export const isConnected = writable(false);
 
-export const nodesData = writable([
-  {
-    address: "",
-  },
-]);
+export const nodesData = writable<Node[]>([]);

@@ -1,6 +1,7 @@
 import { constants } from "../configs/constants";
+import type { Node } from "@brubeckscan/common/types";
 
-export function formatNodeStats(data: any, address: string) {
+export function formatNodeStats(data: any, address: string): Node {
   const totalDATASent: number = data[2]?.erc20Transfers.reduce(
     (previous: any, current: any) => {
       return previous + +current.value;
@@ -8,7 +9,7 @@ export function formatNodeStats(data: any, address: string) {
     0
   );
 
-  const node = {
+  const node: Node = {
     address: address,
     polygonScanURL: `${constants.POLYGONSCAN_BASE}${address}`,
     dataStaked: +data[3]?.stakedDATA || 0,
