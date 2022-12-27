@@ -1,0 +1,7 @@
+{
+  "name": "@brubeckscan/common",
+  "version": "1.0.0",
+  "description": "Package containing project types.",
+  "author": "Adam Phi Vo",
+  "license": "MIT"
+}
