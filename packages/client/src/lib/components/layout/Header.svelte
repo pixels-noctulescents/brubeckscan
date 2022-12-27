@@ -21,7 +21,7 @@
     backdrop-filter: saturate(180%) blur(5px);
     background: hsla(0, 0%, 100%, 0.8);
     z-index: 3000;
-    min-height: 65px;
+    height: 70px;
     border-bottom: 1px solid lightgray;
     padding: 10px 50px;
   }

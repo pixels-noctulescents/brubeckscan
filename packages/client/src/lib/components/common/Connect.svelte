@@ -27,7 +27,7 @@
     <button on:click={connect}
       ><p>Connect</p>
       <div class="icon">
-        <Icon icon="logos:metamask-icon" width="32" />
+        <Icon icon="logos:metamask-icon" width="26" />
       </div></button
     >
   {:else}
@@ -41,7 +41,7 @@
 <style lang="scss">
   button {
     border: 1px solid lightgray;
-    padding: 10px 15px;
+    padding: 7px 12px;
     border-radius: 8px;
     transition: 0.3s;
     color: lightgray;
