@@ -26,14 +26,12 @@
   {:else if $hasMetamask}
     <button on:click={connect}
       ><p>Connect</p>
-      <div class="icon">
-        <Icon icon="logos:metamask-icon" width="26" />
-      </div></button
+      <Icon icon="logos:metamask-icon" width="26" /></button
     >
   {:else}
     <button
       ><p>Get Metamask</p>
-      <div class="icon"><Icon icon="logos:metamask-icon" /></div></button
+      <Icon icon="logos:metamask-icon" /></button
     >
   {/if}
 </div>
@@ -48,7 +46,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
     &:hover {
       cursor: pointer;
       user-select: none;
