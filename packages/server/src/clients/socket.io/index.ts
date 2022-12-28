@@ -12,7 +12,9 @@ socketsClient.init = (server: any) => {
     },
   });
 
-  io.on("connection", (socket) => {
+  io.on("connection", async (socket) => {
+    const prices = await getPrices();
+    socket.emit("prices", prices);
     socket.on("disconnect", () => {});
   });
 
