@@ -20,3 +20,17 @@ export interface ClaimedRewardCode {
   id: string;
   claimTime: string;
 }
+
+export interface DatabaseNode {
+  id: string;
+  address: string;
+  createdAt: string;
+  updatedAt: string;
+  userAddress: string;
+  name: string;
+}
+
+export interface UserStore {
+  address: string;
+  nodes: DatabaseNode[];
+}
