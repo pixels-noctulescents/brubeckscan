@@ -13,6 +13,7 @@
         <th>DataSent</th>
         <th>PolygonScan</th>
         <th>claimPercentage</th>
+        <th>Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -24,7 +25,29 @@
 </div>
 
 <style lang="scss">
+  div {
+    width: 100%;
+  }
   table {
     width: 100%;
+    background-color: white;
+    border-radius: 8px;
+
+    thead {
+      border-bottom: 1px solid lightgray;
+      background-color: rgb(32, 32, 32);
+      color: whitesmoke;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      tr {
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+      }
+    }
+
+    th {
+      padding: 20px;
+      text-align: center;
+    }
   }
 </style>

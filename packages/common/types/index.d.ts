@@ -34,3 +34,9 @@ export interface UserStore {
   address: string;
   nodes: DatabaseNode[];
 }
+
+export interface RealTimePrices {
+  BTCUSDT: number;
+  DATAUSDT: number;
+  EURUSDT: number;
+}

@@ -5,4 +5,4 @@ export const user = writable<UserStore>();
 
 export const isConnected = writable<boolean>(false);
 
-export const nodesData = writable<Node[]>([]);
+export const nodesData = writable<Node[]>();

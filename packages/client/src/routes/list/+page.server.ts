@@ -1,6 +1,6 @@
-import { PUBLIC_API_BASE_URL, PUBLIC_API_TOKEN } from "$env/static/public";
 import type { Actions } from "@sveltejs/kit";
 import { fail } from "@sveltejs/kit";
+import { PUBLIC_API_BASE_URL, PUBLIC_API_TOKEN } from "$env/static/public";
 import validator from "validator";
 
 /** @type {import('./$types').Actions} */

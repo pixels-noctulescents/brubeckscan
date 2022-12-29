@@ -3,7 +3,7 @@
 </script>
 
 <div class="landing">
-  <Prices />
+  <h1>Home</h1>
 </div>
 
 <style lang="scss">
