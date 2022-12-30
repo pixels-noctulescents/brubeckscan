@@ -1,4 +1,5 @@
 import { constants } from "../../configs/constants";
+import { formatNetworkStats } from "../../utils/format";
 
 export async function getStats() {
   try {
@@ -8,7 +9,9 @@ export async function getStats() {
 
     const data = await Promise.all(requests);
 
-    return data;
+    const stats = formatNetworkStats(data);
+
+    return stats;
   } catch (e) {
     throw e;
   }

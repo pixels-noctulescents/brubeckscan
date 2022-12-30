@@ -1,7 +1,11 @@
 <script lang="ts"></script>
 
+<svelte:head>
+  <title>BrubeckScan | Scan</title>
+</svelte:head>
+
 <div>
-  <p>Scan</p>
+  <h1>Scan</h1>
 </div>
 
 <style lang="scss"></style>

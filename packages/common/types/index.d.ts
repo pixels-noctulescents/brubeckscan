@@ -40,3 +40,24 @@ export interface RealTimePrices {
   DATAUSDT: number;
   EURUSDT: number;
 }
+
+export interface NetworkStats {
+  stats: Stats;
+  lastRewards: RewardCode[];
+}
+
+export interface Stats {
+  "24APR": number;
+  "24APY": number;
+  SPOTAPR: number;
+  SPOTAPY: number;
+  "24DATASTAKED": number;
+  SPOTDATASTAKED: number;
+}
+
+export interface RewardCode {
+  code: string;
+  topologySize: number;
+  receivedClaims: number;
+  meanPropagationDelay: number;
+}

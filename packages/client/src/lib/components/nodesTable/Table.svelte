@@ -9,9 +9,11 @@
       <tr>
         <th>Name</th>
         <th>Address</th>
+        <th>Status</th>
         <th>DataStaked</th>
-        <th>DataSent</th>
-        <th>PolygonScan</th>
+        <th>totalRewardsInData</th>
+        <th>dataSent</th>
+        <th>dataToBeReceived</th>
         <th>claimPercentage</th>
         <th>Actions</th>
       </tr>

@@ -26,3 +26,19 @@ export function formatNodeStats(data: any, address: string): Node {
 
   return node;
 }
+
+export function formatNetworkStats(data: Array<any>) {
+  const stats = {
+    stats: {
+      "24APR": data[0]["24h-APR"],
+      "24APY": data[0]["24h-APY"],
+      SPOTAPR: data[0]["spot-APR"],
+      SPOTAPY: data[0]["spot-APY"],
+      "24DATASTAKED": data[0]["24h-data-staked"],
+      SPOTDATASTAKED: data[0]["spot-data-staked"],
+    },
+    lastRewards: data[1].lastRewards,
+  };
+
+  return stats;
+}
