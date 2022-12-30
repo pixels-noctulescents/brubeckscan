@@ -9,6 +9,9 @@ const config = {
 
   kit: {
     adapter: adapter({ out: "dist" }),
+    csrf: {
+      checkOrigin: false,
+    },
   },
 };
 
