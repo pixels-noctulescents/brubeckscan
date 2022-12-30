@@ -12,11 +12,7 @@ nodesRouter.get(
 
 nodesRouter.post("/:address", [validateEthAddress], nodesController.watchNode);
 
-nodesRouter.delete(
-  "/:address",
-  [validateEthAddress],
-  nodesController.unwatchNode
-);
+nodesRouter.delete("/", [], nodesController.unwatchNode);
 
 nodesRouter.patch(
   "/:address",

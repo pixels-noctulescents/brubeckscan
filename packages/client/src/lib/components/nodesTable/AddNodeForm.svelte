@@ -9,7 +9,7 @@
 </script>
 
 <div class="container">
-  {#if form?.success || form?.missing || form?.incorrect}
+  {#if form?.success || form?.missing || form?.incorrect || form?.error}
     <div>
       {#if form?.success}<p class="success message">
           Node added to your list.
@@ -20,6 +20,10 @@
       {#if form?.incorrect}<p class="error message">
           Please enter a valid ethereum address.
         </p>{/if}
+      {#if form?.error}
+        <p>{form?.error}</p>
+        <p>{form?.error.message}</p>
+      {/if}
     </div>
   {/if}
   <form method="POST" action="?/add" use:enhance>
