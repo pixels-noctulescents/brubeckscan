@@ -6,8 +6,6 @@
 ![Snyk Vulnerabilities for GitHub Repo](https://img.shields.io/snyk/vulnerabilities/github/adamphivo/brubeckapi)
 ![GitHub last commit](https://img.shields.io/github/last-commit/adamphivo/brubeckAPI)
 ![GitHub issues](https://img.shields.io/github/issues/adamphivo/brubeckAPI)
-[![Streamr](https://img.shields.io/coincap/price-usd/streamr)](https://streamr.network/)
-![Coincap (Change Percent 24Hr)](https://img.shields.io/coincap/change-percent-24hr/streamr)
 ![GitHub Repo stars](https://img.shields.io/github/stars/adamphivo/brubeckAPI?style=social)
 
 ## Routes
