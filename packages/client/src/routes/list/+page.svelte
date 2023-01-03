@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { ActionData } from "./$types";
-  import Table from "$lib/components/nodesTable/Table.svelte";
-  import AddNodeForm from "$lib/components/nodesTable/AddNodeForm.svelte";
+  import Table from "$lib/components/common/NodeTable/Table.svelte";
+  import AddNodeForm from "$lib/components/common/NodeTable/AddNodeForm.svelte";
   export let form: ActionData;
 </script>
 

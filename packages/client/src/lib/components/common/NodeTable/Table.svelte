@@ -48,8 +48,8 @@
     }
 
     th {
-      padding: 20px;
       text-align: center;
+      padding: 15px;
     }
   }
 </style>

@@ -40,21 +40,4 @@ export const actions: Actions = {
       return fail(400, { error: e, isError: true });
     }
   },
-  remove: async ({ request, fetch }) => {
-    const data = await request.formData();
-    const nodeId = data.get("nodeId");
-
-    const init = {
-      headers: new Headers({
-        Authorization: `Bearer ${PUBLIC_API_TOKEN}`,
-        "Content-Type": "application/json",
-      }),
-      method: "DELETE",
-      body: JSON.stringify({ nodeId }),
-    };
-
-    const response = await fetch(`${PUBLIC_API_BASE_URL}/api/nodes`, init);
-
-    return { success: true };
-  },
 };
