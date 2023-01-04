@@ -14,10 +14,6 @@ nodesRouter.post("/:address", [validateEthAddress], nodesController.watchNode);
 
 nodesRouter.delete("/", [], nodesController.unwatchNode);
 
-nodesRouter.patch(
-  "/:address",
-  [validateEthAddress],
-  nodesController.updateNode
-);
+nodesRouter.patch("/", [], nodesController.updateNode);
 
 export { nodesRouter };

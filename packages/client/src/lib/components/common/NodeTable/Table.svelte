@@ -7,7 +7,7 @@
   <table>
     <thead>
       <tr>
-        <th>Name</th>
+        <th style:width="20%">Name</th>
         <th>Address</th>
         <th>Status</th>
         <th>DataStaked</th>
@@ -29,7 +29,9 @@
 <style lang="scss">
   div {
     width: 100%;
+    box-shadow: 1px 1px 32px rgb(228, 228, 228);
   }
+
   table {
     width: 100%;
     background-color: white;

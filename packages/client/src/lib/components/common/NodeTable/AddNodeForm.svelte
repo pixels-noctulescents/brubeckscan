@@ -42,12 +42,13 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    box-shadow: 1px 1px 32px rgb(228, 228, 228);
   }
   .message {
     display: flex;
     background-color: white;
     border-radius: 8px;
-    padding: 20px;
+    padding: 10px;
     &.success {
       color: lightgreen;
     }
@@ -60,7 +61,7 @@
     flex-direction: row;
     width: 100%;
     background-color: white;
-    padding: 20px;
+    padding: 10px 20px;
     input {
       width: 100%;
     }
