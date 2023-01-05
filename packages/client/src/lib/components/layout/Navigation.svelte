@@ -38,8 +38,8 @@
   }
 
   .icon {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     transition: 0.3s;
     color: rgb(172, 172, 172);
     &:hover {

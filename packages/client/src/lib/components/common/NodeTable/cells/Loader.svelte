@@ -4,7 +4,7 @@
 
 <td colspan="7">
   <div class="loader">
-    <Shadow size="15" color="#FF3E00" unit="px" duration="1s" />
+    <Shadow size="15" color="#FF3E00" unit="px" duration="2s" />
   </div>
 </td>
 

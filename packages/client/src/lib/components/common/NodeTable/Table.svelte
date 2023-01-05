@@ -1,6 +1,7 @@
 <script lang="ts">
   import { user } from "$lib/stores/user";
   import Row from "./Row.svelte";
+  import TotalRow from "./TotalRow.svelte";
 </script>
 
 <div>
@@ -10,15 +11,16 @@
         <th style:width="20%">Name</th>
         <th>Address</th>
         <th>Status</th>
-        <th>DataStaked</th>
-        <th>totalRewardsInData</th>
-        <th>dataSent</th>
-        <th>dataToBeReceived</th>
-        <th>claimPercentage</th>
+        <th>Staked</th>
+        <th>Rewards</th>
+        <th>Sent</th>
+        <th>To Be Received</th>
+        <th>Claim</th>
         <th>Actions</th>
       </tr>
     </thead>
     <tbody>
+      <TotalRow />
       {#each $user.nodes as node}
         <Row {node} />
       {/each}
@@ -38,11 +40,11 @@
     border-radius: 8px;
 
     thead {
-      border-bottom: 1px solid lightgray;
       background-color: rgb(32, 32, 32);
       color: whitesmoke;
       border-top-left-radius: 8px;
       border-top-right-radius: 8px;
+      border-bottom: 1px solid lightgray;
       tr {
         border-top-left-radius: 8px;
         border-top-right-radius: 8px;

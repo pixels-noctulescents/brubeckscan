@@ -45,7 +45,7 @@ usersDAO.findUserByAddress = async (address: string) => {
     include: {
       Node: {
         orderBy: {
-          createdAt: "desc",
+          createdAt: "asc",
         },
       },
     },

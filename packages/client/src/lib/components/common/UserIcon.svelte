@@ -9,8 +9,8 @@
 
 <style lang="scss">
   img {
-    width: 35px;
-    height: 35px;
+    width: 25px;
+    height: 25px;
   }
   div {
     cursor: pointer;

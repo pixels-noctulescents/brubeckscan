@@ -61,3 +61,10 @@ export interface RewardCode {
   receivedClaims: number;
   meanPropagationDelay: number;
 }
+
+export interface TotalsTable {
+  totalDataStaked: number;
+  totalRewards: number;
+  totalDataToBeReceived: number;
+  totalDataSent: number;
+}

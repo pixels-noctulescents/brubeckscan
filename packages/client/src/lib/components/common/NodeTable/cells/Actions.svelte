@@ -2,15 +2,26 @@
   import MdDelete from "svelte-icons/md/MdDelete.svelte";
   import { nodeService } from "$lib/services/node";
   import { user } from "$lib/stores/user";
-  import type { DatabaseNode } from "@brubeckscan/common/types";
+  import { totals } from "$lib/stores/totals";
+  import type { DatabaseNode, Node } from "@brubeckscan/common/types";
 
   export let node: DatabaseNode;
+  export let nodeData: Node;
 
   async function handleDelete() {
     try {
       const unwatchNode = await nodeService.unwatchNode(node.id);
 
       if (unwatchNode.status === "success") {
+        // Update total store
+        totals.update((t) => {
+          t.totalDataSent -= nodeData.dataSent;
+          t.totalDataStaked -= nodeData.dataStaked;
+          t.totalDataToBeReceived -= nodeData.dataToBeReceived;
+          t.totalRewards -= nodeData.totalRewardsInData;
+
+          return t;
+        });
         // Update user store
         user.update((user) => {
           user.nodes = user.nodes.filter((item) => item.id !== node.id);

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { DatabaseNode, Node } from "@brubeckscan/common/types";
+  import type { DatabaseNode } from "@brubeckscan/common/types";
   import { nodeService } from "$lib/services/node";
   import Actions from "./cells/Actions.svelte";
   import NodeName from "./cells/NodeName.svelte";
@@ -21,7 +21,7 @@
     {#if nodeData}
       <NodeData {nodeData} />
       <!-- Actions -->
-      <Actions {node} />
+      <Actions {node} {nodeData} />
     {/if}
   {/await}
 </tr>
@@ -29,6 +29,7 @@
 <style lang="scss">
   tr {
     height: 100%;
+    font-size: 16px;
   }
 
   tr:not(:last-child) {

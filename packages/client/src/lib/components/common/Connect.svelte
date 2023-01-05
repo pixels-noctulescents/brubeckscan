@@ -26,31 +26,34 @@
   {:else if $hasMetamask}
     <button on:click={connect}
       ><p>Connect</p>
-      <Icon icon="logos:metamask-icon" width="26" /></button
+      <Icon icon="logos:metamask-icon" width="15" /></button
     >
   {:else}
     <button
       ><p>Get Metamask</p>
-      <Icon icon="logos:metamask-icon" /></button
+      <Icon icon="logos:metamask-icon" width="15" /></button
     >
   {/if}
 </div>
 
 <style lang="scss">
   button {
-    border: 1px solid lightgray;
-    padding: 7px 12px;
-    border-radius: 8px;
-    transition: 0.3s;
-    color: lightgray;
     display: flex;
     flex-direction: row;
     align-items: center;
+    border: 1px solid transparent;
+    background-color: rgb(32, 32, 32);
+    color: whitesmoke;
+    padding: 7px 10px;
+    border-radius: 8px;
+    transition: 0.3s;
     gap: 10px;
+    font-size: 12px;
     &:hover {
       cursor: pointer;
       user-select: none;
       color: black;
+      background-color: white;
       border-color: black;
     }
   }
