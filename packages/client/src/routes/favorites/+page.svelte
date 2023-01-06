@@ -1,18 +1,12 @@
 <script lang="ts">
-  import type { ActionData } from "./$types";
-  import Table from "$lib/components/common/NodeTable/Table.svelte";
-  import AddNodeForm from "$lib/components/common/NodeTable/AddNodeForm.svelte";
-  export let form: ActionData;
 </script>
 
 <svelte:head>
-  <title>BrubeckScan | List</title>
+  <title>BrubeckScan | Favorites</title>
 </svelte:head>
 
 <div>
   <h1>Favorites</h1>
-  <AddNodeForm {form} />
-  <Table />
 </div>
 
 <style lang="scss">

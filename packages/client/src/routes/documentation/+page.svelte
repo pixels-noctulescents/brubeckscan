@@ -1,5 +1,9 @@
 <script lang="ts"></script>
 
+<svelte:head>
+  <title>BrubeckScan | Documentation</title>
+</svelte:head>
+
 <div>
   <!-- Title -->
   <h1>Documentation</h1>

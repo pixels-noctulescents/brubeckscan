@@ -1,7 +1,7 @@
 <script lang="ts">
   import { hasMetamask } from "$lib/stores/provider";
   import { isConnected } from "$lib/stores/user";
-  import UserIcon from "./UserIcon.svelte";
+  import UserIcon from "./Avatar.svelte";
   import Icon from "@iconify/svelte";
 
   let isConnecting = false;

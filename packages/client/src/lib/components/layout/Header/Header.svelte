@@ -1,7 +1,7 @@
 <script lang="ts">
   import Navigation from "./Navigation.svelte";
-  import Connect from "$lib/components/common/Connect.svelte";
-  import Logo from "../../common/Logo.svelte";
+  import Connect from "$lib/components/layout/Header/Connect.svelte";
+  import Logo from "./Logo.svelte";
   import TopBar from "./TopBar.svelte";
 </script>
 
