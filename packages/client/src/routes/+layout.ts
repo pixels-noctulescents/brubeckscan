@@ -9,15 +9,13 @@ export const ssr = false;
 export const load = (async ({ params, fetch }) => {
   try {
     if (browser) {
-      await socketService.init();
       await authService.init();
+      await socketService.init();
       await networkService.init();
     }
+
+    return {};
   } catch (e) {
     console.log(e);
   }
-
-  // Check client browser for ethereum provider (e.g MetaMask) and existing connection
-
-  return {};
 }) satisfies LayoutLoad;

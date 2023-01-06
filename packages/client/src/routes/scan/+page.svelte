@@ -1,15 +1,14 @@
-<script lang="ts"></script>
+<script lang="ts">
+  import Title from "$lib/components/common/Title.svelte";
+</script>
 
 <svelte:head>
   <title>BrubeckScan | Scan</title>
 </svelte:head>
 
-<div>
-  <h1>Scan</h1>
+<div class="page">
+  <Title title="Scan | 🔍" />
 </div>
 
 <style lang="scss">
-  div {
-    width: 100%;
-  }
 </style>

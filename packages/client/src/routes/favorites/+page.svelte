@@ -1,20 +1,16 @@
 <script lang="ts">
+  import Title from "$lib/components/common/Title.svelte";
+  import Favorites from "$lib/components/Favorites/Favorites.svelte";
 </script>
 
 <svelte:head>
   <title>BrubeckScan | Favorites</title>
 </svelte:head>
 
-<div>
-  <h1>Favorites</h1>
+<div class="page">
+  <Title title="Favorites | ⭐" />
+  <Favorites />
 </div>
 
 <style lang="scss">
-  div {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    width: 100%;
-    max-width: 1200px;
-  }
 </style>

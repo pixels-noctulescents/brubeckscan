@@ -33,6 +33,8 @@ export interface DatabaseNode {
 export interface UserStore {
   address: string;
   nodes: DatabaseNode[];
+  createdAt: string;
+  updatedAt: string;
 }
 
 export interface RealTimePrices {

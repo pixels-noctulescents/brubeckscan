@@ -47,6 +47,7 @@
     transition: 0.3s;
     gap: 10px;
     font-size: 10px;
+    border: 1px solid lightgray;
     &:hover {
       cursor: pointer;
       user-select: none;

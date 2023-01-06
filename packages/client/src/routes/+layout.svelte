@@ -19,7 +19,6 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    min-height: 120vh;
     width: 100%;
   }
 
@@ -27,8 +26,8 @@
     display: flex;
     width: 100%;
     justify-content: center;
-    min-height: calc(100vh - 65px);
-    max-width: 1200px;
-    padding: 30px 0px;
+    min-height: calc(100vh - 88px);
+    padding: 40px;
+    padding-bottom: 160px;
   }
 </style>

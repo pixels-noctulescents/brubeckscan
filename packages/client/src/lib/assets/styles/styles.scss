@@ -1,7 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:400");
+@import "layout";
+
+// Variables
+:root {
+  --dark: rgba(32, 32, 32);
+  --white: white;
+}
 
 html {
-  font-family: "Chivo Mono", monospace;
   /* Adjust font size */
   font-size: 100%;
   -webkit-text-size-adjust: 100%;
@@ -9,19 +15,12 @@ html {
   font-variant-ligatures: none;
   -webkit-font-variant-ligatures: none;
   /* Smoothing */
+  text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px;
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px;
-}
-
-// Variable
-
-:root {
-  --dark: rgba(32, 32, 32);
-}
-
-body {
+  background-color: whitesmoke;
+  scroll-behavior: smooth;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
 }
@@ -49,9 +48,4 @@ h5 {
 small,
 .text_small {
   font-size: 0.75rem;
-}
-
-td {
-  height: 100%;
-  padding: 20px;
 }

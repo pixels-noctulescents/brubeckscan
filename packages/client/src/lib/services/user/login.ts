@@ -64,6 +64,8 @@ function updateUserStores(data: any) {
   isConnected.set(true);
   user.set({
     address: data.address,
+    createdAt: data.createdAt,
+    updatedAt: data.updatedAt,
     nodes: data.Node,
   });
 }
