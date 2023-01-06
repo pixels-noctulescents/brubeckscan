@@ -1,8 +1,8 @@
 <script lang="ts">
-  import Navigation from "../Header/Navigation.svelte";
+  import Navigation from "./Navigation.svelte";
   import Connect from "$lib/components/common/Connect.svelte";
   import Logo from "../../common/Logo.svelte";
-  import TopBar from "../Header/TopBar.svelte";
+  import TopBar from "./TopBar.svelte";
 </script>
 
 <header>

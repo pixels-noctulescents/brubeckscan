@@ -2,13 +2,14 @@
   export let action: any;
   export let Icon: any;
   export let width: string = "30px";
+  export let title: string = "Button";
 
   async function main() {
     await action();
   }
 </script>
 
-<button on:click={main} on:keydown={action} style:width>
+<button on:click={main} on:keydown={action} style:width {title}>
   <Icon />
 </button>
 

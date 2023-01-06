@@ -1,7 +1,7 @@
 <script lang="ts">
   import "the-new-css-reset/css/reset.css";
   import "$lib/assets/styles/styles.scss";
-  import Header from "$lib/components/layout/Footer/Header.svelte";
+  import Header from "$lib/components/layout/Header/Header.svelte";
   import Footer from "$lib/components/layout/Footer/Footer.svelte";
 </script>
 

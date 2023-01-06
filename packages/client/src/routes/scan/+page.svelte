@@ -8,4 +8,8 @@
   <h1>Scan</h1>
 </div>
 
-<style lang="scss"></style>
+<style lang="scss">
+  div {
+    width: 100%;
+  }
+</style>
