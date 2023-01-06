@@ -1,12 +1,8 @@
 <script lang="ts">
 </script>
 
-<svelte:head>
-  <title>BrubeckScan | Home</title>
-</svelte:head>
-
 <div>
-  <h1>Home</h1>
+  <h1>Favorites</h1>
 </div>
 
 <style lang="scss">

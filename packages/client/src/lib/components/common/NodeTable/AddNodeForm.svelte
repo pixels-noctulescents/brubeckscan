@@ -2,13 +2,15 @@
   import { enhance } from "$app/forms";
   import { user } from "$lib/stores/user";
   import MdAdd from "svelte-icons/md/MdAdd.svelte";
-  export let form: any;
+  import Button from "$lib/components/common/Button.svelte";
 
-  const placeholder =
-    "Enter a node ethereum address to save it in your favourites.";
+  export let form: any;
 </script>
 
-<div class="container">
+<form method="POST" action="?/add" use:enhance>
+  <!-- Links variables -->
+  <input type="hidden" bind:value={$user.address} name="userAddress" />
+  <!-- Messages -->
   {#if form?.success || form?.missing || form?.incorrect || form?.error}
     <div>
       {#if form?.success}<p class="success message">
@@ -26,29 +28,33 @@
       {/if}
     </div>
   {/if}
-  <form method="POST" action="?/add" use:enhance>
-    <input name="address" type="text" {placeholder} />
-    <input type="hidden" bind:value={$user.address} name="userAddress" />
+  <!-- Input -->
+  <h4>Save a node</h4>
+  <div class="input">
+    <input name="address" type="text" placeholder="Ethereum address ..." />
     <button type="submit">
-      <div class="icon">
-        <MdAdd />
-      </div>
+      <Button Icon={MdAdd} action={() => {}} width="35px" />
     </button>
-  </form>
-</div>
+  </div>
+</form>
 
 <style lang="scss">
-  .container {
+  form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    box-shadow: 1px 1px 32px rgb(228, 228, 228);
+    width: 100%;
+    border-bottom: 1px solid lightgrey;
+    padding-bottom: 10px;
+  }
+  .input {
+    display: flex;
+    gap: 50px;
+    justify-content: space-between;
   }
   .message {
     display: flex;
     background-color: white;
     border-radius: 8px;
-    padding: 10px;
     &.success {
       color: lightgreen;
     }
@@ -56,24 +62,12 @@
       color: lightcoral;
     }
   }
-  form {
-    display: flex;
-    flex-direction: row;
+
+  input {
     width: 100%;
-    background-color: white;
-    padding: 10px 20px;
-    input {
-      width: 100%;
-    }
-    border-radius: 8px;
-    .icon {
-      width: 40px;
-      color: lightgray;
-      transition: 0.3s;
-      &:hover {
-        color: black;
-        cursor: pointer;
-      }
-    }
+  }
+
+  h4 {
+    margin-bottom: 15px;
   }
 </style>

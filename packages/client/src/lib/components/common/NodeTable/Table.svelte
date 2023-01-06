@@ -4,6 +4,7 @@
   import TotalRow from "./TotalRow.svelte";
 </script>
 
+<h3>My nodes <span>({$user.nodes.length})</span></h3>
 <div>
   <table>
     <thead>
@@ -29,6 +30,10 @@
 </div>
 
 <style lang="scss">
+  span {
+    color: lightgray;
+    font-size: 16px;
+  }
   div {
     width: 100%;
     box-shadow: 1px 1px 32px rgb(228, 228, 228);
@@ -53,7 +58,7 @@
 
     th {
       text-align: center;
-      padding: 15px;
+      padding: 25px;
     }
   }
 </style>

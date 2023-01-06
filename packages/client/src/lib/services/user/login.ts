@@ -3,7 +3,8 @@ import { isConnected, user } from "$lib/stores/user";
 
 export async function login(address: string) {
   try {
-    const data = await getUserData(address);
+    const data = await fetchUser(address);
+
     if (data) {
       if (data.status === "fail") {
         const user = await createUser(address);
@@ -17,8 +18,7 @@ export async function login(address: string) {
   }
 }
 
-// Retrieve user's data from API
-async function getUserData(address: string) {
+async function fetchUser(address: string) {
   try {
     const init = {
       headers: new Headers({
@@ -60,7 +60,6 @@ async function createUser(address: string) {
   }
 }
 
-// Update app state
 function updateUserStores(data: any) {
   isConnected.set(true);
   user.set({

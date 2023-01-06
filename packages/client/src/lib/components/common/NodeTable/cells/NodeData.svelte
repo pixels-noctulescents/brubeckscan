@@ -1,12 +1,12 @@
 <script lang="ts">
   import type { Node } from "@brubeckscan/common/types";
   import { format } from "$lib/utils/format";
-  import { streamrNetwork } from "$lib/stores/streamrNetwork";
+  import { network } from "$lib/stores/network";
 
   export let nodeData: Node;
 
   function getStatus(nodeData: Node) {
-    const latestNetworkCode = $streamrNetwork.lastRewards[0].code;
+    const latestNetworkCode = $network.lastRewards[0].code;
     const latestNodeCode = nodeData.claimedRewardCodes[0]?.id;
     return latestNetworkCode === latestNodeCode;
   }

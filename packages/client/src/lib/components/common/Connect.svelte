@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { hasMetamask } from "$lib/stores/ethereumBrowserEnv";
+  import { hasMetamask } from "$lib/stores/provider";
   import { isConnected } from "$lib/stores/user";
   import UserIcon from "./UserIcon.svelte";
   import Icon from "@iconify/svelte";
@@ -42,19 +42,16 @@
     flex-direction: row;
     align-items: center;
     border: 1px solid transparent;
-    background-color: rgb(32, 32, 32);
-    color: whitesmoke;
     padding: 7px 10px;
     border-radius: 8px;
     transition: 0.3s;
     gap: 10px;
-    font-size: 12px;
+    font-size: 10px;
     &:hover {
       cursor: pointer;
       user-select: none;
-      color: black;
-      background-color: white;
-      border-color: black;
+      border: 1px solid rgb(32, 32, 32);
+      box-shadow: 1px 1px black;
     }
   }
 </style>

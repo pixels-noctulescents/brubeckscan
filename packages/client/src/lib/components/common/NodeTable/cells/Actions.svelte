@@ -4,6 +4,7 @@
   import { user } from "$lib/stores/user";
   import { totals } from "$lib/stores/totals";
   import type { DatabaseNode, Node } from "@brubeckscan/common/types";
+  import Button from "$lib/components/common/Button.svelte";
 
   export let node: DatabaseNode;
   export let nodeData: Node;
@@ -37,9 +38,7 @@
 <td>
   <div>
     <p style:visibility="hidden">.</p>
-    <button on:click={handleDelete} class="icon">
-      <MdDelete />
-    </button>
+    <Button action={handleDelete} Icon={MdDelete} />
   </div>
 </td>
 
@@ -50,19 +49,5 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .icon {
-    color: lightgrey;
-    transition-duration: 0.3s;
-    width: 25px;
-    &:hover {
-      color: rgb(32, 32, 32);
-      cursor: pointer;
-    }
   }
 </style>

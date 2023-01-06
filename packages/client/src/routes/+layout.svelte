@@ -1,14 +1,8 @@
 <script lang="ts">
-  import { onMount } from "svelte";
   import "the-new-css-reset/css/reset.css";
   import "$lib/assets/styles/styles.scss";
-  import Header from "$lib/components/layout/Header.svelte";
+  import Header from "$lib/components/layout/Footer/Header.svelte";
   import Footer from "$lib/components/layout/Footer/Footer.svelte";
-  import { socketService } from "$lib/services/socket";
-
-  onMount(() => {
-    socketService.init();
-  });
 </script>
 
 <div>
@@ -24,14 +18,17 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
     min-height: 120vh;
+    width: 100%;
   }
 
   main {
     display: flex;
-    flex-grow: 1;
-    background-color: whitesmoke;
+    width: 100%;
+    justify-content: center;
     min-height: calc(100vh - 65px);
-    padding: 40px;
+    max-width: 1200px;
+    padding: 30px 0px;
   }
 </style>

@@ -10,15 +10,17 @@
 </svelte:head>
 
 <div>
+  <h1>Favorites</h1>
   <AddNodeForm {form} />
   <Table />
 </div>
 
 <style lang="scss">
   div {
-    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 40px;
+    width: 100%;
+    max-width: 1200px;
   }
 </style>

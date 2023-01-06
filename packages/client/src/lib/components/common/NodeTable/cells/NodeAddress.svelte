@@ -69,4 +69,8 @@
     align-items: center;
     justify-content: center;
   }
+
+  p {
+    font-size: 8px;
+  }
 </style>
