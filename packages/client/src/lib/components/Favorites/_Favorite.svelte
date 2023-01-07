@@ -66,7 +66,7 @@
   <div class="stats">
     {#await getStats()}
       <div in:scale class="loader">
-        <Pulse size="20" color="#F2F2F2" unit="px" duration="1s" />
+        <Pulse size="20" color="rgb(35,35,35)" unit="px" duration="1s" />
       </div>
     {:then node}
       {#if node}
