@@ -1,10 +1,10 @@
 <script lang="ts">
-  import AddNode from "./_AddNode.svelte";
+  import Add from "./_Add.svelte";
   import Pool from "./Pool.svelte";
 </script>
 
 <div>
-  <AddNode />
+  <Add />
   <Pool />
 </div>
 
@@ -12,6 +12,7 @@
   div {
     max-width: 1200px;
     width: 100%;
+    min-height: 50vh;
     gap: 40px;
     display: flex;
     flex-direction: column;

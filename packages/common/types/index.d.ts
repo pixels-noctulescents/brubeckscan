@@ -21,7 +21,7 @@ export interface ClaimedRewardCode {
   claimTime: string;
 }
 
-export interface DatabaseNode {
+export interface Favorite {
   id: string;
   address: string;
   createdAt: string;
@@ -30,9 +30,8 @@ export interface DatabaseNode {
   name: string;
 }
 
-export interface UserStore {
+export interface User {
   address: string;
-  nodes: DatabaseNode[];
   createdAt: string;
   updatedAt: string;
 }
@@ -70,3 +69,5 @@ export interface TotalsTable {
   totalDataToBeReceived: number;
   totalDataSent: number;
 }
+
+export type ButtonType = "neutral" | "action" | "alert";

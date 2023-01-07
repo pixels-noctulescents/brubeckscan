@@ -1,11 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:400");
 @import "layout";
-
-// Variables
-:root {
-  --dark: rgba(32, 32, 32);
-  --white: white;
-}
+@import "variables";
 
 html {
   /* Adjust font size */

@@ -7,7 +7,7 @@
 </svelte:head>
 
 <div class="page">
-  <Title title="Home | 🏠" />
+  <Title title="Home" />
 </div>
 
 <style lang="scss">

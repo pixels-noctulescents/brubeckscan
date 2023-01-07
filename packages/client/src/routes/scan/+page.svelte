@@ -7,7 +7,7 @@
 </svelte:head>
 
 <div class="page">
-  <Title title="Scan | 🔍" />
+  <Title title="Scan" />
 </div>
 
 <style lang="scss">

@@ -7,7 +7,7 @@
 </svelte:head>
 
 <div class="page">
-  <Title title="Infos | 📘 " />
+  <Title title="Infos" />
 </div>
 
 <style lang="scss">

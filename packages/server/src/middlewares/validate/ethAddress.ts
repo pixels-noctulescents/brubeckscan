@@ -2,7 +2,7 @@ import { NextFunction, Request, Response } from "express";
 import validator from "validator";
 import { sender } from "../../utils/sender";
 
-const INVALID_ADDRESS_MESSAGE = "Wrong request : invalid ethereum address.";
+const INVALID_ADDRESS_MESSAGE = "Invalid ethereum address.";
 
 export function validateEthAddress(
   req: Request,

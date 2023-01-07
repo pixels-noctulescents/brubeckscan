@@ -1,20 +1,26 @@
 import { PUBLIC_API_BASE_URL, PUBLIC_API_TOKEN } from "$env/static/public";
 
-export async function updateNodeName(nodeId: string, nodeName: string) {
+export default async function send(
+  address: string,
+  method: string = "GET",
+  body?: object
+) {
   try {
     const init = {
       headers: new Headers({
         Authorization: `Bearer ${PUBLIC_API_TOKEN}`,
         "Content-Type": "application/json",
       }),
-      method: "PATCH",
-      body: JSON.stringify({ nodeId, nodeName }),
+      method: method,
+      body: JSON.stringify(body),
     };
 
-    const response = await fetch(`${PUBLIC_API_BASE_URL}/api/nodes`, init);
+    const response = await fetch(`${PUBLIC_API_BASE_URL}/${address}`, init);
 
     const data = await response.json();
 
     return data;
-  } catch (e) {}
+  } catch (e) {
+    console.log(e);
+  }
 }

@@ -1,5 +1,7 @@
-import { PUBLIC_API_BASE_URL, PUBLIC_API_TOKEN } from "$env/static/public";
 import { isConnected, user } from "$lib/stores/user";
+import { favorites } from "$lib/stores/favorites";
+
+import send from "$lib/utils/send";
 
 export async function login(address: string) {
   try {
@@ -8,9 +10,9 @@ export async function login(address: string) {
     if (data) {
       if (data.status === "fail") {
         const user = await createUser(address);
-        updateUserStores(user.data.user);
+        updateStores(user.data.user);
       } else {
-        updateUserStores(data.data.user);
+        updateStores(data.data.user);
       }
     }
   } catch (e) {
@@ -20,20 +22,8 @@ export async function login(address: string) {
 
 async function fetchUser(address: string) {
   try {
-    const init = {
-      headers: new Headers({
-        Authorization: `Bearer ${PUBLIC_API_TOKEN}`,
-      }),
-    };
-
-    const response = await fetch(
-      `${PUBLIC_API_BASE_URL}/api/users/${address}`,
-      init
-    );
-
-    const data = await response.json();
-
-    return data;
+    const user = await send(`api/users/${address}`);
+    return user;
   } catch (e) {
     console.log(e);
   }
@@ -41,31 +31,19 @@ async function fetchUser(address: string) {
 
 async function createUser(address: string) {
   try {
-    const init = {
-      headers: new Headers({
-        Authorization: `Bearer ${PUBLIC_API_TOKEN}`,
-        "Content-Type": "application/json",
-      }),
-      method: "POST",
-      body: JSON.stringify({ address }),
-    };
-
-    const response = await fetch(`${PUBLIC_API_BASE_URL}/api/users`, init);
-
-    const data = await response.json();
-
-    return data;
+    const user = await send("api/users", "POST", { address });
+    return user;
   } catch (e) {
     console.log(e);
   }
 }
 
-function updateUserStores(data: any) {
+function updateStores(data: any) {
   isConnected.set(true);
   user.set({
     address: data.address,
     createdAt: data.createdAt,
     updatedAt: data.updatedAt,
-    nodes: data.Node,
   });
+  favorites.set(data.Node);
 }

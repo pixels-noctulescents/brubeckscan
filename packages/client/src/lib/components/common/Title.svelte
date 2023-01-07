@@ -25,6 +25,6 @@
   }
   .background {
     width: 50%;
-    background: linear-gradient(to right, #11752a00, #2356a3);
+    background: linear-gradient(to right, #11752a00, var(--main));
   }
 </style>

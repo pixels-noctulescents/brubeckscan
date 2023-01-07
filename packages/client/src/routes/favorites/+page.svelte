@@ -8,7 +8,7 @@
 </svelte:head>
 
 <div class="page">
-  <Title title="Favorites | ⭐" />
+  <Title title="Favorites" />
   <Favorites />
 </div>
 

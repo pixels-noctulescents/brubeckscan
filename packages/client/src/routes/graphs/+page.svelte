@@ -7,7 +7,7 @@
 </svelte:head>
 
 <div class="page">
-  <Title title={"Graphs"} />
+  <Title title="Graphs" />
 </div>
 
 <style lang="scss">

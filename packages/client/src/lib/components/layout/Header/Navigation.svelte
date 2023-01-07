@@ -26,8 +26,8 @@
   {/if}
   <Button
     Icon={MdInfoOutline}
-    action={() => goto("/documentation")}
-    title={"Go to Documentation"}
+    action={() => goto("/infos")}
+    title={"Go to Infos"}
   />
 </nav>
 

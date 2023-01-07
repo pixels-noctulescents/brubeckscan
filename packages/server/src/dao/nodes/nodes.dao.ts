@@ -2,24 +2,20 @@ import { prisma } from "../../clients/prisma";
 
 const nodesDAO = () => {};
 
-nodesDAO.watchNode = async (userAddress: string, nodeAddress: string) => {
+nodesDAO.watchNode = async (
+  userAddress: string,
+  nodeAddress: string,
+  nodeName: string
+) => {
   try {
-    const user = await prisma.user.update({
-      where: {
-        address: userAddress,
-      },
+    const node = await prisma.node.create({
       data: {
-        Node: {
-          create: {
-            address: nodeAddress,
-          },
-        },
-      },
-      include: {
-        Node: true,
+        userAddress: userAddress,
+        address: nodeAddress,
+        name: nodeName,
       },
     });
-    return user;
+    return node;
   } catch (e) {
     throw e;
   }

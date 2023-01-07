@@ -1,12 +1,12 @@
 <script lang="ts">
-  import Node from "./_Node.svelte";
-  import { user } from "$lib/stores/user";
+  import Node from "./_Favorite.svelte";
+  import { favorites } from "$lib/stores/favorites";
 </script>
 
 <div>
-  {#if $user}
-    {#each $user.nodes as node}
-      <Node {node} />
+  {#if $favorites}
+    {#each $favorites as favorite}
+      <Node {favorite} />
     {/each}
   {/if}
 </div>
