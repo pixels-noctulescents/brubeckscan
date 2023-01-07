@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:400");
 @import "layout";
 @import "variables";
+@import "themes";
 
 html {
   /* Adjust font size */
@@ -14,7 +15,6 @@ html {
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background-color: whitesmoke;
   scroll-behavior: smooth;
   font-family: "Poppins", sans-serif;
   font-weight: 400;

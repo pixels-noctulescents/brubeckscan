@@ -19,7 +19,7 @@
 </script>
 
 {#if $user}
-  <div class="container" in:scale>
+  <div class="container profile" in:scale>
     <div class="background">
       <img src={iconUrl} alt="A generated icon" />
     </div>
@@ -50,7 +50,6 @@
   .container {
     display: flex;
     flex-direction: row;
-    background-color: white;
     width: 100%;
     max-width: 1200px;
     border-radius: 8px;

@@ -22,6 +22,7 @@
 </script>
 
 <div
+  class="addNode"
   in:slide
   on:keydown={async (e) => {
     if (e.key === "Enter") {
@@ -46,12 +47,9 @@
     left: 0;
     display: flex;
     width: 100%;
-    background-color: white;
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 1px 1px 32px rgba(160, 160, 160, 0.185);
     backdrop-filter: saturate(180%) blur(5px);
-    background: hsla(0, 0%, 100%, 0.8);
     z-index: 3000;
   }
   input {

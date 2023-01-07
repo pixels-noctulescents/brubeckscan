@@ -3,9 +3,10 @@
   import "$lib/assets/styles/styles.scss";
   import Header from "$lib/components/layout/Header/Header.svelte";
   import Footer from "$lib/components/layout/Footer/Footer.svelte";
+  import { theme } from "$lib/stores/theme";
 </script>
 
-<div>
+<div class={`${$theme} page`}>
   <Header />
   <main>
     <slot />

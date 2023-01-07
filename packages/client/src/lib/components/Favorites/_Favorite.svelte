@@ -54,7 +54,7 @@
   }
 </script>
 
-<div class="container" in:scale>
+<div class="container favorite" in:scale>
   <img
     src={`https://avatars.dicebear.com/api/identicon/${favorite.address}.svg`}
     alt="A generated icon"
@@ -99,7 +99,6 @@
 
 <style lang="scss">
   .status {
-    background-color: whitesmoke;
     padding: 8px;
     border-radius: 8px;
     font-size: 10px;
@@ -121,13 +120,9 @@
     transition-duration: 0.3s;
     padding: 30px;
     width: 100%;
-    background-color: whitesmoke;
     border-radius: 8px;
     display: flex;
     justify-content: space-between;
-    background-color: white;
-    box-shadow: 1px 1px 32px rgba(158, 158, 158, 0.164);
-    color: rgb(48, 48, 48);
     gap: 20px;
     flex-wrap: wrap;
     .stats {

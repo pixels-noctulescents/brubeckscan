@@ -6,10 +6,10 @@
 </script>
 
 <header>
-  <div class="top">
+  <div class="topbar">
     <TopBar />
   </div>
-  <div class="low">
+  <div class="header">
     <Logo />
     <Navigation />
     <Connect />
@@ -23,12 +23,10 @@
     width: 100%;
   }
 
-  .low {
+  .header {
     backdrop-filter: saturate(180%) blur(5px);
-    background: hsla(0, 0%, 100%, 0.8);
     z-index: 3000;
     height: 50px;
-    border-bottom: 1px solid lightgray;
     padding: 10px 40px;
     display: flex;
     flex-direction: row;

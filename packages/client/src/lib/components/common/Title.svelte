@@ -13,7 +13,7 @@
       mainColor || "lightgray"
     })`}
   />
-  <h1>{title}</h1>
+  <h1 class="mainTitle">{title}</h1>
 </div>
 
 <style lang="scss">
@@ -27,9 +27,7 @@
   }
   h1 {
     width: 50%;
-    background-color: white;
     padding: 20px 40px;
-    color: var(--dark);
     font-size: 26px;
     border-bottom-right-radius: 8px;
   }
