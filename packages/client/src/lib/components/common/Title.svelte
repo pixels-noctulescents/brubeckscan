@@ -1,9 +1,18 @@
 <script lang="ts">
+  import { user } from "$lib/stores/user";
+
   export let title: string = "Title";
+
+  $: mainColor = $user.mainColor;
 </script>
 
 <div>
-  <div class="background" />
+  <div
+    class="background"
+    style:background={`linear-gradient(to right, #10d44100, ${
+      mainColor || "lightgray"
+    })`}
+  />
   <h1>{title}</h1>
 </div>
 
@@ -14,6 +23,7 @@
     justify-content: space-between;
     max-width: 1200px;
     width: 100%;
+    transition-duration: 0.3s;
   }
   h1 {
     width: 50%;
@@ -25,6 +35,5 @@
   }
   .background {
     width: 50%;
-    background: linear-gradient(to right, #10d44100, var(--main));
   }
 </style>

@@ -88,7 +88,7 @@
         </p>
         <p in:scale>Total Sent : {Math.round(node?.dataSent || 0)}</p>
         {#if node?.claimedRewardCodes[0]?.claimTime}
-          <p>
+          <p in:scale>
             Latest claim : {formatDate(node.claimedRewardCodes[0].claimTime)}
           </p>
         {/if}

@@ -44,6 +44,7 @@ function updateStores(data: any) {
     address: data.address,
     createdAt: data.createdAt,
     updatedAt: data.updatedAt,
+    mainColor: data.mainColor,
   });
   favorites.set(data.Node);
 }
