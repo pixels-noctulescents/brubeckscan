@@ -1,6 +1,7 @@
 <script lang="ts">
   import { user } from "$lib/stores/user";
   import { userService } from "$lib/services/user";
+  import { scale } from "svelte/transition";
 
   $: data = $user;
   $: iconUrl = `https://avatars.dicebear.com/api/identicon/${$user.address}.svg`;
@@ -18,7 +19,7 @@
 </script>
 
 {#if $user}
-  <div class="container">
+  <div class="container" in:scale>
     <div class="background">
       <img src={iconUrl} alt="A generated icon" />
     </div>
@@ -42,9 +43,6 @@
     gap: 20px;
     border: none;
   }
-  .avatar {
-    width: 20px;
-  }
   input {
     width: 60px;
     height: 60px;
@@ -55,6 +53,7 @@
     background-color: white;
     width: 100%;
     max-width: 1200px;
+    border-radius: 8px;
     .infos {
       display: flex;
       flex-direction: column;
