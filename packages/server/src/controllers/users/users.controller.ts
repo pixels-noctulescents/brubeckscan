@@ -62,4 +62,21 @@ usersController.deleteUser = async (
   }
 };
 
+usersController.update = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const user = await usersDAO.updateUserByAddress(
+      req.params.address,
+      req.body
+    );
+
+    return sender.success(res, { user });
+  } catch (e) {
+    next(e);
+  }
+};
+
 export { usersController };

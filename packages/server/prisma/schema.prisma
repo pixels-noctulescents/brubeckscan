@@ -11,6 +11,7 @@ model User {
   address   String   @id @unique
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
+  mainColor String   @default("#4287f5")
   Node      Node[]
 }
 

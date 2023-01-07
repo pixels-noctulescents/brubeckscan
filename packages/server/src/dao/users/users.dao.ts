@@ -11,6 +11,21 @@ usersDAO.count = async () => {
   }
 };
 
+usersDAO.updateUserByAddress = async (address: string, data: any) => {
+  try {
+    const user = await prisma.user.update({
+      where: {
+        address: address,
+      },
+      data: data,
+    });
+
+    return user;
+  } catch (e) {
+    throw e;
+  }
+};
+
 usersDAO.createUser = async (address: string) => {
   try {
     let user;

@@ -32,6 +32,7 @@ export interface Favorite {
 
 export interface User {
   address: string;
+  mainColor: string;
   createdAt: string;
   updatedAt: string;
 }
