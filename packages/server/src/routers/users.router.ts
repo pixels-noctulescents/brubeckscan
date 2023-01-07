@@ -14,4 +14,6 @@ usersRouter.post("", [validateUserCreationInput], usersController.createUser);
 
 usersRouter.delete("", [validateUserCreationInput], usersController.deleteUser);
 
+usersRouter.patch("/:address", usersController.update);
+
 export { usersRouter };
