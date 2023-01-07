@@ -13,20 +13,9 @@ socketsClient.init = (server: any) => {
     },
   });
 
-  let activeConnections = 0;
-  let activesUsers = [];
-
   io.on("connection", async (socket) => {
-    activeConnections += 1;
-    console.log("user connected");
-    const prices = await getPrices();
-    socket.emit("prices", prices);
-    io.emit("connections", { activeConnections });
-    socket.on("disconnect", () => {
-      activeConnections -= 1;
-      io.emit("connections", { activeConnections });
-      console.log("user disconnected");
-    });
+    socket.on("connectionEvent", (data: any) => {});
+    socket.on("disconnect", () => {});
   });
 
   const job = schedule.scheduleJob("*/5 * * * * *", async () => {
@@ -34,6 +23,7 @@ socketsClient.init = (server: any) => {
     const stats = await getStats();
     io.emit("prices", prices);
     io.emit("stats", stats);
+    io.emit("clientCount", io.engine.clientsCount);
   });
 };
 

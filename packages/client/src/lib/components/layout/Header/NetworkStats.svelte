@@ -1,11 +1,11 @@
 <script lang="ts">
   import { network } from "$lib/stores/network";
-  import { app } from "$lib/stores/app";
+  import { usersCount } from "$lib/stores/usersCount";
 </script>
 
 <div>
   <p>Latest reward code | {$network.lastRewards[0].code}</p>
-  <p>Users | {$app.activeConnections}</p>
+  <p>Users | {$usersCount}</p>
 </div>
 
 <style lang="scss">
