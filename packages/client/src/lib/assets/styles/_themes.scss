@@ -1,0 +1,88 @@
+.page {
+  transition-duration: 0.3s;
+}
+.dark.page {
+  background-color: rgb(26, 25, 25);
+  color: #f5f5f5;
+  .background {
+    opacity: 0.5;
+  }
+  .header {
+    background: hsla(0, 0%, 8%, 0.8);
+    border-bottom: 1px solid rgb(31, 31, 31);
+  }
+  .logoText {
+    color: whitesmoke;
+  }
+  .mainTitle {
+    background-color: rgba(17, 17, 19, 0.61);
+  }
+  .addNode {
+    background: hsla(0, 0%, 12%, 0.9);
+    box-shadow: 1px 1px 32px rgba(0, 0, 0, 0.185);
+  }
+  .favorite {
+    color: whitesmoke;
+    background-color: rgba(17, 17, 19, 0.61);
+    box-shadow: 1px 1px 32px rgba(5, 5, 5, 0.164);
+  }
+  .status {
+    background-color: rgb(39, 42, 44);
+  }
+  .profile {
+    background-color: rgba(17, 17, 19, 0.61);
+    color: whitesmoke;
+  }
+  .topbar {
+    background-color: rgb(0, 0, 0);
+    color: whitesmoke;
+  }
+  button {
+    &:hover {
+      border: 1px solid whitesmoke;
+      box-shadow: 1px 1px whitesmoke;
+      color: whitesmoke;
+    }
+  }
+}
+.light.page {
+  background-color: #f5f5f5;
+  color: rgb(32, 32, 32);
+  .header {
+    background: hsla(0, 0%, 100%, 0.8);
+    border-bottom: 1px solid lightgray;
+  }
+  .logoText {
+    color: rgb(32, 32, 32);
+  }
+  .mainTitle {
+    background-color: white;
+  }
+  .addNode {
+    box-shadow: 1px 1px 32px rgba(151, 151, 151, 0.185);
+    background: hsla(0, 0%, 100%, 0.8);
+  }
+  .favorite {
+    color: rgb(48, 48, 48);
+    background-color: white;
+    box-shadow: 1px 1px 32px rgba(158, 158, 158, 0.164);
+  }
+  .status {
+    background-color: whitesmoke;
+  }
+  .profile {
+    background-color: white;
+    color: rgba(32, 32, 32);
+  }
+  .topbar {
+    background-color: rgba(32, 32, 32);
+    color: whitesmoke;
+  }
+  button {
+    &:hover {
+      border: 1px solid rgb(32, 32, 32);
+      box-shadow: 1px 1px rgb(32, 32, 32);
+      color: rgb(32, 32, 32);
+    }
+  }
+}

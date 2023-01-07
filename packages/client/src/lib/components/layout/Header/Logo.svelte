@@ -9,7 +9,7 @@
   <a href={STREAMR_URL} target="_blank" rel="noreferrer">
     <img src={logo} alt={LOGO_ALT} />
   </a>
-  <p>BRUBECKSCAN</p>
+  <p class="logoText">BRUBECKSCAN</p>
 </div>
 
 <style lang="scss">
@@ -19,9 +19,9 @@
   }
   p {
     font-weight: 400;
-    color: rgb(66, 66, 66);
     letter-spacing: -5px;
     font-size: 22px;
+    transition-duration: 0.3s;
   }
   a {
     display: flex;

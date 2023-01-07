@@ -12,7 +12,6 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    flex-grow: 1;
     gap: 50px;
   }
 </style>
