@@ -55,11 +55,11 @@
 </script>
 
 <div class="container" in:scale>
-  <p>{favorite.name}</p>
   <img
     src={`https://avatars.dicebear.com/api/identicon/${favorite.address}.svg`}
     alt="A generated icon"
   />
+  <p>{favorite.name}</p>
   <p>{formatAddress(favorite.address)}</p>
   <p>{favorite.createdAt}</p>
   <p>{favorite.updatedAt}</p>
