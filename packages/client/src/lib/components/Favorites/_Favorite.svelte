@@ -4,12 +4,11 @@
   import MdRemoveCircleOutline from "svelte-icons/md/MdRemoveCircleOutline.svelte";
   import { userService } from "$lib/services/user";
   import { nodeService } from "$lib/services/node";
-  import { scale } from "svelte/transition";
+  import { scale, slide } from "svelte/transition";
   import { Pulse } from "svelte-loading-spinners";
   import { network } from "$lib/stores/network";
   import dayjs from "dayjs";
   import relativeTime from "dayjs/plugin/relativeTime";
-  import { now } from "svelte/internal";
 
   export let favorite: Favorite;
 

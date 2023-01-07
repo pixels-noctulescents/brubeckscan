@@ -4,7 +4,7 @@
   import { userService } from "$lib/services/user";
   import { user } from "$lib/stores/user";
   import { favorites } from "$lib/stores/favorites";
-  import { fade } from "svelte/transition";
+  import { slide } from "svelte/transition";
 
   let address: string = "";
 
@@ -22,7 +22,7 @@
 </script>
 
 <div
-  in:fade
+  in:slide
   on:keydown={async (e) => {
     if (e.key === "Enter") {
       await addNode();
