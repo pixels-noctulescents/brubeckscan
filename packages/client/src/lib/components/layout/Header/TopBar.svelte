@@ -1,12 +1,12 @@
 <script lang="ts">
   import Prices from "./Prices.svelte";
   import NetworkStatus from "./NetworkStatus.svelte";
-  import NetworkStats from "./NetworkStats.svelte";
+  import LatestRewardCode from "./LatestRewardCode.svelte";
 </script>
 
 <div class="container">
   <Prices />
-  <NetworkStats />
+  <LatestRewardCode />
   <NetworkStatus />
 </div>
 
@@ -15,6 +15,7 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: var(--dark);
     padding: 10px 40px;
     color: whitesmoke;
