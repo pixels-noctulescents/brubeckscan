@@ -6,10 +6,11 @@
 </script>
 
 <div>
-  <p>APY | {$network.stats["24APY"]} %</p>
+  <p>{$network.stats.SPOTAPY} % | APY</p>
   <p>
-    VALUE LOCKED | {Math.round(Math.round(dataStaked) / 10000) / 100}M USDT
+    {Math.round(Math.round(dataStaked) / 10000) / 100}M USDT | VALUE LOCKED
   </p>
+  <p>{$network.stats.SPOTDATASTAKED} | DATA STAKED</p>
 </div>
 
 <style lang="scss">

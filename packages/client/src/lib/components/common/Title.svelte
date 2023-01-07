@@ -3,7 +3,7 @@
 
   export let title: string = "Title";
 
-  $: mainColor = $user.mainColor;
+  $: mainColor = $user?.mainColor;
 </script>
 
 <div>

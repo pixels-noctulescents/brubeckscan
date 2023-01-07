@@ -1,10 +1,12 @@
 <script lang="ts">
   import Prices from "./Prices.svelte";
   import NetworkStatus from "./NetworkStatus.svelte";
+  import NetworkStats from "./NetworkStats.svelte";
 </script>
 
 <div class="container">
   <Prices />
+  <NetworkStats />
   <NetworkStatus />
 </div>
 
