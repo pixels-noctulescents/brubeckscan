@@ -7,6 +7,9 @@
   import { scale } from "svelte/transition";
   import { Pulse } from "svelte-loading-spinners";
   import { network } from "$lib/stores/network";
+  import dayjs from "dayjs";
+  import relativeTime from "dayjs/plugin/relativeTime";
+  import { now } from "svelte/internal";
 
   export let favorite: Favorite;
 
@@ -37,15 +40,27 @@
       return false;
     }
   }
+
+  function formatDate(date: string) {
+    dayjs.extend(relativeTime);
+    const fromNow = dayjs(date).fromNow();
+    return fromNow;
+  }
+
+  function formatAddress(address: string) {
+    const start = address.slice(0, 3);
+    const end = address.slice(-3);
+    return `${start} ... ${end}`;
+  }
 </script>
 
 <div class="container" in:scale>
+  <p>{favorite.name}</p>
   <img
     src={`https://avatars.dicebear.com/api/identicon/${favorite.address}.svg`}
     alt="A generated icon"
   />
-  <p>{favorite.name}</p>
-  <p>{favorite.address}</p>
+  <p>{formatAddress(favorite.address)}</p>
   <p>{favorite.createdAt}</p>
   <p>{favorite.updatedAt}</p>
   <Button Icon={MdRemoveCircleOutline} action={removeFavorite} type="alert" />
@@ -63,17 +78,20 @@
             <span class="ko">KO</span>
           {/if}
         </p>
+        <p in:scale>Staked : {Math.round(node?.dataStaked || 0)}</p>
         <p in:scale>
           To Be Received : {Math.round(node?.dataToBeReceived || 0)}
         </p>
+
         <p in:scale>
-          To Be Received : {Math.round(node?.dataToBeReceived || 0)}
-        </p>
-        <p in:scale>
-          Total Rewards : {Math.round(node?.totalRewardsInData || 0)}
+          Total rewards : {Math.round(node?.totalRewardsInData || 0)}
         </p>
         <p in:scale>Total Sent : {Math.round(node?.dataSent || 0)}</p>
-        <p in:scale>Staked : {Math.round(node?.dataStaked || 0)}</p>
+        {#if node?.claimedRewardCodes[0]?.claimTime}
+          <p>
+            Latest claim : {formatDate(node.claimedRewardCodes[0].claimTime)}
+          </p>
+        {/if}
       {/if}
     {/await}
   </div>

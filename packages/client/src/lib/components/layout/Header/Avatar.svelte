@@ -14,8 +14,8 @@
 
 <style lang="scss">
   img {
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
   }
   div {
     border: 1px solid transparent;
@@ -29,7 +29,8 @@
     border-radius: 5px;
     &:hover {
       cursor: pointer;
-      background-color: rgb(247, 247, 247);
+      border: 1px solid var(--dark);
+      box-shadow: 1px 1px var(--dark);
     }
   }
 </style>
