@@ -3,11 +3,11 @@
 </script>
 
 <svelte:head>
-  <title>BrubeckScan | Scan</title>
+  <title>BrubeckScan | Graphs</title>
 </svelte:head>
 
 <div class="page">
-  <Title title="Scan" />
+  <Title title="Graphs" />
 </div>
 
 <style lang="scss">

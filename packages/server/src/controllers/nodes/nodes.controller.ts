@@ -30,17 +30,11 @@ nodesController.watchNode = async (
   next: NextFunction
 ) => {
   try {
-    if (!req.params.address) {
-      return sender.failure(res, { userAddress: "Missing user address." }, 400);
-    }
-    if (!req.body.address) {
-      return sender.failure(res, { nodeAddress: "Missing node address." }, 400);
-    }
-
     const userAddress = req.params.address;
     const nodeAddress = req.body.address;
+    const nodeName = req.body.name;
 
-    const node = await nodesDAO.watchNode(userAddress, nodeAddress);
+    const node = await nodesDAO.watchNode(userAddress, nodeAddress, nodeName);
 
     return sender.success(res, { node });
   } catch (e) {

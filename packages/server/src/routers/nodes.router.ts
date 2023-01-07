@@ -1,6 +1,7 @@
 import express from "express";
 import { nodesController } from "../controllers/nodes/nodes.controller";
 import { validateEthAddress } from "../middlewares/validate/ethAddress";
+import { validateNodeCreationInput } from "../middlewares/validate/nodeCreationInput";
 
 const nodesRouter = express.Router();
 
@@ -10,7 +11,11 @@ nodesRouter.get(
   nodesController.getNodeStats
 );
 
-nodesRouter.post("/:address", [validateEthAddress], nodesController.watchNode);
+nodesRouter.post(
+  "/:address",
+  [validateNodeCreationInput],
+  nodesController.watchNode
+);
 
 nodesRouter.delete("/", [], nodesController.unwatchNode);
 

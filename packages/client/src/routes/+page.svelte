@@ -1,19 +1,14 @@
 <script lang="ts">
-  import Prices from "$lib/components/common/Prices.svelte";
+  import Title from "$lib/components/common/Title.svelte";
 </script>
 
 <svelte:head>
   <title>BrubeckScan | Home</title>
 </svelte:head>
 
-<div class="landing">
-  <h1>Home</h1>
+<div class="page">
+  <Title title="Home" />
 </div>
 
 <style lang="scss">
-  .landing {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-  }
 </style>

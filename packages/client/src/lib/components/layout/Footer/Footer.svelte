@@ -10,6 +10,7 @@
 
 <style lang="scss">
   footer {
+    width: 100%;
     padding: 60px;
     min-height: 200px;
     background-color: rgb(32, 32, 32);
