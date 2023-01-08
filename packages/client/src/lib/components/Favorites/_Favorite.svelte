@@ -10,6 +10,7 @@
   import dayjs from "dayjs";
   import relativeTime from "dayjs/plugin/relativeTime";
   import { user } from "$lib/stores/user";
+  import { theme } from "$lib/stores/theme";
 
   export let favorite: Favorite;
 
@@ -67,7 +68,12 @@
   <div class="stats">
     {#await getStats()}
       <div in:scale class="loader">
-        <Pulse size="20" color={$user.mainColor} unit="px" duration="1s" />
+        <Pulse
+          size="20"
+          color={$theme === "dark" ? "white" : "black"}
+          unit="px"
+          duration="1s"
+        />
       </div>
     {:then node}
       {#if node}

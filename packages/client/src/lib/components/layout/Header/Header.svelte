@@ -21,11 +21,12 @@
     position: sticky;
     top: 0;
     width: 100%;
+    z-index: 1;
   }
 
   .header {
     backdrop-filter: saturate(180%) blur(5px);
-    z-index: 3000;
+    z-index: 3001;
     height: 50px;
     padding: 10px 40px;
     display: flex;

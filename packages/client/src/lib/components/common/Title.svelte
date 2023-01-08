@@ -9,8 +9,8 @@
 <div>
   <div
     class="background"
-    style:background={`linear-gradient(to right, #10d44100, ${
-      mainColor || "lightgray"
+    style:background={`linear-gradient(30deg, #10d44100, ${
+      mainColor || "rgb(32,32,32)"
     })`}
   />
   <h1 class="mainTitle">{title}</h1>

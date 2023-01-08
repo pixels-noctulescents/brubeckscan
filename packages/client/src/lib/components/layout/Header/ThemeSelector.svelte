@@ -2,12 +2,13 @@
   import { theme } from "$lib/stores/theme";
   import FaMoon from "svelte-icons/fa/FaMoon.svelte";
   import FaRegSun from "svelte-icons/fa/FaRegSun.svelte";
+  import MdWbSunny from "svelte-icons/md/MdWbSunny.svelte";
 </script>
 
 <div>
   {#if $theme === "dark"}
     <button on:click={() => theme.set("light")} on:keydown={() => {}}>
-      <FaRegSun />
+      <MdWbSunny />
     </button>
   {:else}
     <button on:click={() => theme.set("dark")} on:keydown={() => {}}>
@@ -20,7 +21,7 @@
   div {
     display: flex;
     button {
-      width: 15px;
+      width: 20px;
       display: flex;
       transition-duration: 0.3s;
       &:hover {
