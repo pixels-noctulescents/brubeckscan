@@ -1,9 +1,8 @@
 <script lang="ts">
-  import type { Favorite } from "@brubeckscan/common/types";
+  import type { Favorite, Node } from "@brubeckscan/common/types";
   import Button from "../common/Button.svelte";
   import MdRemoveCircleOutline from "svelte-icons/md/MdRemoveCircleOutline.svelte";
   import FavoriteService from "$lib/services/favorite";
-  import { userService } from "$lib/services/user";
   import { nodeService } from "$lib/services/node";
   import { scale } from "svelte/transition";
   import { Pulse } from "svelte-loading-spinners";
@@ -11,8 +10,12 @@
   import dayjs from "dayjs";
   import relativeTime from "dayjs/plugin/relativeTime";
   import { theme } from "$lib/stores/theme";
+  import { onMount } from "svelte";
 
   export let favorite: Favorite;
+
+  let loading = true;
+  let nodeData: Node;
 
   async function removeFavorite() {
     const response = await FavoriteService.remove(favorite.id);
@@ -23,12 +26,23 @@
     return stats;
   }
 
+  onMount(async () => {
+    try {
+      loading = true;
+      const stats = await getStats();
+      if (stats) {
+        nodeData = stats;
+      }
+      loading = false;
+    } catch (e) {
+      console.log(e);
+    }
+  });
+
   function getStatus(codes: any) {
-    // Network code
     const latestCode = $network.lastRewards[0].code;
 
     if (codes.length > 0) {
-      // Node codes
       const code1 = codes[0].id;
       const code2 = codes[1].id;
 
@@ -65,8 +79,10 @@
   <p>{favorite.createdAt}</p>
   <p>{favorite.updatedAt}</p>
   <Button Icon={MdRemoveCircleOutline} action={removeFavorite} type="alert" />
+
+  <!-- Loading data -->
   <div class="stats">
-    {#await getStats()}
+    {#if loading}
       <div in:scale class="loader">
         <Pulse
           size="20"
@@ -75,31 +91,27 @@
           duration="1s"
         />
       </div>
-    {:then node}
-      {#if node}
-        <p in:scale class="status">
-          {#if getStatus(node.claimedRewardCodes)}
-            <span class="ok">OK</span>
-          {:else}
-            <span class="ko">KO</span>
-          {/if}
-        </p>
-        <p in:scale>Staked : {Math.round(node?.dataStaked || 0)}</p>
-        <p in:scale>
-          To Be Received : {Math.round(node?.dataToBeReceived || 0)}
-        </p>
-
-        <p in:scale>
-          Total rewards : {Math.round(node?.totalRewardsInData || 0)}
-        </p>
-        <p in:scale>Total Sent : {Math.round(node?.dataSent || 0)}</p>
-        {#if node?.claimedRewardCodes[0]?.claimTime}
-          <p in:scale>
-            Latest claim : {formatDate(node.claimedRewardCodes[0].claimTime)}
-          </p>
+    {/if}
+    {#if nodeData}
+      <p in:scale class="status">
+        {#if getStatus(nodeData?.claimedRewardCodes)}
+          <span class="ok">OK</span>
+        {:else}
+          <span class="ko">KO</span>
         {/if}
-      {/if}
-    {/await}
+      </p>
+      <p in:scale>Staked : {Math.round(nodeData?.dataStaked || 0)}</p>
+      <p in:scale>
+        To Be Received : {Math.round(nodeData?.dataToBeReceived || 0)}
+      </p>
+      <p in:scale>
+        Total rewards : {Math.round(nodeData?.totalRewardsInData || 0)}
+      </p>
+      <p in:scale>Total Sent : {Math.round(nodeData?.dataSent || 0)}</p>
+      <p in:scale>
+        Latest claim : {formatDate(nodeData?.claimedRewardCodes[0]?.claimTime)}
+      </p>
+    {/if}
   </div>
 </div>
 

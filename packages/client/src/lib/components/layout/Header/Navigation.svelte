@@ -7,7 +7,9 @@
   import MdSearch from "svelte-icons/md/MdSearch.svelte";
   import MdFolderSpecial from "svelte-icons/md/MdFolderSpecial.svelte";
   import MdInfoOutline from "svelte-icons/md/MdInfoOutline.svelte";
+  import Avatar from "$lib/components/common/Avatar.svelte";
   import { page } from "$app/stores";
+  import { add_render_callback } from "svelte/internal";
 
   $: current = $page.route.id;
 </script>
@@ -31,6 +33,12 @@
     title={"Go to Scan"}
     active={current === "/scan" ? true : false}
   />
+  <Button
+    Icon={MdInfoOutline}
+    action={() => goto("/infos")}
+    title={"Go to Infos"}
+    active={current === "/infos" ? true : false}
+  />
   {#if $isConnected}
     <Button
       Icon={MdFolderSpecial}
@@ -38,13 +46,13 @@
       title={"Go to Favorites"}
       active={current === "/favorites" ? true : false}
     />
+    <Button
+      Icon={Avatar}
+      action={() => goto("/profile")}
+      title={"Go to Profile"}
+      active={current === "/profile" ? true : false}
+    />
   {/if}
-  <Button
-    Icon={MdInfoOutline}
-    action={() => goto("/infos")}
-    title={"Go to Infos"}
-    active={current === "/infos" ? true : false}
-  />
 </nav>
 
 <style lang="scss">

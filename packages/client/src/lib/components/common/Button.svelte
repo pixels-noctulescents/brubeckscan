@@ -29,6 +29,8 @@
 <style lang="scss">
   button {
     display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 3px;
     color: lightgray;
     transition-duration: 0.3s;

@@ -1,7 +1,6 @@
 <script lang="ts">
   import { hasMetamask } from "$lib/stores/provider";
   import { isConnected } from "$lib/stores/user";
-  import UserIcon from "./Avatar.svelte";
   import Icon from "@iconify/svelte";
 
   let isConnecting = false;
@@ -22,7 +21,7 @@
 
 <div>
   {#if $isConnected}
-    <UserIcon />
+    <p />
   {:else if $hasMetamask}
     <button on:click={connect}
       ><p>Connect</p>
