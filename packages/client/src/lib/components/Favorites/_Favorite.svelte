@@ -129,8 +129,9 @@
     border-radius: 8px;
     display: flex;
     justify-content: space-between;
-    gap: 40px;
+    gap: 30px;
     flex-wrap: wrap;
+    font-size: 14px;
     .stats {
       width: 100%;
       display: flex;

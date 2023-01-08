@@ -11,9 +11,9 @@
 <style lang="scss">
   footer {
     width: 100%;
-    padding: 60px;
+    padding: 80px;
     min-height: 200px;
-    background-color: rgb(32, 32, 32);
+    background-color: rgb(0, 0, 0);
     color: whitesmoke;
     display: flex;
     align-items: center;
