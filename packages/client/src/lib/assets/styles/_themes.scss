@@ -43,6 +43,11 @@
       box-shadow: 1px 1px whitesmoke;
       color: whitesmoke;
     }
+    &.active {
+      border: 1px solid whitesmoke;
+      box-shadow: 1px 1px whitesmoke;
+      color: whitesmoke;
+    }
   }
 }
 .light.page {
@@ -79,6 +84,11 @@
     color: whitesmoke;
   }
   button {
+    &.active {
+      border: 1px solid rgb(32, 32, 32);
+      box-shadow: 1px 1px rgb(32, 32, 32);
+      color: rgb(32, 32, 32);
+    }
     &:hover {
       border: 1px solid rgb(32, 32, 32);
       box-shadow: 1px 1px rgb(32, 32, 32);

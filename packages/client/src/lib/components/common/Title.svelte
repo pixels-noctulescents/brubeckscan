@@ -1,5 +1,10 @@
 <script lang="ts">
   import { user } from "$lib/stores/user";
+  import { page } from "$app/stores";
+
+  if ($page.route.id) {
+    console.log($page.route.id);
+  }
 
   export let title: string = "Title";
 </script>

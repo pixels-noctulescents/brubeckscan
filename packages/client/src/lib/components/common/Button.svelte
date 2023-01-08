@@ -6,6 +6,7 @@
   export let width: string = "30px";
   export let title: string = "Button";
   export let type: ButtonType = "neutral";
+  export let active: boolean = false;
 
   async function main() {
     try {
@@ -16,7 +17,12 @@
   }
 </script>
 
-<button on:click={main} style:width {title} class={type}>
+<button
+  on:click={main}
+  style:width
+  {title}
+  class={`${type} ${active ? "active" : ""}`}
+>
   <svelte:component this={Icon} />
 </button>
 
