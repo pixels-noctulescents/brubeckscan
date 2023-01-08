@@ -12,7 +12,7 @@ model User {
   createdAt DateTime   @default(now())
   updatedAt DateTime   @default(now())
   mainColor String     @default("black")
-  theme     String     @default("dark")
+  theme     String     @default("light")
   Favorite  Favorite[]
 }
 
