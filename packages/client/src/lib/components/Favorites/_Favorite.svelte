@@ -2,20 +2,20 @@
   import type { Favorite } from "@brubeckscan/common/types";
   import Button from "../common/Button.svelte";
   import MdRemoveCircleOutline from "svelte-icons/md/MdRemoveCircleOutline.svelte";
+  import FavoriteService from "$lib/services/favorite";
   import { userService } from "$lib/services/user";
   import { nodeService } from "$lib/services/node";
-  import { scale, slide } from "svelte/transition";
+  import { scale } from "svelte/transition";
   import { Pulse } from "svelte-loading-spinners";
   import { network } from "$lib/stores/network";
   import dayjs from "dayjs";
   import relativeTime from "dayjs/plugin/relativeTime";
-  import { user } from "$lib/stores/user";
   import { theme } from "$lib/stores/theme";
 
   export let favorite: Favorite;
 
   async function removeFavorite() {
-    const response = await userService.deleteFavorite(favorite.id);
+    const response = await FavoriteService.remove(favorite.id);
   }
 
   async function getStats() {

@@ -22,7 +22,8 @@ export async function login(address: string) {
 
 async function fetchUser(address: string) {
   try {
-    const user = await send(`api/users/${address}`);
+    const user = await send(`users/${address}`);
+
     return user;
   } catch (e) {
     console.log(e);
@@ -31,7 +32,8 @@ async function fetchUser(address: string) {
 
 async function createUser(address: string) {
   try {
-    const user = await send("api/users", "POST", { address });
+    const user = await send(`users/${address}`, "POST");
+
     return user;
   } catch (e) {
     console.log(e);
@@ -45,6 +47,7 @@ function updateStores(data: any) {
     createdAt: data.createdAt,
     updatedAt: data.updatedAt,
     mainColor: data.mainColor,
+    theme: data.theme
   });
-  favorites.set(data.Node);
+  favorites.set(data.Favorite);
 }

@@ -1,7 +1,7 @@
 <script lang="ts">
   import Button from "../common/Button.svelte";
   import MdAdd from "svelte-icons/md/MdAdd.svelte";
-  import { userService } from "$lib/services/user";
+  import FavoriteService from "$lib/services/favorite";
   import { user } from "$lib/stores/user";
   import { favorites } from "$lib/stores/favorites";
   import { slide } from "svelte/transition";
@@ -10,7 +10,7 @@
 
   async function addNode() {
     try {
-      const favorite = await userService.saveFavorite(
+      const favorite = await FavoriteService.save(
         $user.address,
         address.toLowerCase().trim(),
         `Node ${$favorites.length + 1}`
@@ -30,7 +30,11 @@
     }
   }}
 >
-  <input bind:value={address} placeholder="Enter a node address to save it" />
+  <input
+    bind:value={address}
+    placeholder="Enter a node address to save it"
+    required={true}
+  />
   <Button
     Icon={MdAdd}
     action={addNode}

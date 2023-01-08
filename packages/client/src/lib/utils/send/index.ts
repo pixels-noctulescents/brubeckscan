@@ -1,5 +1,6 @@
 import { PUBLIC_API_BASE_URL, PUBLIC_API_TOKEN } from "$env/static/public";
 
+// Wrapper function used to query the API
 export default async function send(
   address: string,
   method: string = "GET",
@@ -15,7 +16,7 @@ export default async function send(
       body: JSON.stringify(body),
     };
 
-    const response = await fetch(`${PUBLIC_API_BASE_URL}/${address}`, init);
+    const response = await fetch(`${PUBLIC_API_BASE_URL}${address}`, init);
 
     const data = await response.json();
 

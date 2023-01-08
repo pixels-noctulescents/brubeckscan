@@ -4,7 +4,7 @@ import { goto } from "$app/navigation";
 
 export async function logout() {
   try {
-    user.set({ address: "", createdAt: "", updatedAt: "" });
+    user.set({ address: "", createdAt: "", updatedAt: "" , mainColor: "black", theme: "dark"});
     isConnected.set(false);
     favorites.set([]);
     await goto("/");

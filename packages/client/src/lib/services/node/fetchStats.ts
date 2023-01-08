@@ -1,13 +1,9 @@
-import { PUBLIC_API_BASE_URL } from "$env/static/public";
 import type { Node } from "@brubeckscan/common/types";
+import send from "$lib/utils/send";
 
 export async function fetchStats(address: string) {
   try {
-    const response = await fetch(
-      `${PUBLIC_API_BASE_URL}/api/nodes/stats/${address}`
-    );
-
-    const data = await response.json();
+    const data = await send(`nodes/stats/${address}`);
 
     const node: Node = data.data.node;
 

@@ -30,6 +30,10 @@ favoritesController.create = async (
     const favoriteAddress = req.body.favoriteAddress;
     const favoriteName = req.body.favoriteName;
 
+    if(!userAddress || !favoriteAddress || !favoriteName){
+      return sender.failure(res, {}, 400);
+    }
+
     const favorite = await favoritesDAO.save(userAddress, favoriteAddress, favoriteName);
 
     return sender.success(res, { favorite });
