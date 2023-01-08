@@ -1,8 +1,9 @@
 <script lang="ts">
   export let title: string = "Title";
+  import { slide } from "svelte/transition";
 </script>
 
-<div class="title">
+<div class="title" in:slide>
   <h1>{title}</h1>
 </div>
 
@@ -15,14 +16,14 @@
     transition-duration: 0.3s;
   }
   h1 {
-    padding: 20px;
     border-bottom-right-radius: 8px;
+    letter-spacing: -7px;
   }
   .title {
-    margin-bottom: 20px;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 25px;
   }
 </style>

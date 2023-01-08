@@ -124,12 +124,12 @@
   }
   .container {
     transition-duration: 0.3s;
-    padding: 30px;
+    padding: 40px;
     width: 100%;
     border-radius: 8px;
     display: flex;
     justify-content: space-between;
-    gap: 20px;
+    gap: 40px;
     flex-wrap: wrap;
     .stats {
       width: 100%;

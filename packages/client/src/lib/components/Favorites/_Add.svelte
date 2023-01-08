@@ -34,7 +34,7 @@
   <Button
     Icon={MdAdd}
     action={addNode}
-    width="30px"
+    width="40px"
     title={"Save node"}
     type="action"
   />
@@ -55,5 +55,6 @@
   input {
     width: 100%;
     font-size: 22px;
+    letter-spacing: -1px;
   }
 </style>
