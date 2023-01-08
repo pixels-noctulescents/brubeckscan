@@ -54,5 +54,6 @@
   }
   input {
     width: 100%;
+    font-size: 22px;
   }
 </style>

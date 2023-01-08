@@ -28,7 +28,7 @@
         cursor: pointer;
         color: white;
         border: 1px solid white;
-        padding: 2px;
+        padding: 5px;
         border-radius: 2px;
       }
     }

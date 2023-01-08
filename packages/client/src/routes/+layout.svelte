@@ -21,14 +21,16 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    height: 100%;
   }
 
   main {
     display: flex;
     width: 100%;
+    flex-grow: 1;
     justify-content: center;
     min-height: calc(100vh - 88px);
-    padding: 0px 40px;
+    padding: 0px;
     padding-bottom: 100px;
   }
 </style>

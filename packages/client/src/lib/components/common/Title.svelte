@@ -1,20 +1,9 @@
 <script lang="ts">
-  import { user } from "$lib/stores/user";
-  import { page } from "$app/stores";
-
-  if ($page.route.id) {
-    console.log($page.route.id);
-  }
-
   export let title: string = "Title";
 </script>
 
-<div>
-  <div
-    class="background"
-    style:background={`linear-gradient(30deg, #10d44100, rgb(32,32,32,0.2)`}
-  />
-  <h1 class="mainTitle">{title}</h1>
+<div class="title">
+  <h1>{title}</h1>
 </div>
 
 <style lang="scss">
@@ -22,17 +11,18 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    max-width: 1200px;
     width: 100%;
     transition-duration: 0.3s;
   }
   h1 {
-    width: 50%;
-    padding: 20px 40px;
-    font-size: 26px;
+    padding: 20px;
     border-bottom-right-radius: 8px;
   }
-  .background {
-    width: 50%;
+  .title {
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 </style>
