@@ -1,19 +1,16 @@
 import express from "express";
-import { validateAuth } from "../middlewares/validate/auth";
-import { validateUserCreationInput } from "../middlewares/validate/userCreationInput";
+import { validateEthAddress } from "../middlewares/validate/ethAddress";
 import { usersController } from "../controllers/users/users.controller";
 
 const usersRouter = express.Router();
 
-usersRouter.use(validateAuth);
-
+// General stats
 usersRouter.get("/count", usersController.count);
-usersRouter.get("/:address", usersController.findUserByAddress);
 
-usersRouter.post("", [validateUserCreationInput], usersController.createUser);
-
-usersRouter.delete("", [validateUserCreationInput], usersController.deleteUser);
-
-usersRouter.patch("/:address", usersController.update);
+// User CRUD Operations
+usersRouter.get("/:address", [validateEthAddress], usersController.find);
+usersRouter.post("/:address", [validateEthAddress], usersController.create);
+usersRouter.delete("/:address", [validateEthAddress], usersController.delete);
+usersRouter.patch("/:address", [validateEthAddress], usersController.update);
 
 export { usersRouter };

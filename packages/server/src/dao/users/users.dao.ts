@@ -11,7 +11,7 @@ usersDAO.count = async () => {
   }
 };
 
-usersDAO.updateUserByAddress = async (address: string, data: any) => {
+usersDAO.update = async (address: string, data: any) => {
   try {
     const user = await prisma.user.update({
       where: {
@@ -26,13 +26,13 @@ usersDAO.updateUserByAddress = async (address: string, data: any) => {
   }
 };
 
-usersDAO.createUser = async (address: string) => {
+usersDAO.create = async (address: string) => {
   try {
     let user;
 
     user = {
       address: address,
-      Node: {
+      Favorite: {
         create: {
           address: address,
         },
@@ -42,7 +42,7 @@ usersDAO.createUser = async (address: string) => {
     const createUser = await prisma.user.create({
       data: user,
       include: {
-        Node: true,
+        Favorite: true,
       },
     });
 
@@ -52,13 +52,13 @@ usersDAO.createUser = async (address: string) => {
   }
 };
 
-usersDAO.findUserByAddress = async (address: string) => {
+usersDAO.find = async (address: string) => {
   const user = await prisma.user.findUnique({
     where: {
       address: address,
     },
     include: {
-      Node: {
+      Favorite: {
         orderBy: {
           createdAt: "asc",
         },
@@ -69,13 +69,13 @@ usersDAO.findUserByAddress = async (address: string) => {
   return user;
 };
 
-usersDAO.deleteUserByAddress = async (address: string) => {
+usersDAO.delete = async (address: string) => {
   const user = await prisma.user.delete({
     where: {
       address: address,
     },
     include: {
-      Node: true,
+      Favorite: true,
     },
   });
 

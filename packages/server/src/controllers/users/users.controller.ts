@@ -17,26 +17,26 @@ usersController.count = async (
   }
 };
 
-usersController.createUser = async (
+usersController.create = async (
   req: Request,
   res: Response,
   next: NextFunction
 ) => {
   try {
-    const user = await usersDAO.createUser(req.body.address);
+    const user = await usersDAO.create(req.params.address);
     return sender.success(res, { user });
   } catch (e) {
     next(e);
   }
 };
 
-usersController.findUserByAddress = async (
+usersController.find = async (
   req: Request,
   res: Response,
   next: NextFunction
 ) => {
   try {
-    const user = await usersDAO.findUserByAddress(req.params.address);
+    const user = await usersDAO.find(req.params.address);
 
     if (!user) {
       return sender.failure(res, { user: "User not found." }, 404);
@@ -48,13 +48,13 @@ usersController.findUserByAddress = async (
   }
 };
 
-usersController.deleteUser = async (
+usersController.delete = async (
   req: Request,
   res: Response,
   next: NextFunction
 ) => {
   try {
-    const user = await usersDAO.deleteUserByAddress(req.body.address);
+    const user = await usersDAO.delete(req.params.address);
 
     return sender.success(res, { user });
   } catch (e) {
@@ -68,10 +68,7 @@ usersController.update = async (
   next: NextFunction
 ) => {
   try {
-    const user = await usersDAO.updateUserByAddress(
-      req.params.address,
-      req.body
-    );
+    const user = await usersDAO.update(req.params.address, req.body);
 
     return sender.success(res, { user });
   } catch (e) {
