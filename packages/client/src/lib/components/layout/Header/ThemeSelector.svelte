@@ -1,36 +1,47 @@
 <script lang="ts">
   import { theme } from "$lib/stores/theme";
   import FaMoon from "svelte-icons/fa/FaMoon.svelte";
-  import FaRegSun from "svelte-icons/fa/FaRegSun.svelte";
   import MdWbSunny from "svelte-icons/md/MdWbSunny.svelte";
 </script>
 
-<div>
+<div class="container">
   {#if $theme === "dark"}
-    <button on:click={() => theme.set("light")} on:keydown={() => {}}>
+    <div
+      class="icon"
+      on:click|preventDefault={() => {
+        console.log("test");
+        theme.set("light");
+      }}
+      on:keydown={() => {}}
+    >
       <MdWbSunny />
-    </button>
+    </div>
   {:else}
-    <button on:click={() => theme.set("dark")} on:keydown={() => {}}>
+    <div
+      class="icon"
+      on:click|preventDefault={() => {
+        console.log("test");
+        theme.set("dark");
+      }}
+      on:keydown={() => {}}
+    >
       <FaMoon />
-    </button>
+    </div>
   {/if}
 </div>
 
 <style lang="scss">
-  div {
+  .container {
     display: flex;
-    button {
-      width: 20px;
-      display: flex;
-      transition-duration: 0.3s;
-      &:hover {
-        cursor: pointer;
-        color: white;
-        border: 1px solid white;
-        padding: 5px;
-        border-radius: 2px;
-      }
+    align-items: center;
+    justify-content: center;
+  }
+
+  .icon {
+    width: 15px;
+    display: flex;
+    &:hover {
+      cursor: pointer;
     }
   }
 </style>

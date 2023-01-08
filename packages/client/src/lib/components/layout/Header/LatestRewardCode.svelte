@@ -3,7 +3,7 @@
 </script>
 
 <div class="container">
-  <p>Latest reward code | {$network.lastRewards[0].code}</p>
+  <p>{$network.lastRewards[0].code}</p>
 </div>
 
 <style lang="scss">

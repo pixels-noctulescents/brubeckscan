@@ -50,7 +50,7 @@
     padding: 30px;
     border-radius: 8px;
     backdrop-filter: saturate(180%) blur(5px);
-    z-index: 3000;
+    z-index: 2;
   }
   input {
     width: 100%;
