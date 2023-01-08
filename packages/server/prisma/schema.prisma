@@ -22,7 +22,7 @@ model Favorite {
   createdAt   DateTime @default(now())
   updatedAt   DateTime @default(now())
   userAddress String?
-  name        String   @default("Default node name")
+  name        String   @default("Node")
   User        User?    @relation(fields: [userAddress], references: [address])
 }
 
