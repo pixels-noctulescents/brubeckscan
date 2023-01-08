@@ -14,7 +14,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2px;
+    padding: 4px;
     filter: grayscale(1);
     transition-duration: 0.3s;
     &:hover {
