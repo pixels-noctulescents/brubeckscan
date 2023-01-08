@@ -2,6 +2,7 @@
   import { user } from "$lib/stores/user";
   import { userService } from "$lib/services/user";
   import { scale } from "svelte/transition";
+  import ThemeSelector from "../layout/Header/ThemeSelector.svelte";
 
   $: data = $user;
   $: iconUrl = `https://avatars.dicebear.com/api/identicon/${$user.address}.svg`;
@@ -31,6 +32,7 @@
         <p>{$user.address}</p>
         <p>Created : {new Date($user.createdAt).toLocaleDateString()}</p>
         <p>Updated : {new Date($user.updatedAt).toLocaleDateString()}</p>
+        <p>Theme : <ThemeSelector /></p>
       </div>
     </div>
   </div>
@@ -70,6 +72,10 @@
       justify-content: center;
       align-items: center;
       width: 50%;
+    }
+    p {
+      display: flex;
+      justify-content: space-between;
     }
   }
 

@@ -1,4 +1,5 @@
 import { isConnected, user } from "$lib/stores/user";
+import { theme } from "$lib/stores/theme";
 import { favorites } from "$lib/stores/favorites";
 
 import send from "$lib/utils/send";
@@ -49,5 +50,6 @@ function updateStores(data: any) {
     mainColor: data.mainColor,
     theme: data.theme
   });
+  theme.set(data.theme);
   favorites.set(data.Favorite);
 }
