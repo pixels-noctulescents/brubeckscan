@@ -8,21 +8,22 @@ datasource db {
 }
 
 model User {
-  address   String   @id @unique
-  createdAt DateTime @default(now())
-  updatedAt DateTime @default(now())
-  mainColor String   @default("#4287f5")
-  Node      Node[]
+  address   String     @id @unique
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @default(now())
+  mainColor String     @default("black")
+  theme     String     @default("dark")
+  Favorite  Favorite[]
 }
 
-model Node {
+model Favorite {
   id          String   @id @default(uuid())
   address     String
   createdAt   DateTime @default(now())
   updatedAt   DateTime @default(now())
   userAddress String?
   name        String   @default("Default node name")
-  User        User?    @relation(fields: [userAddress], references: [address], onDelete: Cascade)
+  User        User?    @relation(fields: [userAddress], references: [address])
 }
 
 model BrubeckStats {
@@ -34,12 +35,4 @@ model BrubeckStats {
   spotAPY         Float
   dailyDataStaked Float
   spotDataStaked  Float
-}
-
-model CronRun {
-  id               Int      @id @default(autoincrement())
-  createdAt        DateTime @default(now())
-  runTimeInSeconds Float
-  finalStatus      Int
-  errorMessage     String?
 }
