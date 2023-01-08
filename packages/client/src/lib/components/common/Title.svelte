@@ -2,16 +2,12 @@
   import { user } from "$lib/stores/user";
 
   export let title: string = "Title";
-
-  $: mainColor = $user?.mainColor;
 </script>
 
 <div>
   <div
     class="background"
-    style:background={`linear-gradient(30deg, #10d44100, ${
-      mainColor || "rgb(32,32,32)"
-    })`}
+    style:background={`linear-gradient(30deg, #10d44100, rgb(32,32,32,0.2)`}
   />
   <h1 class="mainTitle">{title}</h1>
 </div>
