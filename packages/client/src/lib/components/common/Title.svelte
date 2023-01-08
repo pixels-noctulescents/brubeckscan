@@ -34,7 +34,6 @@
     z-index: 1;
   }
   .title {
-    max-width: 1200px;
     width: 100%;
     display: flex;
     justify-content: center;

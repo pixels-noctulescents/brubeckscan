@@ -1,5 +1,8 @@
 <script lang="ts">
   import Title from "$lib/components/common/Title.svelte";
+
+  const title = "Home";
+  const subTitle = "Welcome";
 </script>
 
 <svelte:head>
@@ -7,7 +10,7 @@
 </svelte:head>
 
 <div class="page">
-  <Title title="Home" />
+  <Title {title} {subTitle} />
 </div>
 
 <style lang="scss">
