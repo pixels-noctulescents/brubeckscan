@@ -1,6 +1,9 @@
 <script lang="ts">
   import Title from "$lib/components/common/Title.svelte";
   import Favorites from "$lib/components/Favorites/Favorites.svelte";
+
+  const title = "Favorites";
+  const subTitle = "Manage your nodes and keep track of your rewards";
 </script>
 
 <svelte:head>
@@ -8,7 +11,7 @@
 </svelte:head>
 
 <div class="page">
-  <Title title="Favorites" />
+  <Title {title} {subTitle} />
   <Favorites />
 </div>
 
