@@ -31,6 +31,5 @@
     justify-content: center;
     min-height: calc(100vh - 88px);
     padding: 0px;
-    padding-bottom: 200px;
   }
 </style>

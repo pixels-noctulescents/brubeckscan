@@ -83,9 +83,6 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        .label {
-          color: lightgray;
-        }
       }
     }
     .background {
