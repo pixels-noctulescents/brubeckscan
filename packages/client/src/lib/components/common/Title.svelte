@@ -22,14 +22,14 @@
     margin-bottom: 20px;
   }
   h1 {
-    // backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
     z-index: 1;
     letter-spacing: -7px;
     padding: 10px;
   }
 
   h4 {
-    // backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
     z-index: 1;
     padding: 10px;
     text-align: center;
