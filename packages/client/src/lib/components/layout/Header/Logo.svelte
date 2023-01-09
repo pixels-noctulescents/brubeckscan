@@ -2,7 +2,7 @@
 </script>
 
 <div>
-  <p class="logoText">BRUBECKSCAN</p>
+  <p>BRUBECKSCAN</p>
 </div>
 
 <style lang="scss">

@@ -3,7 +3,7 @@ import { sender } from "../../utils/sender";
 import { getNodeStats } from "./getNodeStats";
 import { formatNodeStats } from "../../utils/format";
 
-const nodesController = () => {};
+const nodesController = () => { };
 
 nodesController.getNodeStats = async (
   req: Request,

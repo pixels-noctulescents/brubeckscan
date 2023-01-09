@@ -1,6 +1,6 @@
 import { prisma } from "../../clients/prisma";
 
-const usersDAO = () => {};
+const usersDAO = () => { };
 
 usersDAO.count = async () => {
   try {
@@ -18,6 +18,9 @@ usersDAO.update = async (address: string, data: any) => {
         address: address,
       },
       data: data,
+      include: {
+        Favorite: true
+      }
     });
 
     return user;

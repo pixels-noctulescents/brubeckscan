@@ -4,3 +4,14 @@
   align-items: center;
   width: 100%;
 }
+
+
+.responsive {
+  width: 100%;
+  max-width: var(--max-site-width);
+  @media (max-width: 1300px){
+    max-width: unset;
+    width: 100%;
+    padding: 40px;
+  }
+}

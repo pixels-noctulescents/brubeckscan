@@ -1,55 +1,40 @@
 import { isConnected, user } from "$lib/stores/user";
+import type { Favorite, User } from "@brubeckscan/common/types";
 import { theme } from "$lib/stores/theme";
 import { favorites } from "$lib/stores/favorites";
-
 import send from "$lib/utils/send";
 
 export async function login(address: string) {
   try {
-    const data = await fetchUser(address);
+    const exists = await send(`users/${address}`);
 
-    if (data) {
-      if (data.status === "fail") {
-        const user = await createUser(address);
-        updateStores(user.data.user);
-      } else {
-        updateStores(data.data.user);
-      }
+    if (exists.status === "success") {
+      updateStores(exists.data.user);
+    } else {
+      const create = await send(`users/${address}`, "POST");
+      updateStores(create.data.user);
     }
   } catch (e) {
     console.log(e);
   }
 }
 
-async function fetchUser(address: string) {
-  try {
-    const user = await send(`users/${address}`);
-
-    return user;
-  } catch (e) {
-    console.log(e);
-  }
-}
-
-async function createUser(address: string) {
-  try {
-    const user = await send(`users/${address}`, "POST");
-
-    return user;
-  } catch (e) {
-    console.log(e);
-  }
-}
-
-function updateStores(data: any) {
+function updateStores(data: User) {
   isConnected.set(true);
   user.set({
     address: data.address,
     createdAt: data.createdAt,
     updatedAt: data.updatedAt,
     mainColor: data.mainColor,
-    theme: data.theme
+    theme: data.theme,
+    Favorite: data.Favorite
   });
   theme.set(data.theme);
   favorites.set(data.Favorite);
+}
+
+async function getFavoritesStats(favorites: Favorite[]) {
+  const requests = favorites.map(item => send(`nodes/stats/${item.address}`));
+  const responses = await Promise.all(requests);
+  console.log(responses);
 }

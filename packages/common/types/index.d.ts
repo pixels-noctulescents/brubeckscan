@@ -9,6 +9,7 @@ export interface Node {
   claimCount: number;
   claimPercentage: number;
   claimedRewardCodes: ClaimedRewardCode[];
+  status: boolean;
 }
 
 export interface Payout {
@@ -33,7 +34,8 @@ export interface Favorite {
 export interface User {
   address: string;
   mainColor: string;
-  theme: string;
+  theme: "dark" | "light";
+  Favorite: Favorite[]
   createdAt: string;
   updatedAt: string;
 }
@@ -65,11 +67,12 @@ export interface RewardCode {
   meanPropagationDelay: number;
 }
 
-export interface TotalsTable {
+export interface FavoritesTotals {
   totalDataStaked: number;
   totalRewards: number;
   totalDataToBeReceived: number;
   totalDataSent: number;
+  statuses: boolean[];
 }
 
 export type ButtonType = "neutral" | "action" | "alert";

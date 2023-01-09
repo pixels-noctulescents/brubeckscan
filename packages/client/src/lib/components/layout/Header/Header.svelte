@@ -5,7 +5,7 @@
   import TopBar from "./TopBar.svelte";
 </script>
 
-<header>
+<header class="transparent">
   <div class="topbar">
     <TopBar />
   </div>
@@ -25,9 +25,7 @@
   }
 
   .header {
-    backdrop-filter: saturate(180%) blur(5px);
     z-index: 10000;
-    height: 50px;
     padding: 10px 40px;
     display: flex;
     flex-direction: row;

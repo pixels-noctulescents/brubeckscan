@@ -20,62 +20,79 @@
 </script>
 
 {#if $user}
-  <div class="container profile" in:scale>
-    <div class="background">
-      <img src={iconUrl} alt="A generated icon" />
-    </div>
-    <div class="info">
-      <p class="colorContainer">
-        <input type="color" value={$user.mainColor} on:change={handleChange} />
-      </p>
-      <div class="infos">
-        <p>{$user.address}</p>
-        <p>Created : {new Date($user.createdAt).toLocaleDateString()}</p>
-        <p>Updated : {new Date($user.updatedAt).toLocaleDateString()}</p>
-        <p>Theme : <ThemeSelector /></p>
+  <div class="responsive">
+    <div class="container module" in:scale>
+      <div class="background">
+        <img src={iconUrl} alt="A generated icon" />
+      </div>
+      <div class="stats">
+        <div class="stat">
+          <div class="label">Address</div>
+          <div class="value">{$user.address}</div>
+        </div>
+        <div class="stat">
+          <div class="label">Created At</div>
+          <div class="value">
+            {new Date($user.createdAt).toLocaleDateString()}
+          </div>
+        </div>
+        <div class="stat">
+          <div class="label">Updated at</div>
+          <div class="value">
+            {new Date($user.updatedAt).toLocaleDateString()}
+          </div>
+        </div>
+        <div class="stat">
+          <div class="label">Theme</div>
+          <div class="value">
+            <ThemeSelector />
+          </div>
+        </div>
+        <div class="stat">
+          <div class="label">Main Color</div>
+          <div class="value">
+            <input
+              type="color"
+              value={$user.mainColor}
+              on:change={handleChange}
+            />
+          </div>
+        </div>
       </div>
     </div>
   </div>
 {/if}
 
 <style lang="scss">
-  .colorContainer {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    border: none;
-  }
   input {
-    width: 60px;
-    height: 60px;
+    width: 20px;
+    height: 20px;
   }
   .container {
     display: flex;
     flex-direction: row;
     width: 100%;
-    max-width: 1200px;
-    border-radius: 8px;
-    .infos {
+    gap: 20px;
+    .stats {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-    }
-    .info {
-      width: 50%;
-      padding: 50px;
-      display: flex;
-      flex-direction: row;
-      gap: 30px;
+      width: 100%;
+      gap: 10px;
+      padding: 10px;
+      .stat {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .label {
+          color: lightgray;
+        }
+      }
     }
     .background {
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 50%;
-    }
-    p {
-      display: flex;
-      justify-content: space-between;
+      width: 20%;
     }
   }
 

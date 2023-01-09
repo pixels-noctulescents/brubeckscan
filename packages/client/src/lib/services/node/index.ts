@@ -1,7 +1,9 @@
 import { fetchStats } from "./fetchStats";
+import { getEmptyNode } from "./getEmptyNode";
 
-const nodeService = () => {};
+const NodeService = () => { };
 
-nodeService.fetchStats = fetchStats;
+NodeService.fetchStats = fetchStats;
+NodeService.getEmptyNode = getEmptyNode;
 
-export { nodeService };
+export default NodeService;
