@@ -9,13 +9,12 @@
 </svelte:head>
 
 <div class="page container">
-  <Title {title} color="red" />
+  <Title {title} />
 </div>
 
 <style lang="scss">
   .container {
     width: 100%;
-    background-color: rgb(104, 112, 179);
     min-height: calc(100vh - 89px);
   }
 </style>

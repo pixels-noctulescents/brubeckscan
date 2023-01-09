@@ -6,7 +6,7 @@ import { get } from 'svelte/store';
 export const ssr = false;
 
 export const load = (async ({ params, fetch }) => {
-  if (!get(user)) {
-    throw redirect(307, "/");
-  }
+    if (!get(user)) {
+        throw redirect(307, "/");
+    }
 }) satisfies PageLoad;

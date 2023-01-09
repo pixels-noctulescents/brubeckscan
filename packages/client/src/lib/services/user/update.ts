@@ -4,7 +4,6 @@ import { user } from "$lib/stores/user";
 export async function update(address: string, data: any) {
   try {
     const updatedUser = await send(`users/${address}`, "PATCH", data);
-
     user.set(updatedUser.data.user);
     return;
   } catch (e) {

@@ -1,6 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 import UsersDAO from "../../dao/users/users.dao";
 import { sender } from "../../utils/sender";
+import { buildOverview } from "./buildOverview";
 
 const usersController = () => { };
 
@@ -71,6 +72,31 @@ usersController.update = async (
     const user = await UsersDAO.update(req.params.address, req.body);
 
     return sender.success(res, { user });
+  } catch (e) {
+    next(e);
+  }
+};
+
+usersController.getOverview = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const userAddress = req.params.address;
+
+    const exist = await UsersDAO.find(userAddress);
+
+    if (!exist) {
+      return sender.failure(res, { user: "Not found" }, 404);
+    }
+
+    if (exist) {
+      const overview = await buildOverview(exist.Favorite);
+      if (overview) {
+        return sender.success(res, { overview });
+      }
+    }
   } catch (e) {
     next(e);
   }

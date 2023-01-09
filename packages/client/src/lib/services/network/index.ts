@@ -1,7 +1,7 @@
 import { network } from "$lib/stores/network";
 import send from "$lib/utils/send";
 
-const networkService = () => {};
+const networkService = () => { };
 
 networkService.init = async () => {
   const stats = await send("networks/stats");

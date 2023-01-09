@@ -1,5 +1,5 @@
 import { isConnected, user } from "$lib/stores/user";
-import type { Favorite, User } from "@brubeckscan/common/types";
+import type { User } from "@brubeckscan/common/types";
 import { theme } from "$lib/stores/theme";
 import { favorites } from "$lib/stores/favorites";
 import send from "$lib/utils/send";
@@ -19,7 +19,7 @@ export async function login(address: string) {
   }
 }
 
-function updateStores(data: User) {
+export function updateStores(data: User) {
   isConnected.set(true);
   user.set({
     address: data.address,
@@ -31,10 +31,4 @@ function updateStores(data: User) {
   });
   theme.set(data.theme);
   favorites.set(data.Favorite);
-}
-
-async function getFavoritesStats(favorites: Favorite[]) {
-  const requests = favorites.map(item => send(`nodes/stats/${item.address}`));
-  const responses = await Promise.all(requests);
-  console.log(responses);
 }

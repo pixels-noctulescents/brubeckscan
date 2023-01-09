@@ -1,3 +1,7 @@
+import type { Overview } from "./overview";
+
+export default Overview;
+
 export interface Node {
   address: string;
   polygonScanURL: string;

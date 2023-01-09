@@ -4,6 +4,11 @@
   import Header from "$lib/components/layout/Header/Header.svelte";
   import Footer from "$lib/components/layout/Footer/Footer.svelte";
   import { theme } from "$lib/stores/theme";
+  import { onMount } from "svelte";
+
+  onMount(async () => {
+    console.log("mounting layout");
+  });
 </script>
 
 <div class={`${$theme} page`}>

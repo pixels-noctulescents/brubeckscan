@@ -13,4 +13,8 @@ usersRouter.post("/:address", [validateEthAddress], usersController.create);
 usersRouter.delete("/:address", [validateEthAddress], usersController.delete);
 usersRouter.patch("/:address", [validateEthAddress], usersController.update);
 
+// Overview
+// Retrieve information for every favorites
+usersRouter.get("/:address/overview", [validateEthAddress], usersController.getOverview);
+
 export { usersRouter };

@@ -1,7 +1,6 @@
 <script lang="ts">
   import { user } from "$lib/stores/user";
-  import { userService } from "$lib/services/user";
-  import { scale } from "svelte/transition";
+  import UserService from "$lib/services/user";
   import ThemeSelector from "../layout/Header/ThemeSelector.svelte";
 
   $: data = $user;
@@ -10,7 +9,7 @@
   async function handleChange(e: any) {
     try {
       const selectedValue = e.target.value;
-      const user = await userService.update(data.address, {
+      const user = await UserService.update(data.address, {
         mainColor: selectedValue,
       });
     } catch (e) {

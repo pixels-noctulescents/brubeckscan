@@ -11,11 +11,4 @@ nodesRouter.get(
   NodeController.getNodeStats
 );
 
-// Retrieve information for every favorites
-nodesRouter.get(
-  "/user/:address",
-  [validateEthAddress],
-  NodeController.getAllFromUser
-);
-
 export { nodesRouter };

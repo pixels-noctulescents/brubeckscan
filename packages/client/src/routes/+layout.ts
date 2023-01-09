@@ -1,18 +1,9 @@
-import { browser } from "$app/environment";
-import { socket } from "$lib/services/socket";
-import { authService } from "$lib/services/auth";
-import { networkService } from "$lib/services/network";
 import type { LayoutLoad } from "./$types";
 
 export const ssr = false;
 
 export const load = (async ({ params, fetch }) => {
   try {
-    if (browser) {
-      await authService.init();
-      await networkService.init();
-    }
-
     return {};
   } catch (e) {
     console.log(e);

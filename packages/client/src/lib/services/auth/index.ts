@@ -1,6 +1,6 @@
 import detectEthereumProvider from "@metamask/detect-provider";
 import { browser } from "$app/environment";
-import { userService } from "$lib/services/user";
+import UserService from "../user";
 import { hasEthereumProvider, hasMetamask } from "$lib/stores/provider";
 
 export const authService = {
@@ -19,9 +19,9 @@ export const authService = {
             "accountsChanged",
             async (accounts: string[]) => {
               if (accounts[0]) {
-                await userService.login(accounts[0]);
+                await UserService.login(accounts[0]);
               } else {
-                await userService.logout();
+                await UserService.logout();
               }
             }
           );
@@ -36,7 +36,7 @@ async function checkForExistingConnection() {
     method: "eth_accounts",
   });
   if (accounts.length) {
-    await userService.login(accounts[0]);
+    await UserService.login(accounts[0]);
     return true;
   } else {
     return false;

@@ -2,10 +2,10 @@ import { login } from "./login";
 import { logout } from "./logout";
 import { update } from "./update";
 
-const userService = () => {};
+const UserService = () => { };
 
-userService.login = login;
-userService.logout = logout;
-userService.update = update;
+UserService.login = login;
+UserService.logout = logout;
+UserService.update = update;
 
-export { userService };
+export default UserService;
