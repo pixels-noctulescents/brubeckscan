@@ -10,7 +10,7 @@
 </svelte:head>
 
 <div class="page container">
-  <!-- <Title {title} {subTitle} /> -->
+  <h1>Well</h1>
 </div>
 
 <style lang="scss">
@@ -18,5 +18,8 @@
     width: 100%;
     background-color: rgb(26, 224, 115);
     min-height: calc(100vh - 89px);
+    h1 {
+      color: white;
+    }
   }
 </style>
