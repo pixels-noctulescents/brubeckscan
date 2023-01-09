@@ -24,4 +24,8 @@ format.getFromNow = (date: string) => {
   return fromNow;
 }
 
+format.numberWithSpaces = (x: number) => {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+}
+
 export { format };

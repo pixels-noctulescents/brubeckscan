@@ -70,7 +70,12 @@
     <div><Remove {favorite} /></div>
   </div>
   <div class="row">
-    {favorite.address}
+    Address | {favorite.address}
+  </div>
+  <div class="row">
+    {#if node?.claimedRewardCodes[0]}
+      {node.claimedRewardCodes[0].id}
+    {/if}
   </div>
   <div class="row">
     <div>{favorite.name}</div>
@@ -102,7 +107,7 @@
           {#if loading}
             <Loader />
           {:else}
-            {node.dataToBeReceived} DATA
+            {format.numberWithSpaces(node.dataToBeReceived)} DATA
           {/if}
         </div>
       </div>
@@ -112,7 +117,7 @@
           {#if loading}
             <Loader />
           {:else}
-            {node.dataStaked} DATA
+            {format.numberWithSpaces(node.dataStaked)} DATA
           {/if}
         </div>
       </div>
@@ -122,7 +127,7 @@
           {#if loading}
             <Loader />
           {:else}
-            {node.dataSent} DATA
+            {format.numberWithSpaces(node.dataSent)} DATA
           {/if}
         </div>
       </div>
@@ -132,7 +137,7 @@
           {#if loading}
             <Loader />
           {:else}
-            {node.totalRewardsInData} DATA
+            {format.numberWithSpaces(node.totalRewardsInData)} DATA
           {/if}
         </div>
       </div>

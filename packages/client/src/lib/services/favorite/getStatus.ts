@@ -23,6 +23,12 @@ export function getStatus(networkCodes: any[], nodeCodes: any[]): boolean {
     if (beforeLatestNetworkCode === latestNodeCode) {
         return true;
     }
+    if (latestNodeCode === beforeLatestNetworkCode) {
+        return true;
+    }
+    if (beforeLatestNodeCode === latestNetworkCode) {
+        return true;
+    }
 
     return false;
 }
