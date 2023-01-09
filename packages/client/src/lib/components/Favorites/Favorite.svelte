@@ -70,14 +70,6 @@
     <div><Remove {favorite} /></div>
   </div>
   <div class="row">
-    Address | {favorite.address}
-  </div>
-  <div class="row">
-    {#if node?.claimedRewardCodes[0]}
-      {node.claimedRewardCodes[0].id}
-    {/if}
-  </div>
-  <div class="row">
     <div>{favorite.name}</div>
     <div in:scale>
       {#if loading}
@@ -91,6 +83,12 @@
   </div>
   <div class="row">
     <div class="stats">
+      <div class="stat">
+        <div class="label">Address</div>
+        <div class="value">
+          <div>{favorite.address}</div>
+        </div>
+      </div>
       <div class="stat">
         <div class="label">Latest claim</div>
         <div class="value">
@@ -138,6 +136,16 @@
             <Loader />
           {:else}
             {format.numberWithSpaces(node.totalRewardsInData)} DATA
+          {/if}
+        </div>
+      </div>
+      <div class="stat">
+        <div class="label">Latest code</div>
+        <div class="value">
+          {#if loading}
+            <Loader />
+          {:else if node?.claimedRewardCodes[0]}
+            {node.claimedRewardCodes[0].id}
           {/if}
         </div>
       </div>
