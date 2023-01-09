@@ -70,7 +70,7 @@
     <div><Remove {favorite} /></div>
   </div>
   <div class="row">
-    <div>{favorite.name}</div>
+    <div><h4>{favorite.name}</h4></div>
     <div in:scale>
       {#if loading}
         <Loader />

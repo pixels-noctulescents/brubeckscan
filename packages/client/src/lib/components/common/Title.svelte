@@ -6,11 +6,7 @@
   export let subTitle: string = "";
 </script>
 
-<div
-  in:slide
-  class="title responsive"
-  style="{generate.getRandomBackground()}}"
->
+<div in:slide class="title responsive">
   <h1>{title}</h1>
   <h4 class="subtitle">{subTitle}</h4>
 </div>
