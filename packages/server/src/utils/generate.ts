@@ -1,4 +1,6 @@
-const generate = () => {};
+import type { Node } from "@brubeckscan/common/types";
+
+const generate = () => { };
 
 generate.randomGradient = () => {
   function getRandomColor() {
@@ -22,5 +24,25 @@ generate.randomGradient = () => {
 
   return backgroundColor;
 };
+
+generate.emptyNode = (): Node => {
+  const node: Node = {
+    address: "",
+    polygonScanURL: "",
+    dataStaked: 0,
+    totalRewardsInData: 0,
+    dataSent: 0,
+    dataToBeReceived: 0,
+    firstClaim: null,
+    lastClaim: null,
+    payouts: [],
+    claimCount: 0,
+    claimPercentage: 0,
+    claimedRewardCodes: [],
+    status: false,
+  };
+
+  return node;
+}
 
 export { generate };

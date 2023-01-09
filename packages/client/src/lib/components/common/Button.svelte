@@ -42,19 +42,4 @@
       box-shadow: 1px 1px var(--dark);
     }
   }
-
-  .neutral:hover {
-    color: var(--dark);
-    border-color: var(--dark);
-  }
-
-  .alert:hover {
-    color: var(--alert);
-    border-color: var(--alert);
-  }
-
-  .action:hover {
-    color: var(--main);
-    border-color: var(--main);
-  }
 </style>

@@ -21,7 +21,7 @@
 
 {#if $user}
   <div class="responsive">
-    <div class="container module" in:scale>
+    <div class="container module">
       <div class="background">
         <img src={iconUrl} alt="A generated icon" />
       </div>

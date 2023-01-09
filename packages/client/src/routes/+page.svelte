@@ -1,8 +1,7 @@
 <script lang="ts">
   import Title from "$lib/components/common/Title.svelte";
 
-  const title = "Home";
-  const subTitle = "Welcome";
+  const title = "BrubeckScan";
 </script>
 
 <svelte:head>
@@ -10,16 +9,13 @@
 </svelte:head>
 
 <div class="page container">
-  <h1>Well</h1>
+  <Title {title} color="red" />
 </div>
 
 <style lang="scss">
   .container {
     width: 100%;
-    background-color: rgb(26, 224, 115);
+    background-color: rgb(104, 112, 179);
     min-height: calc(100vh - 89px);
-    h1 {
-      color: white;
-    }
   }
 </style>

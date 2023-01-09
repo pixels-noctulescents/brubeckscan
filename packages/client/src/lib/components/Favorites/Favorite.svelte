@@ -60,7 +60,7 @@
 </script>
 
 <!-- Component -->
-<div in:scale class="module responsive container">
+<div class="module responsive container">
   <div class="row">
     <img
       src={`https://avatars.dicebear.com/api/identicon/${favorite.address}.svg`}
@@ -71,7 +71,7 @@
   </div>
   <div class="row">
     <div><h4>{favorite.name}</h4></div>
-    <div in:scale>
+    <div>
       {#if loading}
         <Loader />
       {:else if node.status}

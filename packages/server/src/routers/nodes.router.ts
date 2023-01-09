@@ -1,5 +1,5 @@
 import express from "express";
-import { nodesController } from "../controllers/nodes/nodes.controller";
+import NodeController from "../controllers/nodes/nodes.controller";
 import { validateEthAddress } from "../middlewares/validate/ethAddress";
 
 const nodesRouter = express.Router();
@@ -8,7 +8,14 @@ const nodesRouter = express.Router();
 nodesRouter.get(
   "/stats/:address",
   [validateEthAddress],
-  nodesController.getNodeStats
+  NodeController.getNodeStats
+);
+
+// Retrieve information for every favorites
+nodesRouter.get(
+  "/user/:address",
+  [validateEthAddress],
+  NodeController.getAllFromUser
 );
 
 export { nodesRouter };

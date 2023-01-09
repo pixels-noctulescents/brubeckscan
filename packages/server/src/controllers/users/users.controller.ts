@@ -1,8 +1,8 @@
 import { Request, Response, NextFunction } from "express";
-import { usersDAO } from "../../dao/users/users.dao";
+import UsersDAO from "../../dao/users/users.dao";
 import { sender } from "../../utils/sender";
 
-const usersController = () => {};
+const usersController = () => { };
 
 usersController.count = async (
   req: Request,
@@ -10,7 +10,7 @@ usersController.count = async (
   next: NextFunction
 ) => {
   try {
-    const count = await usersDAO.count();
+    const count = await UsersDAO.count();
     return sender.success(res, { users: { count } });
   } catch (e) {
     next(e);
@@ -23,7 +23,7 @@ usersController.create = async (
   next: NextFunction
 ) => {
   try {
-    const user = await usersDAO.create(req.params.address);
+    const user = await UsersDAO.create(req.params.address);
     return sender.success(res, { user });
   } catch (e) {
     next(e);
@@ -36,7 +36,7 @@ usersController.find = async (
   next: NextFunction
 ) => {
   try {
-    const user = await usersDAO.find(req.params.address);
+    const user = await UsersDAO.find(req.params.address);
 
     if (!user) {
       return sender.failure(res, { user: "User not found." }, 404);
@@ -54,7 +54,7 @@ usersController.delete = async (
   next: NextFunction
 ) => {
   try {
-    const user = await usersDAO.delete(req.params.address);
+    const user = await UsersDAO.delete(req.params.address);
 
     return sender.success(res, { user });
   } catch (e) {
@@ -68,12 +68,13 @@ usersController.update = async (
   next: NextFunction
 ) => {
   try {
-    const user = await usersDAO.update(req.params.address, req.body);
+    const user = await UsersDAO.update(req.params.address, req.body);
 
     return sender.success(res, { user });
   } catch (e) {
     next(e);
   }
 };
+
 
 export { usersController };

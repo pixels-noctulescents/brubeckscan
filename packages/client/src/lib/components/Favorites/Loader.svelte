@@ -2,7 +2,7 @@
   import { scale } from "svelte/transition";
 </script>
 
-<div in:scale>
+<div>
   <p>...</p>
 </div>
 

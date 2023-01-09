@@ -1,8 +1,8 @@
 import { prisma } from "../../clients/prisma";
 
-const usersDAO = () => { };
+const UsersDAO = () => { };
 
-usersDAO.count = async () => {
+UsersDAO.count = async () => {
   try {
     const count = await prisma.user.count();
     return count;
@@ -11,7 +11,7 @@ usersDAO.count = async () => {
   }
 };
 
-usersDAO.update = async (address: string, data: any) => {
+UsersDAO.update = async (address: string, data: any) => {
   try {
     const user = await prisma.user.update({
       where: {
@@ -29,7 +29,7 @@ usersDAO.update = async (address: string, data: any) => {
   }
 };
 
-usersDAO.create = async (address: string) => {
+UsersDAO.create = async (address: string) => {
   try {
     let user;
 
@@ -55,7 +55,7 @@ usersDAO.create = async (address: string) => {
   }
 };
 
-usersDAO.find = async (address: string) => {
+UsersDAO.find = async (address: string) => {
   const user = await prisma.user.findUnique({
     where: {
       address: address,
@@ -72,7 +72,7 @@ usersDAO.find = async (address: string) => {
   return user;
 };
 
-usersDAO.delete = async (address: string) => {
+UsersDAO.delete = async (address: string) => {
   const user = await prisma.user.delete({
     where: {
       address: address,
@@ -85,4 +85,4 @@ usersDAO.delete = async (address: string) => {
   return user;
 };
 
-export { usersDAO };
+export default UsersDAO;

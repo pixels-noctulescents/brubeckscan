@@ -2,8 +2,20 @@ import { getStats } from "./getStats";
 import { getRewards } from "./getRewards";
 import { getDataSent } from "./getDataSent";
 import { getDataStaked } from "./getDataStaked";
+import { formatNodeStats } from "../../../utils/format";
+import type { Node } from "@brubeckscan/common/types";
+import { generate } from "../../../utils/generate";
+import { cache } from "../../../clients/cache";
 
-export async function getNodeStats(address: string) {
+export async function getNodeStats(address: string): Promise<Node | undefined> {
+  const cached: Node | undefined = cache.get(`node/${address}`);
+
+  if (cached as any) {
+    return cached;
+  }
+
+  let node = generate.emptyNode();
+
   try {
     const requests = [
       getStats(address),
@@ -22,8 +34,15 @@ export async function getNodeStats(address: string) {
       })
     );
 
-    return data;
+    // Check if all promises have resolved before data aggregation
+    if (data.length === requests.length) {
+      node = await formatNodeStats(data, address);
+    }
+
+    cache.set(`node/${address}`, node, 30);
+
+    return node;
   } catch (e) {
-    console.log(e);
+    console.error(e);
   }
 }

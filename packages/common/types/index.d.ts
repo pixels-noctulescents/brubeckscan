@@ -6,9 +6,11 @@ export interface Node {
   dataSent: number;
   dataToBeReceived: number;
   payouts: Payout[];
+  firstClaim: RewardCode | null;
+  lastClaim: RewardCode | null;
   claimCount: number;
   claimPercentage: number;
-  claimedRewardCodes: ClaimedRewardCode[];
+  claimedRewardCodes: RewardCode[];
   status: boolean;
 }
 
@@ -17,7 +19,7 @@ export interface Payout {
   timestamp: string;
 }
 
-export interface ClaimedRewardCode {
+export interface RewardCode {
   id: string;
   claimTime: string;
 }
@@ -48,7 +50,7 @@ export interface RealTimePrices {
 
 export interface NetworkStats {
   stats: Stats;
-  lastRewards: RewardCode[];
+  lastRewards: NetworkRewardCode[];
 }
 
 export interface Stats {
@@ -60,7 +62,7 @@ export interface Stats {
   SPOTDATASTAKED: number;
 }
 
-export interface RewardCode {
+export interface NetworkRewardCode {
   code: string;
   topologySize: number;
   receivedClaims: number;
@@ -68,11 +70,12 @@ export interface RewardCode {
 }
 
 export interface FavoritesTotals {
-  totalDataStaked: number;
-  totalRewards: number;
-  totalDataToBeReceived: number;
-  totalDataSent: number;
-  statuses: boolean[];
+  nodes: number,
+  staked: number;
+  rewards: number;
+  toBeReceived: number;
+  sent: number;
+  statuses: number;
 }
 
 export type ButtonType = "neutral" | "action" | "alert";
