@@ -5,5 +5,5 @@ export async function logout() {
   user.set({ address: "", createdAt: "", updatedAt: "", mainColor: "black", theme: "dark", Favorite: [] });
   isConnected.set(false);
   favorites.set([]);
-  window.location.replace("/");
+  window.location.href = "/";
 }
