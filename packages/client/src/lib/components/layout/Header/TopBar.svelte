@@ -1,14 +1,10 @@
 <script lang="ts">
   import Prices from "./Prices.svelte";
-  import NetworkStatus from "./NetworkStatus.svelte";
-  import LatestRewardCode from "./LatestRewardCode.svelte";
   import ThemeSelector from "./ThemeSelector.svelte";
 </script>
 
 <div class="container topbar">
   <Prices />
-  <LatestRewardCode />
-  <NetworkStatus />
   <ThemeSelector />
 </div>
 

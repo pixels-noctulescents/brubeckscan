@@ -6,6 +6,7 @@ const networkService = () => { };
 networkService.init = async () => {
   const stats = await send("networks/stats");
   network.set(stats.data.stats);
+  return true;
 };
 
 export { networkService };
