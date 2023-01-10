@@ -12,7 +12,7 @@
   <Title {title} />
 </div>
 
-<style lang="scss">
+<style>
   .container {
     width: 100%;
     min-height: calc(100vh - 89px);

@@ -15,5 +15,5 @@
   <Profile />
 </div>
 
-<style lang="scss">
+<style>
 </style>

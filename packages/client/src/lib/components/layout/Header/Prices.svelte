@@ -7,7 +7,7 @@
   <div>DATA | {$prices.DATAUSDT || "/"} USDT</div>
 </div>
 
-<style lang="scss">
+<style>
   .prices {
     display: flex;
     align-items: center;

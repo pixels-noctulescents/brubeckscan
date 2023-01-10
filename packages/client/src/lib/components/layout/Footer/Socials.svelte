@@ -68,7 +68,7 @@
   </a>
 </div>
 
-<style lang="scss">
+<style>
   .container {
     display: flex;
     flex-direction: row;

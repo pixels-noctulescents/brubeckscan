@@ -1,12 +1,14 @@
 <script lang="ts">
   import Prices from "./Prices.svelte";
+  import Connect from "$lib/components/common/Connect.svelte";
 </script>
 
 <div class="container">
   <Prices />
+  <Connect />
 </div>
 
-<style lang="scss">
+<style>
   .container {
     width: 100%;
     display: flex;

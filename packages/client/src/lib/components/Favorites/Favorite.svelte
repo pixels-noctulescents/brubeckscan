@@ -47,27 +47,28 @@
   </div>
 </div>
 
-<style lang="scss">
+<style>
   .icon {
     width: 30px;
-    &.gray {
-      filter: grayscale(1);
-    }
+  }
+  .gray {
+    filter: grayscale(1);
   }
   .container {
     display: flex;
     flex-direction: column;
     gap: 20px;
     justify-content: space-between;
-    .actions {
-      display: flex;
-      gap: 20px;
-    }
-    .row {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-    }
+  }
+
+  .container .actions {
+    display: flex;
+    gap: 20px;
+  }
+  .container .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 </style>

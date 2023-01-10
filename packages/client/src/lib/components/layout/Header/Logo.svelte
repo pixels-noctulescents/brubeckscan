@@ -5,7 +5,7 @@
   <p>BRUBECKSCAN</p>
 </div>
 
-<style lang="scss">
+<style>
   div {
     display: flex;
     gap: 20px;

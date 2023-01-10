@@ -1,6 +1,5 @@
 <script lang="ts">
   import Navigation from "./Navigation.svelte";
-  import Connect from "$lib/components/common/Connect.svelte";
   import Logo from "./Logo.svelte";
   import TopBar from "./TopBar.svelte";
   import ThemeSelector from "$lib/components/common/ThemeSelector.svelte";
@@ -14,11 +13,10 @@
     <Logo />
     <Navigation />
     <ThemeSelector />
-    <Connect />
   </div>
 </header>
 
-<style lang="scss">
+<style>
   header {
     position: sticky;
     top: 0;

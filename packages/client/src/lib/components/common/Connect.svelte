@@ -17,19 +17,19 @@
   {#if $user}
     <p />
   {:else if $hasEthereumProvider}
-    <button on:click={handleConnect}
-      ><p>Connect</p>
-      <Icon icon="logos:metamask-icon" width="15" /></button
-    >
+    <button on:click={handleConnect}>
+      <p>Connect</p>
+      <Icon icon="logos:metamask-icon" width="15" />
+    </button>
   {:else}
-    <button
-      ><p>Get Metamask</p>
-      <Icon icon="logos:metamask-icon" width="15" /></button
-    >
+    <button>
+      <p>Get Metamask</p>
+      <Icon icon="logos:metamask-icon" width="15" />
+    </button>
   {/if}
 </div>
 
-<style lang="scss">
+<style>
   button {
     display: flex;
     flex-direction: row;
@@ -41,11 +41,12 @@
     gap: 10px;
     font-size: 10px;
     border: 1px solid lightgray;
-    &:hover {
-      cursor: pointer;
-      user-select: none;
-      border: 1px solid rgb(32, 32, 32);
-      box-shadow: 1px 1px black;
-    }
+  }
+
+  button:hover {
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid rgb(32, 32, 32);
+    box-shadow: 1px 1px black;
   }
 </style>

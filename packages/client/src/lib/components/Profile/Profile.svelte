@@ -34,23 +34,24 @@
   </div>
 {/if}
 
-<style lang="scss">
+<style>
   .container {
     display: flex;
     flex-direction: row;
     width: 100%;
     gap: 20px;
-    .stats {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      gap: 10px;
-      padding: 10px;
-      .stat {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-    }
+  }
+
+  .container .stats {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    padding: 10px;
+  }
+  .container .stats .stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 </style>

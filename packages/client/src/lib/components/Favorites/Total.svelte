@@ -24,15 +24,14 @@
   </div>
 {/if}
 
-<style lang="scss">
+<style>
   .container {
     display: flex;
-    .data {
-      display: flex;
-      justify-content: space-between;
-      // background-color: red;
-      width: 100%;
-      align-items: center;
-    }
+  }
+  .container .data {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
   }
 </style>

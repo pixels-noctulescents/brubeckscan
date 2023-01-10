@@ -70,7 +70,7 @@
   </div>
 {/if}
 
-<style lang="scss">
+<style>
   .add {
     display: flex;
     justify-content: space-between;
@@ -80,19 +80,21 @@
     display: flex;
     width: 100%;
     z-index: 2;
-    form {
-      width: 100%;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      gap: 50px;
-      input {
-        font-size: 22px;
-        flex-grow: 1;
-        border-color: rgb(17, 10, 10);
-      }
-    }
+  }
+
+  .add form {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+  }
+
+  .add form input {
+    font-size: 22px;
+    flex-grow: 1;
+    border-color: rgb(17, 10, 10);
   }
   .page {
     position: relative;

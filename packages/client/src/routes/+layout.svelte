@@ -1,6 +1,4 @@
 <script lang="ts">
-  import "the-new-css-reset/css/reset.css";
-  import "$lib/assets/styles/styles.scss";
   import Header from "$lib/components/layout/Header/Header.svelte";
   import Footer from "$lib/components/layout/Footer/Footer.svelte";
   import { currentTheme } from "$lib/stores";
@@ -20,7 +18,7 @@
   <Footer />
 </div>
 
-<style lang="scss">
+<style>
   div {
     display: flex;
     flex-direction: column;

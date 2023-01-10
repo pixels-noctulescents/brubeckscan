@@ -127,7 +127,7 @@
   </div>
 </div>
 
-<style lang="scss">
+<style>
   .container {
     display: flex;
     flex-direction: row;
@@ -146,8 +146,9 @@
 
   p {
     margin-bottom: 7px;
-    &:hover {
-      text-decoration: underline;
-    }
+  }
+
+  p:hover {
+    text-decoration: underline;
   }
 </style>

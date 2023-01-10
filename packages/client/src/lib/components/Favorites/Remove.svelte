@@ -9,4 +9,4 @@
   <button formaction="?/deleteFavorite">Delete</button>
 </form>
 
-<style lang="scss"></style>
+<style></style>

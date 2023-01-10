@@ -10,7 +10,7 @@
   {/if}
 </nav>
 
-<style lang="scss">
+<style>
   nav {
     flex-grow: 1;
     display: flex;
