@@ -13,7 +13,7 @@
     width: 100%;
     padding: 80px;
     min-height: 200px;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(13, 21, 134);
     color: whitesmoke;
     display: flex;
     align-items: center;
