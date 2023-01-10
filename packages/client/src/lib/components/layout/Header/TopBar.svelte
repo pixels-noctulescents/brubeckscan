@@ -1,6 +1,6 @@
 <script lang="ts">
   import Prices from "./Prices.svelte";
-  import ThemeSelector from "./ThemeSelector.svelte";
+  import ThemeSelector from "$lib/components/common/ThemeSelector.svelte";
 </script>
 
 <div class="container topbar">

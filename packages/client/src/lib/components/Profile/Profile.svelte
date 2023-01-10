@@ -1,29 +1,11 @@
 <script lang="ts">
-  import { user } from "$lib/stores/user";
-  import UserService from "$lib/services/user";
-  import ThemeSelector from "../layout/Header/ThemeSelector.svelte";
-
-  $: data = $user;
-  $: iconUrl = `https://avatars.dicebear.com/api/identicon/${$user.address}.svg`;
-
-  async function handleChange(e: any) {
-    try {
-      const selectedValue = e.target.value;
-      const user = await UserService.update(data.address, {
-        mainColor: selectedValue,
-      });
-    } catch (e) {
-      console.log(e);
-    }
-  }
+  import { user } from "$lib/stores";
+  import ThemeSelector from "../common/ThemeSelector.svelte";
 </script>
 
 {#if $user}
   <div class="responsive">
     <div class="container module">
-      <div class="background">
-        <img src={iconUrl} alt="A generated icon" />
-      </div>
       <div class="stats">
         <div class="stat">
           <div class="label">Address</div>
@@ -49,13 +31,6 @@
         </div>
         <div class="stat">
           <div class="label">Main Color</div>
-          <div class="value">
-            <input
-              type="color"
-              value={$user.mainColor}
-              on:change={handleChange}
-            />
-          </div>
         </div>
       </div>
     </div>
@@ -63,10 +38,6 @@
 {/if}
 
 <style lang="scss">
-  input {
-    width: 20px;
-    height: 20px;
-  }
   .container {
     display: flex;
     flex-direction: row;
@@ -84,15 +55,5 @@
         align-items: center;
       }
     }
-    .background {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 20%;
-    }
-  }
-
-  img {
-    width: 50px;
   }
 </style>

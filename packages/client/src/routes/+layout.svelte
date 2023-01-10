@@ -3,18 +3,16 @@
   import "$lib/assets/styles/styles.scss";
   import Header from "$lib/components/layout/Header/Header.svelte";
   import Footer from "$lib/components/layout/Footer/Footer.svelte";
-  import { networkService } from "$lib/services/network";
+  import { currentTheme } from "$lib/stores";
   import { authService } from "$lib/services/auth";
-  import { theme } from "$lib/stores/theme";
   import { onMount } from "svelte";
 
   onMount(async () => {
-    await networkService.init();
     await authService.init();
   });
 </script>
 
-<div class={`${$theme} page`}>
+<div class={`${$currentTheme} page`}>
   <Header />
   <main>
     <slot />

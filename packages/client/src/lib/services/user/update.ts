@@ -1,5 +1,5 @@
 import send from "$lib/utils/send";
-import { user } from "$lib/stores/user";
+import { user } from "$lib/stores";
 
 export async function update(address: string, data: any) {
   try {

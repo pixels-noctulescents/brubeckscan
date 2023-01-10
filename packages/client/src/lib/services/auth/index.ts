@@ -1,18 +1,15 @@
 import detectEthereumProvider from "@metamask/detect-provider";
 import { browser } from "$app/environment";
 import UserService from "../user";
-import { hasEthereumProvider, hasMetamask } from "$lib/stores/provider";
+import { hasEthereumProvider } from "$lib/stores";
 
 export const authService = {
   init: async () => {
     if (browser) {
       const provider = await detectEthereumProvider();
       if (provider) {
-        hasEthereumProvider.set(true);
-        // Check if the ethereum provider is MetaMask
         if (provider.isMetaMask) {
-          hasMetamask.set(true);
-          // Check existing connection
+          hasEthereumProvider.set(true);
           await checkForExistingConnection();
           // Add account event
           (window as any).ethereum.on(

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { prices } from "$lib/stores/prices";
+  import { prices } from "$lib/stores";
 </script>
 
 <div class="prices">

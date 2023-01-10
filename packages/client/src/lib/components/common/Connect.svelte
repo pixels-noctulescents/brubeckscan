@@ -1,18 +1,12 @@
 <script lang="ts">
-  import { hasMetamask } from "$lib/stores/provider";
-  import { isConnected } from "$lib/stores/user";
+  import { user, hasEthereumProvider } from "$lib/stores";
   import Icon from "@iconify/svelte";
 
-  let isConnecting = false;
-
-  async function connect() {
+  async function handleConnect() {
     try {
-      if (isConnecting) return;
-      isConnecting = true;
-      const connect = await (window as any).ethereum.request({
+      const request = await (window as any).ethereum.request({
         method: "eth_requestAccounts",
       });
-      isConnecting = false;
     } catch (e) {
       console.log(e);
     }
@@ -20,10 +14,10 @@
 </script>
 
 <div>
-  {#if $isConnected}
+  {#if $user}
     <p />
-  {:else if $hasMetamask}
-    <button on:click={connect}
+  {:else if $hasEthereumProvider}
+    <button on:click={handleConnect}
       ><p>Connect</p>
       <Icon icon="logos:metamask-icon" width="15" /></button
     >

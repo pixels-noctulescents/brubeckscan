@@ -1,9 +1,9 @@
 <script lang="ts">
   import type { PageData, ActionData } from "./$types";
   import { enhance } from "$app/forms";
-  import { user } from "$lib/stores/user";
+  import { user } from "$lib/stores";
   import Title from "$lib/components/common/Title.svelte";
-  import Totals from "$lib/components/Favorites/Totals.svelte";
+  import Totals from "$lib/components/Favorites/Total.svelte";
   import Favorite from "$lib/components/Favorites/Favorite.svelte";
   import { fade } from "svelte/transition";
 
@@ -18,55 +18,57 @@
   <title>BrubeckScan | Favorites</title>
 </svelte:head>
 
-<div class="page">
-  <!-- Title -->
-  <Title {title} {subTitle} />
-  <!-- Content -->
-  <div class="responsive">
-    <div class="module add">
-      <!-- Form message -->
+{#if $user}
+  <div class="page">
+    <!-- Title -->
+    <Title {title} {subTitle} />
+    <!-- Content -->
+    <div class="responsive">
+      <div class="module add">
+        <!-- Form message -->
 
-      <!-- Add form -->
-      <form method="POST" use:enhance>
-        <input type="hidden" name="userAddress" value={$user.address} />
-        <input
-          type="hidden"
-          name="name"
-          value={`Node ${data.overview.favorites.length + 1}`}
-        />
-        <input
-          type="text"
-          name="favoriteAddress"
-          placeholder="Enter a node address"
-          required={true}
-        />
-        <!-- Message -->
-        {#if form}
-          <div class="messages" in:fade>
-            {#if form.error}
-              <p class="ko">{form.error}</p>
-            {/if}
-            {#if form.success}
-              <p class="ok">{form.message}</p>
-            {/if}
-          </div>
-        {/if}
-        <!-- Button -->
-        <button formaction="?/saveFavorite">Add</button>
-      </form>
-    </div>
+        <!-- Add form -->
+        <form method="POST" use:enhance>
+          <input type="hidden" name="userAddress" value={$user.address} />
+          <input
+            type="hidden"
+            name="name"
+            value={`Node ${data.overview.favorites.length + 1}`}
+          />
+          <input
+            type="text"
+            name="favoriteAddress"
+            placeholder="Enter a node address"
+            required={true}
+          />
+          <!-- Message -->
+          {#if form}
+            <div class="messages" in:fade>
+              {#if form.error}
+                <p class="ko">{form.error}</p>
+              {/if}
+              {#if form.success}
+                <p class="ok">{form.message}</p>
+              {/if}
+            </div>
+          {/if}
+          <!-- Button -->
+          <button formaction="?/saveFavorite">Add</button>
+        </form>
+      </div>
 
-    <!-- Totals -->
-    <Totals totals={data.overview.totals} />
+      <!-- Totals -->
+      <Totals totals={data.overview.totals} />
 
-    <!-- Favorites -->
-    <div class="favorites">
-      {#each data.overview.favorites as favorite (favorite.db.id)}
-        <Favorite {favorite} />
-      {/each}
+      <!-- Favorites -->
+      <div class="favorites">
+        {#each data.overview.favorites as favorite (favorite.db.id)}
+          <Favorite {favorite} />
+        {/each}
+      </div>
     </div>
   </div>
-</div>
+{/if}
 
 <style lang="scss">
   .add {

@@ -1,9 +1,6 @@
 import { io } from "socket.io-client";
 import { PUBLIC_SOCKET_URL } from "$env/static/public";
-import { prices } from "$lib/stores/prices";
-import { network } from "$lib/stores/network";
-import { usersCount } from "$lib/stores/usersCount";
-import { user } from "$lib/stores/user";
+import { prices, usersCount, user } from "$lib/stores";
 import { browser } from "$app/environment";
 import type { RealTimePrices } from "@brubeckscan/common/types";
 
@@ -21,10 +18,6 @@ if (browser) {
 
   socket.on("prices", (data: RealTimePrices) => {
     prices.set(data);
-  });
-
-  socket.on("stats", (data: any) => {
-    network.set(data);
   });
 
   socket.on("clientCount", (data: any) => {

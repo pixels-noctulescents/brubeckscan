@@ -1,3 +1,0 @@
-const generate = () => { };
-
-export { generate }

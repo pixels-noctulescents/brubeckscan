@@ -1,7 +1,7 @@
 import { redirect } from '@sveltejs/kit';
 import type { Overview } from "@brubeckscan/common/types";
 import type { PageLoad } from "./$types";
-import { user } from "$lib/stores/user";
+import { user } from "$lib/stores";
 import { get } from 'svelte/store';
 import send from '$lib/utils/send';
 

@@ -1,10 +1,10 @@
 <script lang="ts">
-  import { isConnected } from "$lib/stores/user";
+  import { user } from "$lib/stores";
 </script>
 
 <nav>
   <a href="/">Home</a>
-  {#if $isConnected}
+  {#if $user}
     <a href={`/favorites`}>Favorites</a>
     <a href={`/profile`}>Profile</a>
   {/if}

@@ -1,17 +1,16 @@
 <script lang="ts">
-  import { theme } from "$lib/stores/theme";
   import UserService from "$lib/services/user";
-  import { user } from "$lib/stores/user";
+  import { user, currentTheme } from "$lib/stores";
   import FaMoon from "svelte-icons/fa/FaMoon.svelte";
   import MdWbSunny from "svelte-icons/md/MdWbSunny.svelte";
 </script>
 
 <div class="container">
-  {#if $theme === "dark"}
+  {#if $currentTheme === "dark"}
     <div
       class="icon"
       on:click|preventDefault={async () => {
-        theme.set("light");
+        currentTheme.set("light");
         if ($user) {
           await UserService.update($user.address, { theme: "light" });
         }
@@ -24,7 +23,7 @@
     <div
       class="icon"
       on:click|preventDefault={async () => {
-        theme.set("dark");
+        currentTheme.set("dark");
         if ($user) {
           await UserService.update($user.address, { theme: "dark" });
         }

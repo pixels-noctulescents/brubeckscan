@@ -1,34 +1,24 @@
-import { isConnected, user } from "$lib/stores/user";
-import type { User } from "@brubeckscan/common/types";
-import { theme } from "$lib/stores/theme";
-import { favorites } from "$lib/stores/favorites";
+import { user } from "$lib/stores";
 import send from "$lib/utils/send";
 
 export async function login(address: string) {
   try {
-    const exists = await send(`users/${address}`);
+    const exist = await send(`users/${address}`);
 
-    if (exists.status === "success") {
-      updateStores(exists.data.user);
-    } else {
+    // If the user exists, we log it - eg. Set the store
+    if (exist.status === "success") return user.set(exist.data.user);
+
+    // We create the account
+    if (exist.status === "fail") {
       const create = await send(`users/${address}`, "POST");
-      updateStores(create.data.user);
+      if (create.status === "success") {
+        return user.set(create.data.user);
+      }
     }
+
+    // Failed if arrived here so clear
+    return user.set(null);
   } catch (e) {
     console.log(e);
   }
-}
-
-export function updateStores(data: User) {
-  isConnected.set(true);
-  user.set({
-    address: data.address,
-    createdAt: data.createdAt,
-    updatedAt: data.updatedAt,
-    mainColor: data.mainColor,
-    theme: data.theme,
-    Favorite: data.Favorite
-  });
-  theme.set(data.theme);
-  favorites.set(data.Favorite);
 }
