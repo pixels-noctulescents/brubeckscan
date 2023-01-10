@@ -29,9 +29,6 @@
             <ThemeSelector />
           </div>
         </div>
-        <div class="stat">
-          <div class="label">Main Color</div>
-        </div>
       </div>
     </div>
   </div>

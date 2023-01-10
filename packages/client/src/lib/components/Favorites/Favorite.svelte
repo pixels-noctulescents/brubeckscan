@@ -3,49 +3,27 @@
   import type { Favorite } from "@brubeckscan/common/types/overview";
   import Remove from "./Remove.svelte";
   import { format } from "$lib/utils/format";
-  import { enhance } from "$app/forms";
-
   export let favorite: Favorite;
-
-  let newName = favorite.db.name;
-
-  let isEditing: boolean = false;
 </script>
 
 <div class="module responsive container" in:fade>
   <div class="row">
     <div class="name">
-      {#if isEditing}
-        <input type="text" bind:value={newName} />
-      {:else}
-        <h4>{favorite.db.name}</h4>
-      {/if}
+      <div>
+        <img
+          src={`https://avatars.dicebear.com/api/identicon/${favorite.db.address}.svg`}
+          alt="A generated icon"
+          class="icon {favorite.stats.status ? '' : 'gray'}"
+        />
+      </div>
     </div>
     <div class="actions">
       <Remove id={favorite.db.id} />
-      {#if isEditing}
-        <div>
-          <form use:enhance method="POST" on:submit={() => (isEditing = false)}>
-            <input type="hidden" value={newName} name="name" />
-            <input type="hidden" value={favorite.db.id} name="id" />
-            <button formaction="?/updateFavoriteName">Save</button>
-          </form>
-        </div>
-      {/if}
-      {#if !isEditing}
-        <button on:click={() => (isEditing = !isEditing)}>Edit</button>
-      {/if}
       <button>Extend</button>
     </div>
   </div>
   <div class="row">
-    <div>
-      <img
-        src={`https://avatars.dicebear.com/api/identicon/${favorite.db.address}.svg`}
-        alt="A generated icon"
-        class="icon {favorite.stats.status ? '' : 'gray'}"
-      />
-    </div>
+    <h4>{favorite.db.name}</h4>
     <div>
       {#if favorite.stats.status}
         <p class="ok">OK</p>
@@ -91,9 +69,5 @@
       justify-content: space-between;
       align-items: center;
     }
-  }
-
-  input {
-    font-size: 1.777rem;
   }
 </style>
