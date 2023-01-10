@@ -26,7 +26,7 @@
   <svelte:component this={Icon} />
 </button>
 
-<style lang="scss">
+<style>
   button {
     display: flex;
     justify-content: center;
@@ -37,9 +37,10 @@
     border: 1px solid transparent;
     border-radius: 5px;
     box-shadow: 1px 1px var transparent;
-    &:hover {
-      cursor: pointer;
-      box-shadow: 1px 1px var(--dark);
-    }
+  }
+
+  button:hover {
+    cursor: pointer;
+    box-shadow: 1px 1px var(--dark);
   }
 </style>
