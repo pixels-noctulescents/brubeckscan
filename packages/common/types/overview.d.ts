@@ -3,7 +3,7 @@ export interface Overview {
     favorites: Favorite[]
 }
 
-interface Totals {
+export interface Totals {
     nodes: number
     toBeReceived: number
     staked: number
@@ -12,7 +12,7 @@ interface Totals {
     statuses: number
 }
 
-interface Favorite {
+export interface Favorite {
     db: Db
     stats: Stats
 }
@@ -33,8 +33,8 @@ interface Stats {
     totalRewardsInData: number
     dataSent: number
     dataToBeReceived: number
-    firstClaim?: FirstClaim
-    lastClaim?: LastClaim
+    firstClaim: FirstClaim
+    lastClaim: LastClaim
     payouts: Payout[]
     claimCount: number
     claimPercentage: number

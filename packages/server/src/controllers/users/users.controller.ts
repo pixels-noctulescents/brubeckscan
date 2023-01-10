@@ -2,6 +2,7 @@ import { Request, Response, NextFunction } from "express";
 import UsersDAO from "../../dao/users/users.dao";
 import { sender } from "../../utils/sender";
 import { buildOverview } from "./buildOverview";
+import { cache } from "../../clients/cache";
 
 const usersController = () => { };
 
@@ -84,6 +85,12 @@ usersController.getOverview = async (
 ) => {
   try {
     const userAddress = req.params.address;
+
+    const cached = cache.get(`overview/${userAddress}`);
+
+    if (cached) {
+      return sender.success(res, { overview: cached });
+    }
 
     const exist = await UsersDAO.find(userAddress);
 

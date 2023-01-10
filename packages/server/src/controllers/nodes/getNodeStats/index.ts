@@ -39,7 +39,7 @@ export async function getNodeStats(address: string): Promise<Node | undefined> {
       node = await formatNodeStats(data, address);
     }
 
-    cache.set(`node/${address}`, node, 30);
+    cache.set(`node/${address}`, node, 60 * 2);
 
     return node;
   } catch (e) {

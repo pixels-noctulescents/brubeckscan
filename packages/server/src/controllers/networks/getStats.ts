@@ -19,7 +19,7 @@ export async function getStats(): Promise<NetworkStats> {
 
       const stats = formatNetworkStats(data);
 
-      cache.set("brubeckStats", stats, 60);
+      cache.set("brubeckStats", stats, 60 * 3);
 
       return stats;
     }

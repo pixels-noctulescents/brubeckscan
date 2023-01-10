@@ -1,6 +1,6 @@
 import type { Overview } from "./overview";
 
-export default Overview;
+export { Overview };
 
 export interface Node {
   address: string;
@@ -10,8 +10,8 @@ export interface Node {
   dataSent: number;
   dataToBeReceived: number;
   payouts: Payout[];
-  firstClaim: RewardCode | null;
-  lastClaim: RewardCode | null;
+  firstClaim?: RewardCode | null;
+  lastClaim?: RewardCode | null;
   claimCount: number;
   claimPercentage: number;
   claimedRewardCodes: RewardCode[];
