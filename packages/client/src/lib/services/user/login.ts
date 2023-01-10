@@ -1,12 +1,19 @@
-import { user } from "$lib/stores";
-import send from "$lib/utils/send";
+import { user, overview } from "$lib/stores";
+import send from "$lib/send";
 
 export async function login(address: string) {
   try {
     const exist = await send(`users/${address}`);
 
-    // If the user exists, we log it - eg. Set the store
-    if (exist.status === "success") return user.set(exist.data.user);
+    const response = await send(`users/${address}/overview`, undefined, undefined, fetch);
+
+    if (response) {
+      overview.set(response.data.overview)
+    }
+
+    if (exist.status === "success") {
+      return user.set(exist.data.user);
+    }
 
     // We create the account
     if (exist.status === "fail") {

@@ -1,40 +1,17 @@
 <script lang="ts">
   import "../app.css";
-  import Header from "$lib/components/layout/Header/Header.svelte";
-  import Footer from "$lib/components/layout/Footer/Footer.svelte";
-  import { currentTheme } from "$lib/stores";
-  import { authService } from "$lib/services/auth";
-  import { onMount } from "svelte";
-
-  onMount(async () => {
-    await authService.init();
-  });
+  import Header from "$lib/components/Header.svelte";
+  import Footer from "$lib/components/Footer.svelte";
+  import Title from "$lib/components/Title.svelte";
 </script>
 
-<div class={`${$currentTheme} page`}>
+<div class="flex flex-col justify-between items-center min-h-screen">
   <Header />
-  <main>
-    <slot />
+  <Title/>
+  <main class="flex flex-col grow w-full items-center bg-slate-200 min-h-[600px]">
+    <div class="flex w-full p-5 xl:max-w-screen-xl xl:px-0 py-10">
+      <slot />
+    </div>
   </main>
   <Footer />
 </div>
-
-<style>
-  div {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-  }
-
-  main {
-    display: flex;
-    width: 100%;
-    flex-grow: 1;
-    justify-content: center;
-    min-height: calc(100vh - 88px);
-    padding: 0px;
-  }
-</style>

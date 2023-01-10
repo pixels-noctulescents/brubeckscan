@@ -1,4 +1,4 @@
-<div class="container">
+<div class="flex w-full justify-between text-center border-b pb-20">
   <div>
     <h5>DISCOVER</h5>
     <div>
@@ -65,24 +65,6 @@
     </div>
   </div>
   <div>
-    <h5>Developers</h5>
-    <div>
-      <a href="https://streamr.network/docs" target="_blank" rel="noreferrer">
-        <p>Docs</p>
-      </a>
-      <a href="https://streamr.network/fund/" target="_blank" rel="noreferrer">
-        <p>Data Fund</p>
-      </a>
-      <a
-        href="https://streamr.network/design/"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <p>Design Assets</p>
-      </a>
-    </div>
-  </div>
-  <div>
     <h5>Apps</h5>
     <div>
       <a
@@ -108,37 +90,9 @@
       </a>
     </div>
   </div>
-  <div>
-    <h5>Contact</h5>
-    <div>
-      <a href="mailto:contact@streamr.com" target="_blank" rel="noreferrer">
-        <p>General</p>
-      </a>
-      <a href="mailto:media@streamr.com" target="_blank" rel="noreferrer">
-        <p>Media</p>
-      </a>
-      <a href="mailto:jobs@streamr.com" target="_blank" rel="noreferrer">
-        <p>Jobs</p>
-      </a>
-      <a href="mailto:labs@streamr.com" target="_blank" rel="noreferrer">
-        <p>Business</p>
-      </a>
-    </div>
-  </div>
 </div>
 
 <style>
-  .container {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
-    max-width: 1200px;
-    width: 100%;
-    border-bottom: 1px solid lightgray;
-    padding-bottom: 60px;
-  }
-
   h5 {
     text-transform: uppercase;
     margin-bottom: 20px;

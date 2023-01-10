@@ -1,4 +1,4 @@
-import send from "$lib/utils/send";
+import send from "$lib/send";
 import { user } from "$lib/stores";
 
 export async function update(address: string, data: any) {

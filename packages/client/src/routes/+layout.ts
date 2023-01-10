@@ -1,11 +1,6 @@
+import EthereumProviderService from "$lib/services/EthereumProvider";
 import type { LayoutLoad } from "./$types";
 
-export const ssr = false;
-
 export const load = (async ({ params, fetch }) => {
-  try {
-    return {};
-  } catch (e) {
-    console.log(e);
-  }
+  await EthereumProviderService.init();
 }) satisfies LayoutLoad;

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import Button from "./Button.svelte";
   import UserService from "$lib/services/user";
   import { user, currentTheme } from "$lib/stores";
 
@@ -22,12 +23,7 @@
 </script>
 
 <div>
-  {#if $currentTheme === "dark"}
-    <button on:click={select}>Light</button>
-  {:else}
-    <button on:click={select}>Dark</button>
-  {/if}
+  <Button handle={select}>
+    <p>{$currentTheme === "dark" ? "light" : "dark"}</p>
+  </Button>
 </div>
-
-<style>
-</style>
