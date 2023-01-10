@@ -3,6 +3,7 @@
   import Connect from "$lib/components/common/Connect.svelte";
   import Logo from "./Logo.svelte";
   import TopBar from "./TopBar.svelte";
+  import ThemeSelector from "$lib/components/common/ThemeSelector.svelte";
 </script>
 
 <header class="transparent">
@@ -12,6 +13,7 @@
   <div class="header">
     <Logo />
     <Navigation />
+    <ThemeSelector />
     <Connect />
   </div>
 </header>

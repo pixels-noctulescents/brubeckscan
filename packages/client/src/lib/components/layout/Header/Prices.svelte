@@ -10,8 +10,8 @@
 <style lang="scss">
   .prices {
     display: flex;
-    flex-direction: row;
+    align-items: center;
     gap: 20px;
-    width: 300px;
+    font-size: 12px;
   }
 </style>

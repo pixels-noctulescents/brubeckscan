@@ -1,19 +1,66 @@
 button {
-  padding: 5px 10px;
-  border: 1px solid;
-  transition-duration: 0.3s;
-  border-radius: 8px;
-  font-size: 10px;
-  &:hover {
-    cursor: pointer;
-  }
+  appearance: none;
+  background-color: #FAFBFC;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+  box-sizing: border-box;
+  color: #24292E;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  padding: 6px 16px;
+  position: relative;
+  transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+  word-wrap: break-word;
 }
+
+button:hover {
+  background-color: #F3F4F6;
+  text-decoration: none;
+  transition-duration: 0.1s;
+}
+
+button:disabled {
+  background-color: #FAFBFC;
+  border-color: rgba(27, 31, 35, 0.15);
+  color: #959DA5;
+  cursor: default;
+}
+
+button:active {
+  background-color: #EDEFF2;
+  box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
+  transition: none 0s;
+}
+
+button:focus {
+  outline: 1px transparent;
+}
+
+button:before {
+  display: none;
+}
+
+button:-webkit-details-marker {
+  display: none;
+}
+
 .ko {
   color: red;
 }
 
 .ok {
-  color: rgb(56, 209, 56);
+  color: rgb(87, 230, 87);
 }
 
 .module {
@@ -25,10 +72,6 @@ button {
 .dark.page {
   background-color: rgb(10, 21, 43);
   color: whitesmoke;
-  button:hover {
-    background-color: rgb(245, 243, 243);
-    color: rgb(17, 16, 16);
-  }
   .header {
     background: hsla(0, 6%, 13%, 0.8);
     border-bottom: 1px solid rgb(31, 31, 31);
@@ -47,10 +90,6 @@ button {
 }
 
 .light.page {
-  button:hover {
-    background-color: black;
-    color: whitesmoke;
-  }
   background-color: #f5f5f5;
   color: rgb(32, 32, 32);
   .header {
@@ -65,7 +104,7 @@ button {
     box-shadow: 1px 1px 32px rgba(151, 151, 151, 0.185);
   }
   .topbar {
-    background-color: rgba(32, 32, 32);
+    background-color: rgb(36, 59, 88);
     color: whitesmoke;
   }
 }
