@@ -2,7 +2,7 @@ import { NextFunction, Request, Response } from "express";
 import { favoritesDAO } from "../../dao/favorites/favorites.dao";
 import { sender } from "../../utils/sender";
 
-const favoritesController = () => {};
+const favoritesController = () => { };
 
 favoritesController.find = async (
   req: Request,
@@ -14,7 +14,7 @@ favoritesController.find = async (
 
     const favorite = await favoritesDAO.find(favoriteId);
 
-    return sender.success(res, {  favorite});
+    return sender.success(res, { favorite });
   } catch (e) {
     next(e);
   }
@@ -30,11 +30,13 @@ favoritesController.create = async (
     const favoriteAddress = req.body.favoriteAddress;
     const favoriteName = req.body.favoriteName;
 
-    if(!userAddress || !favoriteAddress || !favoriteName){
+    console.log(userAddress);
+
+    if (!userAddress || !favoriteAddress || !favoriteName) {
       return sender.failure(res, {}, 400);
     }
 
-    const favorite = await favoritesDAO.save(userAddress, favoriteAddress, favoriteName);
+    const favorite = await favoritesDAO.save(userAddress.toLowerCase(), favoriteAddress.toLowerCase().trim(), favoriteName);
 
     return sender.success(res, { favorite });
   } catch (e) {

@@ -24,7 +24,7 @@ export async function login(address: string) {
     }
 
     // Failed if arrived here so clear
-    return user.set(null);
+    return user.set(undefined);
   } catch (e) {
     console.log(e);
   }

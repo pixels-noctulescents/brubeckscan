@@ -15,10 +15,10 @@ export async function buildOverview(favorites: Favorite[]) {
     const nodes = await Promise.all(favorites.map(async (favorite) => {
         const stats = await getNodeStats(favorite.address);
         if (stats) {
-            totals.sent += stats.dataSent;
-            totals.staked += stats.dataStaked;
-            totals.toBeReceived += stats.dataToBeReceived;
-            totals.rewards += stats.totalRewardsInData;
+            totals.sent += stats.sent;
+            totals.staked += stats.staked;
+            totals.toBeReceived += stats.toBeReceived;
+            totals.rewards += stats.rewards;
         }
         return { db: favorite, stats };
     }))

@@ -17,7 +17,7 @@ export interface Favorite {
     stats: Stats
 }
 
-interface Db {
+export interface Db {
     id: string
     address: string
     createdAt: string
@@ -26,14 +26,13 @@ interface Db {
     name: string
 }
 
-interface Stats {
+export interface Stats {
     address: string
     status: boolean
-    dataStaked: number
-    totalRewardsInData: number
-    dataSent: number
-    dataToBeReceived: number
-    firstClaim: FirstClaim
+    staked: number
+    rewards: number
+    sent: number
+    toBeReceived: number
     lastClaim: LastClaim
     payouts: Payout[]
     claimCount: number
@@ -42,22 +41,17 @@ interface Stats {
     polygonScanURL: string
 }
 
-interface FirstClaim {
+export interface LastClaim {
     id: string
     claimTime: string
 }
 
-interface LastClaim {
-    id: string
-    claimTime: string
-}
-
-interface Payout {
+export interface Payout {
     value: string
     timestamp: string
 }
 
-interface ClaimedRewardCode {
+export interface ClaimedRewardCode {
     id: string
     claimTime: string
 }

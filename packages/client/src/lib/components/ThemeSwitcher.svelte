@@ -1,6 +1,6 @@
 <script lang="ts">
   import Button from "./Button.svelte";
-  import UserService from "$lib/services/user";
+  import UserService from "$lib/services/User";
   import { user, currentTheme } from "$lib/stores";
 
   async function select() {

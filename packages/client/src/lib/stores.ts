@@ -10,8 +10,8 @@ export const prices = writable<RealTimePrices>({
     EURUSDT: 0,
 });
 
-export const user = writable<User | null>(null);
+export const user = writable<User | undefined>(undefined);
 export const hasEthereumProvider = writable<boolean | undefined>(undefined);
 export const usersCount = writable<number>(0);
 export const currentTheme = writable<"light" | "dark">("light");
-export const overview = writable<Overview>()
+export const overview = writable<Overview | undefined>()

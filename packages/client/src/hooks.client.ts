@@ -1,1 +1,1 @@
-import { socket } from "$lib/services/socket";
+import { Socket } from "$lib/services/Socket";

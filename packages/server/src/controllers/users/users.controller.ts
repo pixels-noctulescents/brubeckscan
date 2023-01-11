@@ -86,12 +86,6 @@ usersController.getOverview = async (
   try {
     const userAddress = req.params.address;
 
-    const cached = cache.get(`overview/${userAddress}`);
-
-    if (cached) {
-      return sender.success(res, { overview: cached });
-    }
-
     const exist = await UsersDAO.find(userAddress);
 
     if (!exist) {

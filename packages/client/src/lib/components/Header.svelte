@@ -8,7 +8,7 @@
 
 <div class="flex items-center justify-center w-full bg-slate-900 text-stone-100 sticky top-0">
   <header class="flex flex-col items-center w-full">
-    <div class="w-full flex justify-between bg-black px-5 py-2">
+    <div class="w-full flex justify-between bg-slate-800 px-5 py-2">
       <Prices/>
       <Connect/>
     </div>

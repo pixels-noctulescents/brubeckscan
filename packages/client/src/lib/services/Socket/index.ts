@@ -4,7 +4,7 @@ import { prices, usersCount, user } from "$lib/stores";
 import { browser } from "$app/environment";
 import type { RealTimePrices } from "@brubeckscan/common/types";
 
-let socket = {};
+let Socket = {};
 
 if (browser) {
   const socket = io(PUBLIC_SOCKET_URL, { transports: ["websocket"] });
@@ -28,4 +28,4 @@ if (browser) {
     console.log(reason);
   });
 }
-export { socket };
+export { Socket };

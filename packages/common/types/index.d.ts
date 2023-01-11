@@ -5,12 +5,11 @@ export { Overview };
 export interface Node {
   address: string;
   polygonScanURL: string;
-  dataStaked: number;
-  totalRewardsInData: number;
-  dataSent: number;
-  dataToBeReceived: number;
+  staked: number;
+  rewards: number;
+  sent: number;
+  toBeReceived: number;
   payouts: Payout[];
-  firstClaim?: RewardCode | null;
   lastClaim?: RewardCode | null;
   claimCount: number;
   claimPercentage: number;
@@ -81,5 +80,3 @@ export interface FavoritesTotals {
   sent: number;
   statuses: number;
 }
-
-export type ButtonType = "neutral" | "action" | "alert";

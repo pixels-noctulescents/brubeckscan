@@ -1,6 +1,6 @@
 import detectEthereumProvider from "@metamask/detect-provider";
 import { browser } from "$app/environment";
-import UserService from "../user";
+import UserService from "../User";
 import { hasEthereumProvider } from "$lib/stores";
 
 const EthereumProviderService = {
