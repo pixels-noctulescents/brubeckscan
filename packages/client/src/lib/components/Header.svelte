@@ -6,11 +6,11 @@
 </script>
 
 <div class="flex items-center justify-center w-full text-stone-100 sticky top-0">
-  <header class="flex flex-col items-center w-full">
+  <header class="flex flex-col items-center w-full z-50">
     <div class="w-full flex justify-between bg-slate-900 px-5 py-2">
       <Prices/>
     </div>
-    <div class="w-full flex justify-between items-center px-5 py-2 bg-midnight">
+    <div class="w-full flex justify-between items-center px-5 py-2 bg-slate-800 border-b border-gray-500">
       <Logo />
       <Navigation />
       <Connect/>
