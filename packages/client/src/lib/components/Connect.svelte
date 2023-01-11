@@ -3,6 +3,8 @@
   import Icon from "@iconify/svelte";
   import Button from "$lib/components/Button.svelte";
 
+  const metamaskURL = "https://metamask.io/download/"
+
   async function handleConnect() {
     try {
       const request = await (window as any).ethereum.request({
@@ -22,15 +24,13 @@
       <Icon icon="logos:metamask-icon" width="15" />
     </Button>
     {:else}
-    <Button handle={() => {}}>
-      <p>Get Metamask</p>
-      <Icon icon="logos:metamask-icon" width="15" />
-    </Button>
+    <div class="px-2 py-1">
+      <a href={metamaskURL} target="_blank" rel="noreferrer">Get Metamask</a>
+    </div>
     {/if}
   </div>
 {:else}
-<Button handle={() => {}}>
-  <p>Connected</p>
-  <Icon icon="logos:metamask-icon" width="15" />
-</Button>
+  <div class="px-2 py-1">
+    <p>Connected</p>
+  </div>
 {/if}

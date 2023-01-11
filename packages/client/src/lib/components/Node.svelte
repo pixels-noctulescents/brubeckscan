@@ -1,30 +1,33 @@
 <script lang="ts">
+    import { enhance } from "$app/forms";
     import { format } from "$lib/utils/format";
     import Module from "./Module.svelte";
     import type { Favorite } from "@brubeckscan/common/types/overview";
-    import { enhance } from "$app/forms";
+    import { scale } from "svelte/transition";
 
     export let node: Favorite;
-    let isEditing: boolean = false;
-    let newName = node.db.name;
 </script>
 
 
-<div class="sm:w-full max-w-xs flex flex-col">
+<div class="sm:w-full max-w-xs flex flex-col" in:scale>
     <Module>
         <div class="flex flex-col w-72 h-max">
             <div class="flex justify-between w-full h-max">
                 <p>Status</p>
                     {#if node.stats.status}
-                        <p class="ok">Ok</p>
+                        <p class="text-green-400">Ok</p>
                     {:else}
-                        <p class="ko">Ko</p>
+                        <p class="text-red-500">Ko</p>
                     {/if}
             </div>
-            <div class="flex justify-between w-full">
-                <p>Name</p>
-                <p>{node.db.name}</p>
-            </div>
+
+            <form class="flex justify-between w-full" method="POST" use:enhance>
+                <input class="w-4/6" value={node.db.name} type="hidden" name="baseName">               
+                <input class="w-4/6" value={node.db.name} type="text" name="newName">
+                <input value={node.db.id} type="hidden" name="id">
+                <button formaction="?/updateFavorite">Save</button>
+            </form>
+
             <div class="flex justify-between w-full">
                 <p>Adress</p>
                 <p>{format.ethAddress(node.stats.address)}</p>
@@ -63,32 +66,10 @@
                 <p>PolygonScan</p>
                 <a href="{node.stats.polygonScanURL}" target="_blank" rel="noreferrer">Go</a>
             </div>
-            <div class="flex justify-between w-full">
-                {#if isEditing}
-                <form method="POST" use:enhance>
-                    <input value={node.db.id} type="hidden" name="newName">
-                    <input value={node.db.id} type="hidden" name="id">
-                    <button formaction="?/saveFavorite">Save</button>
-                </form>
-                {:else}
-                    <button on:click={() => isEditing = !isEditing}>Edit</button>
-                {/if}
-
-                <!-- Delete -->
-                <form method="POST" use:enhance>
-                    <input value={node.db.id} type="hidden" name="id">
-                    <button formaction="?/deleteFavorite">Delete</button>
-                </form>
-            </div>
+            <form class="flex justify-between w-full" method="POST" use:enhance>               
+                <input value={node.db.id} type="hidden" name="id">
+                <button formaction="?/deleteFavorite">Delete</button>
+            </form>
         </div>
     </Module>
 </div>
-
-<style>
-    .ok {
-        color: green;
-    }
-    .ko {
-        color: red;
-    }
-</style>

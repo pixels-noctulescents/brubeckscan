@@ -5,10 +5,10 @@
 <nav class="flex gap-3 xl:gap-10">
 
   <!-- Public links-->
-  <a href="/">Home</a>
+  <a class="text-lg"href="/">Home</a>
 
   <!-- Authenticated links -->
   {#if $user}
-    <a href="/favorites">Favorites</a>
+    <a class="text-lg" href="/favorites">Favorites</a>
   {/if}
 </nav>

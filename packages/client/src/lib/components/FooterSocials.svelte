@@ -9,9 +9,9 @@
   import FaLinkedinIn from "svelte-icons/fa/FaLinkedinIn.svelte";
 </script>
 
-<div class="container">
+<div class="flex justify-between">
   <a href="https://github.com/streamr-dev" target="_blank" rel="noreferrer">
-    <div class="icon">
+    <div class="w-6">
       <FaGithub />
     </div>
   </a>
@@ -20,17 +20,17 @@
     target="_blank"
     rel="noreferrer"
   >
-    <div class="icon">
+    <div class="w-6">
       <FaDiscord />
     </div>
   </a>
   <a href="https://twitter.com/streamr" target="_blank" rel="noreferrer">
-    <div class="icon">
+    <div class="w-6">
       <FaTwitter />
     </div>
   </a>
   <a href="https://www.reddit.com/r/streamr" target="_blank" rel="noreferrer">
-    <div class="icon">
+    <div class="w-6">
       <FaRedditSquare />
     </div>
   </a>
@@ -39,7 +39,7 @@
     target="_blank"
     rel="noreferrer"
   >
-    <div class="icon">
+    <div class="w-6">
       <FaTrello />
     </div>
   </a>
@@ -48,12 +48,12 @@
     target="_blank"
     rel="noreferrer"
   >
-    <div class="icon">
+    <div class="w-6">
       <FaYoutube />
     </div>
   </a>
   <a href="https://medium.com/streamrblog" target="_blank" rel="noreferrer">
-    <div class="icon">
+    <div class="w-6">
       <FaMedium />
     </div>
   </a>
@@ -62,23 +62,8 @@
     target="_blank"
     rel="noreferrer"
   >
-    <div class="icon">
+    <div class="w-6">
       <FaLinkedinIn />
     </div>
   </a>
 </div>
-
-<style>
-  .container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    width: 100%;
-    padding-top: 20px;
-  }
-  .icon {
-    width: 25px;
-  }
-</style>

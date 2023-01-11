@@ -1,32 +1,31 @@
 <script lang="ts">
     import { overview } from "$lib/stores";
     import Module from "./Module.svelte";
-    import Data from "./Data.svelte";
 </script>
 
 {#if $overview}
     <div class="w-full">
         <Module>
-            <div class="w-full flex justify-between items-center">
-                <div class="flex flex-col items-center">
+            <div class="w-full flex flex-col">
+                <div class="flex flex-row justify-between">
                     <p>Nodes</p>
-                    <Data>{$overview.totals.nodes}</Data>
+                    <p>{$overview.totals.nodes}</p>
                 </div>
-                <div class="flex flex-col items-center">
+                <div class="flex flex-row justify-between">
                     <p>To be received</p>
-                    <Data>{$overview.totals.toBeReceived}</Data>
+                    <p>{$overview.totals.toBeReceived}</p>
                 </div>
-                <div class="flex flex-col items-center">
+                <div class="flex flex-row justify-between">
                     <p>Sent</p>
-                    <Data>{$overview.totals.sent}</Data>
+                    <p>{$overview.totals.sent}</p>
                 </div>
-                <div class="flex flex-col items-center">
+                <div class="flex flex-row justify-between">
                     <p>Staked</p>
-                    <Data>{$overview.totals.staked}</Data>
+                    <p>{$overview.totals.staked}</p>
                 </div>
-                <div class="flex flex-col items-center">
+                <div class="flex flex-row justify-between">
                     <p>OK %</p>
-                    <Data>{$overview.totals.statuses} %</Data>
+                    <p>{$overview.totals.statuses} %</p>
                 </div>
             </div>
         </Module>
