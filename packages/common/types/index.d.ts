@@ -51,9 +51,17 @@ export interface RealTimePrices {
   EURUSDT: number;
 }
 
-export interface NetworkStats {
+export interface Network {
   stats: Stats;
   lastRewards: NetworkRewardCode[];
+  averages: Averages
+}
+
+
+export interface Averages {
+  averageTopologySize: number
+  averageReceivedClaims: number
+  averageMeanPropagationDelay: number
 }
 
 export interface Stats {

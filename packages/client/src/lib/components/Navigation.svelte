@@ -6,6 +6,7 @@
 
   <!-- Public links-->
   <a class="text-lg"href="/">Home</a>
+  <a class="text-lg"href="/network">Network</a>
 
   <!-- Authenticated links -->
   {#if $user}

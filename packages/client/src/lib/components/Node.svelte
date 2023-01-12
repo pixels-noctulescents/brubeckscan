@@ -36,7 +36,7 @@
             </form>
 
             <div class="flex justify-between w-full h-max items-center">
-                <p>Status</p>
+                <p class="text-gray-600">Status</p>
                     {#if node.stats.status}
                         <p class="text-green-400 text-lg">OK</p>
                     {:else}
@@ -45,7 +45,7 @@
             </div>
 
             <div class="flex justify-between w-full items-center">
-                <p>Adress</p>
+                <p class="text-gray-600">Adress</p>
                 <p class="flex items-center gap-4">
                     <span>{format.ethAddress(node.stats.address)}</span>
                     <button class="transition duration-100 ease-in w-6 text-gray-300 hover:text-blue-500" on:click={async () => {await navigator.clipboard.writeText(node.stats.address)}}>
@@ -54,38 +54,37 @@
                 </p>
             </div>
             <div class="flex justify-between w-full items-center">
-                <p>To be received</p>
+                <p class="text-gray-600">To be received</p>
                 <p>{node.stats.toBeReceived}</p>
             </div>
             {#if node?.stats?.lastClaim?.id}             
             <div class="flex justify-between w-full items-center">
-                <p>Last claim</p>
+                <p class="text-gray-600">Last claim</p>
                 <p>{format.getFromNow(node.stats.lastClaim.claimTime)}</p>
             </div>
             {/if}
             <div class="flex justify-between w-full items-center">
-                <p>Staked</p>
+                <p class="text-gray-600">Staked</p>
                 <p>{node.stats.staked}</p>
             </div>
             <div class="flex justify-between w-full items-center">
-                <p>Sent</p>
+                <p class="text-gray-600">Sent</p>
                 <p>{node.stats.sent}</p>
             </div>
             <div class="flex justify-between w-full items-center">
-                <p>Claim count</p>
+                <p class="text-gray-600">Claim count</p>
                 <p>{node.stats.claimCount}</p>
             </div>
             <div class="flex justify-between w-full items-center">
-                <p>Claim percentage</p>
+                <p class="text-gray-600">Claim percentage</p>
                 <p>{Math.round(node.stats.claimPercentage * 100)}%</p>
             </div>
             <div class="flex justify-between w-full items-center">
-                <p>Payouts</p>
+                <p class="text-gray-600">Payouts</p>
                 <p>{node.stats.payouts.length}</p>
             </div>
             <div class="flex justify-between w-full items-center">
-                <p>PolygonScan</p>
-                <a href="{node.stats.polygonScanURL}" target="_blank" rel="noreferrer">Go</a>
+                <a href="{node.stats.polygonScanURL}" target="_blank" rel="noreferrer">PolygonScan</a>
             </div>
         </div>
     </Module>

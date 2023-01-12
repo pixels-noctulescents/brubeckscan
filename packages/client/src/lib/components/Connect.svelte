@@ -30,7 +30,7 @@
     {/if}
   </div>
 {:else}
-  <div class="px-2 py-1">
+  <div class="py-1">
     <p>Connected</p>
   </div>
 {/if}

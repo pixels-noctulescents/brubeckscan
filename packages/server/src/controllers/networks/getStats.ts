@@ -5,7 +5,6 @@ import { NetworkStats } from "@brubeckscan/common/types";
 
 export async function getStats(): Promise<NetworkStats> {
   try {
-    // Check cached data
     const cached: NetworkStats | undefined = cache.get("brubeckStats")
 
     if (cached) {
@@ -19,7 +18,7 @@ export async function getStats(): Promise<NetworkStats> {
 
       const stats = formatNetworkStats(data);
 
-      cache.set("brubeckStats", stats, 60 * 3);
+      cache.set("brubeckStats", stats, 60);
 
       return stats;
     }
