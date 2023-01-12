@@ -10,6 +10,7 @@ const constants = {
   BRUBECK_NODE_REWARDS_BASE: "https://brubeck1.streamr.network:3013/datarewards/",
   BRUBECK_NODE_STATS_BASE: "https://brubeck1.streamr.network:3013/stats/",
   POLYGONSCAN_BASE: "https://polygonscan.com/address/",
+  IDENTICON_BASE: "https://api.dicebear.com/5.x/identicon/svg?seed="
 };
 
 Object.freeze(constants);

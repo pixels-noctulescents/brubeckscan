@@ -1,20 +1,27 @@
-import type { Overview } from "./overview";
-
-export { Overview };
+export interface User {
+  address: string;
+  mainColor: string;
+  theme: "dark" | "light";
+  Favorite: Favorite[]
+  createdAt: string;
+  updatedAt: string;
+}
 
 export interface Node {
   address: string;
-  polygonScanURL: string;
+  status: boolean;
   staked: number;
-  rewards: number;
-  sent: number;
   toBeReceived: number;
-  payouts: Payout[];
+  sent: number;
+  rewards: number;
+  firstClaim?: RewardCode | null;
   lastClaim?: RewardCode | null;
   claimCount: number;
   claimPercentage: number;
   claimedRewardCodes: RewardCode[];
-  status: boolean;
+  payouts: Payout[];
+  polygonScanURL: string;
+  identiconURL: string;
 }
 
 export interface Payout {
@@ -28,21 +35,31 @@ export interface RewardCode {
 }
 
 export interface Favorite {
-  id: string;
-  address: string;
-  createdAt: string;
-  updatedAt: string;
-  userAddress: string;
-  name: string;
+  id: string
+  address: string
+  createdAt: Date
+  updatedAt: Date
+  userAddress: string | null
+  name: string
 }
 
-export interface User {
-  address: string;
-  mainColor: string;
-  theme: "dark" | "light";
-  Favorite: Favorite[]
-  createdAt: string;
-  updatedAt: string;
+export interface FavoritesOverview {
+  totals: FavoritesTotals,
+  favorites: FavoritesOverviewNode[]
+}
+
+interface FavoritesTotals {
+  nodes: number,
+  staked: number;
+  rewards: number;
+  toBeReceived: number;
+  sent: number;
+  statuses: number;
+}
+
+interface FavoritesOverviewNode {
+  db: Favorite,
+  stats: Node,
 }
 
 export interface RealTimePrices {
@@ -78,13 +95,4 @@ export interface NetworkRewardCode {
   topologySize: number;
   receivedClaims: number;
   meanPropagationDelay: number;
-}
-
-export interface FavoritesTotals {
-  nodes: number,
-  staked: number;
-  rewards: number;
-  toBeReceived: number;
-  sent: number;
-  statuses: number;
 }

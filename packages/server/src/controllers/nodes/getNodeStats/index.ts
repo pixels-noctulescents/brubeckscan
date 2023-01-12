@@ -7,10 +7,10 @@ import type { Node } from "@brubeckscan/common/types";
 import { generate } from "../../../utils/generate";
 import { cache } from "../../../clients/cache";
 
-export async function getNodeStats(address: string): Promise<Node | undefined> {
+export async function getNodeStats(address: string): Promise<Node> {
   const cached: Node | undefined = cache.get(`node/${address}`);
 
-  if (cached as any) {
+  if (cached) {
     return cached;
   }
 
@@ -37,6 +37,7 @@ export async function getNodeStats(address: string): Promise<Node | undefined> {
     // Check if all promises have resolved before data aggregation
     if (data.length === requests.length) {
       node = await formatNodeStats(data, address);
+      return node;
     }
 
     cache.set(`node/${address}`, node, 60);
@@ -44,5 +45,6 @@ export async function getNodeStats(address: string): Promise<Node | undefined> {
     return node;
   } catch (e) {
     console.error(e);
+    return node;
   }
 }

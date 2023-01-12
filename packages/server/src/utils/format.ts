@@ -22,6 +22,7 @@ export async function formatNodeStats(data: any, address: string): Promise<Node>
     0
   );
 
+  const firstClaim = data[0].claimedRewardCodes[0];
   const lastClaim = data[0].claimedRewardCodes.reverse()[0];
 
   const claimedRewardCodes = data[0].claimedRewardCodes.slice(0, 100);
@@ -33,15 +34,17 @@ export async function formatNodeStats(data: any, address: string): Promise<Node>
     address: address,
     status: status,
     staked: Math.round(+data[3]?.stakedDATA) || 0,
-    rewards: Math.round(data[1].DATA) || 0,
-    sent: Math.round(+totalDATASent) || 0,
     toBeReceived: Math.round(data[1].DATA - totalDATASent),
+    sent: Math.round(+totalDATASent) || 0,
+    rewards: Math.round(data[1].DATA) || 0,
+    firstClaim: firstClaim || null,
     lastClaim: lastClaim || null,
-    polygonScanURL: `${constants.POLYGONSCAN_BASE}${address}`,
-    payouts: data[2]?.erc20Transfers,
     claimCount: +data[0].claimCount,
     claimPercentage: +data[0].claimPercentage,
+    payouts: data[2]?.erc20Transfers,
     claimedRewardCodes: claimedRewardCodes,
+    polygonScanURL: `${constants.POLYGONSCAN_BASE}${address}`,
+    identiconURL: `${constants.IDENTICON_BASE}${address}`,
   };
 
   return node;

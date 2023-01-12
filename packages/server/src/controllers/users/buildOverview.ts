@@ -1,8 +1,7 @@
-import { Favorite } from "@prisma/client";
 import { getNodeStats } from "../nodes/getNodeStats";
-import type { FavoritesTotals } from "@brubeckscan/common/types";
+import type { FavoritesTotals, FavoritesOverview, FavoritesOverviewNode, Favorite } from "@brubeckscan/common/types";
 
-export async function buildOverview(favorites: Favorite[]) {
+export async function buildOverview(favorites: Favorite[]): Promise<FavoritesOverview> {
     let totals: FavoritesTotals = {
         nodes: 0,
         toBeReceived: 0,
@@ -12,19 +11,23 @@ export async function buildOverview(favorites: Favorite[]) {
         statuses: 0
     }
 
-    const nodes = await Promise.all(favorites.map(async (favorite) => {
+    const nodes: FavoritesOverviewNode[] = await Promise.all(favorites.map(async (favorite) => {
         const stats = await getNodeStats(favorite.address);
-        if (stats) {
-            totals.sent += stats.sent;
-            totals.staked += stats.staked;
-            totals.toBeReceived += stats.toBeReceived;
-            totals.rewards += stats.rewards;
+        totals.sent += stats.sent;
+        totals.staked += stats.staked;
+        totals.toBeReceived += stats.toBeReceived;
+        totals.rewards += stats.rewards;
+
+        const node: FavoritesOverviewNode = {
+            db: favorite,
+            stats: stats
         }
-        return { db: favorite, stats };
+
+        return node;
     }))
 
     const ok = nodes.filter((item) => {
-        return item.stats?.status
+        return item.stats.status
     })
 
     const percentage = ok.length / favorites.length * 100;
@@ -32,7 +35,7 @@ export async function buildOverview(favorites: Favorite[]) {
     totals.statuses = Math.round(percentage) || 0;
     totals.nodes = favorites.length;
 
-    const overview = {
+    const overview: FavoritesOverview = {
         totals,
         favorites: nodes
     }
