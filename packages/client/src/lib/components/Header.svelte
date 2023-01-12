@@ -5,6 +5,8 @@
   import Logo from "./Logo.svelte";
   import NetworkStats from "./HeaderNetworkStats.svelte";
   import type { Network } from "@brubeckscan/common/types";
+  import { navigating } from "$app/stores";
+  import {fade} from "svelte/transition";
 
   export let network:Network;
 </script>
@@ -19,6 +21,11 @@
       <Navigation />
       <Connect/>
     </div>
+    {#if $navigating != null}
+      <div in:fade class="w-full bg-orange-500 h-1 bg-opacity-50"></div>
+    {:else}
+      <div in:fade class="w-full bg-orange-500 h-1 bg-opacity-0"></div>
+    {/if}
   </header>
 </div>
 

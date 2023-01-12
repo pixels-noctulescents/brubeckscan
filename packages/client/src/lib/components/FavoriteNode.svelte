@@ -21,23 +21,27 @@
             <div class="flex w-full items-end justify-between">
                 <div class="transition duration-100 ease-in w-6 text-gray-300 hover:text-blue-500">
                     <a href={`/nodes/${node.db.address}`}>
-                        <MdSearch/>
+                        <div class="w-8">
+                            <MdSearch/>
+                        </div>
                     </a>
                 </div>
                 <form class="flex justify-end" method="POST" use:enhance>               
                     <input value={node.db.id} type="hidden" name="id">
                     <button formaction="?/deleteFavorite">
                         <div class="transition duration-100 ease-in w-6 text-gray-300 hover:text-red-500">
-                            <MdDeleteForever/>
+                            <div class="w-8">
+                                <MdDeleteForever/>
+                            </div>
                         </div>
                     </button>
                 </form>
             </div>
 
 
-            <form class="flex justify-between w-full mb-4" method="POST" use:enhance>
+            <form class="flex justify-between w-full mb-4 gap-10" method="POST" use:enhance>
                 <input class="w-4/6" value={node.db.name} type="hidden" name="baseName">               
-                <input class="w-4/6 text-2xl" value={node.db.name} type="text" name="newName">
+                <input class="w-full text-2xl bg-slate-100 text-slate-900 p-2" value={node.db.name} type="text" name="newName">
                 <input value={node.db.id} type="hidden" name="id">
                 <button formaction="?/updateFavorite">
                     <div class="transition duration-100 ease-in w-6 text-gray-300 hover:text-blue-500">
@@ -66,7 +70,7 @@
 
             <div class="flex justify-between w-full items-center">
                 <p class="text-gray-600">Identicon</p>
-                <div>
+                <div class={node.stats.status ? "" : "gray"}>
                     <Identicon address={node.db.address}></Identicon>
                 </div>
             </div>
@@ -113,3 +117,9 @@
         </div>
     </Module>
 </div>
+
+<style>
+    .gray {
+        filter: grayscale(1);
+    }
+</style>

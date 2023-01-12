@@ -72,6 +72,7 @@
         </Module>
     </div>
 
+    
     <!-- Payouts -->
     <div class="flex w-1/2">
         <Module>
@@ -85,25 +86,31 @@
                     </div>
                     {/each}
                 </div>
+                {#if !data.node.payouts.length}
+                    <p class="text-lg">This node never received any payout</p>
+                {/if}
             </div>
         </Module>
     </div>
-        <!-- Payouts -->
-        <div class="flex flex-grow">
-            <Module>
-                <div class="flex flex-col w-full">
-                    <h3 class="text-3xl mb-8">Latest codes</h3>
-                    <div class="flex flex-col w-full gap-1 text-md justify-between flex-grow">
-                        {#each data.node.claimedRewardCodes.slice(0,10) as code}
-                        <div class="w-full flex justify-between items-center flex-grow">
-                            <div class="text-slate-500">{new Date(code.claimTime).toLocaleTimeString()}</div>
-                            <div>{code.id}</div>
-                        </div>
-                        {/each}
+    <!-- Payouts -->
+    <div class="flex flex-grow">
+        <Module>
+            <div class="flex flex-col w-full">
+                <h3 class="text-3xl mb-8">Latest codes</h3>
+                <div class="flex flex-col w-full gap-1 text-md justify-between flex-grow">
+                    {#each data.node.claimedRewardCodes.slice(0,10) as code}
+                    <div class="w-full flex justify-between items-center flex-grow">
+                        <div>{code.id}</div>
+                        <div class="text-slate-500">{new Date(code.claimTime).toLocaleTimeString()}</div>
                     </div>
+                    {/each}
                 </div>
-            </Module>
-        </div>
+                {#if !data.node.claimedRewardCodes.length}
+                <p class="text-lg">This node never claimed any code</p>
+                {/if}
+            </div>
+        </Module>
+    </div>
 </div>
 
 <style>

@@ -9,7 +9,7 @@
     }
   
     if  ($page.route.id === "/nodes/[address]"){
-      return title = "Node review";
+      return title = "Stats";
     }
   
     else {
@@ -20,8 +20,8 @@
   })
 </script>
 
-<div class="flex flex-col w-full items-start p-14 bg-neutral-100 max-w-screen-lg">
-  <h1 class="capitalize text-6xl text-slate-700 bg-slate-100 p-4 rounded-md z-20 bg-opacity-80 tracking-tighter">{title}</h1>
+<div class="flex flex-col w-full items-start py-8 bg-neutral-100 max-w-screen-lg">
+  <h1 class="capitalize text-5xl text-slate-700 bg-slate-100 p-4 rounded-md z-20 bg-opacity-80 tracking-tighter">{title}</h1>
 </div>
 
 <style>

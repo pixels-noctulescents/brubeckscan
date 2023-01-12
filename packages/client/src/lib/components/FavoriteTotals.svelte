@@ -10,7 +10,7 @@
     <div class="w-full">
         <Module>
             <div class="flex grow flex-col justify-between">
-                <h2 class="text-4xl mb-4">Total</h2>
+                <h2 class="text-4xl mb-4 tracking-tight">Totals</h2>
                 <div class="flex flex-row justify-between">
                     <p class="text-gray-600 text-lg">Nodes</p>
                     <p class="text-lg">{$overview.totals.nodes}</p>
@@ -22,15 +22,21 @@
                     </p>
                 </div>
                 <div class="flex flex-row justify-between">
+                    <p class="text-gray-600 text-lg">Staked</p>
+                    <p class="text-lg">
+                        <TokenData value={$overview.totals.staked}/>
+                    </p>
+                </div>
+                <div class="flex flex-row justify-between">
                     <p class="text-gray-600 text-lg">Sent</p>
                     <p class="text-lg">
                         <TokenData value={$overview.totals.sent}/>
                     </p>
                 </div>
                 <div class="flex flex-row justify-between">
-                    <p class="text-gray-600 text-lg">Staked</p>
+                    <p class="text-gray-600 text-lg">Sent</p>
                     <p class="text-lg">
-                        <TokenData value={$overview.totals.staked}/>
+                        <TokenData value={$overview.totals.rewards}/>
                     </p>
                 </div>
             </div>

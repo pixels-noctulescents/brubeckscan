@@ -40,6 +40,11 @@
                 }
             },
             options: {
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
                 scales: {
                     x: {
                         ticks: {
@@ -77,6 +82,9 @@
 
 <div class="w-full">
     <Module>
-        <canvas id={GRAPH_ID} />
+        <div class="w-full flex flex-col">
+            <h3 class="text-3xl  text-neutral-900">Topology size & received claims</h3>
+            <canvas id={GRAPH_ID} />
+        </div>
     </Module>
 </div>

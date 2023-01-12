@@ -12,9 +12,9 @@
     <FavoriteAdd result={form}></FavoriteAdd>
     <FavoriteTotals></FavoriteTotals>
     {#if $overview}
-        <div class="flex w-full flex-wrap {$overview.favorites.length >= 3 ? "justify-between" : "justify-start"} items-stretch gap-4">
+        <div class="flex w-full flex-wrap justify-between items-stretch gap-6">
             {#each $overview.favorites as node (node.db.id) }
-                    <div class="flex max-w-xs">
+                    <div class="flex grow">
                         <FavoriteNode {node}/>
                     </div>
             {/each}
