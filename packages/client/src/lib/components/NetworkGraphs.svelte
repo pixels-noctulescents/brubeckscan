@@ -18,7 +18,7 @@
                 {
                     label: "topologySize",
                     backgroundColor: "white",
-                    borderColor: "lightblue",
+                    borderColor: "#FF8540",
                     borderWidth: 1,
                     data: topologySize.reverse(),
                 },

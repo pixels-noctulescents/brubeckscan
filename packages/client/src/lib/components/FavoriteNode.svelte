@@ -3,6 +3,7 @@
     import { enhance } from "$app/forms";
     import { format } from "$lib/utils/format";
     import Module from "./Module.svelte";
+    import Identicon from "./Identicon.svelte";
     import MdRemoveCircleOutline from 'svelte-icons/md/MdRemoveCircleOutline.svelte'
     import MdSave from 'svelte-icons/md/MdSave.svelte'
     import MdContentCopy from 'svelte-icons/md/MdContentCopy.svelte'
@@ -42,6 +43,13 @@
                     {:else}
                         <p class="text-red-500 text-lg">KO</p>
                     {/if}
+            </div>
+
+            <div class="flex justify-between w-full items-center">
+                <p class="text-gray-600">Identicon</p>
+                <div>
+                    <Identicon address={node.db.address}></Identicon>
+                </div>
             </div>
 
             <div class="flex justify-between w-full items-center">

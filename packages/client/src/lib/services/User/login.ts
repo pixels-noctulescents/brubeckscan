@@ -1,31 +1,45 @@
-import { user, overview } from "$lib/stores";
 import send from "$lib/send";
+import { user, userOnNetwork, overview } from "$lib/stores";
+import type { User } from "@brubeckscan/common/types";
 
 export async function login(address: string) {
   try {
     const exist = await send(`users/${address}`);
 
-    const response = await send(`users/${address}/overview`, undefined, undefined, fetch);
-
-    if (response) {
-      overview.set(response.data.overview)
-    }
-
     if (exist.status === "success") {
-      return user.set(exist.data.user);
+      const updated = await updateUserData(exist.data.user);
+      return;
     }
 
-    // We create the account
     if (exist.status === "fail") {
       const create = await send(`users/${address}`, "POST");
-      if (create.status === "success") {
-        return user.set(create.data.user);
-      }
+      const updated = await updateUserData(create.data.user);
+      return;
     }
 
-    // Failed if arrived here so clear
     return user.set(undefined);
   } catch (e) {
     console.log(e);
+  }
+}
+
+async function updateUserData(userDb: User): Promise<boolean> {
+  try {
+    const getOverview = await send(`users/${userDb.address}/overview`, undefined, undefined, fetch);
+    const getUserOnNetwork = await send(`nodes/stats/${userDb.address}`, undefined, undefined, fetch);
+
+    if (getUserOnNetwork) {
+      userOnNetwork.set(getUserOnNetwork.data.node);
+    }
+
+    if (getOverview) {
+      overview.set(getOverview.data.overview)
+    }
+
+    user.set(userDb);
+    return true;
+  } catch (e) {
+    console.log(e);
+    return false;
   }
 }

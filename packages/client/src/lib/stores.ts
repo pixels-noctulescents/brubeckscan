@@ -2,6 +2,7 @@ import { writable } from "svelte/store";
 import type { RealTimePrices } from "@brubeckscan/common/types";
 import type { User } from "@brubeckscan/common/types";
 import type { Overview } from "@brubeckscan/common/types";
+import type { Node } from "@brubeckscan/common/types";
 
 
 export const brubeckStats = writable();
@@ -14,6 +15,7 @@ export const prices = writable<RealTimePrices>({
 
 // User relative stores
 export const user = writable<User | undefined>(undefined);
+export const userOnNetwork = writable<Node | undefined>(undefined);
 export const hasEthereumProvider = writable<boolean | undefined>(undefined);
 export const currentTheme = writable<"light" | "dark">("light");
 export const overview = writable<Overview | undefined>()
