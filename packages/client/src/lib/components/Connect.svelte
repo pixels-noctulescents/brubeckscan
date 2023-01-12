@@ -31,7 +31,7 @@
       <a href={metamaskURL} target="_blank" rel="noreferrer">Get Metamask</a>
     </div>
   {:else if $user}
-    <div class="py-1 flex items-center gap-4">
+    <div class="py-1 flex items-center gap-4 text-blue-200">
       <TokenData value={$userOnNetwork?.staked}/>
       <p class="text-slate-300">|</p>
       <Identicon address={$user.address}/>

@@ -9,7 +9,7 @@
     let address = result?.add?.address || "";
 </script>
 
-<div class="sticky backdrop-opacity-4 w-full">
+<div class="transition duration-150 ease-in sticky w-full z-50">
     <Module>
         <div class="flex flex-col gap-4 w-full">
             {#if result?.add}
@@ -18,7 +18,7 @@
             <form class="flex w-full justify-between gap-10" method="POST" use:enhance>
                 <input name="user" type="hidden" value={$user?.address}>
                 <input name="name" type="hidden" value="Node {$overview?.totals.nodes || 0 + 1}">
-                <input class="w-full"name="address" type="text" bind:value={address} placeholder="Enter a node address">
+                <input class="w-full bg-transparent"name="address" type="text" bind:value={address} placeholder="Enter a node address">
                 <button formaction="?/addFavorite">
                     <div class="transition duration-100 ease-in w-10 text-gray-400 hover:text-blue-500">
                         <MdAdd/>
@@ -30,7 +30,8 @@
 </div>
 
 <style>
-    div {
+    .sticky {
         top: 100px;
+        backdrop-filter: blur(10px);
     }
 </style>

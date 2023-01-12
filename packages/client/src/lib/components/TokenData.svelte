@@ -7,7 +7,7 @@
     const alt = "The DATA token icon"
 </script>
 
-<div class="flex gap-2">
-    <p class="font-mono text-md">{format.numberWithSpaces(value)}</p>
+<div class="flex gap-2 items-center justify-center">
+    <p class="flex items-center font-mono text-md text-neutral-400">{format.numberWithSpaces(value)}</p>
     <img class="w-5" src={token} alt={alt}/>
 </div>

@@ -9,7 +9,7 @@
     }
   
     if  ($page.route.id === "/nodes/[address]"){
-      return title = $page.params.address;
+      return title = "Node review";
     }
   
     else {

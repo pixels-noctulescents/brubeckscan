@@ -13,10 +13,10 @@
 
 <div class="w-full flex gap-4 items-stretch justify-between flex-wrap max-w-screen-lg pt-20 pb-40">
     <!-- Avatar -->
-    <div class="flex aspect-square">
+    <div class="flex">
         <Module>
-            <div class="w-full flex">
-                <img class="w-52" {src} {alt}>
+            <div class="w-48 flex items-center justify-center {data.node.status ? "" : "inactive"}">
+                <img class="w-32" {src} {alt}>
             </div>
         </Module>
     </div>
@@ -77,7 +77,7 @@
         <Module>
             <div class="flex flex-col w-full">
                 <h3 class="text-3xl mb-8">Payouts</h3>
-                <div class="flex flex-col w-full gap-4 text-lg">
+                <div class="flex flex-col w-full gap-1 text-md">
                     {#each data.node.payouts.reverse() as payout}
                     <div class="w-full flex justify-between items-center">
                         <div class="text-slate-500">{new Date(+payout.timestamp * 1000).toUTCString()}</div>
@@ -93,7 +93,7 @@
             <Module>
                 <div class="flex flex-col w-full">
                     <h3 class="text-3xl mb-8">Latest codes</h3>
-                    <div class="flex flex-col w-full gap-4 text-md justify-between flex-grow">
+                    <div class="flex flex-col w-full gap-1 text-md justify-between flex-grow">
                         {#each data.node.claimedRewardCodes.slice(0,10) as code}
                         <div class="w-full flex justify-between items-center flex-grow">
                             <div class="text-slate-500">{new Date(code.claimTime).toLocaleTimeString()}</div>
@@ -105,3 +105,9 @@
             </Module>
         </div>
 </div>
+
+<style>
+    .inactive {
+        filter: grayscale(1);
+    }
+</style>

@@ -23,7 +23,7 @@
     <div class="flex w-full max-w-screen-lg">
         <Module>
             <div in:slide class="flex w-full justify-between gap-20">
-                <input class="text-xl w-full" bind:value={address} placeholder="Enter a node address">
+                <input class="text-xl w-full bg-transparent" bind:value={address} placeholder="Enter a node address">
                 <button on:click={handleSearch}>
                     <div class="transition duration-150 ease-in w-10 text-gray-300 hover:text-slate-700">
                         <IoIosSearch></IoIosSearch>

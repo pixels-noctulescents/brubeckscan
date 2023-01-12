@@ -15,9 +15,9 @@
 </script>
 
 
-<div class="sm:w-full max-w-xs flex flex-col" in:scale>
+<div class="w-full flex flex-col" in:scale>
     <Module>
-        <div class="flex flex-col w-72 h-max gap-2">
+        <div class="w-full flex flex-col gap-1">
             <div class="flex w-full items-end justify-between">
                 <div class="transition duration-100 ease-in w-6 text-gray-300 hover:text-blue-500">
                     <a href={`/nodes/${node.db.address}`}>
@@ -46,6 +46,15 @@
                 </button>
             </form>
 
+            <div class="flex justify-between w-full items-center">
+                <p class="text-gray-600">Adress</p>
+                <p class="flex items-center gap-4">
+                    <span>{format.ethAddress(node.stats.address)}</span>
+                    <button class="transition duration-100 ease-in w-6 text-gray-300 hover:text-blue-500" on:click={async () => {await navigator.clipboard.writeText(node.stats.address)}}>
+                        <MdContentCopy/>
+                    </button>
+                </p>
+            </div>
             <div class="flex justify-between w-full h-max items-center">
                 <p class="text-gray-600">Status</p>
                     {#if node.stats.status}
@@ -62,27 +71,18 @@
                 </div>
             </div>
 
-            <div class="flex justify-between w-full items-center">
-                <p class="text-gray-600">Adress</p>
-                <p class="flex items-center gap-4">
-                    <span>{format.ethAddress(node.stats.address)}</span>
-                    <button class="transition duration-100 ease-in w-6 text-gray-300 hover:text-blue-500" on:click={async () => {await navigator.clipboard.writeText(node.stats.address)}}>
-                        <MdContentCopy/>
-                    </button>
-                </p>
-            </div>
-            <div class="flex justify-between w-full items-center">
-                <p class="text-gray-600">To be received</p>
-                <p>
-                    <TokenData value={node.stats.toBeReceived}/>
-                </p>
-            </div>
             {#if node?.stats?.lastClaim?.id}             
             <div class="flex justify-between w-full items-center">
                 <p class="text-gray-600">Last claim</p>
                 <p>{format.getFromNow(node.stats.lastClaim.claimTime)}</p>
             </div>
             {/if}
+            <div class="flex justify-between w-full items-center">
+                <p class="text-gray-600">To be received</p>
+                <p>
+                    <TokenData value={node.stats.toBeReceived}/>
+                </p>
+            </div>
             <div class="flex justify-between w-full items-center">
                 <p class="text-gray-600">Staked</p>
                 <p>
