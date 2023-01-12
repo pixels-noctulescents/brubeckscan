@@ -37,10 +37,9 @@ export async function getNodeStats(address: string): Promise<Node> {
     // Check if all promises have resolved before data aggregation
     if (data.length === requests.length) {
       node = await formatNodeStats(data, address);
+      cache.set(`node/${address}`, node, 60);
       return node;
     }
-
-    cache.set(`node/${address}`, node, 60);
 
     return node;
   } catch (e) {

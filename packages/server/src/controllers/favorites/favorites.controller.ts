@@ -30,8 +30,6 @@ favoritesController.create = async (
     const favoriteAddress = req.body.favoriteAddress;
     const favoriteName = req.body.favoriteName;
 
-    console.log(userAddress);
-
     if (!userAddress || !favoriteAddress || !favoriteName) {
       return sender.failure(res, {}, 400);
     }
