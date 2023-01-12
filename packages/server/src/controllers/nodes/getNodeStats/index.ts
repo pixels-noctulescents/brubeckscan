@@ -3,7 +3,7 @@ import { getRewards } from "./getRewards";
 import { getDataSent } from "./getDataSent";
 import { getDataStaked } from "./getDataStaked";
 import { formatNodeStats } from "../../../utils/format";
-import type { Node } from "@brubeckscan/common/types";
+import type Node from "@brubeckscan/common/types/node";
 import { generate } from "../../../utils/generate";
 import { cache } from "../../../clients/cache";
 

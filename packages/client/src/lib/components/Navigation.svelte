@@ -9,6 +9,7 @@
   <!-- Public links-->
   <a class="transition ease-in duration-150 text-md text-slate-500 hover:text-slate-800"href="/">Home</a>
   <a class="transition ease-in duration-150 text-md text-slate-500 hover:text-slate-800"href="/network">Network</a>
+  <a class="transition ease-in duration-150 text-md text-slate-500 hover:text-slate-800"href="/api">API</a>
 
   <!-- Authenticated links -->
   {#if $user}

@@ -1,3 +1,5 @@
+import type Node from "./node";
+
 export interface User {
   address: string;
   mainColor: string;
@@ -7,29 +9,7 @@ export interface User {
   updatedAt: string;
 }
 
-export interface Node {
-  address: string;
-  status: boolean;
-  staked: number;
-  toBeReceived: number;
-  sent: number;
-  rewards: number;
-  firstClaim?: RewardCode | null;
-  lastClaim?: RewardCode | null;
-  claimCount: number;
-  claimPercentage: number;
-  claimedRewardCodes: RewardCode[];
-  payouts: Payout[];
-  polygonScanURL: string;
-  identiconURL: string;
-}
-
-export interface Payout {
-  value: string;
-  timestamp: string;
-}
-
-export interface RewardCode {
+interface RewardCode {
   id: string;
   claimTime: string;
 }

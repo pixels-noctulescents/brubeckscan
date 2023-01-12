@@ -1,6 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 import { getNodeStats } from "./getNodeStats";
 import { sender } from "../../utils/sender";
+import validator from "validator";
 
 const NodesController = () => { };
 
@@ -11,6 +12,10 @@ NodesController.getNodeStats = async (
 ) => {
   try {
     const address = req.params.address;
+
+    if (!address || !validator.isEthereumAddress(req.params.address)) {
+      return sender.failure(res, { address: "Invalid ethereum address" })
+    }
 
     const node = await getNodeStats(address);
     if (node) {
