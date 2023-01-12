@@ -1,16 +1,14 @@
 <script lang="ts">
     import { overview } from "$lib/stores";
-    import type { ActionData } from "./$types";
+    import type { ActionData, PageData } from "./$types";
     import Totals from "$lib/components/Totals.svelte";
     import Node from "$lib/components/Node.svelte";
     import AddFavorite from "$lib/components/AddFavorite.svelte";
 
     export let form: ActionData;
-
-    console.log(form);
 </script>
 
-<div class="flex w-full flex-col gap-10">
+<div class="flex w-full flex-col gap-10 max-w-screen-lg">
     <AddFavorite result={form}></AddFavorite>
     <Totals></Totals>
     {#if $overview}

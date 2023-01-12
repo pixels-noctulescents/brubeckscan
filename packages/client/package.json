@@ -27,6 +27,7 @@
   "dependencies": {
     "@metamask/detect-provider": "^2.0.0",
     "@sveltejs/adapter-node": "^1.0.0",
+    "chart.js": "^4.1.2",
     "socket.io-client": "^4.5.4",
     "svelte-icons": "^2.1.0",
     "validator": "^13.7.0"
