@@ -9,7 +9,7 @@
     const network: Network = data.network;
 </script>
 
-<div class="flex flex-col w-full gap-10">
+<div class="flex flex-col w-full gap-10 max-w-screen-lg pt-20 pb-40">
     <div class="flex w-full gap-8 items-stretch">
         <NetworkStats stats={network.stats}/>
         <NetworkAverages averages={network.averages}/>

@@ -1,7 +1,23 @@
 <script lang="ts">
   import { page } from "$app/stores";
 
-  $: title = $page.route.id === "/" ? "Home" : $page.route.id?.substring(1)
+  let title = "";
+
+  page.subscribe((page) => {
+    if ($page.route.id === "/"){
+      return title = "Home";
+    }
+  
+    if  ($page.route.id === "/nodes/[address]"){
+      return title = $page.params.address;
+    }
+  
+    else {
+      if($page.route.id){
+        return title = $page.route.id?.substring(1);
+      }
+    }
+  })
 </script>
 
 <div class="flex flex-col w-full items-center p-14 bg-neutral-200">

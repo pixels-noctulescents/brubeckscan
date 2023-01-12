@@ -4,6 +4,7 @@
   import Header from "$lib/components/Header.svelte";
   import Footer from "$lib/components/Footer.svelte";
   import type { LayoutData } from "./$types";
+  import { page } from "$app/stores";
 
   export let data: LayoutData;
 </script>
@@ -14,10 +15,12 @@
       <Header network={data.network}/>
     {/if}
     <main class="flex flex-col grow w-full items-center min-h-[600px]">
+      {#if $page.route.id != "/"}
       <div class="w-full">
         <Title/>
       </div>
-      <div class="flex w-full p-5 xl:max-w-screen-lg xl:px-0 py-10 xl:pb-40">
+      {/if}
+      <div class="flex flex-col w-full xl:px-0 items-center">
         <slot />
       </div>
     </main>

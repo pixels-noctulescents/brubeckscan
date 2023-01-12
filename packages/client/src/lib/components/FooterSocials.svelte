@@ -11,7 +11,7 @@
 
 <div class="flex justify-between">
   <a href="https://github.com/streamr-dev" target="_blank" rel="noreferrer">
-    <div class="w-6">
+    <div class="w-6 transition ease-in duration-100 text-slate-700 hover:text-slate-900">
       <FaGithub />
     </div>
   </a>
@@ -20,17 +20,17 @@
     target="_blank"
     rel="noreferrer"
   >
-    <div class="w-6">
+    <div class="w-6 transition ease-in duration-100 text-slate-700 hover:text-slate-900">
       <FaDiscord />
     </div>
   </a>
   <a href="https://twitter.com/streamr" target="_blank" rel="noreferrer">
-    <div class="w-6">
+    <div class="w-6 transition ease-in duration-100 text-slate-700 hover:text-slate-900">
       <FaTwitter />
     </div>
   </a>
   <a href="https://www.reddit.com/r/streamr" target="_blank" rel="noreferrer">
-    <div class="w-6">
+    <div class="w-6 transition ease-in duration-100 text-slate-700 hover:text-slate-900">
       <FaRedditSquare />
     </div>
   </a>
@@ -39,7 +39,7 @@
     target="_blank"
     rel="noreferrer"
   >
-    <div class="w-6">
+    <div class="w-6 transition ease-in duration-100 text-slate-700 hover:text-slate-900">
       <FaTrello />
     </div>
   </a>
@@ -48,12 +48,12 @@
     target="_blank"
     rel="noreferrer"
   >
-    <div class="w-6">
+    <div class="w-6 transition ease-in duration-100 text-slate-700 hover:text-slate-900">
       <FaYoutube />
     </div>
   </a>
   <a href="https://medium.com/streamrblog" target="_blank" rel="noreferrer">
-    <div class="w-6">
+    <div class="w-6 transition ease-in duration-100 text-slate-700 hover:text-slate-900">
       <FaMedium />
     </div>
   </a>
@@ -62,7 +62,7 @@
     target="_blank"
     rel="noreferrer"
   >
-    <div class="w-6">
+    <div class="w-6 transition ease-in duration-100 text-slate-700 hover:text-slate-900">
       <FaLinkedinIn />
     </div>
   </a>
