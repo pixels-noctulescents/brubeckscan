@@ -1,7 +1,7 @@
 import { getNodeStats } from "../nodes/getNodeStats";
 import type { FavoritesTotals, FavoritesOverview, FavoritesOverviewNode, Favorite } from "@brubeckscan/common/types";
 
-export async function buildOverview(favorites: Favorite[]): Promise<FavoritesOverview> {
+export async function buildFavoritesOverview(favorites: Favorite[]): Promise<FavoritesOverview> {
     let totals: FavoritesTotals = {
         nodes: 0,
         toBeReceived: 0,

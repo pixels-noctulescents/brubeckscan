@@ -1,11 +1,13 @@
 import { constants } from "../configs/constants";
-import { getStats } from "../controllers/networks/getStats";
-import type { Node, NetworkRewardCode, RewardCode, Network } from "@brubeckscan/common/types";
+import NetworkManager from "../managers/NetworkManager";
+import type { Node, RewardCode } from "@brubeckscan/common/types";
 
 async function getStatus(codes: RewardCode[]): Promise<boolean> {
-  const networkData = await getStats();
+  const networkData = await NetworkManager.getNetworkStats();
 
   if (!codes.length) return false;
+
+  if (!networkData) return false;
 
   if (networkData.lastRewards[0].code === codes[0].id || codes[1].id) {
     return true;
@@ -48,45 +50,4 @@ export async function formatNodeStats(data: any, address: string): Promise<Node>
   };
 
   return node;
-}
-
-export function formatNetworkStats(data: Array<any>): Network {
-  const averages = getAverages(data[1].lastRewards);
-
-  const stats = {
-    stats: {
-      "24APR": data[0]["24h-APR"],
-      "24APY": data[0]["24h-APY"],
-      SPOTAPR: data[0]["spot-APR"],
-      SPOTAPY: data[0]["spot-APY"],
-      "24DATASTAKED": data[0]["24h-data-staked"],
-      SPOTDATASTAKED: data[0]["spot-data-staked"],
-    },
-    averages: averages,
-    lastRewards: data[1].lastRewards,
-  };
-
-  return stats;
-}
-
-function getAverages(codes: NetworkRewardCode[]) {
-  let totalTopologySize = 0;
-  let totalReceivedClaims = 0;
-  let totalMeanPropagationDelay = 0;
-
-  codes.map((code) => {
-    totalTopologySize += code.topologySize;
-    totalReceivedClaims += code.receivedClaims;
-    totalMeanPropagationDelay += code.meanPropagationDelay;
-  })
-
-  let averageTopologySize = totalTopologySize / codes.length;
-  let averageReceivedClaims = totalReceivedClaims / codes.length;
-  let averageMeanPropagationDelay = totalMeanPropagationDelay / codes.length;
-
-  return {
-    averageTopologySize,
-    averageReceivedClaims,
-    averageMeanPropagationDelay,
-  }
 }

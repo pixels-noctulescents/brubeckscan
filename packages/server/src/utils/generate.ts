@@ -29,6 +29,7 @@ generate.emptyNode = (): Node => {
   const node: Node = {
     address: "",
     polygonScanURL: "",
+    identiconURL: "",
     staked: 0,
     rewards: 0,
     sent: 0,

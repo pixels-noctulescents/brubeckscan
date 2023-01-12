@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 import UsersDAO from "../../dao/users/users.dao";
 import { sender } from "../../utils/sender";
-import { buildOverview } from "./buildOverview";
+import { buildFavoritesOverview } from "./buildOverview";
 
 const usersController = () => { };
 
@@ -92,7 +92,7 @@ usersController.getOverview = async (
     }
 
     if (exist) {
-      const overview = await buildOverview(exist.Favorite);
+      const overview = await buildFavoritesOverview(exist.Favorite);
       if (overview) {
         return sender.success(res, { overview });
       }
@@ -101,6 +101,5 @@ usersController.getOverview = async (
     next(e);
   }
 };
-
 
 export { usersController };

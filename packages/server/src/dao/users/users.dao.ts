@@ -56,33 +56,41 @@ UsersDAO.create = async (address: string) => {
 };
 
 UsersDAO.find = async (address: string) => {
-  const user = await prisma.user.findUnique({
-    where: {
-      address: address,
-    },
-    include: {
-      Favorite: {
-        orderBy: {
-          createdAt: "asc",
+  try {
+    const user = await prisma.user.findUnique({
+      where: {
+        address: address,
+      },
+      include: {
+        Favorite: {
+          orderBy: {
+            createdAt: "asc",
+          },
         },
       },
-    },
-  });
+    });
 
-  return user;
+    return user;
+  } catch (e) {
+    throw (e);
+  }
 };
 
 UsersDAO.delete = async (address: string) => {
-  const user = await prisma.user.delete({
-    where: {
-      address: address,
-    },
-    include: {
-      Favorite: true,
-    },
-  });
+  try {
+    const user = await prisma.user.delete({
+      where: {
+        address: address,
+      },
+      include: {
+        Favorite: true,
+      },
+    });
 
-  return user;
-};
+    return user;
+  } catch (e) {
+    throw (e);
+  }
+}
 
 export default UsersDAO;
