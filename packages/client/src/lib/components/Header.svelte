@@ -9,16 +9,21 @@
   export let network:Network;
 </script>
 
-<div class="flex items-center justify-center w-full text-stone-100 sticky top-0">
-  <header class="flex flex-col items-center w-full z-50">
-    <div class="w-full flex justify-between bg-slate-900 px-5 py-2">
+<div class="flex items-center justify-center w-full sticky top-0">
+  <header class="flex flex-col items-center w-full z-50 bg-slate-900 text-slate-100 bg-opacity-90">
+    <div class="w-full flex justify-between px-5 py-2 xl:px-32 bg-neutral-900">
       <Prices/>
       <NetworkStats {network}/>
     </div>
-    <div class="w-full flex justify-between items-center px-5 py-2 bg-slate-800 border-b border-gray-500">
-      <Logo />
+    <div class="w-full flex justify-between items-center px-5 py-2 xl:px-32">
       <Navigation />
       <Connect/>
     </div>
   </header>
 </div>
+
+<style>
+  header {
+    backdrop-filter: blur(10px);
+  }
+</style>
