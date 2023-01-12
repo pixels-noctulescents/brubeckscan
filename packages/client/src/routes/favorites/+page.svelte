@@ -8,7 +8,7 @@
     export let form: ActionData;
 </script>
 
-<div class="flex w-full flex-col gap-10 max-w-screen-lg">
+<div class="flex w-full flex-col gap-10 max-w-screen-lg pt-20 pb-40">
     <FavoriteAdd result={form}></FavoriteAdd>
     <FavoriteTotals></FavoriteTotals>
     {#if $overview}

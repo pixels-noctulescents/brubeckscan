@@ -1,4 +1,5 @@
 <script lang="ts">
+  import HomeLanding from "$lib/components/HomeLanding.svelte";
 </script>
 
 <svelte:head>
@@ -6,5 +7,8 @@
 </svelte:head>
 
 <div class="w-full">
-  <p>Page content</p>
+  <HomeLanding/>
 </div>
+
+<style>
+</style>

@@ -4,7 +4,8 @@
     import { format } from "$lib/utils/format";
     import Module from "./Module.svelte";
     import Identicon from "./Identicon.svelte";
-    import MdRemoveCircleOutline from 'svelte-icons/md/MdRemoveCircleOutline.svelte'
+    import MdSearch from 'svelte-icons/md/MdSearch.svelte'
+    import MdDeleteForever from 'svelte-icons/md/MdDeleteForever.svelte'
     import MdSave from 'svelte-icons/md/MdSave.svelte'
     import MdContentCopy from 'svelte-icons/md/MdContentCopy.svelte'
     import type { Favorite } from "@brubeckscan/common/types/overview";
@@ -17,14 +18,22 @@
 <div class="sm:w-full max-w-xs flex flex-col" in:scale>
     <Module>
         <div class="flex flex-col w-72 h-max gap-2">
-            <form class="flex justify-end w-full mb-4" method="POST" use:enhance>               
-                <input value={node.db.id} type="hidden" name="id">
-                <button formaction="?/deleteFavorite">
-                    <div class="transition duration-100 ease-in w-6 text-gray-300 hover:text-red-500">
-                        <MdRemoveCircleOutline/>
-                    </div>
-                </button>
-            </form>
+            <div class="flex w-full items-end justify-between">
+                <div class="transition duration-100 ease-in w-6 text-gray-300 hover:text-blue-500">
+                    <a href={`/nodes/${node.db.address}`}>
+                        <MdSearch/>
+                    </a>
+                </div>
+                <form class="flex justify-end" method="POST" use:enhance>               
+                    <input value={node.db.id} type="hidden" name="id">
+                    <button formaction="?/deleteFavorite">
+                        <div class="transition duration-100 ease-in w-6 text-gray-300 hover:text-red-500">
+                            <MdDeleteForever/>
+                        </div>
+                    </button>
+                </form>
+            </div>
+
 
             <form class="flex justify-between w-full mb-4" method="POST" use:enhance>
                 <input class="w-4/6" value={node.db.name} type="hidden" name="baseName">               
