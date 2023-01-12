@@ -7,11 +7,11 @@
 
   <Logo/>
   <!-- Public links-->
-  <a class="text-md"href="/">Home</a>
-  <a class="text-md"href="/network">Network</a>
+  <a class="transition ease-in duration-150 text-md text-slate-500 hover:text-slate-800"href="/">Home</a>
+  <a class="transition ease-in duration-150 text-md text-slate-500 hover:text-slate-800"href="/network">Network</a>
 
   <!-- Authenticated links -->
   {#if $user}
-    <a class="text-md" href="/favorites">Favorites</a>
+    <a class="transition ease-in duration-150 text-md text-slate-500 hover:text-slate-800" href="/favorites">Favorites</a>
   {/if}
 </nav>

@@ -2,6 +2,7 @@
     import { overview } from "$lib/stores";
     import Module from "./Module.svelte";
     import FavoriteDoughnut from "$lib/components/FavoriteDoughnut.svelte";
+    import TokenData from "./TokenData.svelte";
 </script>
 
 {#if $overview}
@@ -16,15 +17,21 @@
                 </div>
                 <div class="flex flex-row justify-between">
                     <p class="text-gray-600 text-lg">To be received</p>
-                    <p class="text-lg">{$overview.totals.toBeReceived}</p>
+                    <p class="text-lg">
+                        <TokenData value={$overview.totals.toBeReceived}/>
+                    </p>
                 </div>
                 <div class="flex flex-row justify-between">
                     <p class="text-gray-600 text-lg">Sent</p>
-                    <p class="text-lg">{$overview.totals.sent}</p>
+                    <p class="text-lg">
+                        <TokenData value={$overview.totals.sent}/>
+                    </p>
                 </div>
                 <div class="flex flex-row justify-between">
                     <p class="text-gray-600 text-lg">Staked</p>
-                    <p class="text-lg">{$overview.totals.staked}</p>
+                    <p class="text-lg">
+                        <TokenData value={$overview.totals.staked}/>
+                    </p>
                 </div>
             </div>
         </Module>

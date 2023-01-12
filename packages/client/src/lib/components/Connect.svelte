@@ -3,6 +3,7 @@
   import Icon from "@iconify/svelte";
   import Button from "$lib/components/Button.svelte";
   import Identicon from "$lib/components/Identicon.svelte";
+  import TokenData from "$lib/components/TokenData.svelte";
 
   const metamaskURL = "https://metamask.io/download/"
 
@@ -31,7 +32,8 @@
     </div>
   {:else if $user}
     <div class="py-1 flex items-center gap-4">
-      <p class="text-sm">{$userOnNetwork?.staked} DATA</p>
+      <TokenData value={$userOnNetwork?.staked}/>
+      <p class="text-slate-300">|</p>
       <Identicon address={$user.address}/>
     </div>
   {/if}

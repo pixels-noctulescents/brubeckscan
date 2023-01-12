@@ -4,7 +4,7 @@ import EthereumProviderService from "$lib/services/EthereumProvider";
 
 (async () => {
     try {
-        await EthereumProviderService.init();
+        return await EthereumProviderService.init();
     } catch (e) {
         console.log(e);
     }

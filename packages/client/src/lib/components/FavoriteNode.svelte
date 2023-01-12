@@ -8,6 +8,7 @@
     import MdSave from 'svelte-icons/md/MdSave.svelte'
     import MdContentCopy from 'svelte-icons/md/MdContentCopy.svelte'
     import type { Favorite } from "@brubeckscan/common/types/overview";
+    import TokenData from "./TokenData.svelte";
 
     export let node: Favorite;
 </script>
@@ -15,7 +16,7 @@
 
 <div class="sm:w-full max-w-xs flex flex-col" in:scale>
     <Module>
-        <div class="flex flex-col w-72 h-max gap-1">
+        <div class="flex flex-col w-72 h-max gap-2">
             <form class="flex justify-end w-full mb-4" method="POST" use:enhance>               
                 <input value={node.db.id} type="hidden" name="id">
                 <button formaction="?/deleteFavorite">
@@ -63,7 +64,9 @@
             </div>
             <div class="flex justify-between w-full items-center">
                 <p class="text-gray-600">To be received</p>
-                <p>{node.stats.toBeReceived}</p>
+                <p>
+                    <TokenData value={node.stats.toBeReceived}/>
+                </p>
             </div>
             {#if node?.stats?.lastClaim?.id}             
             <div class="flex justify-between w-full items-center">
@@ -73,11 +76,15 @@
             {/if}
             <div class="flex justify-between w-full items-center">
                 <p class="text-gray-600">Staked</p>
-                <p>{node.stats.staked}</p>
+                <p>
+                    <TokenData value={node.stats.staked}/>
+                </p>
             </div>
             <div class="flex justify-between w-full items-center">
                 <p class="text-gray-600">Sent</p>
-                <p>{node.stats.sent}</p>
+                <p>
+                    <TokenData value={node.stats.sent}/>
+                </p>
             </div>
             <div class="flex justify-between w-full items-center">
                 <p class="text-gray-600">Claim count</p>
