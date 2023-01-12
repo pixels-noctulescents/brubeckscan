@@ -11,6 +11,10 @@
     if  ($page.route.id === "/nodes/[address]"){
       return title = "Stats";
     }
+
+    if  ($page.route.id === "/api"){
+      return title = "Public API";
+    }
   
     else {
       if($page.route.id){
