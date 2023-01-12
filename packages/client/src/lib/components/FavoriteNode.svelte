@@ -24,7 +24,7 @@
                 </button>
             </form>
 
-            <form class="flex justify-between w-full" method="POST" use:enhance>
+            <form class="flex justify-between w-full mb-4" method="POST" use:enhance>
                 <input class="w-4/6" value={node.db.name} type="hidden" name="baseName">               
                 <input class="w-4/6 text-2xl" value={node.db.name} type="text" name="newName">
                 <input value={node.db.id} type="hidden" name="id">

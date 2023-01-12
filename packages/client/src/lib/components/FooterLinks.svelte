@@ -1,6 +1,6 @@
 <div class="flex w-full justify-between border-b pb-20">
   <div class="justify-center text-start">
-    <h5 class="mb-4 uppercase">DISCOVER</h5>
+    <h5 class="mb-4 uppercase text-xl">DISCOVER</h5>
     <div>
       <a class="mb-2 hover:underline"
         href="https://streamr.network/discover/network/"
@@ -33,7 +33,7 @@
     </div>
   </div>
   <div class="text-center">
-    <h5 class="mb-4 uppercase">Project</h5>
+    <h5 class="mb-4 uppercase text-xl">Project</h5>
     <div>
       <a class="mb-2 hover:underline" href="https://streamr.network/about/" target="_blank" rel="noreferrer">
         <p>About</p>
@@ -65,7 +65,7 @@
     </div>
   </div>
   <div class="text-end">
-    <h5 class="mb-4 uppercase">Apps</h5>
+    <h5 class="mb-4 uppercase text-xl">Apps</h5>
     <div>
       <a class="mb-2 hover:underline"
         href="https://streamr.network/network-explorer"

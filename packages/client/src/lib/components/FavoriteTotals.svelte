@@ -1,7 +1,7 @@
 <script lang="ts">
     import { overview } from "$lib/stores";
     import Module from "./Module.svelte";
-    import FavoritesDoughnut from "$lib/components/FavoritesDoughnut.svelte";
+    import FavoriteDoughnut from "$lib/components/FavoriteDoughnut.svelte";
 </script>
 
 {#if $overview}
@@ -9,7 +9,7 @@
     <div class="w-full">
         <Module>
             <div class="flex grow flex-col justify-between">
-                <h2 class="text-5xl mb-10">Total</h2>
+                <h2 class="text-4xl mb-4">Total</h2>
                 <div class="flex flex-row justify-between">
                     <p class="text-gray-600 text-lg">Nodes</p>
                     <p class="text-lg">{$overview.totals.nodes}</p>
@@ -30,7 +30,7 @@
         </Module>
     </div>
     <div class="flex w-52">
-        <FavoritesDoughnut/>
+        <FavoriteDoughnut/>
     </div>
 </div>
 {/if}
