@@ -1,6 +1,6 @@
 import { constants } from "../configs/constants";
 import { getStats } from "../controllers/networks/getStats";
-import type { Node, NetworkRewardCode, RewardCode, NetworkStats } from "@brubeckscan/common/types";
+import type { Node, NetworkRewardCode, RewardCode, Network } from "@brubeckscan/common/types";
 
 async function getStatus(codes: RewardCode[]): Promise<boolean> {
   const networkData = await getStats();
@@ -47,7 +47,7 @@ export async function formatNodeStats(data: any, address: string): Promise<Node>
   return node;
 }
 
-export function formatNetworkStats(data: Array<any>): NetworkStats {
+export function formatNetworkStats(data: Array<any>): Network {
   const averages = getAverages(data[1].lastRewards);
 
   const stats = {

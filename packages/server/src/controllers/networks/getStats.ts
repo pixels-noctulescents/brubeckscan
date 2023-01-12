@@ -1,11 +1,11 @@
 import { constants } from "../../configs/constants";
 import { formatNetworkStats } from "../../utils/format";
 import { cache } from "../../clients/cache";
-import { NetworkStats } from "@brubeckscan/common/types";
+import { Network } from "@brubeckscan/common/types";
 
-export async function getStats(): Promise<NetworkStats> {
+export async function getStats(): Promise<Network> {
   try {
-    const cached: NetworkStats | undefined = cache.get("brubeckStats")
+    const cached: Network | undefined = cache.get("brubeckStats")
 
     if (cached) {
       return cached;
