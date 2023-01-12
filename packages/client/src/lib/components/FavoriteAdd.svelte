@@ -9,7 +9,7 @@
     let address = result?.add?.address || "";
 </script>
 
-<div class="transition duration-150 ease-in sticky w-full z-50">
+<div class="transition duration-150 ease-in sticky w-full z-40">
     <Module>
         <div class="flex flex-col gap-4 w-full">
             {#if result?.add}

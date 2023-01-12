@@ -9,14 +9,14 @@
   export let data: LayoutData;
 </script>
 
-<div class="bg-neutral-50">
+<div class="bg-neutral-100">
   <div class="flex flex-col justify-between items-center min-h-screen">
     {#if data.network}
       <Header network={data.network}/>
     {/if}
     <main class="flex flex-col grow w-full items-center min-h-[600px]">
       {#if $page.route.id != "/"}
-      <div class="w-full">
+      <div class="w-full flex justify-center">
         <Title/>
       </div>
       {/if}
