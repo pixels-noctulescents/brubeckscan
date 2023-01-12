@@ -33,7 +33,7 @@
     </div>
   </div>
   <div class="text-center">
-    <h5 class="mb-4 uppercase text-xl">Project</h5>
+    <h5 class="mb-4 uppercase text-xl">Streamr</h5>
     <div class="flex flex-col text-slate-500 gap-1">
       <a class="mb-2 hover:underline" href="https://streamr.network/about/" target="_blank" rel="noreferrer">
         <p>About</p>

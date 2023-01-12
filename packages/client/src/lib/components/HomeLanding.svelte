@@ -4,6 +4,7 @@
     import validator from "validator";
     import { goto } from "$app/navigation";
     import { slide } from "svelte/transition";
+    import streamrLogo from "$lib/assets/img/streamr/logo.svg"
 
     let address: string;
     let invalid: boolean = false;
@@ -18,7 +19,12 @@
 </script>
 
 <article class="w-full flex flex-col items-center h-landing bg-neutral-200 gap-20 p-40">
-    <p in:slide class="text-xl p-10 text-slate-500 rounded-md">BrubeckScan aggregates data to help you manage Streamr nodes</p>
+    <section in:slide class="text-xl p-10 text-slate-500 rounded-md flex items-center gap-2">
+        <span>BrubeckScan aggregates data to help you manage Streamr nodes</span>
+        <span>
+            <img class="w-8"src={streamrLogo} alt="Streamr logo">
+        </span>
+    </section>
 
     <div class="flex w-full max-w-screen-lg">
         <Module>
@@ -38,7 +44,7 @@
 </article>
 
 <style>
-    p {
+    section {
         z-index: 2;
         background-color: rgba(240, 248, 255, 0.664);
         backdrop-filter: blur(10px);

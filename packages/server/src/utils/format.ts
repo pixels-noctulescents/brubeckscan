@@ -28,7 +28,7 @@ export async function formatNodeStats(data: any, address: string): Promise<Node>
   const firstClaim = data[0].claimedRewardCodes[0];
   const lastClaim = data[0].claimedRewardCodes.at(-1);
 
-  const claimedRewardCodes = data[0].claimedRewardCodes.slice(0, 10);
+  const claimedRewardCodes = data[0].claimedRewardCodes.slice(-10).reverse();
 
   const status = await getStatus(claimedRewardCodes);
 
