@@ -1,18 +1,11 @@
 <script lang="ts">
-  import FaGithub from "svelte-icons/fa/FaGithub.svelte";
-  import FaDiscord from "svelte-icons/fa/FaDiscord.svelte";
-  import FaTwitter from "svelte-icons/fa/FaTwitter.svelte";
-  import FaRedditSquare from "svelte-icons/fa/FaRedditSquare.svelte";
-  import FaTrello from "svelte-icons/fa/FaTrello.svelte";
-  import FaYoutube from "svelte-icons/fa/FaYoutube.svelte";
-  import FaMedium from "svelte-icons/fa/FaMedium.svelte";
-  import FaLinkedinIn from "svelte-icons/fa/FaLinkedinIn.svelte";
+  import Icon from '@iconify/svelte';
 </script>
 
-<div class="flex justify-between">
+<div class="flex justify-between items-center">
   <a href="https://github.com/streamr-dev" target="_blank" rel="noreferrer">
-    <div class="w-6 transition ease-in duration-100 text-slate-700 hover:text-slate-900">
-      <FaGithub />
+    <div class="flex items-center w-6 transition ease-in duration-100 text-slate-700 hover:text-slate-900">
+      <Icon icon="mdi:github" width="24" />
     </div>
   </a>
   <a
@@ -21,17 +14,17 @@
     rel="noreferrer"
   >
     <div class="w-6 transition ease-in duration-100 text-slate-700 hover:text-slate-900">
-      <FaDiscord />
+      <Icon icon="mdi:discord" width="24" />
     </div>
   </a>
   <a href="https://twitter.com/streamr" target="_blank" rel="noreferrer">
     <div class="w-6 transition ease-in duration-100 text-slate-700 hover:text-slate-900">
-      <FaTwitter />
+      <Icon icon="mdi:twitter" width="24" />
     </div>
   </a>
   <a href="https://www.reddit.com/r/streamr" target="_blank" rel="noreferrer">
     <div class="w-6 transition ease-in duration-100 text-slate-700 hover:text-slate-900">
-      <FaRedditSquare />
+      <Icon icon="mdi:reddit" width="24" />
     </div>
   </a>
   <a
@@ -40,7 +33,7 @@
     rel="noreferrer"
   >
     <div class="w-6 transition ease-in duration-100 text-slate-700 hover:text-slate-900">
-      <FaTrello />
+      <Icon icon="mdi:trello" width="24" />
     </div>
   </a>
   <a
@@ -49,12 +42,12 @@
     rel="noreferrer"
   >
     <div class="w-6 transition ease-in duration-100 text-slate-700 hover:text-slate-900">
-      <FaYoutube />
+      <Icon icon="mdi:youtube" width="24" />
     </div>
   </a>
   <a href="https://medium.com/streamrblog" target="_blank" rel="noreferrer">
     <div class="w-6 transition ease-in duration-100 text-slate-700 hover:text-slate-900">
-      <FaMedium />
+      <Icon icon="mdi:medium" width="24" />
     </div>
   </a>
   <a
@@ -63,7 +56,7 @@
     rel="noreferrer"
   >
     <div class="w-6 transition ease-in duration-100 text-slate-700 hover:text-slate-900">
-      <FaLinkedinIn />
+      <Icon icon="mdi:linkedin" width="24" />
     </div>
   </a>
 </div>

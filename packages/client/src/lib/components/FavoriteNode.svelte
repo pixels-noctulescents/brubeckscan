@@ -2,13 +2,12 @@
     import { scale } from "svelte/transition";
     import { enhance } from "$app/forms";
     import { format } from "$lib/utils/format";
+    import Icon from '@iconify/svelte';
     import Module from "./Module.svelte";
-    import MdSearch from 'svelte-icons/md/MdSearch.svelte'
-    import MdDeleteForever from 'svelte-icons/md/MdDeleteForever.svelte'
-    import MdSave from 'svelte-icons/md/MdSave.svelte'
-    import MdContentCopy from 'svelte-icons/md/MdContentCopy.svelte'
-    import type { FavoritesOverviewNode } from "@brubeckscan/common/types/favoritesOverview";
     import TokenData from "./TokenData.svelte";
+    import FavoriteNodeName from "./FavoriteNodeName.svelte";
+    import type { FavoritesOverviewNode } from "@brubeckscan/common/types/favoritesOverview";
+
 
     export let node: FavoritesOverviewNode;
 </script>
@@ -17,47 +16,28 @@
 <div class="w-full flex flex-col" in:scale>
     <Module>
         <div class="w-full flex flex-col gap-1">
-            <div class="flex w-full justify-between">
-                <div class="transition duration-100 ease-in w-6 text-gray-300 hover:text-blue-500">
-                    <a href={`/nodes/${node.db.address}`}>
-                        <div class="w-8">
-                            <MdSearch/>
-                        </div>
-                    </a>
-                </div>
-                <form class="flex justify-end" method="POST" use:enhance>               
-                    <input value={node.db.id} type="hidden" name="id">
-                    <button formaction="?/deleteFavorite">
-                        <div class="transition duration-100 ease-in w-6 text-gray-300 hover:text-red-500">
-                            <div class="w-8">
-                                <MdDeleteForever/>
-                            </div>
-                        </div>
-                    </button>
-                </form>
-            </div>
-
-
-            <form class="flex justify-between w-full mb-4 gap-10" method="POST" use:enhance>
-                <input class="w-4/6" value={node.db.name} type="hidden" name="baseName">               
-                <input class="w-full text-xl bg-slate-100 text-slate-900 p-2" value={node.db.name} type="text" name="newName">
-                <input value={node.db.id} type="hidden" name="id">
-                <button formaction="?/updateFavorite">
-                    <div class="transition duration-100 ease-in w-6 text-gray-300 hover:text-blue-500">
-                        <MdSave/>
-                    </div>
-                </button>
-            </form>
+            <FavoriteNodeName {node} />
 
             <div class="flex justify-between w-full items-center">
-                <p class="text-gray-600">Adress</p>
-                <p class="flex items-center gap-4">
-                    <span>{format.ethAddress(node.stats.address)}</span>
-                    <button class="transition duration-100 ease-in w-6 text-gray-300 hover:text-blue-500" on:click={async () => {await navigator.clipboard.writeText(node.stats.address)}}>
-                        <MdContentCopy/>
-                    </button>
-                </p>
+                <div class="flex items-center w-full justify-between">
+                    <span><a title={node.db.address} href={`/nodes/${node.db.address}`}>{format.ethAddress(node.stats.address)}</a></span>
+                    <div class="flex">
+                        <button class="transition duration-100 ease-in w-6 text-gray-300 hover:text-blue-500" on:click={async () => {await navigator.clipboard.writeText(node.stats.address)}}>
+                            <Icon icon="material-symbols:content-copy" width="26" />
+                        </button>
+                        <div class="flex justify-between">
+                            <div class="transition duration-100 ease-in w-6 text-gray-300 hover:text-blue-500">
+                                <a href={`/nodes/${node.db.address}`}>
+                                    <div class="w-8">
+                                        <Icon icon="material-symbols:search" width="26" />
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
             <div class="flex justify-between w-full h-max items-center">
                 <p class="text-gray-600">Status</p>
                     {#if node.stats.status}
@@ -91,6 +71,17 @@
                     <TokenData value={node.stats.sent}/>
                 </p>
             </div>
+            <form class="flex" method="POST" use:enhance>               
+                <input value={node.db.id} type="hidden" name="id">
+                <button formaction="?/deleteFavorite" class="w-full">
+                    <div class="transition duration-100 ease-in w-full text-gray-300 hover:text-red-500  flex justify-end">
+                        <div class="flex items-center">
+                            <p>Delete</p>
+                            <Icon icon="material-symbols:delete" width="26" />
+                        </div>
+                    </div>
+                </button>
+            </form>
         </div>
     </Module>
 </div>

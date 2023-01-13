@@ -1,6 +1,6 @@
 <script lang="ts">
     import Module from "./Module.svelte";
-    import IoIosSearch from 'svelte-icons/io/IoIosSearch.svelte'
+    import Icon from '@iconify/svelte';
     import validator from "validator";
     import { goto } from "$app/navigation";
     import { slide } from "svelte/transition";
@@ -32,7 +32,7 @@
                 <input class="text-xl w-full bg-transparent" bind:value={address} placeholder="Enter a node address">
                 <button on:click={handleSearch}>
                     <div class="transition duration-150 ease-in w-10 text-gray-300 hover:text-slate-700">
-                        <IoIosSearch></IoIosSearch>
+                        <Icon icon="material-symbols:search" width="32" />
                     </div>
                 </button>
             </div>

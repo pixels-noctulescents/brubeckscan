@@ -12,12 +12,22 @@
     <FavoriteAdd result={form}></FavoriteAdd>
     <FavoriteTotals></FavoriteTotals>
     {#if $overview}
-        <div class="flex w-full flex-wrap justify-between items-stretch gap-6">
+        <div class="nodeContainer flex w-full flex-wrap start items-stretch">
             {#each $overview.favorites as node (node.db.id) }
-                    <div class="flex grow">
+                    <div class="node flex">
                         <FavoriteNode {node}/>
                     </div>
             {/each}
         </div>
     {/if}
 </div>
+
+<style>
+    .nodeContainer {
+        display: flex;
+        gap: 10px;
+    }
+    .node {
+        width: calc(50% - 5px);
+    }
+</style>
