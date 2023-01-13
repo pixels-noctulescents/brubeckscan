@@ -1,4 +1,4 @@
-import { getNodeStats } from "../controllers/nodes/getNodeStats";
+import { getNodeStats } from "../controllers/node/getNodeStats";
 import type { DFavorite } from "@brubeckscan/common/types/db";
 import type { FavoritesTotals, FavoritesOverview, FavoritesOverviewNode } from "@brubeckscan/common/types/favoritesOverview";
 

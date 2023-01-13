@@ -1,43 +1,43 @@
 import { Request, Response, NextFunction } from "express";
-import UsersDAO from "../../dao/users/users.dao";
+import UserDAO from "../../dao/user/UserDAO";
 import UserManager from "../../managers/UserManager";
 import { sender } from "../../utils/sender";
 
-const usersController = () => { };
+const UserController = () => { };
 
-usersController.count = async (
+UserController.count = async (
   req: Request,
   res: Response,
   next: NextFunction
 ) => {
   try {
-    const count = await UsersDAO.count();
+    const count = await UserDAO.count();
     return sender.success(res, { users: { count } });
   } catch (e) {
     next(e);
   }
 };
 
-usersController.create = async (
+UserController.create = async (
   req: Request,
   res: Response,
   next: NextFunction
 ) => {
   try {
-    const user = await UsersDAO.create(req.params.address);
+    const user = await UserDAO.create(req.params.address);
     return sender.success(res, { user });
   } catch (e) {
     next(e);
   }
 };
 
-usersController.find = async (
+UserController.find = async (
   req: Request,
   res: Response,
   next: NextFunction
 ) => {
   try {
-    const user = await UsersDAO.find(req.params.address);
+    const user = await UserDAO.find(req.params.address);
 
     if (!user) {
       return sender.failure(res, { user: "User not found." }, 404);
@@ -49,13 +49,13 @@ usersController.find = async (
   }
 };
 
-usersController.delete = async (
+UserController.delete = async (
   req: Request,
   res: Response,
   next: NextFunction
 ) => {
   try {
-    const user = await UsersDAO.delete(req.params.address);
+    const user = await UserDAO.delete(req.params.address);
 
     return sender.success(res, { user });
   } catch (e) {
@@ -63,13 +63,13 @@ usersController.delete = async (
   }
 };
 
-usersController.update = async (
+UserController.update = async (
   req: Request,
   res: Response,
   next: NextFunction
 ) => {
   try {
-    const user = await UsersDAO.update(req.params.address, req.body);
+    const user = await UserDAO.update(req.params.address, req.body);
 
     return sender.success(res, { user });
   } catch (e) {
@@ -77,7 +77,7 @@ usersController.update = async (
   }
 };
 
-usersController.getOverview = async (
+UserController.getOverview = async (
   req: Request,
   res: Response,
   next: NextFunction
@@ -85,7 +85,7 @@ usersController.getOverview = async (
   try {
     const userAddress = req.params.address;
 
-    const exist = await UsersDAO.find(userAddress.toLowerCase());
+    const exist = await UserDAO.find(userAddress.toLowerCase());
 
     if (!exist) {
       return sender.failure(res, { user: "Not found" }, 404);
@@ -100,4 +100,4 @@ usersController.getOverview = async (
   }
 };
 
-export { usersController };
+export default UserController;

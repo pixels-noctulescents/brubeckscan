@@ -1,5 +1,5 @@
 import express from "express";
-import NetworkController from "../controllers/networks/NetworkController";
+import NetworkController from "../controllers/network/NetworkController";
 
 const NetworkRouter = express.Router();
 

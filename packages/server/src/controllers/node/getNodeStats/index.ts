@@ -1,7 +1,7 @@
-import { getStats } from "./getStats";
-import { getRewards } from "./getRewards";
-import { getDataSent } from "./getDataSent";
-import { getDataStaked } from "./getDataStaked";
+import { fetchStats } from "./fetchNetworkStats";
+import { fetchNetworkRewards } from "./fetchNetworkRewards";
+import { fetchDataSent } from "./fetchDataSent";
+import { fetchDataStaked } from "./fetchDataStaked";
 import { formatNodeStats } from "../../../utils/format";
 import { generate } from "../../../utils/generate";
 import { cache } from "../../../clients/cache";
@@ -18,10 +18,10 @@ export async function getNodeStats(address: string): Promise<BrubeckNodeStats> {
 
   try {
     const requests = [
-      getStats(address),
-      getRewards(address),
-      getDataSent(address),
-      getDataStaked(address),
+      fetchStats(address),
+      fetchNetworkRewards(address),
+      fetchDataSent(address),
+      fetchDataStaked(address),
     ];
 
     const responses = await Promise.allSettled(requests);

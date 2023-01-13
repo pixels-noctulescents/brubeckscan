@@ -2,9 +2,9 @@ import { getPrices } from "./getPrices";
 import { sender } from "../../utils/sender";
 import { Response, NextFunction, Request } from "express";
 
-const marketsController = () => {};
+const MarketController = () => { };
 
-marketsController.getPrices = async (
+MarketController.getPrices = async (
   req: Request,
   res: Response,
   next: NextFunction
@@ -18,4 +18,4 @@ marketsController.getPrices = async (
   }
 };
 
-export { marketsController };
+export default MarketController;

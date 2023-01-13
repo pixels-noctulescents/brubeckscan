@@ -17,7 +17,9 @@ NodesController.getNodeStats = async (
       return sender.failure(res, { address: "Invalid ethereum address" })
     }
 
+    // Main method du manager
     const node = await getNodeStats(address);
+
     if (node) {
       return sender.success(res, { node: node });
     }

@@ -1,6 +1,6 @@
 import { constants } from "../../../configs/constants";
 
-export async function getStats(address: string) {
+export async function fetchStats(address: string) {
   try {
     const response = await fetch(
       `${constants.BRUBECK_NODE_STATS_BASE}${address}`

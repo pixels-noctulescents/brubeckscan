@@ -1,14 +1,14 @@
 import express from "express";
-import NodeController from "../controllers/nodes/nodes.controller";
+import NodeController from "../controllers/node/NodeController";
 import { validateEthAddress } from "../middlewares/validate/ethAddress";
 
-const nodesRouter = express.Router();
+const NodeRouter = express.Router();
 
 // Aggregate data from various sources
-nodesRouter.get(
+NodeRouter.get(
   "/stats/:address",
   [validateEthAddress],
   NodeController.getNodeStats
 );
 
-export { nodesRouter };
+export default NodeRouter;

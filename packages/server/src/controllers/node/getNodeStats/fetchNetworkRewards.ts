@@ -1,6 +1,6 @@
 import { constants } from "../../../configs/constants";
 
-export async function getRewards(address: string) {
+export async function fetchNetworkRewards(address: string) {
   try {
     const response = await fetch(
       `${constants.BRUBECK_NODE_REWARDS_BASE}${address}`

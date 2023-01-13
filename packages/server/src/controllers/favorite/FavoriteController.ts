@@ -1,10 +1,10 @@
 import { NextFunction, Request, Response } from "express";
-import { favoritesDAO } from "../../dao/favorites/favorites.dao";
+import FavoriteDAO from "../../dao/favorite/FavoriteDAO";
 import { sender } from "../../utils/sender";
 
-const favoritesController = () => { };
+const FavoriteController = () => { };
 
-favoritesController.find = async (
+FavoriteController.find = async (
   req: Request,
   res: Response,
   next: NextFunction
@@ -12,7 +12,7 @@ favoritesController.find = async (
   try {
     const favoriteId = req.params.id;
 
-    const favorite = await favoritesDAO.find(favoriteId);
+    const favorite = await FavoriteDAO.find(favoriteId);
 
     return sender.success(res, { favorite });
   } catch (e) {
@@ -20,7 +20,7 @@ favoritesController.find = async (
   }
 };
 
-favoritesController.create = async (
+FavoriteController.create = async (
   req: Request,
   res: Response,
   next: NextFunction
@@ -34,7 +34,7 @@ favoritesController.create = async (
       return sender.failure(res, {}, 400);
     }
 
-    const favorite = await favoritesDAO.save(userAddress.toLowerCase(), favoriteAddress.toLowerCase().trim(), favoriteName);
+    const favorite = await FavoriteDAO.save(userAddress.toLowerCase(), favoriteAddress.toLowerCase().trim(), favoriteName);
 
     return sender.success(res, { favorite });
   } catch (e) {
@@ -42,7 +42,7 @@ favoritesController.create = async (
   }
 };
 
-favoritesController.delete = async (
+FavoriteController.delete = async (
   req: Request,
   res: Response,
   next: NextFunction
@@ -53,7 +53,7 @@ favoritesController.delete = async (
     }
 
     const favoriteId = req.params.id;
-    const favorite = await favoritesDAO.delete(favoriteId);
+    const favorite = await FavoriteDAO.delete(favoriteId);
 
     return sender.success(res, { favorite });
   } catch (e) {
@@ -61,7 +61,7 @@ favoritesController.delete = async (
   }
 };
 
-favoritesController.update = async (
+FavoriteController.update = async (
   req: Request,
   res: Response,
   next: NextFunction
@@ -71,7 +71,7 @@ favoritesController.update = async (
       return sender.failure(res, { nodeId: "Missing node ID." }, 400);
     }
 
-    const favorite = await favoritesDAO.update(req.params.id, req.body);
+    const favorite = await FavoriteDAO.update(req.params.id, req.body);
 
     return sender.success(res, { favorite });
   } catch (e) {
@@ -79,4 +79,4 @@ favoritesController.update = async (
   }
 };
 
-export { favoritesController };
+export default FavoriteController;

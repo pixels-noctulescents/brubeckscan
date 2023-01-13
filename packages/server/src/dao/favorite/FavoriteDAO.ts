@@ -1,8 +1,8 @@
 import { prisma } from "../../clients/prisma";
 
-const favoritesDAO = () => {};
+const FavoriteDAO = () => { };
 
-favoritesDAO.find = async ( id: string) => {
+FavoriteDAO.find = async (id: string) => {
   try {
     const favorite = await prisma.favorite.findUnique({
       where: {
@@ -16,7 +16,7 @@ favoritesDAO.find = async ( id: string) => {
   }
 };
 
-favoritesDAO.save = async (
+FavoriteDAO.save = async (
   userAddress: string,
   nodeAddress: string,
   nodeName: string
@@ -35,7 +35,7 @@ favoritesDAO.save = async (
   }
 };
 
-favoritesDAO.delete = async (id: string) => {
+FavoriteDAO.delete = async (id: string) => {
   try {
     const favorite = await prisma.favorite.delete({
       where: {
@@ -49,7 +49,7 @@ favoritesDAO.delete = async (id: string) => {
   }
 };
 
-favoritesDAO.update = async (id: string, data: object) => {
+FavoriteDAO.update = async (id: string, data: object) => {
   try {
     const favorite = await prisma.favorite.update({
       where: {
@@ -64,4 +64,4 @@ favoritesDAO.update = async (id: string, data: object) => {
   }
 };
 
-export { favoritesDAO };
+export default FavoriteDAO;

@@ -1,19 +1,17 @@
 import express from "express";
 import { validateAuth } from "../middlewares/validate/auth";
-import { usersRouter } from "./users.router";
-import { marketsRouter } from "./markets.router";
-import { nodesRouter } from "./nodes.router";
-import { favoritesRouter } from "./favorites.router";
+import NodeRouter from "./NodeRouter"
 import NetworkRouter from "./NetworkRouter";
+import UserRouter from "./UserRouter";
+import FavoriteRouter from "./FavoriteRouter";
+import MarketRouter from "./MarketRouter";
 
 const Router = express.Router();
 
-Router.use(validateAuth);
-
-Router.use("/users", usersRouter);
-Router.use("/markets", marketsRouter);
-Router.use("/nodes", nodesRouter);
-Router.use("/networks", NetworkRouter);
-Router.use("/favorites", favoritesRouter);
+Router.use("/users", [validateAuth], UserRouter);
+Router.use("/markets", [validateAuth], MarketRouter);
+Router.use("/nodes", [validateAuth], NodeRouter);
+Router.use("/networks", [validateAuth], NetworkRouter);
+Router.use("/favorites", [validateAuth], FavoriteRouter);
 
 export { Router };

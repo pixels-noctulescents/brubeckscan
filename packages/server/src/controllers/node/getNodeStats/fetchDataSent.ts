@@ -1,7 +1,7 @@
 import { request, gql } from "graphql-request";
 import { constants } from "../../../configs/constants";
 
-export async function getDataSent(address: string) {
+export async function fetchDataSent(address: string) {
   try {
     const query = gql`
             {

@@ -1,6 +1,6 @@
 import { Server } from "socket.io";
 import schedule from "node-schedule";
-import { getPrices } from "../../controllers/markets/getPrices";
+import { getPrices } from "../../controllers/market/getPrices";
 import NetworkManager from "../../managers/NetworkManager";
 
 const socketsClient = () => { };
