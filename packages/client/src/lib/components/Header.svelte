@@ -1,7 +1,7 @@
 <script lang="ts">
   import Prices from "$lib/components/Prices.svelte";
   import Connect from "$lib/components/Connect.svelte";
-  import Navigation from "./Navigation.svelte";
+  import HeaderNavigation from "./HeaderNavigation.svelte";
   import NetworkStats from "./HeaderNetworkStats.svelte";
   import type { BrubeckNetworkStats } from "@brubeckscan/common/types/networkStats";
   import { navigating } from "$app/stores";
@@ -17,7 +17,7 @@
       <NetworkStats {network}/>
     </div>
     <div class="w-full flex justify-between items-center px-5 py-2 xl:px-32">
-      <Navigation />
+      <HeaderNavigation />
       <Connect/>
     </div>
     {#if $navigating != null}
