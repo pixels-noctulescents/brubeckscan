@@ -4,6 +4,7 @@
   "description": "BrubeckScan API.",
   "main": "dist/index.js",
   "scripts": {
+    "check": "tsc -noEmit",
     "build": "rm -rf ./dist && prisma migrate deploy && prisma generate && tsc",
     "dev": "concurrently npm:watch:*",
     "watch:ts": "tsc --watch",

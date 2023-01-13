@@ -77,6 +77,7 @@
     onMount(async () => {
         const config = generateGraphConfig();
         const chart = new Chart(canvas, config);
+        return chart;
     });
 </script>
 

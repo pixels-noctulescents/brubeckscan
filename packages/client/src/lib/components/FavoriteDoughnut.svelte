@@ -4,8 +4,6 @@
     import Chart from "chart.js/auto";
     import Module from "./Module.svelte";
     
-    const GRAPH_ID = "profileDoughnut";
-
     let canvas: HTMLCanvasElement;
 
     onMount(async () => {

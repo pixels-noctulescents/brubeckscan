@@ -1,5 +1,5 @@
 import send from "$lib/send";
-import { user, userOnNetwork, overview } from "$lib/stores";
+import { user, userOnNetwork } from "$lib/stores";
 import type { DUser } from "@brubeckscan/common/types/db";
 
 export async function login(address: string) {
