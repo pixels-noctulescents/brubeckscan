@@ -1,10 +1,10 @@
 import { getNodeStats } from "../controllers/nodes/getNodeStats";
-import type { FavoritesTotals, FavoritesOverview, FavoritesOverviewNode, Favorite } from "@brubeckscan/common/types";
-
+import type { DFavorite } from "@brubeckscan/common/types/db";
+import type { FavoritesTotals, FavoritesOverview, FavoritesOverviewNode } from "@brubeckscan/common/types/favoritesOverview";
 
 const UserManager = () => { };
 
-UserManager.getOverview = async (favorites: Favorite[]): Promise<FavoritesOverview> => {
+UserManager.getOverview = async (favorites: DFavorite[]): Promise<FavoritesOverview> => {
     let totals: FavoritesTotals = {
         nodes: 0,
         toBeReceived: 0,

@@ -1,9 +1,9 @@
 <script lang="ts">
     import { prices } from "$lib/stores";
-    import type { Network } from "@brubeckscan/common/types";
+    import type { BrubeckNetworkStats} from "@brubeckscan/common/types/networkStats";
     import { format } from "$lib/utils/format";
 
-    export let network: Network;
+    export let network: BrubeckNetworkStats;
 </script>
 
 <div class="flex text-xs gap-4">

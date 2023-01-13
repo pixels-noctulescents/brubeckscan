@@ -2,7 +2,7 @@ import { io } from "socket.io-client";
 import { PUBLIC_SOCKET_URL } from "$env/static/public";
 import { prices, usersCount, user } from "$lib/stores";
 import { browser } from "$app/environment";
-import type { RealTimePrices } from "@brubeckscan/common/types";
+import type { RealTimePrices } from "@brubeckscan/common/types/sockets";
 
 let Socket = {};
 

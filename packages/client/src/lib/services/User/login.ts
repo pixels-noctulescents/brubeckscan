@@ -1,6 +1,6 @@
 import send from "$lib/send";
 import { user, userOnNetwork, overview } from "$lib/stores";
-import type { User } from "@brubeckscan/common/types";
+import type { DUser } from "@brubeckscan/common/types/db";
 
 export async function login(address: string) {
   try {
@@ -23,20 +23,14 @@ export async function login(address: string) {
   }
 }
 
-async function updateUserData(userDb: User): Promise<boolean> {
+async function updateUserData(dUser: DUser): Promise<boolean> {
   try {
-    const getOverview = await send(`users/${userDb.address}/overview`, undefined, undefined, fetch);
-    const getUserOnNetwork = await send(`nodes/stats/${userDb.address}`, undefined, undefined, fetch);
+    const getUserOnNetwork = await send(`nodes/stats/${dUser.address}`, undefined, undefined, fetch);
 
     if (getUserOnNetwork) {
       userOnNetwork.set(getUserOnNetwork.data.node);
     }
-
-    if (getOverview) {
-      overview.set(getOverview.data.overview)
-    }
-
-    user.set(userDb);
+    user.set(dUser);
     return true;
   } catch (e) {
     console.log(e);

@@ -3,12 +3,12 @@ import { getRewards } from "./getRewards";
 import { getDataSent } from "./getDataSent";
 import { getDataStaked } from "./getDataStaked";
 import { formatNodeStats } from "../../../utils/format";
-import type Node from "@brubeckscan/common/types/node";
 import { generate } from "../../../utils/generate";
 import { cache } from "../../../clients/cache";
+import type { BrubeckNodeStats } from "@brubeckscan/common/types/node";
 
-export async function getNodeStats(address: string): Promise<Node> {
-  const cached: Node | undefined = cache.get(`node/${address}`);
+export async function getNodeStats(address: string): Promise<BrubeckNodeStats> {
+  const cached: BrubeckNodeStats | undefined = cache.get(`node/${address}`);
 
   if (cached) {
     return cached;

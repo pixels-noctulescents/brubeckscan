@@ -1,7 +1,7 @@
 import { constants } from "../configs/constants";
 import NetworkManager from "../managers/NetworkManager";
-import type { RewardCode } from "@brubeckscan/common/types";
-import type Node from "@brubeckscan/common/types/node";
+import type { RewardCode } from "@brubeckscan/common/types/node";
+import type { BrubeckNodeStats } from "@brubeckscan/common/types/node";
 
 async function getStatus(codes: RewardCode[]): Promise<boolean> {
   const networkData = await NetworkManager.getNetworkStats();
@@ -17,7 +17,7 @@ async function getStatus(codes: RewardCode[]): Promise<boolean> {
   return false;
 }
 
-export async function formatNodeStats(data: any, address: string): Promise<Node> {
+export async function formatNodeStats(data: any, address: string): Promise<BrubeckNodeStats> {
   const totalDATASent: number = data[2]?.erc20Transfers.reduce(
     (previous: any, current: any) => {
       return previous + +current.value;
@@ -33,7 +33,7 @@ export async function formatNodeStats(data: any, address: string): Promise<Node>
   const status = await getStatus(claimedRewardCodes);
 
   // Build the actual node
-  const node: Node = {
+  const node: BrubeckNodeStats = {
     address: address,
     status: status,
     staked: Math.round(+data[3]?.stakedDATA) || 0,

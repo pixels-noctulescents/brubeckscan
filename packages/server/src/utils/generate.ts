@@ -1,4 +1,4 @@
-import type { Node } from "@brubeckscan/common/types";
+import type { BrubeckNodeStats } from "@brubeckscan/common/types/node";
 
 const generate = () => { };
 
@@ -25,8 +25,8 @@ generate.randomGradient = () => {
   return backgroundColor;
 };
 
-generate.emptyNode = (): Node => {
-  const node: Node = {
+generate.emptyNode = (): BrubeckNodeStats => {
+  const node: BrubeckNodeStats = {
     address: "",
     polygonScanURL: "",
     identiconURL: "",

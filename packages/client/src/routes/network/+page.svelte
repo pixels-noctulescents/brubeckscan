@@ -1,12 +1,12 @@
 <script lang="ts">
-    import type { Network } from "@brubeckscan/common/types";
+    import type { BrubeckNetworkStats } from "@brubeckscan/common/types/networkStats";
     import NetworkStats from "$lib/components/NetworkStats.svelte";
     import NetworkGraphs from "$lib/components/NetworkGraphs.svelte";
     import NetworkAverages from "$lib/components/NetworkAverages.svelte";
 
     export let data;
 
-    const network: Network = data.network;
+    const network: BrubeckNetworkStats = data.network;
 </script>
 
 <div class="flex flex-col w-full gap-10 max-w-screen-lg pt-20 pb-40">

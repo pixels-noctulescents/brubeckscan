@@ -2,13 +2,12 @@
   import Prices from "$lib/components/Prices.svelte";
   import Connect from "$lib/components/Connect.svelte";
   import Navigation from "./Navigation.svelte";
-  import Logo from "./Logo.svelte";
   import NetworkStats from "./HeaderNetworkStats.svelte";
-  import type { Network } from "@brubeckscan/common/types";
+  import type { BrubeckNetworkStats } from "@brubeckscan/common/types/networkStats";
   import { navigating } from "$app/stores";
   import {fade} from "svelte/transition";
 
-  export let network:Network;
+  export let network: BrubeckNetworkStats;
 </script>
 
 <div class="flex items-center justify-center w-full sticky top-0 z-50">

@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type { Stats } from "@brubeckscan/common/types";
+    import type { Stats } from "@brubeckscan/common/types/networkStats";
     
     import Module from "./Module.svelte";
 

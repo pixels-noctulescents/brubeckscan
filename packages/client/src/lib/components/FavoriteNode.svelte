@@ -7,7 +7,7 @@
     import MdDeleteForever from 'svelte-icons/md/MdDeleteForever.svelte'
     import MdSave from 'svelte-icons/md/MdSave.svelte'
     import MdContentCopy from 'svelte-icons/md/MdContentCopy.svelte'
-    import type { FavoritesOverviewNode } from "@brubeckscan/common/types";
+    import type { FavoritesOverviewNode } from "@brubeckscan/common/types/favoritesOverview";
     import TokenData from "./TokenData.svelte";
 
     export let node: FavoritesOverviewNode;

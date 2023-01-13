@@ -1,6 +1,6 @@
 <script lang="ts">
     import { overview } from "$lib/stores";
-    import type { ActionData, PageData } from "./$types";
+    import type { ActionData } from "./$types";
     import FavoriteTotals from "$lib/components/FavoriteTotals.svelte";
     import FavoriteNode from "$lib/components/FavoriteNode.svelte";
     import FavoriteAdd from "$lib/components/FavoriteAdd.svelte";

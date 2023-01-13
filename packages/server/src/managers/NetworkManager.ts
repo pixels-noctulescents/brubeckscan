@@ -1,13 +1,13 @@
 import { constants } from "../configs/constants";
-import { Network } from "@brubeckscan/common/types";
-import { NetworkRewardCode } from "@brubeckscan/common/types";
+import { BrubeckNetworkStats } from "@brubeckscan/common/types/networkStats";
+import { NetworkRewardCode } from "@brubeckscan/common/types/networkStats";
 import { cache } from "../clients/cache";
 
 const NetworkManager = () => { };
 
-NetworkManager.getNetworkStats = async (): Promise<Network | undefined> => {
+NetworkManager.getNetworkStats = async (): Promise<BrubeckNetworkStats | undefined> => {
     try {
-        const cached: Network | undefined = cache.get("networkStats");
+        const cached: BrubeckNetworkStats | undefined = cache.get("networkStats");
 
         if (cached) {
             return cached;
@@ -51,7 +51,7 @@ async function fetchStats() {
     }
 }
 
-function formatStats(data: Array<any>): Network {
+function formatStats(data: Array<any>): BrubeckNetworkStats {
     const averages = getAverages(data[1].lastRewards);
 
     const stats = {
