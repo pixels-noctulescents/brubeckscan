@@ -1,7 +1,8 @@
 import { NextFunction, Request, Response } from "express";
-import { getNodeStats } from "./getNodeStats";
 import { sender } from "../../utils/sender";
 import validator from "validator";
+import NodeManager from "../../managers/Node/NodeManager";
+import NetworkManager from "../../managers/NetworkManager";
 
 const NodesController = () => { };
 
@@ -17,15 +18,20 @@ NodesController.getNodeStats = async (
       return sender.failure(res, { address: "Invalid ethereum address" })
     }
 
-    // Main method du manager
-    const node = await getNodeStats(address);
+    // We need the Brubeck network stats to process a node status
+    const networkStats = await NetworkManager.getNetworkStats();
 
-    if (node) {
-      return sender.success(res, { node: node });
+    if (networkStats) {
+      const manager = new NodeManager(address, networkStats);
+      const node = await manager.getStats();
+      if (node) {
+        return sender.success(res, { node });
+      } else {
+        return sender.failure(res, { message: "Fail" });
+      }
     }
 
-    return sender.failure(res, { message: "Could not get node" });
-
+    return sender.failure(res, { message: "Fail" });
   } catch (e) {
     next(e);
   }

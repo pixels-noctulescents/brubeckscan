@@ -6,11 +6,12 @@
     
     export let codes: NetworkRewardCode[];
 
-    const GRAPH_ID = "topologyChart";
+    let canvas: HTMLCanvasElement;
 
     const labels = codes.map((item) => item.code);
     const topologySize = codes.map( item => item.topologySize);
     const receivedClaims = codes.map(item => item.receivedClaims);
+
     function generateGraphConfig() {
         const data = {
             labels: labels.reverse(),
@@ -75,8 +76,8 @@
     }
     onMount(async () => {
         const config = generateGraphConfig();
-        const element: any = document.getElementById(GRAPH_ID);
-        const chart = new Chart(element, config);
+        const chart = new Chart(canvas, config);
+        return chart;
     });
 </script>
 
@@ -84,7 +85,7 @@
     <Module>
         <div class="w-full flex flex-col">
             <h3 class="text-3xl  text-neutral-900">Topology size & received claims</h3>
-            <canvas id={GRAPH_ID} />
+            <canvas bind:this={canvas}/>
         </div>
     </Module>
 </div>

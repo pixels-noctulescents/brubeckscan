@@ -1,22 +1,23 @@
 {
-    "name": "brubeckscan",
-    "private": "true",
-    "scripts": {
-        "build": "npm run build --workspaces --if-present",
-        "dev": "concurrently npm:dev:*",
-        "dev:client": "npm run dev --workspace=@brubeckscan/client",
-        "dev:server": "npm run dev --workspace=@brubeckscan/server"
-    },
-    "workspaces": [
-        "./packages/client",
-        "./packages/server",
-        "./packages/common"
-    ],
-    "dependencies": {
-        "dayjs": "^1.11.7",
-        "dotenv": "^16.0.3"
-    },
-    "devDependencies": {
-        "concurrently": "^7.6.0"
-    }
+  "name": "brubeckscan",
+  "private": "true",
+  "scripts": {
+    "check": "npm run check --workspaces --if-present",
+    "build": "npm run build --workspaces --if-present",
+    "dev": "concurrently npm:dev:*",
+    "dev:client": "npm run dev --workspace=@brubeckscan/client",
+    "dev:server": "npm run dev --workspace=@brubeckscan/server"
+  },
+  "workspaces": [
+    "./packages/client",
+    "./packages/server",
+    "./packages/common"
+  ],
+  "dependencies": {
+    "dayjs": "^1.11.7",
+    "dotenv": "^16.0.3"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
 }

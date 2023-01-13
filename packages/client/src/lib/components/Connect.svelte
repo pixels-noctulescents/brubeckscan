@@ -9,7 +9,7 @@
 
   async function handleConnect() {
     try {
-      const request = await (window as any).ethereum.request({
+      await (window as any).ethereum.request({
         method: "eth_requestAccounts",
       });
     } catch (e) {

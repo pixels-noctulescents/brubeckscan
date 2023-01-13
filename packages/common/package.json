@@ -1,7 +1,8 @@
 {
   "name": "@brubeckscan/common",
   "version": "1.0.0",
-  "description": "Package containing project types.",
+  "description": "Package containing project types and utils",
   "author": "Adam Phi Vo",
-  "license": "MIT"
+  "license": "MIT",
+  "main": "index.ts"
 }

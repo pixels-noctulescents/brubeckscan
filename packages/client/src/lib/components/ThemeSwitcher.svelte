@@ -7,14 +7,14 @@
     if ($currentTheme === "dark") {
       currentTheme.set("light");
       if ($user) {
-        const update = await UserService.update(`${$user.address}`, {
+        await UserService.update(`${$user.address}`, {
           theme: "light",
         });
       }
     } else {
       currentTheme.set("dark");
       if ($user) {
-        const update = await UserService.update(`${$user.address}`, {
+        await UserService.update(`${$user.address}`, {
           theme: "dark",
         });
       }

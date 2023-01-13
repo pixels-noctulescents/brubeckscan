@@ -1,22 +1,25 @@
 <script lang="ts">
-    export let handle: any;
-  
-    let loading = false;
-  
+    export let handle: any = () => {};
+    export let formaction = "";
+
+    let disabled = false;
+
+    
     async function main() {
       try {
-        loading = true;
+        disabled = true;
         await handle();
-        loading = false;
+        disabled = false;
       } catch (e) {
         console.log(e);
       }
     }
   </script>
   
-  <button 
-    on:click={main} 
-    style:color={loading ? "orange" : ""}
-    class="transition duration-150 ease-in flex items-center hover:bg-slate-700 gap-2 px-2 py-1 rounded-sm hover:shadow-sm hover:text-white">
+  <button
+    {disabled}
+    {formaction}
+    on:click={main}>
     <slot/>
   </button>
+

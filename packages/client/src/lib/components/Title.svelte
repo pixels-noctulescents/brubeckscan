@@ -4,21 +4,21 @@
   let title = "";
 
   page.subscribe((page) => {
-    if ($page.route.id === "/"){
+    if (page.route.id === "/"){
       return title = "Home";
     }
   
-    if  ($page.route.id === "/nodes/[address]"){
+    if  (page.route.id === "/nodes/[address]"){
       return title = "Stats";
     }
 
-    if  ($page.route.id === "/api"){
+    if  (page.route.id === "/api"){
       return title = "Public API";
     }
   
     else {
-      if($page.route.id){
-        return title = $page.route.id?.substring(1);
+      if(page.route.id){
+        return title = page.route.id?.substring(1);
       }
     }
   })

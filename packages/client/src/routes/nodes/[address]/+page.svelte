@@ -2,7 +2,7 @@
     import Module from "$lib/components/Module.svelte";
     import TokenData from "$lib/components/TokenData.svelte";
     import type { PageData } from "./$types";
-    import { format } from "$lib/utils/format";
+    import { format } from "@brubeckscan/common/utils";
 
     export let data: PageData;
 

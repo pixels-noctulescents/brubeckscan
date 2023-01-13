@@ -1,7 +1,7 @@
 <script lang="ts">
     import { prices } from "$lib/stores";
     import type { BrubeckNetworkStats} from "@brubeckscan/common/types/networkStats";
-    import { format } from "$lib/utils/format";
+    import { format } from "@brubeckscan/common/utils";
 
     export let network: BrubeckNetworkStats;
 </script>

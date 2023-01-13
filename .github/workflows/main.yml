@@ -20,8 +20,10 @@ jobs:
             export NVM_DIR=~/.nvm
             source ~/.nvm/nvm.sh
             cd ~/Projects/brubeckAPI
+            git reset --hard
             git pull
             npm install
+            npm run check
             npm run build
             pm2 start
             pm2 save
