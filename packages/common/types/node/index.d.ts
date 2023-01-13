@@ -1,3 +1,4 @@
+// staked, toBeReceived, sent & rewards are in DATA Token
 export interface BrubeckNodeStats {
     address: string;
     status: boolean;
