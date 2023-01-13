@@ -1,10 +1,13 @@
-import { getNodeStats } from "../controllers/node/getNodeStats";
 import type { DFavorite } from "@brubeckscan/common/types/db";
 import type { FavoritesTotals, FavoritesOverview, FavoritesOverviewNode } from "@brubeckscan/common/types/favoritesOverview";
+import NetworkManager from "./NetworkManager";
+import NodeManager from "./Node/NodeManager";
 
 const UserManager = () => { };
 
-UserManager.getOverview = async (favorites: DFavorite[]): Promise<FavoritesOverview> => {
+UserManager.getOverview = async (favorites: DFavorite[]): Promise<FavoritesOverview | undefined> => {
+    const networkStats = await NetworkManager.getNetworkStats();
+
     let totals: FavoritesTotals = {
         nodes: 0,
         toBeReceived: 0,
@@ -14,12 +17,21 @@ UserManager.getOverview = async (favorites: DFavorite[]): Promise<FavoritesOverv
         statuses: 0
     }
 
+    let tempOkNode = 0;
+
+    if (!networkStats) return undefined;
+
     const nodes: FavoritesOverviewNode[] = await Promise.all(favorites.map(async (favorite) => {
-        const stats = await getNodeStats(favorite.address);
+        const manager = new NodeManager(favorite.address, networkStats);
+        const stats = await manager.getStats();
         totals.sent += stats.sent;
         totals.staked += stats.staked;
         totals.toBeReceived += stats.toBeReceived;
         totals.rewards += stats.rewards;
+        if (stats.status) {
+            tempOkNode += 1;
+        }
+
 
         const node: FavoritesOverviewNode = {
             db: favorite,
@@ -29,11 +41,7 @@ UserManager.getOverview = async (favorites: DFavorite[]): Promise<FavoritesOverv
         return node;
     }))
 
-    const ok = nodes.filter((item) => {
-        return item.stats.status
-    })
-
-    const percentage = ok.length / favorites.length * 100;
+    const percentage = tempOkNode / favorites.length * 100;
 
     totals.statuses = Math.round(percentage) || 0;
     totals.nodes = favorites.length;

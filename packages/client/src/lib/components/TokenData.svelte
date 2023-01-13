@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { format } from "$lib/utils/format";
+    import { format } from "@brubeckscan/common/utils";
     import token from "$lib/assets/img/streamr/token.svg";
 
     export let value:number  = 0;

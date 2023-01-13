@@ -1,7 +1,7 @@
 <script lang="ts">
     import { scale } from "svelte/transition";
     import { enhance } from "$app/forms";
-    import { format } from "$lib/utils/format";
+    import { format } from "@brubeckscan/common/utils";
     import Icon from '@iconify/svelte';
     import Module from "./Module.svelte";
     import TokenData from "./TokenData.svelte";
