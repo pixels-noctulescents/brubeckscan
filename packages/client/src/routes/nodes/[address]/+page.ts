@@ -2,7 +2,7 @@ import validator from "validator";
 import { redirect } from "@sveltejs/kit";
 import send from "$lib/send";
 import type { PageLoad } from "./$types";
-import type Node from "@brubeckscan/common/types";
+import type BrubeckNodeStats from "@brubeckscan/common/types/node";
 
 export const load = (async ({ params, fetch }) => {
     if (!params.address || !validator.isEthereumAddress(params.address)) {
@@ -15,7 +15,7 @@ export const load = (async ({ params, fetch }) => {
         throw redirect(300, "/");
     }
 
-    const node: Node = response.data.node
+    const node: BrubeckNodeStats = response.data.node
 
     return {
         address: params.address,

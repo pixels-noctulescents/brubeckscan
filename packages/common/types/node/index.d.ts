@@ -1,4 +1,4 @@
-export default interface Node {
+export default interface BrubeckNodeStats {
     address: string;
     status: boolean;
     staked: number;

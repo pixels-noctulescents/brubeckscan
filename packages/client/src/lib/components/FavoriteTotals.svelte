@@ -34,7 +34,7 @@
                     </p>
                 </div>
                 <div class="flex flex-row justify-between">
-                    <p class="text-gray-600 text-lg">Sent</p>
+                    <p class="text-gray-600 text-lg">Total rewards</p>
                     <p class="text-lg">
                         <TokenData value={$overview.totals.rewards}/>
                     </p>

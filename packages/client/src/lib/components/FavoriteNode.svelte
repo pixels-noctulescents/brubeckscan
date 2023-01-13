@@ -3,22 +3,21 @@
     import { enhance } from "$app/forms";
     import { format } from "$lib/utils/format";
     import Module from "./Module.svelte";
-    import Identicon from "./Identicon.svelte";
     import MdSearch from 'svelte-icons/md/MdSearch.svelte'
     import MdDeleteForever from 'svelte-icons/md/MdDeleteForever.svelte'
     import MdSave from 'svelte-icons/md/MdSave.svelte'
     import MdContentCopy from 'svelte-icons/md/MdContentCopy.svelte'
-    import type { Favorite } from "@brubeckscan/common/types/overview";
+    import type { FavoritesOverviewNode } from "@brubeckscan/common/types";
     import TokenData from "./TokenData.svelte";
 
-    export let node: Favorite;
+    export let node: FavoritesOverviewNode;
 </script>
 
 
 <div class="w-full flex flex-col" in:scale>
     <Module>
         <div class="w-full flex flex-col gap-1">
-            <div class="flex w-full items-end justify-between">
+            <div class="flex w-full justify-between">
                 <div class="transition duration-100 ease-in w-6 text-gray-300 hover:text-blue-500">
                     <a href={`/nodes/${node.db.address}`}>
                         <div class="w-8">
@@ -41,7 +40,7 @@
 
             <form class="flex justify-between w-full mb-4 gap-10" method="POST" use:enhance>
                 <input class="w-4/6" value={node.db.name} type="hidden" name="baseName">               
-                <input class="w-full text-2xl bg-slate-100 text-slate-900 p-2" value={node.db.name} type="text" name="newName">
+                <input class="w-full text-xl bg-slate-100 text-slate-900 p-2" value={node.db.name} type="text" name="newName">
                 <input value={node.db.id} type="hidden" name="id">
                 <button formaction="?/updateFavorite">
                     <div class="transition duration-100 ease-in w-6 text-gray-300 hover:text-blue-500">
@@ -68,13 +67,6 @@
                     {/if}
             </div>
 
-            <div class="flex justify-between w-full items-center">
-                <p class="text-gray-600">Identicon</p>
-                <div class={node.stats.status ? "" : "gray"}>
-                    <Identicon address={node.db.address}></Identicon>
-                </div>
-            </div>
-
             {#if node?.stats?.lastClaim?.id}             
             <div class="flex justify-between w-full items-center">
                 <p class="text-gray-600">Last claim</p>
@@ -99,27 +91,6 @@
                     <TokenData value={node.stats.sent}/>
                 </p>
             </div>
-            <div class="flex justify-between w-full items-center">
-                <p class="text-gray-600">Claim count</p>
-                <p>{node.stats.claimCount}</p>
-            </div>
-            <div class="flex justify-between w-full items-center">
-                <p class="text-gray-600">Claim percentage</p>
-                <p>{Math.round(node.stats.claimPercentage * 100)}%</p>
-            </div>
-            <div class="flex justify-between w-full items-center">
-                <p class="text-gray-600">Payouts</p>
-                <p>{node.stats.payouts.length}</p>
-            </div>
-            <div class="flex justify-between w-full items-center">
-                <a href="{node.stats.polygonScanURL}" target="_blank" rel="noreferrer">PolygonScan</a>
-            </div>
         </div>
     </Module>
 </div>
-
-<style>
-    .gray {
-        filter: grayscale(1);
-    }
-</style>

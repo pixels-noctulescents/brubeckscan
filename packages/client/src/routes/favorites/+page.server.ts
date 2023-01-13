@@ -14,7 +14,7 @@ export const actions: Actions = {
         }
 
         if (validator.isEthereumAddress(address?.toString())) {
-            const response = await send(`favorites`, "POST", { userAddress: user?.toString(), favoriteAddress: address?.toString(), favoriteName: name?.toString() })
+            await send(`favorites`, "POST", { userAddress: user?.toString(), favoriteAddress: address?.toString(), favoriteName: name?.toString() })
             return { message: "Saved 🥳", add: { address } };
         }
 
@@ -22,10 +22,10 @@ export const actions: Actions = {
     },
     deleteFavorite: async ({ request }) => {
         const data = await request.formData();
-        const id = await data.get("id");
+        const id = data.get("id");
 
         if (id) {
-            const response = await send(`favorites/${id?.toString()}`, "DELETE");
+            await send(`favorites/${id?.toString()}`, "DELETE");
             return;
         }
 
@@ -33,9 +33,9 @@ export const actions: Actions = {
     },
     updateFavorite: async ({ request }) => {
         const data = await request.formData();
-        const newName = await data.get("newName");
-        const baseName = await data.get("baseName");
-        const id = await data.get("id");
+        const newName = data.get("newName");
+        const baseName = data.get("baseName");
+        const id = data.get("id");
 
         if (!newName) {
             return fail(400, { newName, missing: true });
@@ -46,7 +46,7 @@ export const actions: Actions = {
         }
 
         if (newName && id) {
-            const response = await send(`favorites/${id?.toString()}`, "POST", { name: newName });
+            await send(`favorites/${id?.toString()}`, "POST", { name: newName });
             return;
         }
     }

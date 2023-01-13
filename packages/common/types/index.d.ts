@@ -1,4 +1,4 @@
-import type Node from "./node";
+import type BrubeckNodeStats from "./node";
 
 export interface User {
   address: string;
@@ -37,9 +37,9 @@ interface FavoritesTotals {
   statuses: number;
 }
 
-interface FavoritesOverviewNode {
+export interface FavoritesOverviewNode {
   db: Favorite,
-  stats: Node,
+  stats: BrubeckNodeStats,
 }
 
 export interface RealTimePrices {

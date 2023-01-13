@@ -24,7 +24,7 @@
             labels: ["ok", "ko"],
             datasets: [
                 {
-                    label: "test",
+                    label: "nodes",
                     backgroundColor: ["lightgreen", "red"],
                     data: [0,0],
                 },
@@ -71,7 +71,10 @@
 </script>
 
 <Module>
-    <div class="w-full flex items-center">
-        <canvas id={GRAPH_ID} />
+    <div class="w-full flex flex-col">
+        <h3 class="text-xl tracking-tighter"><span class="text-green-400">OK</span> %</h3>
+        <div class="w-full flex items-center">
+            <canvas id={GRAPH_ID} />
+        </div>
     </div>
 </Module>

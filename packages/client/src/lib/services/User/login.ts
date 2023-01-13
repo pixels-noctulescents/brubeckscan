@@ -8,13 +8,13 @@ export async function login(address: string) {
 
     if (exist.status === "success") {
       const updated = await updateUserData(exist.data.user);
-      return;
+      return updated;
     }
 
     if (exist.status === "fail") {
       const create = await send(`users/${address}`, "POST");
       const updated = await updateUserData(create.data.user);
-      return;
+      return updated;
     }
 
     return user.set(undefined);
