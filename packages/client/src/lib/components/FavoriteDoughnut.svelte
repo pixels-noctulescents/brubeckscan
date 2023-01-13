@@ -6,10 +6,12 @@
     
     const GRAPH_ID = "profileDoughnut";
 
+    let canvas: HTMLCanvasElement;
+
     onMount(async () => {
         const config = generateGraphConfig();
-        const element: any = document.getElementById(GRAPH_ID);
-        const chart = new Chart(element, config);
+        const chart = new Chart(canvas, config);
+        
         overview.subscribe((overview) => {
             if(overview){
                 const data = [overview.totals.statuses, 100 - overview.totals.statuses]
@@ -74,7 +76,7 @@
     <div class="w-full flex flex-col">
         <h3 class="text-xl tracking-tighter"><span class="text-green-400">OK</span> %</h3>
         <div class="w-full flex items-center">
-            <canvas id={GRAPH_ID} />
+            <canvas bind:this={canvas}/>
         </div>
     </div>
 </Module>
