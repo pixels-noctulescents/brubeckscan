@@ -1,9 +1,9 @@
 import express from "express";
 import morgan from "morgan";
 import cors from "cors";
-import { Router } from "./routers";
-import { Request, Response, NextFunction } from "express";
+import Router from "./routers";
 import { sender } from "./utils/sender";
+import type { Request, Response, NextFunction } from "express";
 
 const app = express();
 

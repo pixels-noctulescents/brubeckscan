@@ -14,4 +14,4 @@ Router.use("/nodes", [validateAuth], NodeRouter);
 Router.use("/networks", [validateAuth], NetworkRouter);
 Router.use("/favorites", [validateAuth], FavoriteRouter);
 
-export { Router };
+export default Router;
