@@ -13,6 +13,8 @@
         <Module>
             <div class="w-full flex flex-col gap-4">
                 <div class="text-2xl flex flex-col gap-4">
+                    <h3 class="text-3xl">Format</h3>
+                    <a class="text-sm" href="https://github.com/omniti-labs/jsend">JSend</a>
                     <h3 class="text-3xl">Request</h3>
                     <div class="text-sm flex gap-4 bg-slate-700 p-4 rounded-md text-white font-mono">
                         <p class="text-green-400">GET</p>
@@ -38,8 +40,7 @@
                         </div>
                     </div>
                 </div>
-            </div>  
-
+            </div>
         </Module>
     </div>
 </div>
