@@ -84,7 +84,7 @@
 <div class="w-full">
 	<Module>
 		<div class="flex w-full flex-col">
-			<h3 class="text-3xl  text-neutral-900">Topology size & received claims</h3>
+			<h3 class="text-2xl  text-neutral-900">Topology size & received claims</h3>
 			<canvas bind:this={canvas} />
 		</div>
 	</Module>

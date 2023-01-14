@@ -26,9 +26,6 @@
 		class="text-md flex items-center gap-2 rounded-md p-10 text-slate-500 md:text-xl"
 	>
 		<span>BrubeckScan aggregates data to help you manage Streamr nodes</span>
-		<span>
-			<img class="w-8" src={streamrLogo} alt="Streamr logo" />
-		</span>
 	</section>
 
 	<div class="flex w-full max-w-screen-lg">

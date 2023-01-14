@@ -13,9 +13,9 @@
 		<Module>
 			<div class="flex w-full flex-col gap-4">
 				<div class="flex flex-col gap-4 text-2xl">
-					<h3 class="text-3xl">Format</h3>
-					<a class="text-md" href="https://github.com/omniti-labs/jsend">JSend</a>
-					<h3 class="text-3xl">Request</h3>
+					<h3 class="text-2xl">Format</h3>
+					<a class="text-lg" href="https://github.com/omniti-labs/jsend">JSend</a>
+					<h3 class="text-2xl">Request</h3>
 					<div
 						class="flex items-center gap-4 rounded-md bg-slate-700 p-4 font-mono text-sm text-white"
 					>
@@ -27,7 +27,7 @@
 				</div>
 				<div />
 				<div class="flex flex-col gap-4">
-					<h3 class="flex items-center gap-2 text-3xl">
+					<h3 class="flex items-center gap-2 text-2xl">
 						Response
 						<div>
 							<a
@@ -40,7 +40,7 @@
 					<div class="flex w-full gap-4">
 						<div class="flex w-full">
 							<pre
-								class="w-full rounded-md bg-slate-700 p-4 font-mono text-[10px] text-white">{@html JSON.stringify(
+								class="text-10px w-full rounded-md bg-slate-700 p-4 font-mono text-white lg:text-[12px]">{@html JSON.stringify(
 									data.response,
 									undefined,
 									2

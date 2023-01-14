@@ -2,7 +2,7 @@
 	import Icon from '@iconify/svelte';
 </script>
 
-<div class="flex items-center justify-between">
+<div class="flex w-full max-w-lg items-center justify-between">
 	<a href="https://github.com/streamr-dev" target="_blank" rel="noreferrer">
 		<div
 			class="flex w-6 items-center text-slate-700 transition duration-100 ease-in hover:text-slate-900"

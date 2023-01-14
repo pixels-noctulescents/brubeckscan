@@ -6,10 +6,10 @@
 	export let stats: Stats;
 </script>
 
-<div class="flex w-full md:w-1/2">
+<div class="node flex w-full md:w-1/2">
 	<Module>
 		<div class="flex w-full flex-col justify-between text-lg">
-			<h3 class="mb-6 text-3xl">APY / APR</h3>
+			<h3 class="mb-6 text-2xl">APY / APR</h3>
 			<div class="flex justify-between">
 				<p class="text-gray-600">Spot APY</p>
 				<p>{stats.SPOTAPY} %</p>
@@ -29,3 +29,14 @@
 		</div>
 	</Module>
 </div>
+
+<style>
+	.node {
+		max-width: calc(50% - 8px);
+	}
+	@media (max-width: 1025px) {
+		.node {
+			max-width: unset;
+		}
+	}
+</style>

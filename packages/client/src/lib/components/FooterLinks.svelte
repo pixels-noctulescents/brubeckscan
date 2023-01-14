@@ -1,112 +1,112 @@
-<div class="pb:10 flex w-full justify-between border-b md:pb-20">
+<div class="pb:10 flex w-full justify-between border-b md:pb-10">
 	<div class="justify-center text-start">
-		<h5 class="text-md mb-4 uppercase lg:text-xl">DISCOVER</h5>
+		<h5 class="text-md mb-2 uppercase lg:text-xl">DISCOVER</h5>
 		<div class="flex flex-col text-slate-500">
 			<a
-				class="mb-0 hover:underline lg:mb-2"
+				class="mb-0 hover:underline lg:mb-1"
 				href="https://streamr.network/discover/network/"
 				target="_blank"
 				rel="noreferrer"
 			>
-				<p class="text-md lg:text-lg">Network</p>
+				<p class="text-md lg:text-md">Network</p>
 			</a>
 			<a
-				class="mb-0 hover:underline lg:mb-2"
+				class="mb-0 hover:underline lg:mb-1"
 				href="https://streamr.network/discover/data-token/"
 				target="_blank"
 				rel="noreferrer"
 			>
-				<p class="text-md lg:text-lg">DATA Token</p>
+				<p class="text-md lg:text-md">DATA Token</p>
 			</a>
 			<a
-				class="mb-0 hover:underline lg:mb-2"
+				class="mb-0 hover:underline lg:mb-1"
 				href="https://streamr.network/case-studies/data-unions/"
 				target="_blank"
 				rel="noreferrer"
 			>
-				<p class="text-md lg:text-lg">Data Unions</p>
+				<p class="text-md lg:text-md">Data Unions</p>
 			</a>
 			<a
-				class="mb-0 hover:underline lg:mb-2"
+				class="mb-0 hover:underline lg:mb-1"
 				href="https://streamr.network/discover/marketplace/"
 				target="_blank"
 				rel="noreferrer"
 			>
-				<p class="text-md lg:text-lg">Marketplace</p>
+				<p class="text-md lg:text-md">Marketplace</p>
 			</a>
 		</div>
 	</div>
 	<div class="text-center">
-		<h5 class="text-md mb-4 uppercase lg:text-xl">Streamr</h5>
+		<h5 class="text-md mb-2 uppercase lg:text-xl">Streamr</h5>
 		<div class="flex flex-col text-slate-500">
 			<a
-				class="mb-0 hover:underline lg:mb-2"
+				class="mb-0 hover:underline lg:mb-1"
 				href="https://streamr.network/about/"
 				target="_blank"
 				rel="noreferrer"
 			>
-				<p class="text-md lg:text-lg">About</p>
+				<p class="text-md lg:text-md">About</p>
 			</a>
 			<a
-				class="mb-0 hover:underline lg:mb-2"
+				class="mb-0 hover:underline lg:mb-1"
 				href="https://streamr.network/roadmap/"
 				target="_blank"
 				rel="noreferrer"
 			>
-				<p class="text-md lg:text-lg">Roadmap</p>
+				<p class="text-md lg:text-md">Roadmap</p>
 			</a>
 			<a
-				class="mb-0 hover:underline lg:mb-2"
+				class="mb-0 hover:underline lg:mb-1"
 				href="https://streamr.network/ecosystem/"
 				target="_blank"
 				rel="noreferrer"
 			>
-				<p class="text-md lg:text-lg">Ecosystem</p>
+				<p class="text-md lg:text-md">Ecosystem</p>
 			</a>
 			<a
-				class="mb-0 hover:underline lg:mb-2"
+				class="mb-0 hover:underline lg:mb-1"
 				href="https://streamr.network/papers/"
 				target="_blank"
 				rel="noreferrer"
 			>
-				<p class="text-md lg:text-lg">Papers</p>
+				<p class="text-md lg:text-md">Papers</p>
 			</a>
 			<a
-				class="mb-0 hover:underline lg:mb-2"
+				class="mb-0 hover:underline lg:mb-1"
 				href="https://blog.streamr.network/"
 				target="_blank"
 				rel="noreferrer"
 			>
-				<p class="text-md lg:text-lg">Blog</p>
+				<p class="text-md lg:text-md">Blog</p>
 			</a>
 		</div>
 	</div>
 	<div class="text-end">
-		<h5 class="text-md mb-4 uppercase lg:text-xl">Apps</h5>
+		<h5 class="text-md mb-2 uppercase lg:text-xl">Apps</h5>
 		<div class="flex flex-col text-slate-500">
 			<a
-				class="mb-0 hover:underline lg:mb-2"
+				class="mb-0 hover:underline lg:mb-1"
 				href="https://streamr.network/network-explorer"
 				target="_blank"
 				rel="noreferrer"
 			>
-				<p class="text-md lg:text-lg">Network Explorer</p>
+				<p class="text-md lg:text-md">Network Explorer</p>
 			</a>
 			<a
-				class="mb-0 hover:underline lg:mb-2"
+				class="mb-0 hover:underline lg:mb-1"
 				href="https://streamr.network/marketplace"
 				target="_blank"
 				rel="noreferrer"
 			>
-				<p class="text-md lg:text-lg">Marketplace</p>
+				<p class="text-md lg:text-md">Marketplace</p>
 			</a>
 			<a
-				class="mb-0 hover:underline lg:mb-2"
+				class="mb-0 hover:underline lg:mb-1"
 				href="https://streamr.network/login?redirect=%2Fcore%2Fstreams"
 				target="_blank"
 				rel="noreferrer"
 			>
-				<p class="text-md lg:text-lg">Core</p>
+				<p class="text-md lg:text-md">Core</p>
 			</a>
 		</div>
 	</div>
