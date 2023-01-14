@@ -14,7 +14,9 @@ UserManager.getOverview = async (favorites: DFavorite[]): Promise<FavoritesOverv
         staked: 0,
         sent: 0,
         rewards: 0,
-        statuses: 0
+        statuses: 0,
+        nodesKo: 0,
+        nodesOk: 0
     }
 
     let tempOkNode = 0;
