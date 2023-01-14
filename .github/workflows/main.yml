@@ -19,7 +19,7 @@ jobs:
           script: |
             export NVM_DIR=~/.nvm
             source ~/.nvm/nvm.sh
-            cd ~/Projects/brubeckAPI
+            cd ~/Projects/brubeckscan
             git reset --hard
             git pull
             npm install
