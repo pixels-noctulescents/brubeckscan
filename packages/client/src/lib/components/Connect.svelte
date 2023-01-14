@@ -1,42 +1,42 @@
 <script lang="ts">
-  import { user, userOnNetwork, hasEthereumProvider } from "$lib/stores";
-  import Icon from "@iconify/svelte";
-  import Button from "$lib/components/Button.svelte";
-  import Identicon from "$lib/components/Identicon.svelte";
-  import TokenData from "$lib/components/TokenData.svelte";
+	import { user, userOnNetwork, hasEthereumProvider } from '$lib/stores';
+	import Icon from '@iconify/svelte';
+	import Button from '$lib/components/Button.svelte';
+	import Identicon from '$lib/components/Identicon.svelte';
+	import TokenData from '$lib/components/TokenData.svelte';
 
-  const metamaskURL = "https://metamask.io/download/"
+	const metamaskURL = 'https://metamask.io/download/';
 
-  async function handleConnect() {
-    try {
-      await (window as any).ethereum.request({
-        method: "eth_requestAccounts",
-      });
-    } catch (e) {
-      console.log(e);
-    }
-  }
+	async function handleConnect() {
+		try {
+			await (window as any).ethereum.request({
+				method: 'eth_requestAccounts'
+			});
+		} catch (e) {
+			console.log(e);
+		}
+	}
 </script>
 
 {#if $hasEthereumProvider != undefined}
-  {#if !$user && $hasEthereumProvider}
-  <div>
-      <Button handle={handleConnect}>
-        <div class="flex items-center rounded-md gap-2">
-          <p>Connect</p>
-          <Icon icon="logos:metamask-icon" width="15" />
-        </div>
-      </Button>
-    </div>
-  {:else if !$user && !$hasEthereumProvider}
-    <div class="px-2 py-1">
-      <a href={metamaskURL} target="_blank" rel="noreferrer">Get Metamask</a>
-    </div>
-  {:else if $user}
-    <div class="py-1 flex items-center gap-4 text-blue-200">
-      <TokenData value={$userOnNetwork?.staked}/>
-      <p class="text-slate-300">|</p>
-      <Identicon address={$user.address}/>
-    </div>
-  {/if}
+	{#if !$user && $hasEthereumProvider}
+		<div>
+			<Button handle={handleConnect}>
+				<div class="flex items-center gap-2 rounded-md">
+					<p>Connect</p>
+					<Icon icon="logos:metamask-icon" width="15" />
+				</div>
+			</Button>
+		</div>
+	{:else if !$user && !$hasEthereumProvider}
+		<div class="px-2 py-1">
+			<a href={metamaskURL} target="_blank" rel="noreferrer">Get Metamask</a>
+		</div>
+	{:else if $user}
+		<div class="flex items-center gap-4 py-1 text-blue-200">
+			<TokenData value={$userOnNetwork?.staked} />
+			<p class="text-slate-300">|</p>
+			<Identicon address={$user.address} />
+		</div>
+	{/if}
 {/if}
