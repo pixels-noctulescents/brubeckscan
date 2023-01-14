@@ -25,17 +25,14 @@ export async function login(address: string) {
 
 async function updateUserData(dUser: DUser): Promise<boolean> {
 	try {
-		const getUserOnNetwork = await send(
-			`nodes/stats/${dUser.address}`,
-			undefined,
-			undefined,
-			fetch
-		);
+		const getUserOnNetwork = await send(`nodes/stats/${dUser.address}`);
 
 		if (getUserOnNetwork) {
 			userOnNetwork.set(getUserOnNetwork.data.node);
 		}
+
 		user.set(dUser);
+
 		return true;
 	} catch (e) {
 		console.log(e);
