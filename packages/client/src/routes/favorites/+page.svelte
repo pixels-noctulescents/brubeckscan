@@ -8,13 +8,13 @@
     export let form: ActionData;
 </script>
 
-<div class="flex w-full flex-col gap-10 max-w-screen-lg pt-20 pb-40">
+<div class="flex-wrap p-8 flex w-full flex-col gap-10 max-w-screen-lg lg:p-0 lg:pt-20 lg:pb-40">
     <FavoriteAdd result={form}></FavoriteAdd>
     <FavoriteTotals></FavoriteTotals>
     {#if $overview}
-        <div class="nodeContainer flex w-full flex-wrap start items-stretch">
+        <div class="nodeContainer flex w-full flex-wrap start items-stretch gap-4">
             {#each $overview.favorites as node (node.db.id) }
-                    <div class="node flex">
+                    <div class="w-full node flex">
                         <FavoriteNode {node}/>
                     </div>
             {/each}
@@ -23,11 +23,12 @@
 </div>
 
 <style>
-    .nodeContainer {
-        display: flex;
-        gap: 10px;
-    }
     .node {
-        width: calc(50% - 5px);
+        max-width: calc(50% - 8px);
+    }
+    @media (max-width: 1025px)  {
+        .node {
+            max-width: unset;
+        }
     }
 </style>

@@ -9,8 +9,8 @@
     const network: BrubeckNetworkStats = data.network;
 </script>
 
-<div class="flex flex-col w-full gap-10 max-w-screen-lg pt-20 pb-40">
-    <div class="flex w-full gap-8 items-stretch">
+<div class="p-8 flex flex-col w-full gap-10 max-w-screen-lg pt-20 pb-40">
+    <div class="flex-wrap md:flex-none flex w-full gap0 items-stretch">
         <NetworkStats stats={network.stats}/>
         <NetworkAverages averages={network.averages}/>
     </div>

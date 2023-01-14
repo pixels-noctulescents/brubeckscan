@@ -8,19 +8,18 @@
     const apiEndpoint = "https://brubeckscan.app/api/nodes/"
 </script>
 
-<div class="flex flex-col w-full items-center pt-20 pb-40">
+<div class="px-8 lg:px-0 flex flex-col w-full items-center pt-20 pb-40">
     <div class="w-full max-w-screen-lg">
         <Module>
             <div class="w-full flex flex-col gap-4">
                 <div class="text-2xl flex flex-col gap-4">
                     <h3 class="text-3xl">Format</h3>
-                    <a class="text-sm" href="https://github.com/omniti-labs/jsend">JSend</a>
+                    <a class="text-md" href="https://github.com/omniti-labs/jsend">JSend</a>
                     <h3 class="text-3xl">Request</h3>
-                    <div class="text-sm flex gap-4 bg-slate-700 p-4 rounded-md text-white font-mono">
+                    <div class="text-sm flex gap-4 bg-slate-700 p-4 rounded-md text-white font-mono items-center">
                         <p class="text-green-400">GET</p>
                         <div class="flex w-full">
-                            <p>{apiEndpoint}</p>
-                            <p class="text-blue-300">[nodeEthereumAddress]</p>
+                            <p class="text-blue-300">{apiEndpoint}<span>[nodeEthereumAddress]</span></p>
                         </div>
                     </div>
                 </div>
@@ -36,7 +35,7 @@
                     </h3>
                     <div class="w-full flex gap-4">
                         <div class="flex w-full">
-                            <pre class="text-xs w-full bg-slate-700 text-white font-mono p-4 rounded-md">{@html JSON.stringify(data.response, undefined, 2)}</pre>
+                            <pre class="text-[10px] w-full bg-slate-700 text-white font-mono p-4 rounded-md">{@html JSON.stringify(data.response, undefined, 2)}</pre>
                         </div>
                     </div>
                 </div>
