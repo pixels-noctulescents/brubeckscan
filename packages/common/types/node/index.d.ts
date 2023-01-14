@@ -6,8 +6,8 @@ export interface BrubeckNodeStats {
     toBeReceived: number;
     sent: number;
     rewards: number;
-    firstClaim?: RewardCode | null;
-    lastClaim?: RewardCode | null;
+    firstClaim: RewardCode | null;
+    lastClaim: RewardCode | null;
     claimCount: number;
     claimPercentage: number;
     claimedRewardCodes: RewardCode[];

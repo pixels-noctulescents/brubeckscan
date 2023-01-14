@@ -8,6 +8,6 @@
 </script>
 
 <div class="flex gap-2 items-center justify-center">
-    <p class="flex items-center font-mono text-md text-neutral-400">{format.numberWithSpaces(value)}</p>
+    <p class="flex items-center font-mono text-md text-neutral-700">{format.numberWithSpaces(value)}</p>
     <img class="w-5" src={token} alt={alt}/>
 </div>

@@ -3,6 +3,7 @@
   import Title from "$lib/components/Title.svelte";
   import Header from "$lib/components/Header.svelte";
   import Footer from "$lib/components/Footer.svelte";
+  import AppInfo from "$lib/components/AppInfo.svelte";
   import type { LayoutData } from "./$types";
   import { page } from "$app/stores";
 
@@ -24,6 +25,9 @@
         <slot />
       </div>
     </main>
-    <Footer />
+    <Footer/>
   </div>
+  {#if data.latestRelease}
+    <AppInfo latestRelease={data.latestRelease}/>
+  {/if}
 </div>

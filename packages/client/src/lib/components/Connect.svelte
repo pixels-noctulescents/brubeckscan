@@ -22,8 +22,10 @@
   {#if !$user && $hasEthereumProvider}
   <div>
       <Button handle={handleConnect}>
-        <p>Connect</p>
-        <Icon icon="logos:metamask-icon" width="15" />
+        <div class="flex items-center rounded-md gap-2">
+          <p>Connect</p>
+          <Icon icon="logos:metamask-icon" width="15" />
+        </div>
       </Button>
     </div>
   {:else if !$user && !$hasEthereumProvider}
