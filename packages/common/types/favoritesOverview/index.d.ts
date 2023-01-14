@@ -8,6 +8,8 @@ export interface FavoritesOverview {
 
 interface FavoritesTotals {
     nodes: number,
+    nodesOk: number;
+    nodesKo: number;
     staked: number;
     rewards: number;
     toBeReceived: number;
