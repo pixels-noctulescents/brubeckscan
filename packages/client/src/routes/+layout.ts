@@ -1,9 +1,13 @@
 import send from '$lib/send';
+import SocketService from '$lib/services/Socket';
 import type { LayoutLoad } from './$types';
 import type { BrubeckNetworkStats } from '@brubeckscan/common/types/networkStats';
 import type { OctokitRLatestReleaseResponse } from '@brubeckscan/common/types/octokit';
 
 export const load = (async ({ fetch }) => {
+	// socket.io
+	const socket = await SocketService.init();
+
 	// Get Brubeck network stats
 	const networkResponse = await send(`networks/stats`, 'GET', undefined, fetch);
 

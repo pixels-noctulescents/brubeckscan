@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { usersCount } from '$lib/stores';
 	import type { OctokitRLatestReleaseResponse } from '@brubeckscan/common/types/octokit';
 
 	export let latestRelease: OctokitRLatestReleaseResponse;
@@ -20,6 +21,7 @@
 					>{latestRelease.tag_name}</a
 				>
 			</p>
+			<p>U {$usersCount}</p>
 		</div>
 	</div>
 </div>

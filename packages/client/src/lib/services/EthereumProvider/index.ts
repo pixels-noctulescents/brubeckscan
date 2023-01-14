@@ -18,7 +18,6 @@ const EthereumProviderService = {
 					}
 					(window as any).ethereum.on('accountsChanged', async (accounts: string[]) => {
 						if (accounts[0]) {
-							console.log(accounts);
 							await UserService.login(accounts[0]);
 						} else {
 							await UserService.logout();
