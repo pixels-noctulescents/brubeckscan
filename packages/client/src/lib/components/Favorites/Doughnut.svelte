@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { overview } from '$lib/stores';
+	import { favoritesTotals } from '$lib/stores';
 	import Chart from 'chart.js/auto';
-	import Module from './Module.svelte';
+	import Module from '$lib/components/Module.svelte';
 
 	let canvas: HTMLCanvasElement;
 
@@ -10,9 +10,9 @@
 		const config = generateGraphConfig();
 		const chart = new Chart(canvas, config);
 
-		overview.subscribe((overview) => {
-			if (overview) {
-				const data = [overview.totals.statuses, 100 - overview.totals.statuses];
+		favoritesTotals.subscribe((favoritesTotals) => {
+			if (favoritesTotals) {
+				const data = [favoritesTotals.nodesOk, favoritesTotals.nodesKo];
 				chart.data.datasets[0].data = data;
 				chart.update();
 			}
@@ -71,8 +71,8 @@
 </script>
 
 <Module>
-	<div class="flex w-full flex-col items-center">
-		<div class="flex w-full max-w-sm items-center justify-center">
+	<div class="flex w-full flex-col items-center justify-center">
+		<div class="flex w-40 items-center justify-center">
 			<canvas bind:this={canvas} />
 		</div>
 	</div>

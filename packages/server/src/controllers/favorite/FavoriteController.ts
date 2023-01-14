@@ -1,6 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 import FavoriteDAO from "../../dao/favorite/FavoriteDAO";
 import { sender } from "../../utils/sender";
+import validator from "validator";
 
 const FavoriteController = () => { };
 
@@ -32,6 +33,10 @@ FavoriteController.create = async (
 
     if (!userAddress || !favoriteAddress || !favoriteName) {
       return sender.failure(res, {}, 400);
+    }
+
+    if (!validator.isEthereumAddress(favoriteAddress)) {
+      return sender.failure(res, { address: "invalid" }, 400);
     }
 
     const favorite = await FavoriteDAO.save(userAddress.toLowerCase(), favoriteAddress.toLowerCase().trim(), favoriteName);
