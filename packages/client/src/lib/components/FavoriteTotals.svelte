@@ -6,8 +6,8 @@
 </script>
 
 {#if $overview}
-<div class="flex items-stretch gap-8 max-w-screen-lg">
-    <div class="w-full">
+<div class="w-full flex-wrap lg:flex-none md:max-w-screen-lg flex items-stretch gap-8 ">
+    <div class="w-full lg:w-1/2 lg:flex-grow">
         <Module>
             <div class="flex grow flex-col justify-between">
                 <h2 class="text-4xl mb-4 tracking-tight">Totals</h2>
@@ -42,7 +42,7 @@
             </div>
         </Module>
     </div>
-    <div class="flex w-52">
+    <div class="flex w-full lg:w-52">
         <FavoriteDoughnut/>
     </div>
 </div>
