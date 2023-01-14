@@ -6,7 +6,7 @@
     export let stats: Stats;
 </script>
 
-<div class="flex w-1/2">
+<div class="w-full flex md:w-1/2">
     <Module>
         <div class="flex flex-col w-full justify-between text-lg">
             <h3 class="text-3xl mb-6">APY / APR</h3>

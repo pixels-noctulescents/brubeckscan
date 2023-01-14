@@ -71,9 +71,8 @@
 </script>
 
 <Module>
-    <div class="w-full flex flex-col">
-        <h3 class="text-xl tracking-tighter"><span class="text-green-400">OK</span> %</h3>
-        <div class="w-full flex items-center">
+    <div class="w-full flex flex-col items-center">
+        <div class="w-full max-w-sm flex items-center justify-center">
             <canvas bind:this={canvas}/>
         </div>
     </div>

@@ -3,8 +3,8 @@
   import Socials from "./FooterSocials.svelte";
 </script>
 
-<div class="flex justify-center items-center w-full py-10 xl:py-20 bg-neutral-200 text-neutral-900">
-  <footer class="flex w-full flex-col gap-20 xl:max-w-screen-lg">
+<div class="p-8 flex justify-center items-center w-full py-10 xl:py-20 bg-neutral-200 text-neutral-900">
+  <footer class="flex w-full flex-col gap-10 xl:max-w-screen-lg">
     <Links />
     <Socials />
   </footer>
