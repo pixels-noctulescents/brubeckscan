@@ -10,15 +10,15 @@
 
 ## Introduction
 
-Mono 
+Mono repo for the BrubeckScan app.
 
 ### packages/client
 
-- SvelteKit UI
+- SvelteKit and gateway to main API
 
 ### packages/server
 
-- Main app API
+- Main API
 
 #### Stack
 
@@ -26,7 +26,7 @@ Mono
 
 ### packages/common
 
-- Types and common utilitaries
+- Types and common utilitaries.
 
 ## Public API Routes
 
