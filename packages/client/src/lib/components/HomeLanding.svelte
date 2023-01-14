@@ -4,7 +4,6 @@
 	import validator from 'validator';
 	import { goto } from '$app/navigation';
 	import { slide } from 'svelte/transition';
-	import streamrLogo from '$lib/assets/img/streamr/logo.svg';
 
 	let address: string;
 	let invalid: boolean = false;
@@ -30,18 +29,22 @@
 
 	<div class="flex w-full max-w-screen-lg">
 		<Module>
-			<div in:slide class="flex w-full justify-between gap-20">
+			<form
+				in:slide
+				class="flex w-full justify-between gap-20"
+				on:submit|preventDefault={handleSearch}
+			>
 				<input
 					class="w-full bg-transparent text-xl"
 					bind:value={address}
 					placeholder="Enter a node address"
 				/>
-				<button on:click={handleSearch}>
+				<button type="submit">
 					<div class="w-10 text-gray-300 transition duration-150 ease-in hover:text-slate-700">
 						<Icon icon="material-symbols:search" width="32" />
 					</div>
 				</button>
-			</div>
+			</form>
 		</Module>
 	</div>
 	{#if invalid}

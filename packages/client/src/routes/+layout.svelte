@@ -4,6 +4,7 @@
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
 	import AppInfo from '$lib/components/AppInfo.svelte';
+	import Notifications from '$lib/components/Notifications/Notifications.svelte';
 	import type { LayoutData } from './$types';
 	import { page } from '$app/stores';
 
@@ -30,4 +31,5 @@
 	{#if data.latestRelease}
 		<AppInfo latestRelease={data.latestRelease} />
 	{/if}
+	<Notifications />
 </div>
