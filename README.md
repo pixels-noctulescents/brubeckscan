@@ -1,4 +1,4 @@
-# BrubeckScan API
+# BrubeckScan
 
 [![TypeScript](https://badgen.net/badge/icon/typescript?icon=typescript&label)](https://typescriptlang.org)
 ![GitHub](https://img.shields.io/github/license/adamphivo/brubeckapi)
@@ -8,16 +8,14 @@
 ![GitHub issues](https://img.shields.io/github/issues/adamphivo/brubeckAPI)
 ![GitHub Repo stars](https://img.shields.io/github/stars/adamphivo/brubeckAPI?style=social)
 
-## Routes
+## Public API Routes
 
-- GET api/markets/prices
-- GET api/nodes/stats/:address
-- GET api/networks/stats/
-
-## Environment
-
-- Node : v18.12.1
+- GET api/nodes/[ethereumAddress]
 
 ## API Response Format
 
 - [JSend](https://github.com/omniti-labs/jsend)
+
+## Environment
+
+- Node : v18.12.1
