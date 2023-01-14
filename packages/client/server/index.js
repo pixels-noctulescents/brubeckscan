@@ -6,9 +6,11 @@ import express from 'express';
 
 const app = express();
 
+const port = process.env.CLIENT_PORT;
+
 // let SvelteKit handle everything else, including serving prerendered pages and static assets
 app.use(handler);
 
-app.listen(3771, () => {
-	console.log(`Listening on port 3771`);
+app.listen(port || 3000, () => {
+	console.log(`Listening on port ${port || 3000}`);
 });
