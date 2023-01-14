@@ -3,8 +3,12 @@ import SocketService from '$lib/services/Socket';
 import type { LayoutLoad } from './$types';
 import type { BrubeckNetworkStats } from '@brubeckscan/common/types/networkStats';
 import type { OctokitRLatestReleaseResponse } from '@brubeckscan/common/types/octokit';
+import EthereumProviderService from '$lib/services/EthereumProvider';
 
 export const load = (async ({ fetch }) => {
+	// ethereumProvider
+	await EthereumProviderService.init();
+
 	// socket.io
 	const socket = await SocketService.init();
 

@@ -1,9 +1,4 @@
-import EthereumProviderService from '$lib/services/EthereumProvider';
+import type { HandleClientError } from '@sveltejs/kit';
 
-(async () => {
-	try {
-		return await EthereumProviderService.init();
-	} catch (e) {
-		console.log(e);
-	}
-})();
+export const handleError = (({ error, event }) => {
+}) satisfies HandleClientError;
