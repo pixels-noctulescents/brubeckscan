@@ -1,8 +1,8 @@
-import { login } from "./login";
-import { logout } from "./logout";
-import { update } from "./update";
+import { login } from './login';
+import { logout } from './logout';
+import { update } from './update';
 
-const UserService = () => { };
+const UserService = () => {};
 
 UserService.login = login;
 UserService.logout = logout;
