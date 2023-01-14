@@ -8,6 +8,26 @@
 ![GitHub issues](https://img.shields.io/github/issues/adamphivo/brubeckAPI)
 ![GitHub Repo stars](https://img.shields.io/github/stars/adamphivo/brubeckAPI?style=social)
 
+## Introduction
+
+Mono 
+
+### packages/client
+
+- SvelteKit UI
+
+### packages/server
+
+- Main app API
+
+#### Stack
+
+- Node / Express / PrismaORM / socket.io
+
+### packages/common
+
+- Types and common utilitaries
+
 ## Public API Routes
 
 - GET api/nodes/[ethereumAddress]
