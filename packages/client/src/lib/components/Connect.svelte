@@ -22,7 +22,9 @@
 	{#if !$user && $hasEthereumProvider}
 		<div>
 			<Button handle={handleConnect}>
-				<div class="flex items-center gap-2 rounded-md">
+				<div
+					class="flex items-center gap-2 rounded-md border-2 border-slate-300 px-2 py-1 transition duration-150 ease-in hover:bg-white hover:shadow-sm"
+				>
 					<p>Connect</p>
 					<Icon icon="logos:metamask-icon" width="15" />
 				</div>

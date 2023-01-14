@@ -41,7 +41,7 @@
 
 <style>
 	.sticky {
-		top: 100px;
+		top: 120px;
 		backdrop-filter: blur(10px);
 	}
 </style>

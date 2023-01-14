@@ -13,11 +13,12 @@ const EthereumProviderService = {
 					const request = await (window as any).ethereum.request({
 						method: 'eth_accounts'
 					});
-					if (request) {
+					if (request && request[0]) {
 						await UserService.login(request[0]);
 					}
 					(window as any).ethereum.on('accountsChanged', async (accounts: string[]) => {
 						if (accounts[0]) {
+							console.log(accounts);
 							await UserService.login(accounts[0]);
 						} else {
 							await UserService.logout();

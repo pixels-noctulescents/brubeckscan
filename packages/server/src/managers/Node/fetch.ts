@@ -71,7 +71,8 @@ export async function fetchDataStaked(address: string) {
 
         const data = await request(constants.DATA_GRAPH_URL, query);
 
-        const value = Math.floor(+data.erc20Balances[0].value);
+
+        const value = data.erc20Balances.length ? Math.floor(+data.erc20Balances[0].value) : 0;
 
         return {
             stakedDATA: value,

@@ -95,7 +95,7 @@ class NodeManager {
     private getStatus(codes: RewardCode[]) {
         if (!codes.length) return false;
 
-        if (this.networkStats.lastRewards[0].code === codes[0].id || codes[1].id) {
+        if (this.networkStats.lastRewards[0].code === codes[0].id || codes[1]?.id) {
             return true;
         }
 

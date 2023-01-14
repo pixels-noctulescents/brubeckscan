@@ -19,7 +19,7 @@
 			<Prices />
 			<NetworkStats {network} />
 		</div>
-		<div class="flex w-full items-center justify-between px-5 py-2 xl:px-32">
+		<div class="flex h-16 w-full items-center justify-between px-5 py-2 xl:px-32">
 			<HeaderNavigation />
 			<Connect />
 		</div>
