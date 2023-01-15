@@ -6,7 +6,7 @@
 	import type { BrubeckNetworkStats } from '@brubeckscan/common/types/networkStats';
 	import { navigating } from '$app/stores';
 	import { fade } from 'svelte/transition';
-	import MobileNavigation from './MobileNavigation.svelte';
+	import MobileNavigation from '$lib/components/Header/MobileNavigation.svelte';
 
 	export let network: BrubeckNetworkStats;
 </script>

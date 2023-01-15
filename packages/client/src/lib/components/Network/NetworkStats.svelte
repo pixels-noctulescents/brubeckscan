@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Stats } from '@brubeckscan/common/types/networkStats';
 
-	import Module from './Module.svelte';
+	import Module from '$lib/components/Module.svelte';
 
 	export let stats: Stats;
 </script>

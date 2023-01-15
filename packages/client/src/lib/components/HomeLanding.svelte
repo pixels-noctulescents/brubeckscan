@@ -24,7 +24,7 @@
 		in:slide
 		class="text-md flex items-center gap-2 rounded-md p-10 text-slate-500 md:text-xl"
 	>
-		<span>BrubeckScan aggregates data to help you manage Streamr nodes</span>
+		<span>BrubeckScan aggregates data to help you manage Streamr nodes 🎉</span>
 	</section>
 
 	<div class="flex w-full max-w-screen-lg">

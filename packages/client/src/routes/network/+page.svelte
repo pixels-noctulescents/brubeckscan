@@ -1,8 +1,8 @@
 <script lang="ts">
 	import type { BrubeckNetworkStats } from '@brubeckscan/common/types/networkStats';
-	import NetworkStats from '$lib/components/NetworkStats.svelte';
-	import NetworkGraphs from '$lib/components/NetworkGraphs.svelte';
-	import NetworkAverages from '$lib/components/NetworkAverages.svelte';
+	import NetworkStats from '$lib/components/Network/NetworkStats.svelte';
+	import NetworkGraphs from '$lib/components/Network/NetworkGraphs.svelte';
+	import NetworkAverages from '$lib/components/Network/NetworkAverages.svelte';
 
 	export let data;
 

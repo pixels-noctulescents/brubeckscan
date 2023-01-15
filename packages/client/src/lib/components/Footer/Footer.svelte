@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Links from '$lib/components/FooterLinks.svelte';
-	import Socials from './FooterSocials.svelte';
+	import Links from '$lib/components/Footer/FooterLinks.svelte';
+	import Socials from '$lib/components/Footer/FooterSocials.svelte';
 </script>
 
 <div

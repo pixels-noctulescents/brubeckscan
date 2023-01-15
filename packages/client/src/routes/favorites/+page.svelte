@@ -4,6 +4,7 @@
 	import Totals from '$lib/components/Favorites/Totals.svelte';
 	import Doughnut from '$lib/components/Favorites/Doughnut.svelte';
 	import Add from '$lib/components/Favorites/Add.svelte';
+	import Module from '$lib/components/Module.svelte';
 </script>
 
 {#if $user}
@@ -28,6 +29,14 @@
 				</div>
 			{/each}
 		</div>
+	</div>
+{:else}
+	<div class="flex w-full max-w-screen-lg flex-col items-stretch gap-8 pt-10 pb-20">
+		<Module>
+			<p class="w-full text-center text-xl text-neutral-500">
+				<span>Connect to start saving your nodes and keep track of your rewards 🎉</span>
+			</p>
+		</Module>
 	</div>
 {/if}
 

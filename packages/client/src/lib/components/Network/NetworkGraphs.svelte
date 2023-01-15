@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { NetworkRewardCode } from '@brubeckscan/common/types/networkStats';
-	import Module from './Module.svelte';
+	import Module from '$lib/components/Module.svelte';
 	import { onMount } from 'svelte';
 	import Chart from 'chart.js/auto';
 

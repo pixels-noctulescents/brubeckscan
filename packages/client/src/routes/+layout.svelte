@@ -1,9 +1,9 @@
 <script lang="ts">
 	import '../app.css';
 	import Title from '$lib/components/Title.svelte';
-	import Header from '$lib/components/Header.svelte';
-	import Footer from '$lib/components/Footer.svelte';
-	import AppInfo from '$lib/components/AppInfo.svelte';
+	import Header from '$lib/components/Header/Header.svelte';
+	import Footer from '$lib/components/Footer/Footer.svelte';
+	import AppInfo from '$lib/components/Footer/AppInfo.svelte';
 	import Notifications from '$lib/components/Notifications/Notifications.svelte';
 	import type { LayoutData } from './$types';
 	import { page } from '$app/stores';
