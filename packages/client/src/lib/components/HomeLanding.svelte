@@ -7,13 +7,11 @@
 	import NotificationService from '$lib/services/Notification';
 
 	let address: string;
-	let invalid: boolean = false;
 
 	const GREETING_MESSAGE = 'BrubeckScan aggregates data to help you manage Streamr nodes 🎉';
 
 	async function handleSearch() {
 		if (!validator.isEthereumAddress(address)) {
-			invalid = true;
 			return NotificationService.push('Invalid ethereum address', 'ko');
 		} else {
 			await goto(`nodes/${address}`);

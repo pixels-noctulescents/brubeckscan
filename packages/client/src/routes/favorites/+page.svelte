@@ -7,6 +7,10 @@
 	import Module from '$lib/components/Module.svelte';
 </script>
 
+<svelte:head>
+	<title>BrubeckScan | Favorites</title>
+</svelte:head>
+
 {#if $user}
 	<div class="flex w-full max-w-screen-lg flex-col items-stretch gap-8 pt-10 pb-20">
 		<div class="sticky top-0 flex">

@@ -11,6 +11,10 @@
 	const alt = 'A unique identicon';
 </script>
 
+<svelte:head>
+	<title>BrubeckScan | Stats</title>
+</svelte:head>
+
 <div class="flex w-full max-w-screen-lg flex-wrap items-stretch justify-between gap-4 pt-20 pb-40">
 	<!-- Avatar -->
 	<div class="flex">

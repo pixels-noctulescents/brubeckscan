@@ -8,6 +8,10 @@
 	const apiEndpoint = 'https://brubeckscan.app/api/nodes/';
 </script>
 
+<svelte:head>
+	<title>BrubeckScan | API</title>
+</svelte:head>
+
 <div class="flex w-full flex-col items-center px-8 pt-20 pb-40 lg:px-0">
 	<div class="w-full max-w-screen-lg">
 		<Module>

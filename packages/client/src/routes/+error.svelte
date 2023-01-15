@@ -4,6 +4,10 @@
 	import src from '$lib/assets/img/streamr/illustrations/Node.png';
 </script>
 
+<svelte:head>
+	<title>BrubeckScan | Error</title>
+</svelte:head>
+
 <div class="mb-30 container flex w-full max-w-screen-lg flex-col">
 	<Module>
 		<div class="mb-30 flex w-full flex-col items-center gap-10 p-10">

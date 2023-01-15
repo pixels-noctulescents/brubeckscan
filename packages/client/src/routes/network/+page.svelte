@@ -9,6 +9,10 @@
 	const network: BrubeckNetworkStats = data.network;
 </script>
 
+<svelte:head>
+	<title>BrubeckScan | Network</title>
+</svelte:head>
+
 <div class="flex w-full max-w-screen-lg flex-col gap-10 pt-20 pb-40">
 	<div class="flex w-full flex-wrap items-stretch gap-4 md:flex-none">
 		<NetworkStats stats={network.stats} />
