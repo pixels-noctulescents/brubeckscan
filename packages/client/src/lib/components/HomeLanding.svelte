@@ -4,13 +4,17 @@
 	import validator from 'validator';
 	import { goto } from '$app/navigation';
 	import { slide } from 'svelte/transition';
+	import NotificationService from '$lib/services/Notification';
 
 	let address: string;
 	let invalid: boolean = false;
 
+	const GREETING_MESSAGE = 'BrubeckScan aggregates data to help you manage Streamr nodes 🎉';
+
 	async function handleSearch() {
 		if (!validator.isEthereumAddress(address)) {
 			invalid = true;
+			return NotificationService.push('Invalid ethereum address', 'ko');
 		} else {
 			await goto(`nodes/${address}`);
 		}
@@ -24,7 +28,7 @@
 		in:slide
 		class="text-md flex items-center gap-2 rounded-md p-10 text-slate-500 md:text-xl"
 	>
-		<span>BrubeckScan aggregates data to help you manage Streamr nodes 🎉</span>
+		<span>{GREETING_MESSAGE}</span>
 	</section>
 
 	<div class="flex w-full max-w-screen-lg">
@@ -47,11 +51,6 @@
 			</form>
 		</Module>
 	</div>
-	{#if invalid}
-		<p class="rounded-md bg-neutral-50 p-5 text-xl text-slate-500">
-			Please enter a valid ethereum address
-		</p>
-	{/if}
 </article>
 
 <style>
