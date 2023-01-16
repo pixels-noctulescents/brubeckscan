@@ -60,7 +60,7 @@ export async function fetchDataStaked(address: string) {
           {
             erc20Balances(
               where: {
-                account: "${address}"
+                account: "${address.toLowerCase()}"
                 contract: "${constants.DATA_CONTRACT}"
               }
             ) {
@@ -70,7 +70,6 @@ export async function fetchDataStaked(address: string) {
         `;
 
         const data = await request(constants.DATA_GRAPH_URL, query);
-
 
         const value = data.erc20Balances.length ? Math.floor(+data.erc20Balances[0].value) : 0;
 

@@ -16,15 +16,18 @@ class NodeManager {
     }
 
     public async getStats(): Promise<BrubeckNodeStats> {
-        const cached: any[] | undefined = cache.get(`nodeExternalData/${this.address}`);
+        // const cached: any[] | undefined = cache.get(`nodeExternalData/${this.address}`);
 
-        if (cached) {
-            this.formatNodeStats(cached);
-        } else {
-            const data = await this.getData();
-            cache.set(`nodeExternalData/${this.address}`, data, 60);
-            this.formatNodeStats(data);
-        }
+        // if (cached) {
+        //     this.formatNodeStats(cached);
+        // } else {
+        //     const data = await this.getData();
+        //     cache.set(`nodeExternalData/${this.address}`, data, 60);
+        //     this.formatNodeStats(data);
+        // }
+
+        const data = await this.getData();
+        this.formatNodeStats(data);
         return this.nodeStats;
     }
 

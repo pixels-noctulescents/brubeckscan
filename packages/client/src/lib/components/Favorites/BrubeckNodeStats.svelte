@@ -29,7 +29,7 @@
 		{/if}
 	</div>
 	<div class="flex items-center justify-between">
-		<p>Status</p>
+		<p>Status of rewards claiming</p>
 		{#if stats.status}
 			<p class="text-green-400">OK</p>
 		{:else}

@@ -19,14 +19,14 @@
 				{
 					label: 'topologySize',
 					backgroundColor: 'white',
-					borderColor: '#FF8540',
+					borderColor: '#F9781F',
 					borderWidth: 1,
 					data: topologySize.reverse()
 				},
 				{
 					label: 'receivedClaims',
 					backgroundColor: 'white',
-					borderColor: 'lightgrey',
+					borderColor: '#A3A3A3',
 					borderWidth: 1,
 					data: receivedClaims.reverse()
 				}
@@ -81,10 +81,14 @@
 	});
 </script>
 
+<h3 class="mb-4  text-xl text-neutral-900">
+	<span class="text-orange-500">Topology size</span> &
+	<span class="text-neutral-400">received claims</span>
+	over the last 100 rewards codes
+</h3>
 <div class="w-full">
 	<Module>
 		<div class="flex w-full flex-col">
-			<h3 class="text-2xl  text-neutral-900">Topology size & received claims</h3>
 			<canvas bind:this={canvas} />
 		</div>
 	</Module>

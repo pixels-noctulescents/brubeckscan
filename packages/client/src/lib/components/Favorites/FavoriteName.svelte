@@ -40,7 +40,7 @@
 	}
 </script>
 
-<form class="flex items-center justify-between text-xl" on:submit|preventDefault={update}>
+<form class="flex items-center justify-between text-2xl" on:submit|preventDefault={update}>
 	<div>
 		{#if isEditing}
 			<input

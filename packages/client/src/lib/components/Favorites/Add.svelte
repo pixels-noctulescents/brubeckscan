@@ -11,19 +11,19 @@
 	const placeholder = 'Enter a node address to save it';
 
 	async function add() {
-		if (!validator.isEthereumAddress(address)) {
+		const cleanInput = address.toLowerCase().trim();
+
+		if (!validator.isEthereumAddress(cleanInput)) {
 			return NotificationService.push('Invalid ethereum address', 'ko');
 		}
 		if ($user) {
 			const newFavorite = {
-				favoriteAddress: address,
+				favoriteAddress: cleanInput,
 				userAddress: $user.address,
 				favoriteName: `Node ${$user.Favorite.length + 1}`
 			};
 
 			const response = await send(`favorites`, 'POST', newFavorite);
-
-			console.log(response);
 
 			if (response.status === 'success') {
 				user.update((user) => {

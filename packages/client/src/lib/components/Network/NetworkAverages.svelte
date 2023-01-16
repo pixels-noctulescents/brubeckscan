@@ -7,8 +7,8 @@
 
 <div class="node flex w-full md:w-1/2">
 	<Module>
-		<div class="flex w-full flex-col justify-between text-lg">
-			<h3 class="mb-6 text-2xl">Network averages</h3>
+		<div class="flex w-full flex-col text-lg">
+			<h3 class="mb-2 text-2xl">Network averages</h3>
 			<div class="flex justify-between">
 				<p class="text-gray-600">Average topology size</p>
 				<p>{averages.averageTopologySize}</p>
@@ -20,6 +20,10 @@
 			<div class="flex justify-between">
 				<p class="text-gray-600">Average mean propagation delay</p>
 				<p>{Math.round(averages.averageMeanPropagationDelay)}</p>
+			</div>
+			<div class="flex justify-between">
+				<p class="text-gray-600">Average missing claims</p>
+				<p>{Math.round(averages.averageTopologySize - averages.averageReceivedClaims)}</p>
 			</div>
 		</div>
 	</Module>
