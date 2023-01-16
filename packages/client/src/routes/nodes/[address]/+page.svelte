@@ -4,6 +4,8 @@
 	import type { PageData } from './$types';
 	import { format } from '@brubeckscan/common/utils';
 
+	import SelectCurrency from '$lib/components/Favorites/SelectCurrency.svelte';
+
 	export let data: PageData;
 
 	// Icon
@@ -16,6 +18,9 @@
 </svelte:head>
 
 <div class="flex w-full max-w-screen-lg flex-wrap items-stretch justify-between gap-4 pt-20 pb-40">
+	<div class="w-full">
+		<SelectCurrency />
+	</div>
 	<!-- Avatar -->
 	<div class="flex">
 		<Module>

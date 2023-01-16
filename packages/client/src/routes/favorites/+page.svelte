@@ -4,6 +4,7 @@
 	import Totals from '$lib/components/Favorites/Totals.svelte';
 	import Doughnut from '$lib/components/Favorites/Doughnut.svelte';
 	import Add from '$lib/components/Favorites/Add.svelte';
+	import SelectCurrency from '$lib/components/Favorites/SelectCurrency.svelte';
 	import Module from '$lib/components/Module.svelte';
 </script>
 
@@ -17,6 +18,9 @@
 			<Add />
 		</div>
 		{#if $user.Favorite.length}
+			<div class="w-full">
+				<SelectCurrency />
+			</div>
 			<div class="flex w-full max-w-screen-lg items-stretch gap-8">
 				<div class="flex w-4/6">
 					<Totals />

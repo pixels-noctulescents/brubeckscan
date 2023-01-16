@@ -30,3 +30,4 @@ export const favoritesTotals = writable<FavoritesTotals>({
 });
 
 export const notifications = writable<Notification[]>([]);
+export const selectedCurrency = writable<"data" | "usdt" | "eur">("data")
