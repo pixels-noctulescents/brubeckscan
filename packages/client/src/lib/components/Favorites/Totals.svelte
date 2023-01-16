@@ -39,7 +39,7 @@
 							<p class="text-lg text-gray-600">Staked</p>
 							{#if $favoritesTotals.nodes === $user.Favorite.length}
 								<p class="text-lg">
-									<TokenData value={Math.round($favoritesTotals.toBeReceived)} />
+									<TokenData value={Math.round($favoritesTotals.staked)} />
 								</p>
 							{:else}
 								<Jumper size="20" color="#FF3E00" unit="px" duration="1s" />
@@ -49,7 +49,7 @@
 							<p class="text-lg text-gray-600">Sent</p>
 							{#if $favoritesTotals.nodes === $user.Favorite.length}
 								<p class="text-lg">
-									<TokenData value={Math.round($favoritesTotals.toBeReceived)} />
+									<TokenData value={Math.round($favoritesTotals.sent)} />
 								</p>
 							{:else}
 								<Jumper size="20" color="#FF3E00" unit="px" duration="1s" />
@@ -59,7 +59,7 @@
 							<p class="text-lg text-gray-600">Rewards</p>
 							{#if $favoritesTotals.nodes === $user.Favorite.length}
 								<p class="text-lg">
-									<TokenData value={Math.round($favoritesTotals.toBeReceived)} />
+									<TokenData value={Math.round($favoritesTotals.rewards)} />
 								</p>
 							{:else}
 								<Jumper size="20" color="#FF3E00" unit="px" duration="1s" />
