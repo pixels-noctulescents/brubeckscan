@@ -4,8 +4,11 @@ import cors from "cors";
 import Router from "./routers";
 import { sender } from "./utils/sender";
 import type { Request, Response, NextFunction } from "express";
+import Cron from "./utils/cron";
 
 const app = express();
+
+Cron.init();
 
 app.use(cors());
 

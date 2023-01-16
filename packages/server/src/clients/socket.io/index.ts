@@ -18,7 +18,7 @@ socketsClient.init = (server: any) => {
     socket.on("disconnect", () => { });
   });
 
-  const job = schedule.scheduleJob("*/5 * * * * *", async () => {
+  schedule.scheduleJob("*/5 * * * * *", async () => {
     const prices = await getPrices();
     const stats = await NetworkManager.getNetworkStats();
     io.emit("prices", prices);
