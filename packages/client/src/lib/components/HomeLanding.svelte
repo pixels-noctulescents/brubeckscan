@@ -11,10 +11,12 @@
 	const GREETING_MESSAGE = 'BrubeckScan aggregates data to help you manage Streamr nodes 🎉';
 
 	async function handleSearch() {
-		if (!validator.isEthereumAddress(address)) {
+		const cleanInput = address.toLowerCase().trim();
+
+		if (!validator.isEthereumAddress(cleanInput)) {
 			return NotificationService.push('Invalid ethereum address', 'ko');
 		} else {
-			await goto(`nodes/${address}`);
+			await goto(`nodes/${cleanInput}`);
 		}
 	}
 </script>
