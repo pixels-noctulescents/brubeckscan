@@ -5,7 +5,7 @@ import { prisma } from "../clients/prisma";
 const Cron = () => { };
 
 Cron.init = () => {
-    schedule.scheduleJob("* */1 * * *", async () => {
+    schedule.scheduleJob("* * */1 * *", async () => {
         const stats = await NetworkManager.getNetworkStats();
 
         if (stats) {
