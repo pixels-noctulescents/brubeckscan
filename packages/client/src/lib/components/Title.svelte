@@ -22,9 +22,11 @@
 	});
 </script>
 
-<div class="flex w-full max-w-screen-lg flex-col items-start bg-neutral-100 px-8 py-8">
+<div
+	class="flex w-full max-w-screen-lg flex-col items-start bg-neutral-200 px-8 py-8 dark:bg-neutral-800"
+>
 	<h1
-		class="z-20 rounded-md bg-slate-100 bg-opacity-80 p-4 text-5xl capitalize tracking-tighter text-slate-700"
+		class="z-20 rounded-md bg-slate-100 bg-opacity-80 p-4 text-5xl capitalize tracking-tighter text-slate-700 dark:bg-neutral-900 dark:text-white"
 	>
 		{title}
 	</h1>

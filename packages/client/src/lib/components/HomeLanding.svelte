@@ -22,29 +22,31 @@
 </script>
 
 <article
-	class="flex  h-landing w-full flex-col items-center gap-20 bg-neutral-200 bg-contain p-8 pt-40 sm:p-40 md:bg-cover"
+	class="flex h-landing  w-full flex-col items-center gap-20 bg-neutral-200 bg-contain p-8 pt-40 dark:bg-neutral-800 dark:text-white sm:p-40 md:bg-cover"
 >
 	<section
 		in:slide
-		class="text-md flex items-center gap-2 rounded-md p-10 text-slate-500 md:text-xl"
+		class="text-md flex items-center gap-2 rounded-md p-10 text-slate-500 dark:bg-opacity-0 dark:text-white md:text-xl"
 	>
-		<span>{GREETING_MESSAGE}</span>
+		<span class="text-center">{GREETING_MESSAGE}</span>
 	</section>
 
-	<div class="flex w-full max-w-screen-lg">
+	<div class="flex w-full max-w-screen-lg bg-transparent">
 		<Module>
 			<form
 				in:slide
-				class="flex w-full justify-between gap-20"
+				class="flex w-full justify-between gap-20 bg-transparent dark:bg-opacity-0"
 				on:submit|preventDefault={handleSearch}
 			>
 				<input
-					class="w-full bg-transparent text-xl"
+					class="bg-transparenttext-xl w-full bg-transparent"
 					bind:value={address}
-					placeholder="Enter a node address"
+					placeholder="Enter a Streamr node ethereum address"
 				/>
 				<button type="submit">
-					<div class="w-10 text-gray-300 transition duration-150 ease-in hover:text-slate-700">
+					<div
+						class="w-10 text-gray-300 transition duration-150 ease-in hover:text-slate-700 dark:text-neutral-600 dark:hover:text-neutral-100"
+					>
 						<Icon icon="material-symbols:search" width="32" />
 					</div>
 				</button>
@@ -56,7 +58,6 @@
 <style>
 	section {
 		z-index: 2;
-		background-color: rgba(240, 248, 255, 0.664);
 		backdrop-filter: blur(10px);
 	}
 	article {

@@ -2,7 +2,6 @@
 	import Module from '$lib/components/Module.svelte';
 	import NotificationService from '$lib/services/Notification';
 	import { scale } from 'svelte/transition';
-	import Icon from '@iconify/svelte';
 	import { onMount } from 'svelte';
 
 	export let message: string = '';
@@ -28,7 +27,6 @@
 			class="flex w-full items-center justify-between gap-2 text-xs hover:cursor-pointer"
 		>
 			<p class={status}>{message}</p>
-			<button on:click={close}><Icon icon="radix-icons:cross-circled" /></button>
 		</div>
 	</Module>
 </div>

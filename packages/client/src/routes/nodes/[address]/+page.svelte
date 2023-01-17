@@ -46,36 +46,44 @@
 				{#if data.node.lastClaim?.claimTime}
 					<div class="flex justify-between">
 						<p class="text-slate-600">Latest claim</p>
-						<p class="text-slate-900">{format.getFromNow(data.node.lastClaim.claimTime)}</p>
+						<p class="text-slate-900 dark:text-neutral-100">
+							{format.getFromNow(data.node.lastClaim.claimTime)}
+						</p>
 					</div>
 				{/if}
 				<div class="flex justify-between">
 					<p class="text-slate-600">Address</p>
-					<p class="text-slate-900">{data.node.address}</p>
+					<p class="text-slate-900 dark:text-neutral-100">{data.node.address}</p>
 				</div>
 				<div class="flex justify-between">
 					<p class="text-slate-600">Staked</p>
-					<p class="text-slate-900"><TokenData value={data.node.staked} /></p>
+					<p class="text-slate-900 dark:text-neutral-100"><TokenData value={data.node.staked} /></p>
 				</div>
 				<div class="flex justify-between">
 					<p class="text-slate-600">To be received</p>
-					<p class="text-slate-900"><TokenData value={data.node.toBeReceived} /></p>
+					<p class="text-slate-900 dark:text-neutral-100">
+						<TokenData value={data.node.toBeReceived} />
+					</p>
 				</div>
 				<div class="flex justify-between">
 					<p class="text-slate-600">Sent</p>
-					<p class="text-slate-900"><TokenData value={data.node.sent} /></p>
+					<p class="text-slate-900 dark:text-neutral-100"><TokenData value={data.node.sent} /></p>
 				</div>
 				<div class="flex justify-between">
 					<p class="text-slate-600">Total rewards</p>
-					<p class="text-slate-900"><TokenData value={data.node.rewards} /></p>
+					<p class="text-slate-900 dark:text-neutral-100">
+						<TokenData value={data.node.rewards} />
+					</p>
 				</div>
 				<div class="flex justify-between">
 					<p class="text-slate-600">Rewards codes claimed</p>
-					<p class="text-slate-900">{data.node.claimCount}</p>
+					<p class="text-slate-900 dark:text-neutral-100">{data.node.claimCount}</p>
 				</div>
 				<div class="flex justify-between">
 					<p class="text-slate-600">Percentage of received claims</p>
-					<p class="text-slate-900">{Math.round(data.node.claimPercentage * 100)} %</p>
+					<p class="text-slate-900 dark:text-neutral-100">
+						{Math.round(data.node.claimPercentage * 100)} %
+					</p>
 				</div>
 			</div>
 		</Module>
