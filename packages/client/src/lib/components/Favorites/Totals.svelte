@@ -4,18 +4,6 @@
 	import Module from '$lib/components/Module.svelte';
 	import TokenData from '$lib/components/TokenData.svelte';
 	import { Jumper } from 'svelte-loading-spinners';
-
-	// const totalSent = spring(0);
-	// const totalToBeReceived = spring(0);
-	// const totalStaked = spring(0);
-	// const totalRewards = spring(0);
-
-	// favoritesTotals.subscribe((totals) => {
-	// 	totalToBeReceived.set(totals.toBeReceived);
-	// 	totalSent.set(totals.sent);
-	// 	totalStaked.set(totals.staked);
-	// 	totalRewards.set(totals.rewards);
-	// });
 </script>
 
 {#if $user}
@@ -29,7 +17,7 @@
 							<p class="text-lg text-gray-600">To be received</p>
 							{#if $favoritesTotals.nodes === $user.Favorite.length}
 								<p class="text-lg">
-									<TokenData value={Math.round($favoritesTotals.toBeReceived)} />
+									<TokenData value={Math.round($favoritesTotals.toBeReceived * 100) / 100} />
 								</p>
 							{:else}
 								<Jumper size="20" color="#FF3E00" unit="px" duration="1s" />
@@ -39,7 +27,7 @@
 							<p class="text-lg text-gray-600">Staked</p>
 							{#if $favoritesTotals.nodes === $user.Favorite.length}
 								<p class="text-lg">
-									<TokenData value={Math.round($favoritesTotals.staked)} />
+									<TokenData value={Math.round($favoritesTotals.staked * 100) / 100} />
 								</p>
 							{:else}
 								<Jumper size="20" color="#FF3E00" unit="px" duration="1s" />
@@ -49,7 +37,7 @@
 							<p class="text-lg text-gray-600">Sent</p>
 							{#if $favoritesTotals.nodes === $user.Favorite.length}
 								<p class="text-lg">
-									<TokenData value={Math.round($favoritesTotals.sent)} />
+									<TokenData value={Math.round($favoritesTotals.sent * 100) / 100} />
 								</p>
 							{:else}
 								<Jumper size="20" color="#FF3E00" unit="px" duration="1s" />
@@ -59,7 +47,7 @@
 							<p class="text-lg text-gray-600">Rewards</p>
 							{#if $favoritesTotals.nodes === $user.Favorite.length}
 								<p class="text-lg">
-									<TokenData value={Math.round($favoritesTotals.rewards)} />
+									<TokenData value={Math.round($favoritesTotals.rewards * 100) / 100} />
 								</p>
 							{:else}
 								<Jumper size="20" color="#FF3E00" unit="px" duration="1s" />

@@ -81,7 +81,7 @@
 	});
 </script>
 
-<h3 class="mb-4  text-xl text-neutral-900">
+<h3 class="mb-4  text-xl text-neutral-900 dark:text-neutral-100">
 	<span class="text-orange-500">Topology size</span> &
 	<span class="text-neutral-400">received claims</span>
 	over the last 100 rewards codes

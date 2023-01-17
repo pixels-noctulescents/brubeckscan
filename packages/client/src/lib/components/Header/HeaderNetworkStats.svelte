@@ -2,6 +2,7 @@
 	import { prices } from '$lib/stores';
 	import type { BrubeckNetworkStats } from '@brubeckscan/common/types/networkStats';
 	import { format } from '@brubeckscan/common/utils';
+	import ThemeSwitcher from '../ThemeSwitcher.svelte';
 
 	export let network: BrubeckNetworkStats;
 </script>
@@ -12,4 +13,5 @@
 	</p>
 	<p>APY {network?.stats['SPOTAPY']}%</p>
 	<p>{network?.lastRewards[0].topologySize} nodes</p>
+	<ThemeSwitcher />
 </div>

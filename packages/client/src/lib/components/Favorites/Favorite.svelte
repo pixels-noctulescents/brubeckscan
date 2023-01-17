@@ -38,10 +38,10 @@
 			stats = response.data.node;
 			favoritesTotals.update((totals) => {
 				totals.nodes += 1;
-				totals.sent += Math.round(stats.sent);
-				totals.rewards += Math.round(stats.rewards);
-				totals.staked += Math.round(stats.staked);
-				totals.toBeReceived += Math.round(stats.toBeReceived);
+				totals.sent += stats.sent;
+				totals.rewards += stats.rewards;
+				totals.staked += stats.staked;
+				totals.toBeReceived += stats.toBeReceived;
 				stats.status ? (totals.nodesOk += 1) : (totals.nodesKo += 1);
 				return totals;
 			});
@@ -51,10 +51,10 @@
 	onDestroy(async () => {
 		favoritesTotals.update((totals) => {
 			totals.nodes -= 1;
-			totals.sent -= Math.round(stats.sent);
-			totals.rewards -= Math.round(stats.rewards);
-			totals.staked -= Math.round(stats.staked);
-			totals.toBeReceived -= Math.round(stats.toBeReceived);
+			totals.sent -= stats.sent;
+			totals.rewards -= stats.rewards;
+			totals.staked -= stats.staked;
+			totals.toBeReceived -= stats.toBeReceived;
 			stats.status ? (totals.nodesOk -= 1) : (totals.nodesKo -= 1);
 			return totals;
 		});

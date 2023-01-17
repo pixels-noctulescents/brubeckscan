@@ -7,19 +7,15 @@
 
 	const GH_REPO_URL = 'https://github.com/adamphivo/brubeckscan';
 	const GH_PROFILE_URL = 'https://github.com/adamphivo';
-	const MAIL_CONTACT = 'adamphivo@gmail.com';
 </script>
 
 <div
-	class="flex w-full items-center justify-center bg-slate-900 py-2 px-10 text-xs text-white lg:text-sm"
+	class="flex w-full items-center justify-center bg-slate-900 py-2 px-10 text-xs text-white dark:bg-neutral-800 lg:text-sm"
 >
 	<div class="flex w-full max-w-screen-lg justify-between">
 		<div class="flex items-center gap-4">
 			<a href={GH_REPO_URL} target="_blank" rel="noreferrer">BrubeckScan</a>
 			<div class="flex items-center gap-1">
-				<a href={`mailto:${MAIL_CONTACT}`}>
-					<Icon icon="material-symbols:mail-outline" width="20" />
-				</a>
 				<a href={GH_PROFILE_URL} target="_blank" rel="noreferrer">
 					<Icon icon="mdi:github" width="20" />
 				</a>

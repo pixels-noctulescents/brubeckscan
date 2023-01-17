@@ -7,12 +7,15 @@
 	import Notifications from '$lib/components/Notifications/Notifications.svelte';
 	import type { LayoutData } from './$types';
 	import { page } from '$app/stores';
+	import { selectedTheme } from '$lib/stores';
 
 	export let data: LayoutData;
 </script>
 
-<div class="bg-neutral-100">
-	<div class="flex min-h-screen flex-col items-center justify-between">
+<div class={$selectedTheme === 'dark' ? 'dark' : ''}>
+	<div
+		class="flex min-h-screen flex-col items-center justify-between bg-neutral-200 dark:bg-neutral-800"
+	>
 		{#if data.network}
 			<Header network={data.network} />
 		{/if}

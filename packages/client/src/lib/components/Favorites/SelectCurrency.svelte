@@ -10,7 +10,7 @@
 	<button
 		class="rounded-md border border-neutral-300 p-2 text-neutral-300 transition duration-150
         ease-in hover:cursor-pointer
-        hover:border-neutral-800"
+        hover:border-neutral-800 dark:border-neutral-600 dark:hover:border-neutral-100"
 		on:click={() => ($selectedCurrency = 'data')}
 	>
 		<img class="w-5" src={token} {alt} />
@@ -18,7 +18,7 @@
 	<button
 		class="rounded-md border border-neutral-300 p-2  transition duration-150
         ease-in hover:cursor-pointer
-        hover:border-neutral-800"
+        hover:border-neutral-800 dark:border-neutral-600 dark:hover:border-neutral-100"
 		on:click={() => ($selectedCurrency = 'usdt')}
 	>
 		<Icon icon="cryptocurrency-color:usdt" width="20px" />
@@ -26,7 +26,7 @@
 	<button
 		class="rounded-md border border-neutral-300 p-2 text-blue-600 transition duration-150
         ease-in hover:cursor-pointer
-        hover:border-neutral-800"
+        hover:border-neutral-800 dark:border-neutral-600 dark:hover:border-neutral-100"
 		on:click={() => ($selectedCurrency = 'eur')}
 	>
 		<Icon icon="ri:money-euro-circle-fill" width="20px" />

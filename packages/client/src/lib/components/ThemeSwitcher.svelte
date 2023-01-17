@@ -1,29 +1,37 @@
 <script lang="ts">
 	import Button from './Button.svelte';
 	import UserService from '$lib/services/User';
-	import { user, currentTheme } from '$lib/stores';
+	import { user, selectedTheme } from '$lib/stores';
+	import Icon from '@iconify/svelte';
+	import NotificationService from '$lib/services/Notification';
 
 	async function select() {
-		if ($currentTheme === 'dark') {
-			currentTheme.set('light');
+		if ($selectedTheme === 'dark') {
+			selectedTheme.set('light');
 			if ($user) {
 				await UserService.update(`${$user.address}`, {
 					theme: 'light'
 				});
+				return NotificationService.push('Preference updated', 'ok');
 			}
 		} else {
-			currentTheme.set('dark');
+			selectedTheme.set('dark');
 			if ($user) {
 				await UserService.update(`${$user.address}`, {
 					theme: 'dark'
 				});
+				return NotificationService.push('Preference updated', 'ok');
 			}
 		}
 	}
 </script>
 
-<div>
+<div class="flex items-center">
 	<Button handle={select}>
-		<p>{$currentTheme === 'dark' ? 'light' : 'dark'}</p>
+		{#if $selectedTheme === 'dark'}
+			<Icon icon="ph:sun" width="18" />
+		{:else}
+			<Icon icon="ph:moon" width="18" />
+		{/if}
 	</Button>
 </div>

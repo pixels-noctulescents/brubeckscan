@@ -20,8 +20,8 @@
 </script>
 
 <div class="flex items-center justify-center gap-2">
-	<p class="text-md flex items-center font-mono text-neutral-700">
-		{format.numberWithSpaces(Math.round(convertedValue))}
+	<p class="text-md flex items-center font-mono text-neutral-700 dark:text-neutral-200">
+		{format.numberWithSpaces(Math.round(convertedValue * 100) / 100)}
 	</p>
 	{#if $selectedCurrency === 'data'}
 		<img class="w-5" src={token} {alt} />

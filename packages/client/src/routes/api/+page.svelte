@@ -44,7 +44,7 @@
 					<div class="flex w-full gap-4">
 						<div class="flex w-full">
 							<pre
-								class="text-10px w-full rounded-md bg-slate-700 p-4 font-mono text-white lg:text-[12px]">{@html JSON.stringify(
+								class="w-full rounded-md bg-slate-700 p-4 font-mono text-[10px] text-white lg:text-[12px]">{@html JSON.stringify(
 									data.response,
 									undefined,
 									2

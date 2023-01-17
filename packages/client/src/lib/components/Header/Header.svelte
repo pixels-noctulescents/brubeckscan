@@ -7,15 +7,20 @@
 	import { navigating } from '$app/stores';
 	import { fade } from 'svelte/transition';
 	import MobileNavigation from '$lib/components/Header/MobileNavigation.svelte';
+	import ThemeSwitcher from '../ThemeSwitcher.svelte';
 
 	export let network: BrubeckNetworkStats;
 </script>
 
-<div class="sticky top-0 z-50 flex w-full flex-wrap items-center justify-center">
+<div
+	class="sticky top-0 z-50 flex w-full flex-wrap items-center justify-center dark:bg-neutral-900"
+>
 	<header
-		class="z-50 flex w-full flex-col items-center bg-slate-100 bg-opacity-90 text-neutral-900"
+		class="z-50 flex w-full flex-col items-center bg-slate-100 bg-opacity-90 text-neutral-900 dark:bg-neutral-800 dark:text-neutral-200"
 	>
-		<div class="hidden w-full justify-between bg-neutral-200 px-5 py-2 sm:flex xl:px-32">
+		<div
+			class="flex w-full items-center justify-between bg-neutral-200 bg-opacity-90 px-5 py-2 dark:bg-neutral-900 dark:text-neutral-200 sm:flex xl:px-32"
+		>
 			<Prices />
 			<NetworkStats {network} />
 		</div>

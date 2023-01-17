@@ -17,10 +17,12 @@
 	<!-- Links -->
 	{#each links as link}
 		<a
-			class="lg:text-md hidden text-sm text-slate-500 transition duration-150 ease-in hover:text-slate-800 sm:flex"
+			class="lg:text-md hidden text-sm text-slate-500 transition duration-150 ease-in hover:text-slate-800 dark:text-neutral-200 sm:flex"
 			href={link.url}
 		>
-			<span class={link.url === $page.route.id ? 'text-black' : ''}>{link.label}</span>
+			<span class={link.url === $page.route.id ? 'text-black dark:text-white' : ''}
+				>{link.label}</span
+			>
 		</a>
 	{/each}
 </nav>

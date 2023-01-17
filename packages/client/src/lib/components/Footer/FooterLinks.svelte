@@ -1,4 +1,4 @@
-<div class="pb:10 flex w-full justify-between border-b md:pb-10">
+<div class="pb:10 flex w-full justify-between border-b dark:text-neutral-100 md:pb-10">
 	<div class="justify-center text-start">
 		<h5 class="text-md mb-2 uppercase lg:text-xl">DISCOVER</h5>
 		<div class="flex flex-col text-slate-500">
@@ -8,7 +8,7 @@
 				target="_blank"
 				rel="noreferrer"
 			>
-				<p class="text-md lg:text-md">Network</p>
+				<p class="text-md lg:text-md dark:text-white">Network</p>
 			</a>
 			<a
 				class="mb-0 hover:underline lg:mb-1"
@@ -16,7 +16,7 @@
 				target="_blank"
 				rel="noreferrer"
 			>
-				<p class="text-md lg:text-md">DATA Token</p>
+				<p class="text-md lg:text-md dark:text-white">DATA Token</p>
 			</a>
 			<a
 				class="mb-0 hover:underline lg:mb-1"
@@ -24,7 +24,7 @@
 				target="_blank"
 				rel="noreferrer"
 			>
-				<p class="text-md lg:text-md">Data Unions</p>
+				<p class="text-md lg:text-md dark:text-white">Data Unions</p>
 			</a>
 			<a
 				class="mb-0 hover:underline lg:mb-1"
@@ -32,7 +32,7 @@
 				target="_blank"
 				rel="noreferrer"
 			>
-				<p class="text-md lg:text-md">Marketplace</p>
+				<p class="text-md lg:text-md dark:text-white">Marketplace</p>
 			</a>
 		</div>
 	</div>
@@ -45,7 +45,7 @@
 				target="_blank"
 				rel="noreferrer"
 			>
-				<p class="text-md lg:text-md">About</p>
+				<p class="text-md lg:text-md dark:text-white">About</p>
 			</a>
 			<a
 				class="mb-0 hover:underline lg:mb-1"
@@ -53,7 +53,7 @@
 				target="_blank"
 				rel="noreferrer"
 			>
-				<p class="text-md lg:text-md">Roadmap</p>
+				<p class="text-md lg:text-md dark:text-white">Roadmap</p>
 			</a>
 			<a
 				class="mb-0 hover:underline lg:mb-1"
@@ -61,7 +61,7 @@
 				target="_blank"
 				rel="noreferrer"
 			>
-				<p class="text-md lg:text-md">Ecosystem</p>
+				<p class="text-md lg:text-md dark:text-white">Ecosystem</p>
 			</a>
 			<a
 				class="mb-0 hover:underline lg:mb-1"
@@ -69,7 +69,7 @@
 				target="_blank"
 				rel="noreferrer"
 			>
-				<p class="text-md lg:text-md">Papers</p>
+				<p class="text-md lg:text-md dark:text-white">Papers</p>
 			</a>
 			<a
 				class="mb-0 hover:underline lg:mb-1"
@@ -77,7 +77,7 @@
 				target="_blank"
 				rel="noreferrer"
 			>
-				<p class="text-md lg:text-md">Blog</p>
+				<p class="text-md lg:text-md dark:text-white">Blog</p>
 			</a>
 		</div>
 	</div>
@@ -90,7 +90,7 @@
 				target="_blank"
 				rel="noreferrer"
 			>
-				<p class="text-md lg:text-md">Network Explorer</p>
+				<p class="text-md lg:text-md dark:text-white">Network Explorer</p>
 			</a>
 			<a
 				class="mb-0 hover:underline lg:mb-1"
@@ -98,7 +98,7 @@
 				target="_blank"
 				rel="noreferrer"
 			>
-				<p class="text-md lg:text-md">Marketplace</p>
+				<p class="text-md lg:text-md dark:text-white">Marketplace</p>
 			</a>
 			<a
 				class="mb-0 hover:underline lg:mb-1"
@@ -106,7 +106,7 @@
 				target="_blank"
 				rel="noreferrer"
 			>
-				<p class="text-md lg:text-md">Core</p>
+				<p class="text-md lg:text-md dark:text-white">Core</p>
 			</a>
 		</div>
 	</div>

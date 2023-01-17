@@ -16,7 +16,7 @@ export const prices = writable<RealTimePrices>({
 export const user = writable<DUser | undefined>(undefined);
 export const userOnNetwork = writable<BrubeckNodeStats | undefined>(undefined);
 export const hasEthereumProvider = writable<boolean | undefined>(undefined);
-export const currentTheme = writable<'light' | 'dark'>('light');
+export const selectedTheme = writable<'light' | 'dark'>('light');
 
 export const favoritesTotals = writable<FavoritesTotals>({
 	nodes: 0,

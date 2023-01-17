@@ -1,5 +1,5 @@
 import send from '$lib/send';
-import { user, userOnNetwork } from '$lib/stores';
+import { user, userOnNetwork, selectedTheme } from '$lib/stores';
 import type { DUser } from '@brubeckscan/common/types/db';
 
 export async function login(address: string) {
@@ -32,6 +32,7 @@ async function updateUserData(dUser: DUser): Promise<boolean> {
 		}
 
 		user.set(dUser);
+		selectedTheme.set(dUser.theme);
 
 		return true;
 	} catch (e) {
