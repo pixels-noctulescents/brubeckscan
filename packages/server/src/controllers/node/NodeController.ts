@@ -22,7 +22,8 @@ NodesController.getNodeStats = async (
     const networkStats = await NetworkManager.getNetworkStats();
 
     if (networkStats) {
-      const manager = new NodeManager(address, networkStats);
+      const cleanInputAddress = address.trim().toLowerCase();
+      const manager = new NodeManager(cleanInputAddress, networkStats);
       const node = await manager.getStats();
       if (node) {
         return sender.success(res, { node });

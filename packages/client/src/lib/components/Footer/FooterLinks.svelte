@@ -1,4 +1,6 @@
-<div class="pb:10 flex w-full justify-between border-b dark:text-neutral-100 md:pb-10">
+<div
+	class="pb:10 flex w-full justify-between border-b border-b-slate-400 dark:text-neutral-100 md:pb-10"
+>
 	<div class="justify-center text-start">
 		<h5 class="text-md mb-2 uppercase lg:text-xl">DISCOVER</h5>
 		<div class="flex flex-col text-slate-500">

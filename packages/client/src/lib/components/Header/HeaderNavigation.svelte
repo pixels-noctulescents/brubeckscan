@@ -17,7 +17,7 @@
 	<!-- Links -->
 	{#each links as link}
 		<a
-			class="lg:text-md hidden text-sm text-slate-500 transition duration-150 ease-in hover:text-slate-800 dark:text-neutral-200 sm:flex"
+			class="lg:text-md hidden text-sm text-slate-500 transition duration-150 ease-in hover:text-slate-800 dark:text-neutral-500 dark:hover:text-neutral-50 sm:flex"
 			href={link.url}
 		>
 			<span class={link.url === $page.route.id ? 'text-black dark:text-white' : ''}
