@@ -74,14 +74,10 @@
 </script>
 
 <div
-	class="flex min-h-screen w-full flex-col items-center bg-slate-200 py-40 text-slate-500 dark:bg-neutral-800 dark:text-white"
+	class="flex min-h-screen w-full flex-col items-center py-40 text-slate-500 dark:bg-neutral-800 dark:text-white"
 >
-	<h3 class="w-full max-w-screen-lg text-xl ">Total value locked (TVL) history</h3>
-	<canvas bind:this={canvas} />
+	<h3 class="w-full max-w-screen-lg text-xl">Total value locked (TVL) history</h3>
+	<div class="w-full p-6">
+		<canvas bind:this={canvas} />
+	</div>
 </div>
-
-<style>
-	div {
-		background: rgb(229, 229, 229);
-	}
-</style>

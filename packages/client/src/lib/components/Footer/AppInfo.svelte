@@ -10,11 +10,11 @@
 </script>
 
 <div
-	class="flex w-full items-center justify-center bg-slate-900 py-2 px-10 text-xs text-white dark:bg-neutral-800 lg:text-sm"
+	class="flex w-full items-center justify-center bg-slate-900 py-2 px-10 text-xs text-white dark:bg-black lg:text-sm"
 >
 	<div class="flex w-full max-w-screen-lg justify-between">
-		<div class="flex items-center gap-4">
-			<a href={GH_REPO_URL} target="_blank" rel="noreferrer">BrubeckScan</a>
+		<div class="flex items-center justify-around gap-4">
+			<a href={GH_REPO_URL} target="_blank" rel="noreferrer" class="text-xs">BrubeckScan</a>
 			<div class="flex items-center gap-1">
 				<a href={GH_PROFILE_URL} target="_blank" rel="noreferrer">
 					<Icon icon="mdi:github" width="20" />
@@ -25,10 +25,10 @@
 			<p>v.</p>
 			<p>
 				<a target="_blank" href={latestRelease.html_url} rel="noreferrer">
-					<span class="text-blue-500">{latestRelease.tag_name}</span>
+					<span class="text-blue-700">{latestRelease.tag_name}</span>
 				</a>
 			</p>
-			<p>U <span class="text-blue-500">{$usersCount}</span></p>
+			<p>U <span class="text-blue-700">{$usersCount}</span></p>
 		</div>
 	</div>
 </div>
