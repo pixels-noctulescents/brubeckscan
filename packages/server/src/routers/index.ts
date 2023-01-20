@@ -14,6 +14,6 @@ Router.use("/markets", [validateAuth], MarketRouter);
 Router.use("/nodes", [validateAuth], NodeRouter);
 Router.use("/networks", [validateAuth], NetworkRouter);
 Router.use("/favorites", [validateAuth], FavoriteRouter);
-Router.use("/app", [validateAuth], AppRouter)
+Router.use("/app", [validateAuth], AppRouter);
 
 export default Router;
