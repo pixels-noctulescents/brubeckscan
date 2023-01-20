@@ -8,10 +8,10 @@
 </script>
 
 <div class="flex gap-2 text-[9px] lg:gap-4 lg:text-xs">
-	<p>
-		{format.numberWithSpaces(Math.round(network?.stats.SPOTDATASTAKED * $prices.DATAUSDT))} USDT Locked
+	<p title="Total value locked (TVL) in DATA">
+		TVL | {format.numberWithSpaces(Math.round(network?.stats.SPOTDATASTAKED))} DATA
 	</p>
-	<p>APY {network?.stats['SPOTAPY']}%</p>
+	<p>APY | {network?.stats['SPOTAPY']}%</p>
 	<p>{network?.lastRewards[0].topologySize} nodes</p>
 	<ThemeSwitcher />
 </div>

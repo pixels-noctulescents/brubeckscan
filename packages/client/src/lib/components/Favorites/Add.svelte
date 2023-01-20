@@ -44,7 +44,12 @@
 <div class="sticky top-0 flex w-full">
 	<Module>
 		<form on:submit|preventDefault={add} class="flex w-full justify-between">
-			<input class="w-full" bind:value={address} {placeholder} required />
+			<input
+				class="w-full dark:bg-transparent dark:text-white"
+				bind:value={address}
+				{placeholder}
+				required
+			/>
 			<button>
 				<Icon
 					icon="material-symbols:add"

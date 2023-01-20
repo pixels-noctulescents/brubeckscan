@@ -16,19 +16,17 @@ class NodeManager {
     }
 
     public async getStats(): Promise<BrubeckNodeStats> {
-        // const cached: any[] | undefined = cache.get(`nodeExternalData/${this.address}`);
+        const cached: any[] | undefined = cache.get(`nodeExternalData/${this.address}`);
 
-        // if (cached) {
-        //     this.formatNodeStats(cached);
-        // } else {
-        //     const data = await this.getData();
-        //     cache.set(`nodeExternalData/${this.address}`, data, 60);
-        //     this.formatNodeStats(data);
-        // }
-
-        const data = await this.getData();
-        this.formatNodeStats(data);
-        return this.nodeStats;
+        if (cached) {
+            this.formatNodeStats(cached);
+            return this.nodeStats;
+        } else {
+            const data = await this.getData();
+            cache.set(`nodeExternalData/${this.address}`, data, 60);
+            this.formatNodeStats(data);
+            return this.nodeStats;
+        }
     }
 
     private async getData(): Promise<any[] | undefined> {
@@ -98,7 +96,11 @@ class NodeManager {
     private getStatus(codes: RewardCode[]) {
         if (!codes.length) return false;
 
-        if (this.networkStats.lastRewards[0].code === codes[0].id || codes[1]?.id) {
+        if (this.networkStats.lastRewards[0].code === codes[0].id) {
+            return true;
+        }
+
+        if (this.networkStats.lastRewards[0].code === codes[1].id) {
             return true;
         }
 

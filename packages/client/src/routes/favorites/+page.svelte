@@ -18,7 +18,7 @@
 			<Add />
 		</div>
 		{#if $user.Favorite.length}
-			<div class="w-full">
+			<div class="flex w-full justify-between">
 				<SelectCurrency />
 			</div>
 			<div class="flex w-full max-w-screen-lg items-stretch gap-8">

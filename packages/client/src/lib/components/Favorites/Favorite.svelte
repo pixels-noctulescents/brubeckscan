@@ -32,6 +32,13 @@
 		}
 	}
 
+	async function refreshNodeStats() {
+		const response = await send(`nodes/stats/${favorite.address}`);
+		if (response) {
+			stats = response.data.node;
+		}
+	}
+
 	onMount(async () => {
 		const response = await send(`nodes/stats/${favorite.address}`);
 		if (response) {
@@ -70,6 +77,9 @@
 				</a>
 				<button on:click={remove}>
 					<Icon icon="material-symbols:delete-outline" width="24" />
+				</button>
+				<button on:click={refreshNodeStats}>
+					<Icon icon="material-symbols:refresh" width="24" />
 				</button>
 			</div>
 			<FavoriteName {favorite} />
