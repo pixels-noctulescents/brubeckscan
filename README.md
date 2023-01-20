@@ -8,11 +8,11 @@
 
 BrubeckScan monorepo
 
-### packages/client
+### @brubeckscan/client
 
 - SvelteKit and gateway to main API
 
-### packages/server
+### @brubeckscan/server
 
 - Main API
 
@@ -20,7 +20,7 @@ BrubeckScan monorepo
 
 - Node / Express / PrismaORM / socket.io
 
-### packages/common
+### @brubeckscan/common
 
 - Types and common utilitaries.
 
