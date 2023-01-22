@@ -29,9 +29,9 @@
 <div class="flex items-center">
 	<Button handle={select}>
 		{#if $selectedTheme === 'dark'}
-			<Icon icon="ph:sun" width="18" />
+			<Icon icon="ri:sun-fill" width="16" />
 		{:else}
-			<Icon icon="ph:moon" width="18" />
+			<Icon icon="ri:moon-fill" width="16" />
 		{/if}
 	</Button>
 </div>

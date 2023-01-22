@@ -18,7 +18,10 @@
 					label: 'TVL in DATA',
 					backgroundColor: 'transparent',
 					borderColor: '#F9781F',
-					borderWidth: 5,
+					borderWidth: 2,
+					pointBackgroundColor: 'transparent',
+					pointHitRadius: 0,
+					pointBorderWidth: 1,
 					data: values.reverse()
 				}
 			]
@@ -74,9 +77,10 @@
 </script>
 
 <div
-	class="flex min-h-screen w-full flex-col items-center py-40 text-slate-500 dark:bg-neutral-800 dark:text-white"
+	class="flex min-h-screen w-full flex-col items-center justify-center  py-40 text-slate-500 dark:text-white"
 >
-	<h3 class="w-full max-w-screen-lg text-xl">Total value locked (TVL) history</h3>
+	<h3 class="w-full max-w-screen-lg text-3xl">Total value locked (TVL) history</h3>
+	<h4 class="w-full max-w-screen-lg text-2xl text-neutral-400">updated hourly</h4>
 	<div class="w-full p-6">
 		<canvas bind:this={canvas} />
 	</div>
