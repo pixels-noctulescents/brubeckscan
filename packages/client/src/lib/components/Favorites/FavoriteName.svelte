@@ -40,12 +40,12 @@
 	}
 </script>
 
-<form class="flex items-center justify-between text-2xl" on:submit|preventDefault={update}>
-	<div>
+<form class="my-3 flex items-center justify-between text-2xl" on:submit|preventDefault={update}>
+	<div class="flex w-1/2">
 		{#if isEditing}
 			<input
 				required
-				class="bg-slate-400 text-white"
+				class="bg-slate-300 text-white"
 				type="text"
 				bind:value={name}
 				placeholder="Change node name"
@@ -54,7 +54,7 @@
 			<p>{favorite.name}</p>
 		{/if}
 	</div>
-	<div>
+	<div class="flex w-1/2 justify-end">
 		{#if isEditing}
 			<button type="submit">
 				<Icon icon="material-symbols:save-as" width="24" />

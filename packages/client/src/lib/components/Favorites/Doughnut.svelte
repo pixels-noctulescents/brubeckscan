@@ -26,7 +26,8 @@
 				{
 					label: 'nodes',
 					backgroundColor: ['lightgreen', 'red'],
-					data: [0, 0]
+					data: [0, 0],
+					borderColor: 'transparent'
 				}
 			]
 		};

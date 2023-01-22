@@ -18,14 +18,14 @@
 			datasets: [
 				{
 					label: 'topologySize',
-					backgroundColor: 'white',
+					backgroundColor: 'transparent',
 					borderColor: '#F9781F',
 					borderWidth: 1,
 					data: topologySize.reverse()
 				},
 				{
 					label: 'receivedClaims',
-					backgroundColor: 'white',
+					backgroundColor: 'transparent',
 					borderColor: '#A3A3A3',
 					borderWidth: 1,
 					data: receivedClaims.reverse()
@@ -89,7 +89,9 @@
 <div class="w-full">
 	<Module>
 		<div class="flex w-full flex-col">
-			<canvas bind:this={canvas} />
+			<div class="p-6">
+				<canvas bind:this={canvas} />
+			</div>
 		</div>
 	</Module>
 </div>

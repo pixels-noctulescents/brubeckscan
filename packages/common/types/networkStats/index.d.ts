@@ -25,3 +25,16 @@ export interface Averages {
     averageReceivedClaims: number
     averageMeanPropagationDelay: number
 }
+
+export type History = TvlSnapshot[];
+
+export interface TvlSnapshot {
+    id: number
+    createdAt: string
+    dailyAPR: number
+    dailyAPY: number
+    spotAPR: number
+    spotAPY: number
+    dailyDataStaked: number
+    spotDataStaked: number
+}

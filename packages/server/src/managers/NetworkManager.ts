@@ -1,9 +1,21 @@
 import { constants } from "../configs/constants";
-import { BrubeckNetworkStats } from "@brubeckscan/common/types/networkStats";
-import { NetworkRewardCode } from "@brubeckscan/common/types/networkStats";
+import NetworkDAO from "../dao/network/NetworkDAO";
+import type { BrubeckNetworkStats } from "@brubeckscan/common/types/networkStats";
+import type { NetworkRewardCode } from "@brubeckscan/common/types/networkStats";
 import { cache } from "../clients/cache";
 
 const NetworkManager = () => { };
+
+NetworkManager.getTVLHistory = async () => {
+    try {
+        const history = await NetworkDAO.getTVLHistory();
+
+        return history ? history : undefined;
+    } catch (e) {
+        return undefined;
+    }
+
+}
 
 NetworkManager.getNetworkStats = async (): Promise<BrubeckNetworkStats | undefined> => {
     try {
