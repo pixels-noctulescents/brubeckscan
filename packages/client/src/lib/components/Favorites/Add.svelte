@@ -45,7 +45,7 @@
 	<Module>
 		<form on:submit|preventDefault={add} class="flex w-full justify-between">
 			<input
-				class="w-full dark:bg-transparent dark:text-white"
+				class="w-full bg-transparent dark:text-white"
 				bind:value={address}
 				{placeholder}
 				required

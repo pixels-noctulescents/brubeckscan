@@ -12,11 +12,9 @@
 	export let network: BrubeckNetworkStats;
 </script>
 
-<div
-	class="sticky top-0 z-50 flex w-full flex-wrap items-center justify-center dark:bg-neutral-900"
->
+<div class="sticky top-0 z-50 flex w-full flex-wrap items-center justify-center">
 	<header
-		class="z-50 flex w-full flex-col items-center bg-slate-100 bg-opacity-90 text-neutral-900 dark:bg-neutral-900 dark:text-neutral-200"
+		class="z-50 flex w-full flex-col items-center bg-slate-100 bg-opacity-20 text-neutral-900 dark:bg-neutral-900 dark:bg-opacity-20 dark:text-neutral-200"
 	>
 		<div
 			class="flex w-full items-center justify-between bg-neutral-200 bg-opacity-90 px-5 py-2 dark:bg-black dark:text-neutral-200 sm:flex xl:px-32"

@@ -35,7 +35,10 @@
 			<a href={metamaskURL} target="_blank" rel="noreferrer">Get Metamask</a>
 		</div>
 	{:else if $user}
-		<div class="flex items-center gap-4 py-1 text-neutral-400">
+		<div
+			class="flex select-none items-center gap-4 py-1 text-neutral-400"
+			title="User DATA Balance"
+		>
 			{$userOnNetwork?.staked} DATA
 			<p class="text-slate-300">|</p>
 			<Identicon address={$user.address} />
