@@ -12,7 +12,7 @@
 
 	function generateGraphConfig() {
 		const data = {
-			labels: labels.reverse(),
+			labels: labels.reverse().slice(-100),
 			datasets: [
 				{
 					label: 'TVL in DATA',
@@ -22,7 +22,7 @@
 					pointBackgroundColor: 'transparent',
 					pointHitRadius: 0,
 					pointBorderWidth: 1,
-					data: values.reverse()
+					data: values.reverse().slice(-100)
 				}
 			]
 		};
@@ -77,7 +77,7 @@
 </script>
 
 <div
-	class="flex min-h-screen w-full flex-col items-center justify-center  py-40 text-slate-500 dark:text-white"
+	class="flex min-h-screen w-full flex-col items-center justify-center py-40 text-slate-500 dark:text-white"
 >
 	<h3 class="w-full max-w-screen-lg text-3xl">Total value locked (TVL) history</h3>
 	<h4 class="w-full max-w-screen-lg text-2xl text-neutral-400">updated hourly</h4>
