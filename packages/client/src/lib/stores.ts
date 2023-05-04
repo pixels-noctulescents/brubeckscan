@@ -1,9 +1,12 @@
 import { writable } from 'svelte/store';
 import type { RealTimePrices } from '@brubeckscan/common/types/sockets';
 import type { DUser } from '@brubeckscan/common/types/db';
-import type { FavoritesOverview, FavoritesTotals } from '@brubeckscan/common/types/favoritesOverview';
+import type {
+	FavoritesOverview,
+	FavoritesTotals
+} from '@brubeckscan/common/types/favoritesOverview';
 import type { BrubeckNodeStats } from '@brubeckscan/common/types/node';
-import type { Notification } from "@brubeckscan/common/types/notification";
+import type { Notification } from '@brubeckscan/common/types/notification';
 
 export const usersCount = writable<number>(0);
 export const prices = writable<RealTimePrices>({
@@ -16,7 +19,7 @@ export const prices = writable<RealTimePrices>({
 export const user = writable<DUser | undefined>(undefined);
 export const userOnNetwork = writable<BrubeckNodeStats | undefined>(undefined);
 export const hasEthereumProvider = writable<boolean | undefined>(undefined);
-export const selectedTheme = writable<'light' | 'dark'>('light');
+export const selectedTheme = writable<'light' | 'dark'>('dark');
 
 export const favoritesTotals = writable<FavoritesTotals>({
 	nodes: 0,
@@ -26,8 +29,8 @@ export const favoritesTotals = writable<FavoritesTotals>({
 	statuses: 0,
 	toBeReceived: 0,
 	nodesOk: 0,
-	nodesKo: 0,
+	nodesKo: 0
 });
 
 export const notifications = writable<Notification[]>([]);
-export const selectedCurrency = writable<"data" | "usdt" | "eur">("data")
+export const selectedCurrency = writable<'data' | 'usdt' | 'eur'>('data');
