@@ -4,18 +4,14 @@ import validator from "validator";
 import NodeManager from "../../managers/Node/NodeManager";
 import NetworkManager from "../../managers/NetworkManager";
 
-const NodesController = () => { };
+const NodesController = () => {};
 
-NodesController.getNodeStats = async (
-  req: Request,
-  res: Response,
-  next: NextFunction
-) => {
+NodesController.getNodeStats = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const address = req.params.address;
 
     if (!address || !validator.isEthereumAddress(req.params.address)) {
-      return sender.failure(res, { address: "Invalid ethereum address" })
+      return sender.failure(res, { address: "Invalid ethereum address" });
     }
 
     // We need the Brubeck network stats to process a node status
