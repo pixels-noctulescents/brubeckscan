@@ -13,7 +13,7 @@
 </svelte:head>
 
 {#if $user}
-	<div class="flex w-full max-w-screen-lg flex-col items-stretch gap-8 pt-10 pb-20">
+	<div class="flex w-full max-w-screen-lg flex-col items-stretch gap-8 px-4 pb-20 pt-10">
 		<div class="sticky top-0 flex">
 			<Add />
 		</div>
@@ -21,11 +21,11 @@
 			<div class="flex w-full justify-between">
 				<SelectCurrency />
 			</div>
-			<div class="flex w-full max-w-screen-lg items-stretch gap-8">
-				<div class="flex w-4/6">
+			<div class="flex w-full max-w-screen-lg flex-wrap items-stretch gap-8 md:flex-nowrap">
+				<div class="flex w-full md:w-4/6">
 					<Totals />
 				</div>
-				<div class="flex w-2/6">
+				<div class="flex w-full md:w-2/6">
 					<Doughnut />
 				</div>
 			</div>
@@ -39,7 +39,7 @@
 		</div>
 	</div>
 {:else}
-	<div class="flex w-full max-w-screen-lg flex-col items-stretch gap-8 pt-10 pb-20">
+	<div class="flex w-full max-w-screen-lg flex-col items-stretch gap-8 pb-20 pt-10">
 		<Module>
 			<p class="w-full text-center text-xl text-neutral-500">
 				<span>Connect to start saving your nodes and keep track of your rewards 🎉</span>

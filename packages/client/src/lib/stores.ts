@@ -1,5 +1,6 @@
 import { writable } from 'svelte/store';
 import type { RealTimePrices } from '@brubeckscan/common/types/sockets';
+import type { BrubeckNetworkStats } from '@brubeckscan/common/types/networkStats';
 import type { DUser } from '@brubeckscan/common/types/db';
 import type {
 	FavoritesOverview,
@@ -20,6 +21,9 @@ export const user = writable<DUser | undefined>(undefined);
 export const userOnNetwork = writable<BrubeckNodeStats | undefined>(undefined);
 export const hasEthereumProvider = writable<boolean | undefined>(undefined);
 export const selectedTheme = writable<'light' | 'dark'>('dark');
+
+// Network stats
+export const brubeckNetworkStats = writable<BrubeckNetworkStats>(undefined);
 
 export const favoritesTotals = writable<FavoritesTotals>({
 	nodes: 0,

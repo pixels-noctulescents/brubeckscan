@@ -73,7 +73,7 @@
 
 <Module>
 	<div class="flex w-full flex-col items-center justify-center">
-		<div class="flex w-40 items-center justify-center">
+		<div class="flex w-16 items-center justify-center md:w-40">
 			<canvas bind:this={canvas} />
 		</div>
 	</div>
