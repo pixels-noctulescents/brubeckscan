@@ -31,11 +31,12 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"svelte-loading-spinners": "^0.3.4",
 		"@metamask/detect-provider": "^2.0.0",
 		"@sveltejs/adapter-node": "^1.0.0",
 		"chart.js": "^4.1.2",
 		"socket.io-client": "^4.5.4",
+		"svelte-fast-marquee": "^0.4.1",
+		"svelte-loading-spinners": "^0.3.4",
 		"uuid": "^9.0.0",
 		"validator": "^13.7.0"
 	}

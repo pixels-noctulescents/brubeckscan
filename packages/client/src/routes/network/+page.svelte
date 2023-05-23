@@ -6,19 +6,21 @@
 
 	export let data;
 
-	const network: BrubeckNetworkStats = data.network;
+	const network: BrubeckNetworkStats | undefined = data.network;
 </script>
 
 <svelte:head>
 	<title>BrubeckScan | Network</title>
 </svelte:head>
 
-<div class="flex w-full max-w-screen-lg flex-col gap-10 pt-20 pb-40">
-	<div class="flex w-full flex-wrap items-stretch gap-4 md:flex-none">
-		<NetworkStats stats={network.stats} />
-		<NetworkAverages averages={network.averages} />
+{#if network}
+	<div class="flex w-full max-w-screen-lg flex-col gap-10 px-4 pb-40 pt-20 md:px-0">
+		<div class="flex w-full flex-wrap items-stretch gap-4 md:flex-none">
+			<NetworkStats stats={network.stats} />
+			<NetworkAverages averages={network.averages} />
+		</div>
+		<div>
+			<NetworkGraphs codes={network.lastRewards} />
+		</div>
 	</div>
-	<div>
-		<NetworkGraphs codes={network.lastRewards} />
-	</div>
-</div>
+{/if}

@@ -3,7 +3,7 @@
 	import { user } from '$lib/stores';
 </script>
 
-<div class="flex w-full items-center justify-evenly bg-slate-400 p-2">
+<div class="flex w-full items-center justify-evenly bg-slate-400 p-2 dark:bg-neutral-900">
 	<div>
 		<a href="/" class="text-white">
 			<Icon icon="material-symbols:home" width="30" />

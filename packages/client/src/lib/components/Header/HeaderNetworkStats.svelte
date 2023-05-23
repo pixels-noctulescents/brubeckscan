@@ -1,17 +1,12 @@
 <script lang="ts">
-	import { prices } from '$lib/stores';
-	import type { BrubeckNetworkStats } from '@brubeckscan/common/types/networkStats';
 	import { format } from '@brubeckscan/common/utils';
-	import ThemeSwitcher from '../ThemeSwitcher.svelte';
-
-	export let network: BrubeckNetworkStats;
+	import { brubeckNetworkStats } from '$lib/stores';
 </script>
 
-<div class="flex gap-2 text-[9px] lg:gap-4 lg:text-xs">
+<div class="flex gap-4 text-sm lg:gap-4 lg:text-xs">
 	<p title="Total value locked (TVL) in DATA">
-		TVL | {format.numberWithSpaces(Math.round(network?.stats.SPOTDATASTAKED))} DATA
+		TVL | {format.numberWithSpaces(Math.round($brubeckNetworkStats?.stats.SPOTDATASTAKED))} DATA
 	</p>
-	<p>APY | {network?.stats['SPOTAPY']}%</p>
-	<p>{network?.lastRewards[0].topologySize} nodes</p>
-	<ThemeSwitcher />
+	<p>APY | {$brubeckNetworkStats?.stats['SPOTAPY']}%</p>
+	<p>{$brubeckNetworkStats?.lastRewards[0].topologySize} nodes</p>
 </div>

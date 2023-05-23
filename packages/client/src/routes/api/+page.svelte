@@ -12,7 +12,7 @@
 	<title>BrubeckScan | API</title>
 </svelte:head>
 
-<div class="flex w-full flex-col items-center px-8 pt-20 pb-40 lg:px-0">
+<div class="flex w-full flex-col items-center px-4 pb-40 pt-20 lg:px-0">
 	<div class="w-full max-w-screen-lg">
 		<Module>
 			<div class="flex w-full flex-col gap-4">
@@ -44,7 +44,7 @@
 					<div class="flex w-full gap-4">
 						<div class="flex w-full">
 							<pre
-								class="w-full rounded-md bg-slate-700 p-4 font-mono text-[10px] text-white lg:text-[12px]">{@html JSON.stringify(
+								class="w-full break-all rounded-md bg-slate-700 p-4 font-mono text-[10px] text-white lg:text-[12px]">{@html JSON.stringify(
 									data.response,
 									undefined,
 									2

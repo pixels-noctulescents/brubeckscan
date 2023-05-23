@@ -17,14 +17,16 @@
 	<title>BrubeckScan | Stats</title>
 </svelte:head>
 
-<div class="flex w-full max-w-screen-lg flex-wrap items-stretch justify-between gap-4 pt-20 pb-40">
+<div
+	class="flex w-full max-w-screen-lg flex-wrap items-stretch justify-between gap-4 px-4 pb-40 pt-20 md:px-0"
+>
 	<div class="w-full">
 		<SelectCurrency />
 	</div>
 	<!-- Avatar -->
-	<div class="flex">
+	<div class="flex w-full items-center justify-center">
 		<Module>
-			<div class="flex w-48 items-center justify-center {data.node.status ? '' : 'inactive'}">
+			<div class="flex w-full items-center justify-center {data.node.status ? '' : 'inactive'}">
 				<img class="w-32" {src} {alt} />
 			</div>
 		</Module>
@@ -51,9 +53,9 @@
 						</p>
 					</div>
 				{/if}
-				<div class="flex justify-between">
+				<div class="flex justify-between gap-2">
 					<p class="text-slate-600">Address</p>
-					<p class="text-slate-900 dark:text-neutral-100">{data.node.address}</p>
+					<p class="break-all text-slate-900 dark:text-neutral-100">{data.node.address}</p>
 				</div>
 				<div class="flex justify-between">
 					<p class="text-slate-600">Staked</p>
@@ -90,7 +92,7 @@
 	</div>
 
 	<!-- Payouts -->
-	<div class="flex w-1/2">
+	<div class="flex w-full md:w-1/2">
 		<Module>
 			<div class="flex w-full flex-col">
 				<h3 class="mb-8 text-3xl">Payouts</h3>
@@ -115,8 +117,8 @@
 				<h3 class="mb-8 text-3xl">Latest codes</h3>
 				<div class="text-md flex w-full flex-grow flex-col justify-between gap-1">
 					{#each data.node.claimedRewardCodes.slice(0, 10) as code}
-						<div class="flex w-full flex-grow items-center justify-between">
-							<div>{code.id}</div>
+						<div class="flex w-full flex-grow items-center justify-between gap-4">
+							<div class="break-all">{code.id}</div>
 							<div class="text-slate-500">{new Date(code.claimTime).toLocaleTimeString()}</div>
 						</div>
 					{/each}

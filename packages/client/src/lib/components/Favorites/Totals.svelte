@@ -8,7 +8,7 @@
 
 {#if $user}
 	<div class="w-full">
-		<div class="flex w-full flex-wrap items-stretch gap-8 md:max-w-screen-lg lg:flex-none ">
+		<div class="flex w-full flex-wrap items-stretch gap-8 md:max-w-screen-lg lg:flex-none">
 			<div class="w-full lg:w-1/2 lg:flex-grow">
 				<Module>
 					<div class="flex grow flex-col justify-between">
