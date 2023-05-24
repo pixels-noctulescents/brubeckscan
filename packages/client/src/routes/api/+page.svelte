@@ -1,10 +1,6 @@
 <script lang="ts">
 	import Module from '$lib/components/Module.svelte';
-	import type { PageData } from './$types';
 	import Icon from '@iconify/svelte';
-
-	export let data: PageData;
-
 	const apiEndpoint = 'https://brubeckscan.app/api/nodes/';
 </script>
 
