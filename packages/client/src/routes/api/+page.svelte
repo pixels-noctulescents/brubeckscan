@@ -17,11 +17,12 @@
 		<Module>
 			<div class="flex w-full flex-col gap-4">
 				<div class="flex flex-col gap-4 text-2xl">
+					<p class="text-lg">BrubeckScan provides a single API endpoint providing various data.</p>
 					<h3 class="text-2xl">Format</h3>
 					<a class="text-lg" href="https://github.com/omniti-labs/jsend">JSend</a>
-					<h3 class="text-2xl">Request</h3>
+					<h3 class="text-2xl">Endpoint</h3>
 					<div
-						class="flex items-center gap-4 rounded-md bg-slate-700 p-4 font-mono text-sm text-white"
+						class="flex items-center gap-4 rounded-md bg-neutral-700 p-4 font-mono text-sm text-white"
 					>
 						<p class="text-green-400">GET</p>
 						<div class="flex w-full">
@@ -32,25 +33,14 @@
 				<div />
 				<div class="flex flex-col gap-4">
 					<h3 class="flex items-center gap-2 text-2xl">
-						Response
-						<div>
-							<a
-								href="https://github.com/adamphivo/brubeckAPI/blob/main/packages/common/types/node/index.d.ts"
-							>
-								<Icon icon="logos:typescript-icon" width="26" />
-							</a>
-						</div>
+						<a
+							href="https://github.com/adamphivo/brubeckAPI/blob/main/packages/common/types/node/index.d.ts"
+							class="flex gap-2"
+						>
+							<span>Response</span>
+							<Icon icon="logos:typescript-icon" width="26" />
+						</a>
 					</h3>
-					<div class="flex w-full gap-4">
-						<div class="flex w-full">
-							<pre
-								class="w-full break-all rounded-md bg-slate-700 p-4 font-mono text-[10px] text-white lg:text-[12px]">{@html JSON.stringify(
-									data.response,
-									undefined,
-									2
-								)}</pre>
-						</div>
-					</div>
 				</div>
 			</div>
 		</Module>

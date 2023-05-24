@@ -14,8 +14,10 @@
     "./packages/common"
   ],
   "dependencies": {
+    "@zerodevx/svelte-json-view": "^1.0.5",
     "dayjs": "^1.11.7",
-    "dotenv": "^16.0.3"
+    "dotenv": "^16.0.3",
+    "svelte-json-tree": "^1.0.0"
   },
   "devDependencies": {
     "concurrently": "^7.6.0"
